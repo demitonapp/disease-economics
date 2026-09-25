@@ -9,7 +9,7 @@ source_type: industry-body
 method: records
 access: secondary
 read_via: CII's product page for the report; the report itself was not read
-read_on: '2026-09-14'
+read_on: '2026-09-25'
 location: product page summary
 jurisdictions:
 - US
@@ -17,4 +17,9 @@ industries:
 - F42
 ---
 
-More than 150 heavy industrial projects. Mean field rework exceeded 3% of construction-phase cost. US industrial, not civil.
+The Field Rework Index is a one-page tool for predicting field rework and cost growth on a project.
+CII's product page for the report states no rework percentage and no sample size; the 29-page report
+itself is paywalled and has not been read.
+
+This source is kept because the withdrawn finding cites it, so the record shows what was claimed and
+why it was withdrawn.

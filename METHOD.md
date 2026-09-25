@@ -23,7 +23,7 @@ the evidence against a figure as well as for it.
 
 Every finding has an `exposure_kind`:
 
-| Kind | Means | Can be the headline |
+| Kind | Means | Comparable (Section 5) |
 |---|---|---|
 | `contractor_loss` | Money the contractor actually loses | Yes |
 | `money_at_stake` | Money on the table: claimable, held, or in dispute, not necessarily lost | Yes |
@@ -31,7 +31,7 @@ Every finding has an `exposure_kind`:
 | `societal` | Costs borne by workers and the community | No |
 | `context` | Not a cost: a figure that frames one, like a planned margin (`context/` only) | No |
 
-Kinds are never summed across each other. A headline built from owner-side money would be the
+Kinds are never summed across each other. An exposure built from owner-side money would be the
 client's cost counted as the contractor's.
 
 ## 3. Units, and when a figure may be multiplied
@@ -64,18 +64,36 @@ scales with contract size, which the unit cannot express. Its caveat says so.
 Our own arithmetic does not change the grade: `derivation: calculated` and `calculation` show it, so
 anyone can check it. Where a number is needed, the grades map to 1.0, 0.7 and 0.4.
 
-Under this rule no headline figure is graded high. That matches the research: confidence in any
+Under this rule no share-of-contract figure is graded high. That matches the research: confidence in any
 single number for these diseases is low, and most studies measure what is at stake rather than what
 is lost.
 
-## 5. The headline
+## 5. Which figure applies
 
-Each disease has exactly one headline figure: the one a surface shows first. It must be a
-`ratio_of_contract` with a value, and a `contractor_loss` or `money_at_stake` figure. It is declared,
-never picked by size or grade.
+There is no headline. No single figure stands for a disease: which one applies depends on where the
+work is, and a figure from one country put in front of a contractor in another is the misreading this
+record exists to prevent. (Until schema 2.0.0 each disease declared one `is_headline` figure; it was
+removed because one global figure never fits a reader filtering by their own state, and one declared
+per jurisdiction would be an editorial call per cell with most cells empty.)
 
-The headline is global, not per jurisdiction. When a second jurisdiction's figure competes for it,
-this rule becomes one per disease and jurisdiction.
+A figure is **comparable** when it is a `ratio_of_contract` with a value and its kind is
+`contractor_loss` or `money_at_stake`. Only comparable figures are set side by side or multiplied by
+a contract value.
+
+When one figure is needed for a place (the Demiton product multiplies one per disease by each
+project's contract value), it is the **nearest evidence**, chosen from the comparable figures by
+these rules, in order:
+
+1. **Place.** A figure for the place itself (`AU-QLD` for a Queensland project) beats one for its
+   country (`AU`), which beats `GLOBAL` (no limit claimed). A figure for another country or another
+   state never applies, and neither does `unknown`: no figure is better than someone else's.
+2. **Confidence.** high, then moderate, then low.
+3. **Kind.** `contractor_loss` before `money_at_stake`: money lost before money at stake.
+4. **Recency.** The newer source of record.
+5. **Size.** The smaller figure, so a tie never overstates.
+
+The place is the project's location where it is known, and the organisation's country where it is
+not. Industry is not part of the rule yet.
 
 ## 6. Jurisdictions and industries
 
@@ -99,7 +117,7 @@ should propagate into an exposure is not modelled yet.
 ## 8. Changing a figure
 
 A figure is never overwritten silently. When `exposure_value`, `exposure_unit`, `denominator`,
-`exposure_range`, `exposure_kind`, `confidence` or `is_headline` changes:
+`exposure_range`, `exposure_kind` or `confidence` changes:
 
 - a `history` entry records the old figure, the date and the reason (append-only), and
 - the same pull request adds or changes a file under `sources/`.

@@ -4,7 +4,6 @@ exposure_unit: ratio_of_contract
 exposure_basis: of contract value, including indirect costs
 exposure_kind: contractor_loss
 confidence: moderate
-is_headline: true
 derivation: as_published
 sources:
 - love-2010-rework-civil

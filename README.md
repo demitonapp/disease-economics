@@ -9,7 +9,7 @@ commercial interest, stated in [GOVERNANCE.md](GOVERNANCE.md). The point of publ
 that you don't have to take our word for any of it: every figure can be traced, disputed and changed
 under the rules in [METHOD.md](METHOD.md).
 
-**Browse the record at [research.demiton.io](https://research.demiton.io)**, rebuilt from this repository on every merge.
+**Browse the record at [research.demiton.io](https://research.demiton.io)**, rebuilt on every merge: this repository publishes `corpus.json` to the [`data-latest`](../../releases/tag/data-latest) release, and the site is built from it.
 
 **The figures are estimates with stated confidence, not measurements.** Most of them measure how much
 is at stake, not how much a contractor ends up losing. Each one says which.
@@ -30,10 +30,10 @@ The long read that works these figures through a $5 million job is at
 ## What is here
 
 - **[`sources/`](sources)** - where we got it. One file per paper, report or data release.
-- **[`diseases/`](diseases)** - the figures, one file each, in a directory per disease. Exactly one
-  figure per disease is the headline.
+- **[`diseases/`](diseases)** - the figures, one file each, in a directory per disease. No figure
+  stands for a disease: which one applies depends on where the work is ([METHOD.md](METHOD.md) Section 5).
 - **[`context/`](context)** - figures that frame a disease rather than measure it, like a typical
-  planned margin. Never a headline.
+  planned margin. Never counted as a cost.
 - **[`protections/`](protections)** - evidence that a protection mechanism matters. No percentages
   saved: nobody has measured that yet.
 - **[`schema/`](schema)** and **[`vocab/`](vocab)** - the shape every file must have, and the code

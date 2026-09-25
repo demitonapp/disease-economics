@@ -15,7 +15,7 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 from validate import check_against_base, validate  # noqa: E402
 
-HEADLINE = "diseases/rework_signal/rework_total_civil_survey.yaml"
+FINDING = "diseases/rework_signal/rework_total_civil_survey.yaml"
 
 
 class CorpusTest(unittest.TestCase):
@@ -49,20 +49,17 @@ class CorpusTest(unittest.TestCase):
     def test_corpus_passes(self):
         self.assertEqual(self.errors(), [])
 
-    def test_owner_side_cannot_be_headline(self):
-        self.edit(HEADLINE, exposure_kind="owner_side")
-        self.assertFails("a headline must be")
-
-    def test_two_headlines_fail(self):
-        self.edit("diseases/rework_signal/rework_split_direct_indirect.yaml", is_headline=True)
-        self.assertFails("needs exactly one is_headline")
+    def test_is_headline_is_gone(self):
+        # Schema 2.0.0: no figure stands for a disease; which applies depends on where you work.
+        self.edit(FINDING, is_headline=True)
+        self.assertFails("is_headline")
 
     def test_none_unit_with_a_value_fails(self):
-        self.edit(HEADLINE, exposure_unit="none")
+        self.edit(FINDING, exposure_unit="none")
         self.assertFails("go together")
 
     def test_ratio_of_other_needs_denominator(self):
-        self.edit(HEADLINE, exposure_unit="ratio_of_other")
+        self.edit(FINDING, exposure_unit="ratio_of_other")
         self.assertFails("denominator")
 
     def test_per_unit_needs_price_year(self):
@@ -70,7 +67,7 @@ class CorpusTest(unittest.TestCase):
         self.assertFails("price_year")
 
     def test_missing_source_fails(self):
-        self.edit(HEADLINE, sources=["no-such-source"])
+        self.edit(FINDING, sources=["no-such-source"])
         self.assertFails("does not exist")
 
     def test_uncited_source_fails(self):
@@ -97,10 +94,6 @@ class CorpusTest(unittest.TestCase):
         p.write_text(text[:start] + text[end:])
         self.assertFails("read_via")
 
-    def test_context_cannot_be_headline(self):
-        self.edit("context/planned_gross_margin.yaml", is_headline=True)
-        self.assertFails("never a headline")
-
 
 class BaseTest(CorpusTest):
     """The rules that compare a PR to its base branch."""
@@ -121,28 +114,34 @@ class BaseTest(CorpusTest):
         self.assertEqual(self.base_errors(), [])
 
     def test_figure_change_needs_history_and_source(self):
-        self.edit(HEADLINE, exposure_value=0.2)
+        self.edit(FINDING, exposure_value=0.2)
         errs = self.base_errors()
         self.assertTrue(any("history entry" in e for e in errs), errs)
         self.assertTrue(any("sources/" in e for e in errs), errs)
 
     def test_figure_change_with_history_and_source_passes(self):
-        self.edit(HEADLINE, exposure_value=0.2, history=[{
+        self.edit(FINDING, exposure_value=0.2, history=[{
             "exposure_value": 0.1, "changed_on": "2026-10-01", "reason": "new survey"}])
         p = self.tmp / "sources" / "love-2010-rework-civil.md"
         p.write_text(p.read_text() + "\nA newer reading.\n")
         self.assertEqual(self.base_errors(), [])
 
     def test_deleting_a_finding_fails(self):
-        (self.tmp / HEADLINE).unlink()
+        (self.tmp / FINDING).unlink()
         self.assertTrue(any("never deleted" in e for e in self.base_errors()))
 
     def test_history_is_append_only(self):
-        self.edit(HEADLINE, history=[{"changed_on": "2026-10-01", "reason": "a"}])
+        self.edit(FINDING, history=[{"changed_on": "2026-10-01", "reason": "a"}])
         self.git("add", ".")
         self.git("-c", "user.email=t@t", "-c", "user.name=t", "commit", "-qm", "with history")
-        self.edit(HEADLINE, history=[{"changed_on": "2026-10-01", "reason": "rewritten"}])
+        self.edit(FINDING, history=[{"changed_on": "2026-10-01", "reason": "rewritten"}])
         self.assertTrue(any("append-only" in e for e in self.base_errors()))
+
+    def _bumped(self, part):
+        """The finding schema's current version with one part bumped: tests follow the schema's own history."""
+        import json
+        major, minor, patch = map(int, json.loads((self.tmp / "schema" / "finding.schema.json").read_text())["x-schema-version"].split("."))
+        return {"major": f"{major + 1}.0.0", "minor": f"{major}.{minor + 1}.0", "patch": f"{major}.{minor}.{patch + 1}"}[part]
 
     def _schema(self, change, version):
         import json
@@ -155,26 +154,29 @@ class BaseTest(CorpusTest):
 
     def test_widening_an_enum_needs_a_minor_bump(self):
         widen = lambda s: s["properties"]["denominator"]["enum"].append("new_denominator")  # noqa: E731
+        minor = self._bumped("minor")
         self._schema(widen, None)
         self.assertTrue(any("MINOR" in e for e in self.base_errors()))
-        self._schema(lambda s: None, "1.3.0")
+        self._schema(lambda s: None, minor)
         self.assertEqual(self.base_errors(), [])
 
     def test_narrowing_an_enum_needs_a_major_bump(self):
         narrow = lambda s: s["properties"]["confidence"]["enum"].remove("low")  # noqa: E731
-        self._schema(narrow, "1.3.0")
+        minor, major = self._bumped("minor"), self._bumped("major")
+        self._schema(narrow, minor)
         self.assertTrue(any("MAJOR" in e for e in self.base_errors()))
-        self._schema(lambda s: None, "2.0.0")
+        self._schema(lambda s: None, major)
         self.assertEqual(self.base_errors(), [])
 
     def test_a_description_change_needs_a_patch_bump(self):
+        patch = self._bumped("patch")
         self._schema(lambda s: s.update(description="reworded"), None)
         self.assertTrue(any("PATCH" in e for e in self.base_errors()))
-        self._schema(lambda s: None, "1.2.1")
+        self._schema(lambda s: None, patch)
         self.assertEqual(self.base_errors(), [])
 
     def test_typo_fix_needs_no_source(self):
-        self.edit(HEADLINE, caveat="Respondents' estimates, not measured cost records.")
+        self.edit(FINDING, caveat="Respondents' estimates, not measured cost records.")
         self.assertEqual(self.base_errors(), [])
 
 

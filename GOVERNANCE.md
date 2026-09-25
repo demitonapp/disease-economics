@@ -6,8 +6,9 @@
 product uses these figures, and a disease that costs more is a bigger sale, so Demiton has a
 commercial interest in them. We would rather you read that here than discover it.
 
-Because of that interest, every pull request that touches a headline figure is labelled
-`headline` and its review says so.
+Because of that interest, every pull request that touches a comparable figure (a share of contract
+value that the product can multiply, [METHOD.md](METHOD.md) Section 5) is labelled `exposure` and its
+review says so.
 
 ## How fast
 

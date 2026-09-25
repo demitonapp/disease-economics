@@ -133,7 +133,9 @@ def write(out: Path, release: str) -> list[dict]:
     corpus = {
         "release": release, "schema_versions": schemas,
         "findings": [{**d, "path": r["_path"], "citations": r["_citations"]} for d, r in zip(data, full)],
-        "sources": sources, "vocab": vocab, "history": history(ROOT),
+        "sources": sources, "vocab": vocab,
+        "schemas": {sp.name.split(".")[0]: json.loads(sp.read_text()) for sp in sorted((ROOT / "schema").glob("*.schema.json"))},
+        "history": history(ROOT),
     }
     (out / "corpus.json").write_text(json.dumps(corpus, indent=2, default=str) + "\n")
     (out / "findings.json").write_text(json.dumps({"release": release, "schema_versions": schemas, "findings": data}, indent=2) + "\n")

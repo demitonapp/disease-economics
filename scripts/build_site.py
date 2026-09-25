@@ -9,6 +9,8 @@ native <details>.
 from __future__ import annotations
 
 import argparse
+import json
+import shutil
 import sys
 from datetime import date
 from html import escape
@@ -19,6 +21,32 @@ from build_ledger import write  # noqa: E402
 from validate import ROOT, load_corpus, validate  # noqa: E402
 
 REPO = "https://github.com/demitonapp/disease-economics"
+SITE = "https://research.demiton.io/"
+#: Published on demiton.io and docs.demiton.io; the no-GitHub route for evidence and disputes.
+CONTACT = "support@demiton.io"
+NAMES_J = json.loads((ROOT / "vocab" / "jurisdictions.json").read_text())
+SHORT_J = {"GB": "UK", "US": "US", "GLOBAL": "Global", "unknown": "Place unknown"}
+
+
+def place(js: list[str]) -> str:
+    """A short 'where is this from' label for a card: QLD, Australia, NSW, QLD, VIC, Global, US, Canada."""
+    if all(j == "AU" or j.startswith("AU-") for j in js):
+        subs = [j[3:] for j in js if j.startswith("AU-")]
+        return ", ".join(subs) if subs and "AU" not in js else "Australia"
+    return ", ".join(SHORT_J.get(j, NAMES_J.get(j, j)) for j in js)
+
+
+def place_rank(js: list[str]) -> int:
+    """Queensland first, then the rest of Australia, New Zealand, global, elsewhere, unknown."""
+    if "AU-QLD" in js:
+        return 0
+    if any(j == "AU" or j.startswith("AU-") for j in js):
+        return 1
+    if "NZ" in js:
+        return 2
+    if "GLOBAL" in js:
+        return 3
+    return 5 if js == ["unknown"] else 4
 
 #: Research-cost order (the order the docs long read argues for), with the public names.
 DISEASES = [
@@ -48,7 +76,7 @@ DENOMINATOR = {
 }
 
 CURRENCY = {"AUD": "A$", "USD": "US$", "NZD": "NZ$", "GBP": "£", "EUR": "€"}
-PER = {"per_wet_day": "per wet day", "per_incident": "per incident"}
+PER = {"per_wet_day": "per wet day", "per_incident": "per case"}
 CONFIDENCE_ORDER = {"high": 0, "moderate": 1, "low": 2}
 
 
@@ -96,7 +124,7 @@ def finding_card(row: dict, sources: dict, path: str) -> str:
     num, of = figure(row)
     kind_label, kind_help = KIND.get(row["exposure_kind"], (row["exposure_kind"], ""))
     status = row.get("status") or "current"
-    flags = []
+    flags = [f'<span class="tag place" title="Where the evidence is from">{e(place(row["jurisdictions"]))}</span>']
     if row["is_headline"]:
         flags.append('<span class="tag headline">Headline</span>')
     flags.append(f'<span class="tag conf-{e(row["confidence"])}" title="METHOD.md Section 4">{e(row["confidence"]).capitalize()} confidence</span>')
@@ -136,6 +164,7 @@ def finding_card(row: dict, sources: dict, path: str) -> str:
   <summary>
     <span class="fig"><span class="num">{e(num)}</span><span class="of">{e(of)}</span></span>
     <span class="what"><span class="label">{e(row['label'])}</span><span class="flags">{''.join(flags)}</span></span>
+    <span class="chev" aria-hidden="true"></span>
   </summary>
   <div class="body">
     {withdrawn}
@@ -144,13 +173,15 @@ def finding_card(row: dict, sources: dict, path: str) -> str:
     <p><strong>Sample.</strong> {e(row['sample_note'])}</p>
     <p><strong>What it is not.</strong> {e(row['caveat'])}</p>
     {calc}
-    <h4>Where it came from</h4>
+    <h3>Where it came from</h3>
     <ul class="cites">{''.join(cites)}</ul>
-    {f'<h4>Considered and set aside</h4><ul class="cites">{considered}</ul>' if considered else ''}
-    {f'<h4>History</h4><ul class="hist">{history}</ul>' if history else ''}
+    {f'<h3>Considered and set aside</h3><ul class="cites">{considered}</ul>' if considered else ''}
+    {f'<h3>History</h3><ul class="hist">{history}</ul>' if history else ''}
     <p class="meta"><span class="mono">{e(row['id'])}</span> · {e(where)} ·
       <a href="{REPO}/blob/main/{e(path)}">the record</a> ·
-      <a href="{REPO}/issues/new?template=dispute.yml&amp;finding={e(path)}">dispute this figure</a></p>
+      <a class="copy-link" href="#{e(row['id'])}">link to this figure</a> ·
+      <a href="{REPO}/issues/new?template=dispute.yml&amp;finding={e(path)}">dispute this figure</a>
+      <span class="muted">(or email {CONTACT})</span></p>
   </div>
 </details>"""
 
@@ -185,7 +216,7 @@ def filter_bar(data: list[dict]) -> str:
     for special, label in (("ALL", "Not industry-specific"), ("unknown", "Unknown")):
         if special in used_i:
             opts_i.append(f'<option value="{special}">{label}</option>')
-    return f"""<div class="filters" hidden><div class="wrap">
+    return f"""<div class="filters" id="f-bar" hidden><div class="wrap">
   <label>Jurisdiction <select id="f-j">{''.join(opts_j)}</select></label>
   <label>Industry <select id="f-i">{''.join(opts_i)}</select></label>
   <label title="Global figures, national figures for a state, and general-construction or cross-industry figures for an industry"><input type="checkbox" id="f-broad" checked> Include broader evidence</label>
@@ -194,12 +225,39 @@ def filter_bar(data: list[dict]) -> str:
 </div></div>"""
 
 
+def dataset_ld(release: str, today: str, n: int) -> str:
+    """schema.org Dataset markup, so Google Dataset Search can list the corpus."""
+    ld = {
+        "@context": "https://schema.org", "@type": "Dataset",
+        "name": "disease-economics: what published research says the diseases of a construction job cost",
+        "description": f"{n} figures from published research on what rework, cost drift, missed claims, disputes and "
+                       "lapsed compliance cost construction contractors, each with its source, the page it was read on, "
+                       "a confidence grade and a caveat. Open to dispute on GitHub.",
+        "url": SITE, "sameAs": REPO, "version": release, "dateModified": today,
+        "license": "https://creativecommons.org/licenses/by/4.0/", "isAccessibleForFree": True,
+        "creator": {"@type": "Organization", "name": "Demiton", "url": "https://demiton.io"},
+        "keywords": ["construction", "civil engineering", "rework", "cost overrun", "construction disputes",
+                     "security of payment", "Queensland", "Australia"],
+        "spatialCoverage": "Australia",
+        "distribution": [
+            {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": SITE + "findings.csv"},
+            {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": SITE + "findings.json"},
+        ],
+    }
+    return json.dumps(ld).replace("</", "<\\/")
+
+
 #: Filtering is the page's only script, and the page works without it: every finding is in the HTML.
 FILTER_JS = """
 (() => {
   const $ = (id) => document.getElementById(id);
   const bar = document.querySelector('.filters'); bar.hidden = false;
   const selJ = $('f-j'), selI = $('f-i'), broad = $('f-broad'), reset = $('f-reset'), count = $('f-count');
+  const toggle = $('f-toggle'), nav = document.querySelector('nav.diseases'); toggle.hidden = false;
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('show-filters');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
   const q = new URLSearchParams(location.search);
   if (q.get('j')) selJ.value = q.get('j');
   if (q.get('i')) selI.value = q.get('i');
@@ -220,12 +278,22 @@ FILTER_JS = """
     });
     document.querySelectorAll('main section').forEach((s) => {
       const empty = s.querySelector('.empty');
-      if (empty) empty.hidden = !!s.querySelector('details.finding:not([hidden])');
+      if (!empty) return;
+      const none = !s.querySelector('details.finding:not([hidden])');
+      empty.hidden = !none;
+      s.classList.toggle('is-empty', none);
+      const link = document.querySelector(`nav.diseases a[href="#${s.id}"]`);
+      if (link) link.classList.toggle('dim', none);
+    });
+    document.querySelectorAll('.headline-line').forEach((h) => {
+      const card = document.getElementById(h.dataset.for);
+      h.hidden = !!(card && card.hidden);
     });
     document.querySelectorAll('ul.sources li').forEach((li) => { li.hidden = !keep(li); });
     const on = !!(vj || vi);
     count.textContent = on ? `Showing ${shown} of ${total} figures` : `${total} figures`;
     reset.hidden = !on;
+    toggle.textContent = on ? `Filter (${[vj, vi].filter(Boolean).length})` : 'Filter';
     const p = new URLSearchParams();
     if (vj) p.set('j', vj); if (vi) p.set('i', vi); if (!b) p.set('broad', '0');
     history.replaceState(null, '', (p.toString() ? '?' + p : location.pathname) + location.hash);
@@ -233,13 +301,42 @@ FILTER_JS = """
   [selJ, selI, broad].forEach((el) => el.addEventListener('change', apply));
   reset.addEventListener('click', () => { selJ.value = ''; selI.value = ''; broad.checked = true; apply(); });
   apply();
+
+  // A link to one figure opens it: #evidence_gap/dispute_recovery_adjudication_qld_series
+  function openFromHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const d = id && document.getElementById(id);
+    if (d && d.tagName === 'DETAILS') {
+      if (d.hidden) { selJ.value = ''; selI.value = ''; apply(); }
+      d.open = true; d.scrollIntoView({ block: 'start' });
+    }
+  }
+  window.addEventListener('hashchange', openFromHash);
+  openFromHash();
+  document.querySelectorAll('.copy-link').forEach((a) => a.addEventListener('click', (ev) => {
+    const url = location.origin + location.pathname + a.getAttribute('href');
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(() => { a.classList.add('copied'); setTimeout(() => a.classList.remove('copied'), 1500); }, () => {});
+    }
+  }));
+
+  // Print every figure, not just the open ones.
+  let wasOpen = [];
+  window.addEventListener('beforeprint', () => {
+    wasOpen = [...document.querySelectorAll('details.finding')].map((d) => d.open);
+    document.querySelectorAll('details.finding').forEach((d) => { d.open = true; });
+  });
+  window.addEventListener('afterprint', () => {
+    document.querySelectorAll('details.finding').forEach((d, i) => { d.open = wasOpen[i]; });
+  });
 })();
 """
 
 
 def order(rows: list[dict]) -> list[dict]:
     return sorted(rows, key=lambda r: (
-        not r["is_headline"], r.get("status") == "withdrawn", CONFIDENCE_ORDER.get(r["confidence"], 9), r["id"]))
+        not r["is_headline"], r.get("status") == "withdrawn", place_rank(r["jurisdictions"]),
+        CONFIDENCE_ORDER.get(r["confidence"], 9), r["id"]))
 
 
 def render(release: str, today: str) -> str:
@@ -258,7 +355,8 @@ def render(release: str, today: str) -> str:
 
     current = [r for r in data if r.get("status") != "withdrawn"]
     n_sources = len(sources)
-    n_second = sum(1 for s in sources.values() if s["access"] == "secondary")
+    cited_now = {c["source"] for r in current for c in r["_citations"]}
+    n_second = sum(1 for slug in cited_now if sources[slug]["access"] == "secondary")
     by_d = {k: [r for r in data if r["disease_key"] == k] for k, _, _ in DISEASES}
 
     filters = filter_bar(data)
@@ -270,7 +368,7 @@ def render(release: str, today: str) -> str:
         head_line = ""
         if head:
             num, of = figure(head)
-            head_line = f'<p class="headline-line">Headline: <span class="mono">{e(num)}</span> {e(of)}, <span class="muted">{e(head["confidence"])} confidence</span></p>'
+            head_line = f'<p class="headline-line" data-for="{e(head["id"])}">Headline: <span class="mono">{e(num)}</span> {e(of)}, <span class="muted">{e(head["confidence"])} confidence</span></p>'
         cards = "".join(finding_card(r, sources, r["_path"]) for r in rows)
         sections.append(f"""
 <section id="{key}">
@@ -299,7 +397,7 @@ def render(release: str, today: str) -> str:
     sections.append(f"""
 <section id="sources">
   <h2>Sources</h2>
-  <p class="blurb">Every paper, report and data release the figures come from. {n_second} of {n_sources} were read second-hand, and are marked.</p>
+  <p class="blurb">Every paper, report and data release the figures come from. Sources read second-hand are marked.</p>
   <ul class="sources">{src_items}</ul>
 </section>""")
 
@@ -310,6 +408,18 @@ def render(release: str, today: str) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Disease economics | Demiton research</title>
 <meta name="description" content="What published research says rework, cost drift, missed claims, disputes and lapsed compliance cost a construction contractor, and where every figure came from.">
+<link rel="canonical" href="{SITE}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Demiton research">
+<meta property="og:url" content="{SITE}">
+<meta property="og:title" content="What the diseases of a construction job cost, and where every figure came from">
+<meta property="og:description" content="{len(current)} published figures on rework, cost drift, missed claims, disputes and lapsed compliance, each with its source, page and confidence. Open to dispute on GitHub.">
+<meta property="og:image" content="{SITE}og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Disease economics: what published research says the diseases of a construction job cost. Demiton research.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{dataset_ld(release, today, len(current))}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B1220'/%3E%3Crect x='7' y='7' width='18' height='18' fill='none' stroke='%23F9FAFB' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -330,12 +440,25 @@ a:focus-visible, summary:focus-visible {{ outline: 2px solid var(--violet-text);
 .wrap {{ max-width: 960px; margin: 0 auto; padding: 0 16px; }}
 header.top {{ border-bottom: 1px solid var(--border); }}
 header.top .wrap {{ display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 16px; padding-bottom: 16px; }}
-.wordmark {{ font: 500 14px var(--sans); letter-spacing: .15em; color: var(--text); text-decoration: none; }}
-.top-links a {{ margin-left: 16px; font-size: 14px; }}
+.wordmark {{ font: 500 14px var(--sans); letter-spacing: .15em; color: var(--text); text-decoration: none; display: inline-block; padding: 4px 0; line-height: 16px; }}
+.top-links a {{ margin-left: 16px; font-size: 14px; display: inline-block; padding: 4px 0; line-height: 16px; }}
 .hero {{ padding-top: 56px; padding-bottom: 24px; }}
 h1 {{ font: 500 clamp(34px, 6vw, 56px)/1.1 var(--serif); margin: 0 0 16px; }}
 h2 {{ font: 500 clamp(26px, 4vw, 36px)/1.2 var(--serif); margin: 0 0 8px; }}
-h4 {{ font: 600 13px var(--sans); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 20px 0 8px; }}
+.finding h3 {{ font: 600 13px var(--sans); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 20px 0 8px; }}
+.skip {{ position: absolute; left: 16px; top: -48px; background: var(--violet); color: #fff; padding: 8px 12px; border-radius: 6px; z-index: 10; }}
+.skip:focus {{ top: 12px; }}
+.nogh {{ color: var(--muted); font-size: 14px; margin: 12px 0 0; }}
+.chev {{ width: 10px; height: 10px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); margin-top: 8px; transition: transform .15s; justify-self: end; }}
+details[open] > summary .chev {{ transform: rotate(-135deg); margin-top: 14px; }}
+.finding summary:hover .chev {{ border-color: var(--text); }}
+.tag.place {{ border-color: var(--steel); color: #BFD3E6; }}
+.f-toggle {{ display: none; margin-left: auto; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 4px 12px; font: 500 14px var(--sans); min-height: 28px; }}
+section.is-empty {{ padding-top: 20px; }}
+section.is-empty h2 {{ font-size: 20px; color: var(--muted); }}
+section.is-empty .blurb, section.is-empty .headline-line {{ display: none; }}
+nav.diseases a.dim {{ opacity: .45; }}
+.copy-link.copied::after {{ content: " (copied)"; color: var(--muted); }}
 .lede {{ font-size: 19px; color: #D1D5DB; max-width: 44em; }}
 .stats {{ display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 8px; }}
 .stat {{ background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; min-width: 120px; }}
@@ -348,16 +471,17 @@ h4 {{ font: 600 13px var(--sans); text-transform: uppercase; letter-spacing: .06
 .btn:hover {{ border-color: var(--steel); color: var(--text); }}
 nav.diseases {{ position: sticky; top: 0; z-index: 2; background: rgba(11,18,32,.95); border-bottom: 1px solid var(--border); backdrop-filter: blur(6px); }}
 nav.diseases .wrap {{ display: flex; gap: 20px; overflow-x: auto; padding-top: 12px; padding-bottom: 12px; white-space: nowrap; }}
-nav.diseases a {{ color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; }}
+nav.diseases a {{ color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; display: inline-block; padding: 4px 0; line-height: 16px; }}
 nav.diseases a:hover {{ color: var(--text); }}
 section {{ padding: 48px 0 8px; scroll-margin-top: 110px; }}
 .filters {{ border-top: 1px solid var(--border); }}
 .filters .wrap {{ display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding-top: 10px; padding-bottom: 10px; font-size: 14px; }}
 .filters label {{ display: inline-flex; align-items: center; gap: 8px; color: var(--muted); }}
 .filters select {{ background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; font: 14px var(--sans); max-width: 60vw; }}
-.filters input[type=checkbox] {{ accent-color: var(--violet); width: 16px; height: 16px; }}
+.filters input[type=checkbox] {{ accent-color: var(--violet); width: 20px; height: 20px; }}
+.filters label {{ min-height: 24px; }}
 .filters .count {{ margin-left: auto; color: var(--muted); font-family: var(--mono); font-size: 13px; }}
-.filters button {{ background: none; border: 0; color: var(--steel); font: 14px var(--sans); cursor: pointer; padding: 0; }}
+.filters button {{ background: none; border: 0; color: var(--steel); font: 14px var(--sans); cursor: pointer; padding: 4px 8px; min-height: 24px; }}
 .empty {{ color: var(--muted); font-style: italic; }}
 [hidden] {{ display: none !important; }}
 .blurb {{ color: var(--muted); margin: 0 0 8px; max-width: 44em; }}
@@ -367,7 +491,7 @@ section {{ padding: 48px 0 8px; scroll-margin-top: 110px; }}
 .finding {{ background: var(--surface); border: 1px solid var(--border); border-radius: 8px; margin: 10px 0; }}
 .finding.is-headline {{ border-color: var(--steel); }}
 .finding.is-withdrawn {{ opacity: .6; }}
-.finding summary {{ list-style: none; cursor: pointer; display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 16px; }}
+.finding summary {{ list-style: none; cursor: pointer; display: grid; grid-template-columns: 150px 1fr 14px; gap: 16px; padding: 16px; }}
 .finding summary::-webkit-details-marker {{ display: none; }}
 .fig {{ display: flex; flex-direction: column; }}
 .num {{ font: 500 26px/1.1 var(--mono); }}
@@ -394,12 +518,37 @@ section {{ padding: 48px 0 8px; scroll-margin-top: 110px; }}
 .method ul {{ margin: 8px 0 0; padding-left: 18px; }}
 footer {{ border-top: 1px solid var(--border); margin-top: 64px; padding: 32px 0 48px; color: var(--muted); font-size: 14px; }}
 @media (max-width: 640px) {{
-  .finding summary {{ grid-template-columns: 1fr; gap: 8px; }}
-  .top-links a:not(:last-child) {{ display: none; }}
+  .finding summary {{ grid-template-columns: auto 1fr 14px; gap: 4px 12px; padding: 12px; align-items: start; }}
+  .finding summary .what {{ grid-column: 1 / 3; }}
+  .finding summary .chev {{ grid-row: 1; grid-column: 3; }}
+  .num {{ font-size: 22px; }}
+  .fig {{ flex-direction: row; align-items: baseline; gap: 8px; flex-wrap: wrap; }}
+  .of {{ margin-top: 0; }}
+  .flags {{ margin-top: 6px; gap: 4px; }}
+  .top-links a {{ margin-left: 12px; font-size: 13px; }}
+  nav.diseases .wrap {{ gap: 16px; }}
+  .f-toggle {{ display: inline-block; }}
+  .filters {{ display: none; }}
+  nav.diseases.show-filters .filters {{ display: block; }}
+  .filters .count {{ margin-left: 0; }}
+  section {{ scroll-margin-top: 56px; }}
+}}
+@media (prefers-reduced-motion: reduce) {{
+  html {{ scroll-behavior: auto; }}
+  .chev {{ transition: none; }}
+}}
+@media print {{
+  body {{ background: #fff; color: #000; }}
+  a {{ color: #000; }}
+  nav.diseases, .cta, .nogh, .top-links, .skip, .chev, .filters {{ display: none !important; }}
+  .finding, .stat, .method {{ background: #fff; border-color: #999; break-inside: avoid; }}
+  .lede, .blurb, .of, .loc, .via, .meta, .muted, .stat span, .finding h3 {{ color: #333; }}
+  .tag {{ color: #000; border-color: #666; }}
 }}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to the figures</a>
 <header class="top"><div class="wrap">
   <a class="wordmark" href="https://demiton.io">DEMITON</a>
   <span class="top-links"><a href="https://docs.demiton.io/start-here/disease-priority">The long read</a><a href="{REPO}">GitHub</a></span>
@@ -414,10 +563,12 @@ footer {{ border-top: 1px solid var(--border); margin-top: 64px; padding: 32px 0
     <div class="stat"><b>{e(release)}</b><span>release</span></div>
   </div>
   <div class="cta">
-    <a class="btn primary" href="{REPO}/blob/main/CONTRIBUTING.md">Add evidence</a>
+    <a class="btn primary" href="{REPO}/issues/new?template=new-evidence.yml">Suggest a source</a>
+    <a class="btn" href="{REPO}/blob/main/CONTRIBUTING.md">Contribute on GitHub</a>
     <a class="btn" href="findings.csv" download>Download CSV</a>
     <a class="btn" href="findings.json" download>Download JSON</a>
   </div>
+  <p class="nogh">No GitHub account? Email sources or disputes to <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
   <div class="method">
     <strong>How to read a figure.</strong>
     <ul>
@@ -427,8 +578,8 @@ footer {{ border-top: 1px solid var(--border); margin-top: 64px; padding: 32px 0
     </ul>
   </div>
 </div>
-<nav class="diseases" aria-label="Diseases"><div class="wrap">{nav}</div>{filters}</nav>
-<main class="wrap">
+<nav class="diseases" aria-label="Diseases"><div class="wrap">{nav}<button type="button" class="f-toggle" id="f-toggle" aria-expanded="false" aria-controls="f-bar" hidden>Filter</button></div>{filters}</nav>
+<main class="wrap" id="main" tabindex="-1">
 {''.join(sections)}
 </main>
 <footer><div class="wrap">
@@ -453,6 +604,9 @@ def main() -> int:
     out = Path(args.out)
     write(out, args.release)
     (out / "index.html").write_text(render(args.release, date.today().isoformat()))
+    og = ROOT / "assets" / "og.png"
+    if og.exists():
+        shutil.copy(og, out / "og.png")
     print(f"site -> {out}/index.html ({args.release})")
     return 0
 

@@ -362,10 +362,20 @@ def filter_bar(data: list[dict]) -> str:
     return f"""<div class="filters" id="f-bar"><div class="wrap">
   <label>Jurisdiction <select id="f-j">{''.join(opts_j)}</select></label>
   <label>Industry <select id="f-i">{''.join(opts_i)}</select></label>
-  <label title="Global figures, national figures for a state, and general-construction or cross-industry figures for an industry"><input type="checkbox" id="f-broad" checked> Include broader evidence</label>
+  <span class="broad"><label><input type="checkbox" id="f-broad" checked> Include broader evidence</label><button type="button" class="info" popovertarget="broad-help" aria-label="What counts as broader evidence?">?</button></span>
   <button type="button" id="f-reset" hidden>Clear</button>
   <span class="count" id="f-count" aria-live="polite"></span>
-</div></div>"""
+</div></div>
+  <div id="broad-help" popover class="pop" role="dialog" aria-labelledby="broad-help-title">
+    <h3 id="broad-help-title">What counts as broader evidence</h3>
+    <p>Figures that don't name your exact selection but still apply to it.</p>
+    <p><strong>Jurisdiction.</strong> Pick a state and you also get Australia-wide figures and global ones (whose source claims no geographic limit). Pick a country and you get all its states plus global figures.</p>
+    <p><strong>Industry.</strong> Pick a division, such as civil engineering, and you also get figures for construction in general and figures that aren't industry-specific. Pick Construction (any) and you also get the ones that aren't industry-specific.</p>
+    <p><strong>It never adds a sibling.</strong> Queensland never pulls in NSW-only, New Zealand or US figures; civil engineering never pulls in buildings-only figures. A figure covering several states counts for each of them either way.</p>
+    <p class="eg" id="broad-eg"></p>
+    <p>It's on by default because there's little place-specific evidence yet for most diseases. Turn it off to see only what was measured where you picked.</p>
+    <button type="button" class="pop-close" popovertarget="broad-help" popovertargetaction="hide">Close</button>
+  </div>"""
 
 
 # ---- layout -------------------------------------------------------------------------------------
@@ -427,6 +437,16 @@ html:not(.js) .filters, html:not(.js) .f-toggle { display: none !important; }
 .filters label { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); min-height: 24px; }
 .filters select { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; font: 14px var(--sans); max-width: 60vw; }
 .filters input[type=checkbox] { accent-color: var(--violet); width: 20px; height: 20px; }
+.broad { display: inline-flex; align-items: center; gap: 6px; }
+.info { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface); color: var(--muted); font: 600 13px var(--sans); cursor: pointer; padding: 0; line-height: 22px; }
+.info:hover { color: var(--text); border-color: var(--steel); }
+.pop { max-width: min(460px, calc(100vw - 32px)); background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px 16px; box-shadow: 0 16px 48px rgba(0,0,0,.6); font: 15px/1.55 var(--sans); white-space: normal; max-height: calc(100vh - 32px); overflow-y: auto; }
+.pop::backdrop { background: rgba(11,18,32,.55); }
+.pop h3 { font: 500 20px/1.3 var(--serif); margin: 0 0 8px; }
+.pop p { margin: 0 0 10px; color: #D1D5DB; }
+.pop .eg { color: var(--text); font-family: var(--mono); font-size: 13px; }
+.pop .eg:empty { display: none; }
+.pop-close { margin-top: 4px; background: var(--violet); color: #fff; border: 0; border-radius: 6px; padding: 8px 14px; font: 600 14px var(--sans); cursor: pointer; min-height: 24px; }
 .filters .count { margin-left: auto; color: var(--muted); font-family: var(--mono); font-size: 13px; }
 .filters button { background: none; border: 0; color: var(--steel); font: 14px var(--sans); cursor: pointer; padding: 4px 8px; min-height: 24px; }
 section { padding: 48px 0 8px; scroll-margin-top: 110px; }
@@ -643,6 +663,10 @@ FILTER_JS = """
   [selJ, selI, broad].forEach((el) => el.addEventListener('change', () => apply(true)));
   reset.addEventListener('click', () => { selJ.value = ''; selI.value = ''; broad.checked = true; apply(true); });
   window.clearFilters = () => { selJ.value = ''; selI.value = ''; apply(false); };
+  const live = [...document.querySelectorAll('details.finding')].filter((d) => !d.classList.contains('is-withdrawn'));
+  const qld = (b) => live.filter((d) => matchJ(list(d, 'j'), 'AU-QLD', b)).length;
+  const eg = $('broad-eg');
+  if (eg) eg.textContent = `For example, Queensland: ${qld(false)} figures with it off, ${qld(true)} with it on.`;
   apply(false);
 })();
 """

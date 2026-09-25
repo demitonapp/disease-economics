@@ -46,7 +46,8 @@
         "amount_claimed",
         "arbitration_cost",
         "total_injury_cost",
-        "overrun_additional_cost"
+        "overrun_additional_cost",
+        "annual_capital_budget"
       ]
     },
     "currency": {

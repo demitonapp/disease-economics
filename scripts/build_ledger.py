@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from validate import ROOT, load_corpus, split_frontmatter, validate  # noqa: E402
 
 COLUMNS = [
-    "id", "family", "disease_key", "metric_key", "label", "exposure_value", "exposure_unit", "denominator",
+    "id", "family", "disease_key", "metric_key", "subtype", "label", "exposure_value", "exposure_unit", "denominator",
     "currency", "price_year", "exposure_basis", "exposure_kind", "confidence", "exposure_range",
     "derivation", "calculation", "sample_note", "caveat", "status", "dispute_url", "withdrawn_reason",
     "sources", "considered", "history", "jurisdictions", "industries",
@@ -130,6 +130,7 @@ def write(out: Path, release: str) -> list[dict]:
     codes = {x for s in sources.values() for c in s["jurisdictions"] + s["industries"] for x in (c, c.split("-")[0])}
     vocab = {name: {k: v for k, v in json.loads((ROOT / "vocab" / f"{name}.json").read_text()).items() if k in codes}
              for name in ("jurisdictions", "industries")}
+    vocab["subtypes"] = json.loads((ROOT / "vocab" / "subtypes.json").read_text())
     corpus = {
         "release": release, "schema_versions": schemas,
         "findings": [{**d, "path": r["_path"], "citations": r["_citations"]} for d, r in zip(data, full)],

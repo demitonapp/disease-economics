@@ -49,6 +49,16 @@ class CorpusTest(unittest.TestCase):
     def test_corpus_passes(self):
         self.assertEqual(self.errors(), [])
 
+    def test_a_subtype_must_belong_to_its_disease(self):
+        self.edit(FINDING, subtype="payment")
+        self.assertFails("not one of rework_signal's")
+        self.edit(FINDING, subtype="workmanship")
+        self.assertEqual(self.errors(), [])
+
+    def test_a_context_figure_has_no_subtype(self):
+        self.edit("context/planned_gross_margin.yaml", subtype="workmanship")
+        self.assertFails("context/ figure has no subtype")
+
     def test_is_headline_is_gone(self):
         # Schema 2.0.0: no figure stands for a disease; which applies depends on where you work.
         self.edit(FINDING, is_headline=True)

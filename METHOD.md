@@ -147,3 +147,17 @@ does. CI refuses a schema change whose version bump is too small:
 | PATCH | anything else, such as a description or a pattern's wording |
 
 It is the same rule the Demiton product applies to its own data contracts.
+
+## 11. Sub-types
+
+Each disease splits into sub-types by where the money goes wrong ([`vocab/subtypes.json`](vocab/subtypes.json)):
+rework by where the error starts, cost drift by what grew, lapsed compliance by what lapsed. Missed
+claims and disputes share theirs (payment, delay and extensions of time, variations, latent
+conditions, retention and close-out), because a missed claim is an entitlement never asserted in
+time and a dispute is one asserted and contested; weather is a missed-claims sub-type and falls
+under delay in a dispute.
+
+A figure carries a `subtype` only when it measures that sub-type. A figure that covers the disease
+as a whole has none, and a context figure never has one. A sub-type with no figure says so: that is
+the next place to look for research, not a zero.
+

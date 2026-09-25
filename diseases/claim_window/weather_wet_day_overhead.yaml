@@ -1,3 +1,4 @@
+subtype: weather
 label: Time-related site overhead per working day, Australian estimators
 exposure_value: 2010.0
 exposure_unit: per_wet_day

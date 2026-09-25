@@ -1,3 +1,4 @@
+subtype: weather
 label: No published figure for weather cost as a share of contract value
 exposure_value: null
 exposure_unit: none

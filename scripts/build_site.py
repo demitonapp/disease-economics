@@ -132,7 +132,7 @@ def finding_card(row: dict, sources: dict, path: str) -> str:
         basis = basis[:1].upper() + basis[1:]
     where = ", ".join(row["jurisdictions"]) + " · " + ", ".join(row["industries"])
     return f"""
-<details class="finding{' is-headline' if row['is_headline'] else ''}{' is-withdrawn' if status == 'withdrawn' else ''}" id="{e(row['id'])}">
+<details class="finding{' is-headline' if row['is_headline'] else ''}{' is-withdrawn' if status == 'withdrawn' else ''}" id="{e(row['id'])}" data-j="{e(' '.join(row['jurisdictions']))}" data-i="{e(' '.join(row['industries']))}">
   <summary>
     <span class="fig"><span class="num">{e(num)}</span><span class="of">{e(of)}</span></span>
     <span class="what"><span class="label">{e(row['label'])}</span><span class="flags">{''.join(flags)}</span></span>
@@ -153,6 +153,88 @@ def finding_card(row: dict, sources: dict, path: str) -> str:
       <a href="{REPO}/issues/new?template=dispute.yml&amp;finding={e(path)}">dispute this figure</a></p>
   </div>
 </details>"""
+
+
+VOCAB = ROOT / "vocab"
+
+
+def filter_bar(data: list[dict]) -> str:
+    """Jurisdiction and industry selects, built from the codes the findings actually use."""
+    import json as _json
+    names_j = _json.loads((VOCAB / "jurisdictions.json").read_text())
+    names_i = _json.loads((VOCAB / "industries.json").read_text())
+    used_j = {j for r in data for j in r["jurisdictions"]}
+    used_i = {i for r in data for i in r["industries"]}
+    countries = sorted({j.split("-")[0] for j in used_j if j not in ("GLOBAL", "unknown")}, key=lambda c: names_j.get(c, c))
+    opts_j = ['<option value="">All jurisdictions</option>']
+    for c in countries:
+        subs = sorted(j for j in used_j if j.startswith(c + "-"))
+        label = names_j.get(c, c) + (" (all)" if subs else "")
+        opts_j.append(f'<option value="{e(c)}">{e(label)}</option>')
+        for s in subs:
+            opts_j.append(f'<option value="{e(s)}">&nbsp;&nbsp;{e(names_j.get(s, s))}</option>')
+    for special, label in (("GLOBAL", "Global (no limit claimed)"), ("unknown", "Unknown")):
+        if special in used_j:
+            opts_j.append(f'<option value="{special}">{label}</option>')
+    opts_i = ['<option value="">All industries</option>']
+    if used_i & {"F", "F41", "F42", "F43"}:
+        opts_i.append('<option value="F">Construction (any)</option>')
+    for code in ("F42", "F41", "F43"):
+        if code in used_i:
+            opts_i.append(f'<option value="{code}">&nbsp;&nbsp;{e(names_i[code])}</option>')
+    for special, label in (("ALL", "Not industry-specific"), ("unknown", "Unknown")):
+        if special in used_i:
+            opts_i.append(f'<option value="{special}">{label}</option>')
+    return f"""<div class="filters" hidden><div class="wrap">
+  <label>Jurisdiction <select id="f-j">{''.join(opts_j)}</select></label>
+  <label>Industry <select id="f-i">{''.join(opts_i)}</select></label>
+  <label title="Global figures, national figures for a state, and general-construction or cross-industry figures for an industry"><input type="checkbox" id="f-broad" checked> Include broader evidence</label>
+  <button type="button" id="f-reset" hidden>Clear</button>
+  <span class="count" id="f-count" aria-live="polite"></span>
+</div></div>"""
+
+
+#: Filtering is the page's only script, and the page works without it: every finding is in the HTML.
+FILTER_JS = """
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const bar = document.querySelector('.filters'); bar.hidden = false;
+  const selJ = $('f-j'), selI = $('f-i'), broad = $('f-broad'), reset = $('f-reset'), count = $('f-count');
+  const q = new URLSearchParams(location.search);
+  if (q.get('j')) selJ.value = q.get('j');
+  if (q.get('i')) selI.value = q.get('i');
+  if (q.get('broad') === '0') broad.checked = false;
+  const list = (el, k) => (el.dataset[k] || '').split(' ').filter(Boolean);
+  const matchJ = (js, v, b) => !v || js.some((j) => j === v || j.startsWith(v + '-'))
+    || (b && v !== 'GLOBAL' && v !== 'unknown' && (js.includes('GLOBAL') || (v.includes('-') && js.includes(v.split('-')[0]))));
+  const isCon = (i) => i === 'F' || /^F4[123]$/.test(i);
+  const matchI = (is, v, b) => !v || (v === 'F' ? is.some(isCon) : is.includes(v))
+    || (b && v !== 'ALL' && v !== 'unknown' && (is.includes('ALL') || (v !== 'F' && is.includes('F'))));
+  function apply() {
+    const vj = selJ.value, vi = selI.value, b = broad.checked;
+    const keep = (el) => matchJ(list(el, 'j'), vj, b) && matchI(list(el, 'i'), vi, b);
+    let shown = 0, total = 0;
+    document.querySelectorAll('details.finding').forEach((d) => {
+      const ok = keep(d); d.hidden = !ok;
+      if (!d.classList.contains('is-withdrawn')) { total++; if (ok) shown++; }
+    });
+    document.querySelectorAll('main section').forEach((s) => {
+      const empty = s.querySelector('.empty');
+      if (empty) empty.hidden = !!s.querySelector('details.finding:not([hidden])');
+    });
+    document.querySelectorAll('ul.sources li').forEach((li) => { li.hidden = !keep(li); });
+    const on = !!(vj || vi);
+    count.textContent = on ? `Showing ${shown} of ${total} figures` : `${total} figures`;
+    reset.hidden = !on;
+    const p = new URLSearchParams();
+    if (vj) p.set('j', vj); if (vi) p.set('i', vi); if (!b) p.set('broad', '0');
+    history.replaceState(null, '', (p.toString() ? '?' + p : location.pathname) + location.hash);
+  }
+  [selJ, selI, broad].forEach((el) => el.addEventListener('change', apply));
+  reset.addEventListener('click', () => { selJ.value = ''; selI.value = ''; broad.checked = true; apply(); });
+  apply();
+})();
+"""
 
 
 def order(rows: list[dict]) -> list[dict]:
@@ -179,6 +261,7 @@ def render(release: str, today: str) -> str:
     n_second = sum(1 for s in sources.values() if s["access"] == "secondary")
     by_d = {k: [r for r in data if r["disease_key"] == k] for k, _, _ in DISEASES}
 
+    filters = filter_bar(data)
     nav = "".join(f'<a href="#{k}">{e(name)}</a>' for k, name, _ in DISEASES) + '<a href="#context">Context</a><a href="#sources">Sources</a>'
     sections = []
     for key, name, blurb in DISEASES:
@@ -195,6 +278,7 @@ def render(release: str, today: str) -> str:
   <p class="blurb">{e(blurb)}</p>
   {head_line}
   {cards}
+  <p class="empty" hidden>No {e(name.lower())} figures match this filter.</p>
 </section>""")
     ctx = order([r for r in data if r["family"] == "context"])
     sections.append(f"""
@@ -202,9 +286,10 @@ def render(release: str, today: str) -> str:
   <h2>Context</h2>
   <p class="blurb">Figures that frame a disease rather than measure it, such as a typical planned margin. Never a headline.</p>
   {''.join(finding_card(r, sources, r['_path']) for r in ctx)}
+  <p class="empty" hidden>No context figures match this filter.</p>
 </section>""")
     src_items = "".join(
-        f'<li id="src-{e(slug)}"><span class="org">{e(s["organisation"])} ({e(s["year"])})</span>, '
+        f'<li id="src-{e(slug)}" data-j="{e(" ".join(s["jurisdictions"]))}" data-i="{e(" ".join(s["industries"]))}"><span class="org">{e(s["organisation"])} ({e(s["year"])})</span>, '
         f'{"<a href=" + chr(34) + e(s["url"]) + chr(34) + " rel=noopener>" + e(s["title"]) + "</a>" if s.get("url") else e(s["title"])}'
         f'{" <span class=" + chr(34) + "tag warn" + chr(34) + ">second-hand</span>" if s["access"] == "secondary" else ""}'
         f' <span class="muted">{e(", ".join(s["jurisdictions"]))}</span>'
@@ -265,7 +350,16 @@ nav.diseases {{ position: sticky; top: 0; z-index: 2; background: rgba(11,18,32,
 nav.diseases .wrap {{ display: flex; gap: 20px; overflow-x: auto; padding-top: 12px; padding-bottom: 12px; white-space: nowrap; }}
 nav.diseases a {{ color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; }}
 nav.diseases a:hover {{ color: var(--text); }}
-section {{ padding: 48px 0 8px; scroll-margin-top: 56px; }}
+section {{ padding: 48px 0 8px; scroll-margin-top: 110px; }}
+.filters {{ border-top: 1px solid var(--border); }}
+.filters .wrap {{ display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding-top: 10px; padding-bottom: 10px; font-size: 14px; }}
+.filters label {{ display: inline-flex; align-items: center; gap: 8px; color: var(--muted); }}
+.filters select {{ background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; font: 14px var(--sans); max-width: 60vw; }}
+.filters input[type=checkbox] {{ accent-color: var(--violet); width: 16px; height: 16px; }}
+.filters .count {{ margin-left: auto; color: var(--muted); font-family: var(--mono); font-size: 13px; }}
+.filters button {{ background: none; border: 0; color: var(--steel); font: 14px var(--sans); cursor: pointer; padding: 0; }}
+.empty {{ color: var(--muted); font-style: italic; }}
+[hidden] {{ display: none !important; }}
 .blurb {{ color: var(--muted); margin: 0 0 8px; max-width: 44em; }}
 .headline-line {{ margin: 0 0 16px; }}
 .muted {{ color: var(--muted); }}
@@ -333,7 +427,7 @@ footer {{ border-top: 1px solid var(--border); margin-top: 64px; padding: 32px 0
     </ul>
   </div>
 </div>
-<nav class="diseases" aria-label="Diseases"><div class="wrap">{nav}</div></nav>
+<nav class="diseases" aria-label="Diseases"><div class="wrap">{nav}</div>{filters}</nav>
 <main class="wrap">
 {''.join(sections)}
 </main>
@@ -341,6 +435,7 @@ footer {{ border-top: 1px solid var(--border); margin-top: 64px; padding: 32px 0
   <p><strong>Demiton maintains this record and sells software that protects against these diseases.</strong> That is a commercial interest, stated in <a href="{REPO}/blob/main/GOVERNANCE.md">GOVERNANCE.md</a>. Every change goes through a public pull request.</p>
   <p>Data <a href="{REPO}/blob/main/LICENSE">CC BY 4.0</a>, credit "disease-economics by Demiton". Code MIT. Quoted passages remain their authors'. Release {e(release)}, built {e(today)}.</p>
 </div></footer>
+<script>{FILTER_JS}</script>
 </body>
 </html>
 """

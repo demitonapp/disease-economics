@@ -22,7 +22,7 @@ jobs:
       - run: python scripts/build_ledger.py --out dist --release "$TAG"
         env:
           TAG: ${{ github.ref_name }}
-      - run: gh release create "$TAG" dist/findings.json dist/findings.csv --generate-notes
+      - run: gh release create "$TAG" dist/findings.json dist/findings.csv dist/corpus.json --generate-notes
         env:
           TAG: ${{ github.ref_name }}
           GH_TOKEN: ${{ github.token }}

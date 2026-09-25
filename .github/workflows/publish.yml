@@ -1,0 +1,45 @@
+name: publish
+
+# Every merge to main republishes the data to the rolling `data-latest` release and rebuilds
+# research.demiton.io, which is built from corpus.json in the Demiton monorepo. The product does NOT
+# read this release: it pins a tagged vN (release.yml).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python scripts/validate.py
+      # The label the site shows: the latest tag, plus how far main has moved past it.
+      - run: python scripts/build_ledger.py --out dist --release "$(git describe --tags 2>/dev/null || echo main)"
+      - name: Update the data-latest release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view data-latest >/dev/null 2>&1 || gh release create data-latest --prerelease \
+            --title "Latest data (main)" \
+            --notes "Rebuilt on every merge to main. Pin a tagged vN release for anything that must not change."
+          gh release upload data-latest dist/corpus.json dist/findings.json dist/findings.csv --clobber
+      - name: Rebuild research.demiton.io
+        env:
+          HOOK: ${{ secrets.NETLIFY_RESEARCH_BUILD_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "NETLIFY_RESEARCH_BUILD_HOOK not set: site not rebuilt" >&2; exit 1; fi
+          curl -fsS -X POST -d '{}' "$HOOK"

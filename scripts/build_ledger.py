@@ -2,8 +2,10 @@
 
     python scripts/build_ledger.py --out dist --release v1
 
-Writes <out>/findings.json and <out>/findings.csv. Not committed: release.yml attaches them to the
-GitHub release, and the platform pins a release rather than reading main.
+Writes <out>/findings.json and <out>/findings.csv (the ledger the product pins by release), and
+<out>/corpus.json: the ledger plus every citation, every source and the vocabulary, which is what
+research.demiton.io is built from. Not committed: release.yml attaches all three to the GitHub
+release, and publish.yml keeps them current on the rolling `data-latest` release.
 """
 from __future__ import annotations
 
@@ -48,6 +50,7 @@ def rows(root: Path = ROOT) -> list[dict]:
             source_org=record["organisation"], source_title=record["title"], source_url=record.get("url"),
             source_location=first.get("location", record["location"]), source_year=record["year"],
             source_secondary=record["access"] == "secondary",
+            _path=path, _citations=cites,
         )
         out.append(row)
     return sorted(out, key=lambda r: r["id"])
@@ -70,8 +73,19 @@ def main() -> int:
 def write(out: Path, release: str) -> list[dict]:
     """Write findings.json and findings.csv to `out`; return the rows. Shared with build_site.py."""
     out.mkdir(parents=True, exist_ok=True)
-    data = rows(ROOT)
+    full = rows(ROOT)
+    data = [{k: v for k, v in r.items() if not k.startswith("_")} for r in full]
     schemas = {p.name: json.loads(p.read_text()).get("x-schema-version") for p in sorted((ROOT / "schema").glob("*.schema.json"))}
+    _, sources, _, _ = load_corpus(ROOT)
+    codes = {x for s in sources.values() for c in s["jurisdictions"] + s["industries"] for x in (c, c.split("-")[0])}
+    vocab = {name: {k: v for k, v in json.loads((ROOT / "vocab" / f"{name}.json").read_text()).items() if k in codes}
+             for name in ("jurisdictions", "industries")}
+    corpus = {
+        "release": release, "schema_versions": schemas,
+        "findings": [{**d, "path": r["_path"], "citations": r["_citations"]} for d, r in zip(data, full)],
+        "sources": sources, "vocab": vocab,
+    }
+    (out / "corpus.json").write_text(json.dumps(corpus, indent=2, default=str) + "\n")
     (out / "findings.json").write_text(json.dumps({"release": release, "schema_versions": schemas, "findings": data}, indent=2) + "\n")
     with (out / "findings.csv").open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=["release", *COLUMNS])

@@ -114,3 +114,18 @@ A finding is never deleted. It is `withdrawn`, with a `withdrawn_reason`.
 - What a protection saves. The mechanism model is not built; `protections/` holds evidence that a
   mechanism matters, and a figure for what it saves will be a finding here, with sources, when one
   can be defended.
+
+## 10. Schema versions
+
+Every schema in [`schema/`](schema) carries its own semantic version in `x-schema-version`, and the
+ledger (`findings.json`) records the versions its rows were validated against. The version is the
+schema's, not the data's: releases (`v4`) tag the corpus; schema versions change only when a schema
+does. CI refuses a schema change whose version bump is too small:
+
+| Bump | When |
+|---|---|
+| MAJOR | a property removed, a new requirement, an enum narrowed, a type changed: existing files may stop validating |
+| MINOR | a property added, an enum widened: every existing file still validates |
+| PATCH | anything else, such as a description or a pattern's wording |
+
+It is the same rule the Demiton product applies to its own data contracts.

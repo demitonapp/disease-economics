@@ -56,6 +56,12 @@ Cost records from 40 road projects across three contractors. Mean rework was 8% 
 
 Then either a new finding in `diseases/rework_signal/`, or the source added to an existing finding.
 
+## Changing a schema
+
+If your change needs a new field or a new allowed value (a new denominator, say), edit the schema in
+[`schema/`](schema) and bump its `x-schema-version`: MINOR for anything that only adds, MAJOR for
+anything that removes or narrows. CI says which it needs. METHOD.md Section 10 has the rule.
+
 ## What gets rejected, and why
 
 - **A figure with no source.** The corpus is a record of evidence, not of opinion.

@@ -9,7 +9,7 @@ commercial interest, stated in [GOVERNANCE.md](GOVERNANCE.md). The point of publ
 that you don't have to take our word for any of it: every figure can be traced, disputed and changed
 under the rules in [METHOD.md](METHOD.md).
 
-**Browse the record at [research.demiton.io](https://research.demiton.io)**, rebuilt from this repository on every merge.
+**Browse the record at [research.demiton.io](https://research.demiton.io)**, rebuilt on every merge: this repository publishes `corpus.json` to the [`data-latest`](../../releases/tag/data-latest) release, and the site is built from it.
 
 **The figures are estimates with stated confidence, not measurements.** Most of them measure how much
 is at stake, not how much a contractor ends up losing. Each one says which.

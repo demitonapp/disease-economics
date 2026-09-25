@@ -71,7 +71,7 @@ def main() -> int:
 
 
 def write(out: Path, release: str) -> list[dict]:
-    """Write findings.json and findings.csv to `out`; return the rows. Shared with build_site.py."""
+    """Write findings.json, findings.csv and corpus.json to `out`; return the ledger rows."""
     out.mkdir(parents=True, exist_ok=True)
     full = rows(ROOT)
     data = [{k: v for k, v in r.items() if not k.startswith("_")} for r in full]

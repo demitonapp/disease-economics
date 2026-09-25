@@ -32,5 +32,3 @@ jobs:
       - run: python -m unittest discover -s tests
       - name: The ledger builds
         run: python scripts/build_ledger.py --out dist
-      - name: The site builds
-        run: python scripts/build_site.py --out site

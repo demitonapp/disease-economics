@@ -9,6 +9,14 @@ exposure_range:
   high: 0.0989
   kind: across_studies
 derivation: as_published
+statistic: mean
+sample_size:
+  n: 67
+  unit: projects
+  note: 'Mean of the 67 projects'' own margin % of OCV (Table 7: min 0.00, max 32.33, SD 5.79). It is
+    not a ratio of totals: mean original margin divided by mean OCV in Table 2 gives 9.19%. The low end
+    of the range (6%, Love et al. 2019, abstract only) and Love & Ika 2021 (''almost 9%'', abstract only,
+    403) use other samples.'
 sources:
 - source: love-2017-change-orders
   location: accepted manuscript, p.25

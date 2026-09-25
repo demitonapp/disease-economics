@@ -12,6 +12,13 @@ derivation: calculated
 calculation: >-
   Head office is 9.9% of preliminaries (table 4); preliminaries are 10% to 20% of the contract sum (introduction,
   citing Chan & Pasquire 2002). 9.9% x 10% = 0.99%; 9.9% x 20% = 1.98%.
+statistic: modelled
+sample_size:
+  n: 30
+  unit: respondents
+  note: 'Only the 9.90% input rests on this sample: it is the mean across 30 fully completed estimator
+    surveys (33 were returned). The 10% to 20% preliminaries share is cited second-hand from Chan & Pasquire
+    2002 and has no sample. The 0.99% to 1.98% range is our own multiplication.'
 sources:
 - source: oleary-vaz-serra-2025-preliminaries
   location: table 4; introduction

@@ -11,6 +11,12 @@ exposure_basis: >-
 exposure_kind: contractor_loss
 confidence: moderate
 derivation: as_published
+statistic: mean
+sample_size:
+  n: 146
+  unit: respondents
+  note: 146 submissions in total; the average excludes the multi-creditor submission(s), so the true base
+    is slightly below 146 and the report does not give the exact count
 sources:
 - byrne-2019-subcontractor-nonpayment
 sample_note: >-

@@ -7,9 +7,10 @@ denominator: amount_claimed
 exposure_basis: >-
   of the amount claimed: the claimant's own costs of taking a payment dispute to adjudication, averaged
   over all claims
-exposure_kind: contractor_loss
+exposure_kind: derived_contractor_loss
 confidence: moderate
 derivation: as_published
+statistic: mean
 sources:
 - building-disputes-tribunal-2023-adjudication
 sample_note: >-
@@ -20,3 +21,7 @@ caveat: >-
   so small claims dominate: under $30,000 the claimant's costs are 21.6%, over $10 million 1.74%. The
   claimant is usually, not always, the contractor or subcontractor seeking payment.
 status: current
+history:
+  - exposure_kind: contractor_loss
+    changed_on: '2026-09-26'
+    reason: Reclassified as derived contractor loss (schema 2.2.0), money spent fighting a dispute rather than the disputed loss itself.

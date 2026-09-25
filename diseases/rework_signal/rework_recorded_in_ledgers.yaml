@@ -5,6 +5,7 @@ exposure_basis: of contract value, direct cost only, as recorded pre-completion
 exposure_kind: contractor_loss
 confidence: low
 derivation: as_published
+statistic: mean
 sources:
 - love-2026-field-rework
 sample_note: >-

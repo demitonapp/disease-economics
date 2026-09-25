@@ -9,6 +9,7 @@ exposure_basis: >-
 exposure_kind: societal
 confidence: high
 derivation: as_published
+statistic: pooled_ratio
 sources:
 - safe-work-australia-2015-injury-cost
 sample_note: >-

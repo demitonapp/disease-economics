@@ -13,6 +13,7 @@ exposure_range:
   high: 97408.0
   kind: reported_min_max
 derivation: as_published
+statistic: modelled
 sources:
 - allison-2019-accident-costs
 sample_note: >-

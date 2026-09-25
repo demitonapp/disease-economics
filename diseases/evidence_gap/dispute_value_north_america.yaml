@@ -8,6 +8,7 @@ exposure_basis: >-
 exposure_kind: money_at_stake
 confidence: moderate
 derivation: as_published
+statistic: mean
 sources:
 - arcadis-2025-disputes-north-america
 sample_note: >-

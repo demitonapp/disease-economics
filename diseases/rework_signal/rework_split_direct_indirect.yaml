@@ -6,6 +6,11 @@ exposure_kind: contractor_loss
 confidence: moderate
 derivation: calculated
 calculation: 6.4% direct + 5.9% indirect = 12.3% (both from the abstract; the sum is ours)
+statistic: mean
+sample_size:
+  n: 161
+  unit: respondents
+  note: Australian survey; 12.3% is our sum of the two published means
 sources:
 - love-edwards-2005-rework-costs
 sample_note: >-

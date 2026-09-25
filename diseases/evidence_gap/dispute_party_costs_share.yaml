@@ -4,9 +4,14 @@ exposure_unit: ratio_of_other
 denominator: arbitration_cost
 exposure_basis: >-
   of total arbitration costs, being each party's own lawyers, experts and witnesses
-exposure_kind: contractor_loss
+exposure_kind: derived_contractor_loss
 confidence: high
 derivation: as_published
+statistic: mean
+sample_size:
+  n: 221
+  unit: awards
+  note: 221 ICC awards from 2012, all sectors, not construction-specific
 sources:
 - icc-2015-costs
 sample_note: 221 ICC awards from 2012, all sectors - not construction-specific.
@@ -15,3 +20,7 @@ caveat: >-
   is explicitly the arbitration bill. Litigation to recovery is not linear: fighting is expensive in people's
   time.
 status: current
+history:
+  - exposure_kind: contractor_loss
+    changed_on: '2026-09-26'
+    reason: Reclassified as derived contractor loss (schema 2.2.0), money spent fighting a dispute rather than the disputed loss itself.

@@ -8,6 +8,13 @@ exposure_basis: 'of the cost of the projects examined: over A$127 million in con
 exposure_kind: money_at_stake
 confidence: moderate
 derivation: as_published
+statistic: pooled_ratio
+sample_size:
+  n: 6
+  unit: projects
+  note: Total variations (over $127m, as at September 2021) across the 6 projects QAO selected, divided
+    by the total cost of those same projects. Fortitude Valley alone reached 21.5% of its original contract
+    value.
 sources:
 - qao-2022-contract-management
 sample_note: >-

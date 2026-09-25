@@ -8,6 +8,11 @@ exposure_basis: >-
 exposure_kind: contractor_loss
 confidence: low
 derivation: as_published
+statistic: mean
+sample_size:
+  n: 52
+  unit: respondents
+  note: 52 survey completers (34% of 151 invited); the paper does not give an N for this question
 sources:
 - molinari-2025-belgian-overruns
 sample_note: >-

@@ -14,6 +14,13 @@ derivation: calculated
 calculation: >-
   $70,119,333.18 claimed in no-jurisdiction decisions / $189,905,327.50 claimed across all 246 decisions
   = 0.3692 (the author calls it 'almost 37%').
+statistic: pooled_ratio
+sample_size:
+  n: 246
+  unit: decisions
+  note: $70,119,333.18 claimed in the 66 no-jurisdiction decisions divided by $189,905,327.50 claimed
+    across all 246 published QLD decisions, March 2022 to August 2023, both including GST. This is a nominating
+    authority's own tally.
 sources:
 - adjudicate-today-2023-qld-bif-act
 sample_note: >-

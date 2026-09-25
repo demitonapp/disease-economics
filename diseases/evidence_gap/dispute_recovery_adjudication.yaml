@@ -9,6 +9,11 @@ confidence: moderate
 derivation: calculated
 calculation: >-
   AU$81.9m awarded / AU$957.0m claimed = 0.0856 (Table 23; the ratio is ours, not the QBCC's)
+statistic: pooled_ratio
+sample_size:
+  n: 214
+  unit: decisions
+  note: 214 QBCC adjudication decisions released, 2024-25, Queensland
 sources:
 - qbcc-2025-annual-report
 sample_note: >-

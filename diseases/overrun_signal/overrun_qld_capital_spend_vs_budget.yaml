@@ -6,6 +6,7 @@ exposure_basis: of the state's budgeted capital expenditure for the year, all po
 exposure_kind: owner_side
 confidence: moderate
 derivation: as_published
+statistic: single_case
 sources:
 - qao-2025-major-projects-2024
 sample_note: >-

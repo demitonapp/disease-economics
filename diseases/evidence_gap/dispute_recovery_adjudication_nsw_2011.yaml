@@ -12,6 +12,11 @@ derivation: calculated
 calculation: >-
   $77,903,361 adjudicated / $153,143,608 claimed = 0.509 (Fig. 4, p.4). The report states the same result
   as 'about half of the aggregate amount claimed'.
+statistic: pooled_ratio
+sample_size:
+  n: 779
+  unit: decisions
+  note: 779 of 1,112 NSW adjudication applications in 2011-12 that reached a released determination
 sources:
 - nsw-2012-sop-adjudication-report
 sample_note: >-

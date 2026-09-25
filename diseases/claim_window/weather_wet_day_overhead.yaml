@@ -18,6 +18,12 @@ calculation: >-
   year, / 226 working days = 2,013, shown as 2,010. Low end: 5,000,000 x 10% x 45.49% = 227,450 a year,
   / 261 working days = 871, shown as 870. The 45.49% is table 6; the 10% to 20% is the introduction, citing
   Chan & Pasquire 2002.
+statistic: modelled
+sample_size:
+  n: 30
+  unit: respondents
+  note: 'Applies to the 45.49% input only: 30 fully completed of 33 returned from 79 companies surveyed;
+    the 10-20% input is Chan & Pasquire 2002, cited second-hand'
 sources:
 - oleary-vaz-serra-2025-preliminaries
 sample_note: >-

@@ -141,6 +141,8 @@ def validate(root: Path = ROOT):
         rng = f.get("exposure_range")
         if rng and value is not None and not (rng["low"] <= value <= rng["high"]):
             errors.append(f"{path}: exposure_range must satisfy low <= exposure_value <= high")
+        if f.get("statistic") in ("mean", "median", "pooled_ratio") and not f.get("sample_size"):
+            warnings.append(f"{path}: a {f['statistic']} with no sample_size cannot be weighted against other studies")
         st = f.get("subtype")
         if st and is_context:
             errors.append(f"{path}: a context/ figure has no subtype")
@@ -226,7 +228,9 @@ def schema_bump_needed(old: dict, new: dict):
         return None
     a, b = _schema_facts(old), _schema_facts(new)
     if (any(p not in b["props"] or not a["props"][p] <= b["props"][p] for p in a["props"])
-            or any(not b["required"][p] <= a["required"].get(p, set()) for p in b["required"])
+            # A required list inside a property that did not exist before cannot break an existing file
+            # (the whole property is new, and optional unless the parent now requires it).
+            or any(not b["required"][p] <= a["required"].get(p, set()) for p in b["required"] if p in a["props"] or p in a["required"])
             or any(p in b["enum"] and not a["enum"][p] <= b["enum"][p] for p in a["enum"])
             or any(p in b["type"] and a["type"][p] != b["type"][p] for p in a["type"])):
         return "major"
@@ -279,7 +283,9 @@ def check_against_base(root: Path, base: str):
         if moved:
             if len(new_h) <= len(old_h):
                 errors.append(f"{path}: {moved} changed - append a history entry recording the old figure and why")
-            if not changed:
+            # Reclassifying a figure's kind under the method is not a new reading of the evidence, so it
+            # needs its history entry but no new source (METHOD.md Section 8).
+            if not changed and moved != ["exposure_kind"]:
                 errors.append(f"{path}: {moved} changed - the same PR must add or change a file under sources/")
     return errors
 

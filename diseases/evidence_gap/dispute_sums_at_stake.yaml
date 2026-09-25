@@ -5,6 +5,12 @@ exposure_basis: of contract budget
 exposure_kind: money_at_stake
 confidence: moderate
 derivation: as_published
+statistic: mean
+sample_size:
+  n: 2200
+  unit: projects
+  note: 2,200+ projects, 114 countries; the report summary does not say how many of them carry a disputed-sum
+    figure
 sources:
 - hka-2025-crux
 sample_note: >-

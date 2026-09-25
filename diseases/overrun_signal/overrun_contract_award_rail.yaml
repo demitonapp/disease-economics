@@ -5,6 +5,11 @@ exposure_basis: of original contract value, final versus original
 exposure_kind: money_at_stake
 confidence: moderate
 derivation: as_published
+statistic: mean
+sample_size:
+  n: 16
+  unit: projects
+  note: 16 rail projects by a single contractor, mostly WA, 2011-2014
 sources:
 - love-2017-off-the-rails
 sample_note: >-

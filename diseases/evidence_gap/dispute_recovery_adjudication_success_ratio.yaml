@@ -15,6 +15,12 @@ exposure_range:
   high: 0.35
   kind: reported_min_max
 derivation: as_published
+statistic: pooled_ratio
+sample_size:
+  n: 5313
+  unit: other
+  note: NSW adjudication applications 2018-2023 (2,984 determinations) for the 0.12 headline; QLD 18%
+    (2,349 applications) and VIC 35% (2,122) are separate pooled ratios
 sources:
 - dga-2023-adjudication-outcomes
 sample_note: >-

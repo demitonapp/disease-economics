@@ -123,6 +123,12 @@ class BaseTest(CorpusTest):
     def test_unchanged_passes(self):
         self.assertEqual(self.base_errors(), [])
 
+    def test_a_kind_reclassification_needs_history_not_a_source(self):
+        self.edit(FINDING, exposure_kind="derived_contractor_loss")
+        self.assertTrue(any("history entry" in e for e in self.base_errors()))
+        self.edit(FINDING, history=[{"changed_on": "2026-10-01", "reason": "reclassified", "exposure_kind": "contractor_loss"}])
+        self.assertEqual(self.base_errors(), [])
+
     def test_figure_change_needs_history_and_source(self):
         self.edit(FINDING, exposure_value=0.2)
         errs = self.base_errors()
@@ -176,6 +182,12 @@ class BaseTest(CorpusTest):
         self._schema(narrow, minor)
         self.assertTrue(any("MAJOR" in e for e in self.base_errors()))
         self._schema(lambda s: None, major)
+        self.assertEqual(self.base_errors(), [])
+
+    def test_a_new_optional_object_with_its_own_required_fields_is_minor(self):
+        minor = self._bumped("minor")
+        add = lambda s: s["properties"].update(extra={"type": "object", "required": ["n"], "properties": {"n": {"type": "integer"}}})  # noqa: E731
+        self._schema(add, minor)
         self.assertEqual(self.base_errors(), [])
 
     def test_a_description_change_needs_a_patch_bump(self):

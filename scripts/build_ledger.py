@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from validate import ROOT, load_corpus, validate  # noqa: E402
+from validate import ROOT, load_corpus, split_frontmatter, validate  # noqa: E402
 
 COLUMNS = [
     "id", "family", "disease_key", "metric_key", "label", "exposure_value", "exposure_unit", "denominator",
@@ -133,7 +133,10 @@ def write(out: Path, release: str) -> list[dict]:
     corpus = {
         "release": release, "schema_versions": schemas,
         "findings": [{**d, "path": r["_path"], "citations": r["_citations"]} for d, r in zip(data, full)],
-        "sources": sources, "vocab": vocab,
+        "sources": sources,
+        # The body of each sources/<slug>.md: what the source says, in the contributor's own words.
+        "source_notes": {p.stem: split_frontmatter(p.read_text())[1].strip() for p in sorted((ROOT / "sources").glob("*.md"))},
+        "vocab": vocab,
         "schemas": {sp.name.split(".")[0]: json.loads(sp.read_text()) for sp in sorted((ROOT / "schema").glob("*.schema.json"))},
         "history": history(ROOT),
     }

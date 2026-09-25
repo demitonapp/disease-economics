@@ -13,4 +13,10 @@ sample_note: More than 150 heavy industrial projects, US, 2001.
 caveat: >-
   Seen on CII's summary page only; the report was not read. Industrial, not civil, and 25 years old. Who
   bears the cost is not measured.
-status: current
+status: withdrawn
+withdrawn_reason: >-
+  The figure cannot be traced to the source it cites. On 2026-09-25 two agents read CII's page for
+  RS153-1 independently and neither found "above 3%" or "more than 150 projects" on it; the page carries
+  no figure or sample size at all. Other write-ups attribute conflicting numbers to CII's field-rework
+  research (a 5% mean, 144 projects, 4.6% for buildings) without page references. The full report is
+  paywalled and was not read. The figure can return when someone reads the report and cites the page.

@@ -20,7 +20,7 @@ from validate import ROOT, load_corpus, validate  # noqa: E402
 
 COLUMNS = [
     "id", "family", "disease_key", "metric_key", "label", "exposure_value", "exposure_unit", "denominator",
-    "currency", "price_year", "exposure_basis", "exposure_kind", "confidence", "is_headline", "exposure_range",
+    "currency", "price_year", "exposure_basis", "exposure_kind", "confidence", "exposure_range",
     "derivation", "calculation", "sample_note", "caveat", "status", "dispute_url", "withdrawn_reason",
     "sources", "considered", "history", "jurisdictions", "industries",
     # The source of record (the first citation), under the names the product already reads.
@@ -43,7 +43,6 @@ def rows(root: Path = ROOT) -> list[dict]:
         row.update(
             id=f"{family if disease is None else disease}/{metric}",
             family=family, disease_key=disease, metric_key=metric,
-            is_headline=bool(f.get("is_headline")),
             sources=[c["source"] for c in cites],
             jurisdictions=sorted({j for s in cited for j in s["jurisdictions"]}),
             industries=sorted({i for s in cited for i in s["industries"]}),

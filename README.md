@@ -30,10 +30,10 @@ The long read that works these figures through a $5 million job is at
 ## What is here
 
 - **[`sources/`](sources)** - where we got it. One file per paper, report or data release.
-- **[`diseases/`](diseases)** - the figures, one file each, in a directory per disease. Exactly one
-  figure per disease is the headline.
+- **[`diseases/`](diseases)** - the figures, one file each, in a directory per disease. No figure
+  stands for a disease: which one applies depends on where the work is ([METHOD.md](METHOD.md) Section 5).
 - **[`context/`](context)** - figures that frame a disease rather than measure it, like a typical
-  planned margin. Never a headline.
+  planned margin. Never counted as a cost.
 - **[`protections/`](protections)** - evidence that a protection mechanism matters. No percentages
   saved: nobody has measured that yet.
 - **[`schema/`](schema)** and **[`vocab/`](vocab)** - the shape every file must have, and the code

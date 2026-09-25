@@ -21,13 +21,12 @@ from referencing import Registry, Resource
 
 ROOT = Path(__file__).resolve().parent.parent
 DISEASE_KEYS = ("rework_signal", "overrun_signal", "claim_window", "evidence_gap", "compliance_gate")
-HEADLINE_KINDS = ("contractor_loss", "money_at_stake")
 SOLE_ENTRIES = ("GLOBAL", "ALL", "unknown")
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 METRIC_KEY = re.compile(r"^[a-z0-9]+(_[a-z0-9]+)*$")
 #: A change to any of these is a change to the figure: it needs evidence and a history entry.
 SEMVER = re.compile(r"^(\d+)\.(\d+)\.(\d+)$")
-FIGURE_FIELDS = ("exposure_value", "exposure_unit", "denominator", "exposure_range", "exposure_kind", "confidence", "is_headline")
+FIGURE_FIELDS = ("exposure_value", "exposure_unit", "denominator", "exposure_range", "exposure_kind", "confidence")
 
 
 class _Loader(yaml.SafeLoader):
@@ -119,7 +118,6 @@ def validate(root: Path = ROOT):
                     errors.append(f"{path}: {field}: {sole!r} must be the only entry")
 
     # ---- findings ------------------------------------------------------
-    headlines: dict[str, list[str]] = {k: [] for k in DISEASE_KEYS}
     for path, f in findings.items():
         parts = Path(path).parts
         is_context = parts[0] == "context"
@@ -145,20 +143,8 @@ def validate(root: Path = ROOT):
         if is_context:
             if kind != "context":
                 errors.append(f"{path}: a context/ file has exposure_kind 'context'")
-            if f.get("is_headline"):
-                errors.append(f"{path}: a context/ file is never a headline")
         elif kind == "context":
             errors.append(f"{path}: exposure_kind 'context' belongs in context/, not diseases/")
-        if f.get("is_headline"):
-            if unit != "ratio_of_contract" or value is None or kind not in HEADLINE_KINDS:
-                errors.append(
-                    f"{path}: a headline must be a ratio_of_contract with a value and exposure_kind in {HEADLINE_KINDS}"
-                )
-            if not is_context and f.get("status") != "withdrawn":
-                headlines[parts[1]].append(path)
-    for key, paths in headlines.items():
-        if len(paths) != 1:
-            errors.append(f"diseases/{key}: needs exactly one is_headline finding, has {len(paths)}: {paths}")
 
     # ---- protections ---------------------------------------------------
     for path, pr in protections.items():

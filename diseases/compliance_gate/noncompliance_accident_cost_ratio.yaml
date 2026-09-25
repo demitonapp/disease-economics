@@ -4,7 +4,6 @@ exposure_unit: ratio_of_contract
 exposure_basis: of contract sum, insured (0.15%) plus uninsured (0.1%) accident cost
 exposure_kind: contractor_loss
 confidence: moderate
-is_headline: true
 derivation: as_published
 sources:
 - teo-feng-2011-accident-costs

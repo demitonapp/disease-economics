@@ -4,7 +4,6 @@ exposure_unit: ratio_of_contract
 exposure_basis: of contract budget
 exposure_kind: money_at_stake
 confidence: moderate
-is_headline: true
 derivation: as_published
 sources:
 - hka-2025-crux

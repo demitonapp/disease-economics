@@ -4,7 +4,6 @@ exposure_unit: ratio_of_contract
 exposure_basis: of original contract value, final versus original
 exposure_kind: money_at_stake
 confidence: moderate
-is_headline: true
 derivation: as_published
 sources:
 - love-2017-off-the-rails

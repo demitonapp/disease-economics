@@ -1,0 +1,21 @@
+label: >-
+  Contract variations as a share of project cost, Queensland public infrastructure (QAO audit)
+exposure_value: 0.09
+exposure_unit: ratio_of_other
+denominator: construction_cost
+exposure_basis: 'of the cost of the projects examined: over A$127 million in contract variations'
+exposure_kind: money_at_stake
+confidence: moderate
+derivation: as_published
+sources:
+- qao-2022-contract-management
+sample_note: >-
+  The Queensland Government infrastructure projects (mostly schools and public buildings) examined in
+  QAO Report 16: 2021-22. One project, Fortitude Valley State Secondary College, reached 21.5% of its
+  original contract value.
+caveat: >-
+  A handful of audited building projects, not a sample of Queensland civil work. The denominator is total
+  project cost, not the original contract value. Variations are money the client agreed to pay, the size
+  of the pot, not a contractor loss. Corroborates the 10.6% change-order figure (67 Australian projects)
+  from a Queensland regulator.
+status: current

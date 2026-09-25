@@ -1,0 +1,18 @@
+label: Queensland Government capital spending against budget, 2023-24
+exposure_value: 0.138
+exposure_unit: ratio_of_other
+denominator: annual_capital_budget
+exposure_basis: of the state's budgeted capital expenditure for the year, all portfolios
+exposure_kind: owner_side
+confidence: moderate
+derivation: as_published
+sources:
+- qao-2025-major-projects-2024
+sample_note: >-
+  The whole Queensland Government capital program, compiled by the Queensland Audit Office from state
+  capital statements. 16.4% in 2022-23; about 15% a year on average since.
+caveat: >-
+  The state's money, not a contractor's, and a spending variance for the year, not the cost growth of
+  any project: spending can run ahead of budget because work is brought forward as well as because it
+  costs more. The QAO restated the 2022-23 figure between reports (14% in 2023, 16.4% in 2024).
+status: current

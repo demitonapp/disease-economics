@@ -1,0 +1,39 @@
+{
+  "rework_signal": [
+    {"key": "design_documentation", "label": "Design and documentation", "description": "Built off a superseded drawing, a design clash, an unanswered RFI."},
+    {"key": "setting_out", "label": "Setting-out and survey", "description": "Built to the wrong level or position."},
+    {"key": "workmanship", "label": "Workmanship and testing", "description": "A failed test, a non-conformance, work not to specification."},
+    {"key": "ground_services", "label": "Ground and services", "description": "A service strike, or ground conditions misread."},
+    {"key": "defects_after_handover", "label": "Defects after handover", "description": "Fixes in the defects liability period, the rework ledgers most often miss."}
+  ],
+  "overrun_signal": [
+    {"key": "tender_pricing", "label": "Priced wrong at tender", "description": "The estimate or schedule of rates was short from the start."},
+    {"key": "quantity_growth", "label": "Quantities over the schedule", "description": "More was built than the schedule priced."},
+    {"key": "labour_productivity", "label": "Labour productivity and overstaffing", "description": "More hours than the work needed."},
+    {"key": "plant_fuel", "label": "Plant and fuel", "description": "Plant hours and fuel above what was priced."},
+    {"key": "input_prices", "label": "Input price rises", "description": "Materials and subcontract prices rising on a fixed price."}
+  ],
+  "claim_window": [
+    {"key": "payment", "label": "Payment", "description": "A progress claim under-claimed, lodged late, or lost on a procedural point."},
+    {"key": "delay_eot", "label": "Delay and extensions of time", "description": "No notice in time, so the extension or the delay costs are forfeited."},
+    {"key": "variations", "label": "Variations", "description": "Work done but never raised, priced or approved in time."},
+    {"key": "latent_conditions", "label": "Latent conditions", "description": "Unexpected ground or site conditions not notified in time."},
+    {"key": "closeout", "label": "Retention and close-out", "description": "Retention never chased, a final account missed."},
+    {"key": "weather", "label": "Weather", "description": "Wet or hot days the contract allowed for and nobody claimed."}
+  ],
+  "evidence_gap": [
+    {"key": "payment", "label": "Payment", "description": "Payment claims contested, including statutory adjudication."},
+    {"key": "delay_eot", "label": "Delay and extensions of time", "description": "Contested extensions and delay costs, weather included."},
+    {"key": "variations", "label": "Variations", "description": "Contested variations: whether it was a change, and what it is worth."},
+    {"key": "latent_conditions", "label": "Latent conditions", "description": "Contested claims for unexpected site conditions."},
+    {"key": "closeout", "label": "Retention and close-out", "description": "Contested retention, defects and final accounts."}
+  ],
+  "compliance_gate": [
+    {"key": "licences_prequal", "label": "Licences and prequalification", "description": "A licence or prequalification lapsed or not held."},
+    {"key": "insurance", "label": "Insurance", "description": "Cover lapsed or not held when the work was done."},
+    {"key": "worker_competency", "label": "Worker competency and training", "description": "Tickets, inductions and training out of date."},
+    {"key": "plant_registration", "label": "Plant registration and inspection", "description": "Plant unregistered or not inspected."},
+    {"key": "whs", "label": "Work health and safety", "description": "Safety systems, and the accidents and incidents they exist to prevent."},
+    {"key": "environmental", "label": "Environmental", "description": "Environmental conditions and approvals breached."}
+  ]
+}

@@ -89,6 +89,7 @@ def validate(root: Path = ROOT):
     jurisdictions = json.loads((root / "vocab" / "jurisdictions.json").read_text())
     industries = json.loads((root / "vocab" / "industries.json").read_text())
     gates = json.loads((root / "vocab" / "gates.json").read_text())
+    subtypes = {k: {st["key"] for st in v} for k, v in json.loads((root / "vocab" / "subtypes.json").read_text()).items()}
 
     def schema_errors(path, doc, validator):
         for e in sorted(validator.iter_errors(doc), key=str):
@@ -140,6 +141,11 @@ def validate(root: Path = ROOT):
         rng = f.get("exposure_range")
         if rng and value is not None and not (rng["low"] <= value <= rng["high"]):
             errors.append(f"{path}: exposure_range must satisfy low <= exposure_value <= high")
+        st = f.get("subtype")
+        if st and is_context:
+            errors.append(f"{path}: a context/ figure has no subtype")
+        elif st and st not in subtypes.get(parts[1], set()):
+            errors.append(f"{path}: subtype {st!r} is not one of {parts[1]}'s in vocab/subtypes.json")
         if is_context:
             if kind != "context":
                 errors.append(f"{path}: a context/ file has exposure_kind 'context'")

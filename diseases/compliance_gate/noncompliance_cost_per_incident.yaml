@@ -1,3 +1,4 @@
+subtype: whs
 label: Employer cost per construction accident, from a short absence to a fatality
 exposure_value: 97408.0
 exposure_unit: per_incident

@@ -1,3 +1,4 @@
+subtype: closeout
 label: Average retention held, 419 clients and 508 contractors (UK)
 exposure_value: 0.049
 exposure_unit: ratio_of_contract

@@ -1,3 +1,4 @@
+subtype: whs
 label: Accident cost as a share of contract sum (Singapore building contractors)
 exposure_value: 0.0025
 exposure_unit: ratio_of_contract

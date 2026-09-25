@@ -1,0 +1,22 @@
+label: Head office overhead as a share of the contract
+exposure_value: 0.0198
+exposure_unit: ratio_of_contract
+exposure_basis: of contract value, head office overhead
+exposure_kind: context
+confidence: low
+exposure_range:
+  low: 0.0099
+  high: 0.0198
+  kind: scenario
+derivation: calculated
+calculation: >-
+  Head office is 9.9% of preliminaries (table 4); preliminaries are 10% to 20% of the contract sum (introduction,
+  citing Chan & Pasquire 2002). 9.9% x 10% = 0.99%; 9.9% x 20% = 1.98%.
+sources:
+- source: oleary-vaz-serra-2025-preliminaries
+  location: table 4; introduction
+sample_note: 30 senior Australian estimators, mostly building work.
+caveat: >-
+  Our multiplication of two figures, one of them a UK 2002 number cited second-hand. Use your own rate
+  if you have it.
+status: current

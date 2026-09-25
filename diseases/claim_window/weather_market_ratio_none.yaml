@@ -1,0 +1,19 @@
+label: No published figure for weather cost as a share of contract value
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - the only share-of-cost figures found are a single residential project and a perception survey
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+sources:
+- ballesteros-perez-2018-weather
+sample_note: >-
+  UK national weather data and standard building activities; a model with a worked example, not observed
+  projects. Found UK weather extends durations by an average of 21%.
+caveat: >-
+  Recorded as `none` on purpose. The research pass found only two cost-as-percent figures: 4% on one Sydney
+  apartment project (sponsored content, residential) and 23.8% from a Pakistani perception survey the
+  pass called implausible. Neither is a benchmark, so this register holds no ratio rather than a convenient
+  one. See weather_wet_day_overhead for what IS measured.
+status: current

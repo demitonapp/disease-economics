@@ -1,0 +1,17 @@
+label: Direct 6.4% plus indirect 5.9% rework cost, 161 Australian professionals
+exposure_value: 0.123
+exposure_unit: ratio_of_contract
+exposure_basis: of total contract value, direct plus indirect
+exposure_kind: contractor_loss
+confidence: moderate
+derivation: calculated
+calculation: 6.4% direct + 5.9% indirect = 12.3% (both from the abstract; the sum is ours)
+sources:
+- love-edwards-2005-rework-costs
+sample_note: >-
+  National survey of 161 construction professionals about recently completed Australian projects. Mixed
+  sectors.
+caveat: >-
+  A perception survey. Design consultants' and project managers' estimates differed significantly. A 'total
+  of 10%' appeared only in a search snippet, not the abstract, so it is not cited from this paper.
+status: current

@@ -1,0 +1,27 @@
+label: Employer cost per construction accident, from a short absence to a fatality
+exposure_value: 97408.0
+exposure_unit: per_incident
+currency: AUD
+price_year: 2013
+exposure_basis: >-
+  AUD per incident to the employer, ranging AU$1,200 (short absence) to AU$97,408 (fatality)
+exposure_kind: contractor_loss
+confidence: moderate
+exposure_range:
+  low: 1200.0
+  high: 97408.0
+  kind: reported_min_max
+derivation: as_published
+sources:
+- allison-2019-accident-costs
+sample_note: >-
+  Built from the Safe Work Australia 2012-13 dataset plus three Tier-two contractor case studies, Australia.
+  Employer-borne: AU$1,200 (58.82%) for a short absence, AU$6,211 for a long absence, AU$50,175 for full
+  incapacity, AU$97,408 for a fatality (2.23% of that accident's total cost).
+caveat: >-
+  Not independent - it re-cuts the same Safe Work Australia data and is checked against only three case
+  studies, with no averaged employer cost per accident. Severity-specific, so the high end is a fatality
+  and not a typical incident. Penalties are separate and can reach AU$17.0m (Category 1, Commonwealth)
+  or AU$20m (industrial manslaughter, NSW). Price year taken from the source's data year; not yet confirmed
+  against the source's tables.
+status: current

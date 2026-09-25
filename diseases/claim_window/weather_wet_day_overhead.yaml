@@ -1,0 +1,32 @@
+label: Time-related site overhead per working day, Australian estimators
+exposure_value: 2010.0
+exposure_unit: per_wet_day
+currency: AUD
+price_year: 2025
+exposure_basis: >-
+  AUD per working day at the high end (AU$870 at the low end), 20 wet days is AU$17,400 to AU$40,300
+exposure_kind: contractor_loss
+confidence: low
+exposure_range:
+  low: 870.0
+  high: 2010.0
+  kind: scenario
+derivation: calculated
+calculation: >-
+  Worked on a $5M contract. High end: 5,000,000 x 20% preliminaries x 45.49% time-related = 454,900 a
+  year, / 226 working days = 2,013, shown as 2,010. Low end: 5,000,000 x 10% x 45.49% = 227,450 a year,
+  / 261 working days = 871, shown as 870. The 45.49% is table 6; the 10% to 20% is the introduction, citing
+  Chan & Pasquire 2002.
+sources:
+- oleary-vaz-serra-2025-preliminaries
+sample_note: >-
+  30 senior Australian estimators put about 45.49% of preliminaries as time-related for the whole job;
+  preliminaries are 10-20% of the contract sum. On a $5M job that is AU$870 to AU$2,010 per working day,
+  depending on the overhead rate and the working days in the year.
+caveat: >-
+  A WORKED EXAMPLE, NOT A MEASUREMENT. Both inputs are weaker than we would like: the 10-20% preliminaries
+  figure is a UK 2002 number cited second-hand, and the estimators' survey was mostly building work. No
+  open Australian civil source gives either number. Use your own rates if you have them. The unit is per
+  wet day, so this figure is never multiplied by a contract value. Price year taken from the source's
+  data year; not yet confirmed against the source's tables.
+status: current

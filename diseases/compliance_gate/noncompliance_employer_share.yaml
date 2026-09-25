@@ -1,0 +1,21 @@
+label: >-
+  Employers' share of the total cost of work-related injury and illness (Australia)
+exposure_value: 0.19
+exposure_unit: ratio_of_other
+denominator: total_injury_cost
+exposure_basis: >-
+  of the total cost, being the employer's share including workers' compensation premiums
+exposure_kind: societal
+confidence: high
+derivation: as_published
+sources:
+- safe-work-australia-2015-injury-cost
+sample_note: >-
+  AU$61.8 billion total (4.1% of GDP), of which construction was AU$5.84 billion. Employers bear 5% excluding
+  premiums, about 19% including them. The UK is almost identical at about 19% (HSE 2025).
+caveat: >-
+  SOCIETAL, NOT THE CONTRACTOR'S BILL. Workers and the community bear the rest - recorded so the surface
+  can show the real picture and exclude it from the headline. The report is internally inconsistent (74/21
+  in the summary, 77/18 in para 89) and its latest edition covers 2012-13. No construction-specific employer
+  share exists.
+status: current

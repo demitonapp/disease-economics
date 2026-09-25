@@ -1,0 +1,17 @@
+label: Largest firms lost the planned 9% margin plus a further 7%
+exposure_value: null
+exposure_unit: none
+exposure_basis: percentage points of margin swing, not a share of contract value
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+sources:
+- ryan-duffield-2017-contractor-margins
+sample_note: >-
+  Large Australian infrastructure projects, 17 years of outcomes. This is the one figure that speaks directly
+  to what contractors lose, and it is second-hand.
+caveat: >-
+  SECONDARY, and the report that cites it is sceptical - Grattan's own footnote says the study 'does not
+  explain why shareholders would tolerate such a pattern of losses'. Recorded because the alternative
+  is to pretend no contractor-side overrun figure exists.
+status: current

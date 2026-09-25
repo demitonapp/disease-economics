@@ -1,0 +1,17 @@
+label: Rework as recorded in one contractor's books, 0.38% rising to 0.76%
+exposure_value: 0.0038
+exposure_unit: ratio_of_contract
+exposure_basis: of contract value, direct cost only, as recorded pre-completion
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+sources:
+- love-2026-field-rework
+sample_note: >-
+  One contractor's project data, collected by its quality managers. Adding post-completion corrections
+  raises the average to 0.76%.
+caveat: >-
+  SECONDARY - the paper itself returned 403 and was read through ASCE's news write-up. The article gives
+  no sample size, country or sector. The same study found actual costs underreported by around 300%, which
+  is the number that matters here: most rework is never written down as rework.
+status: current

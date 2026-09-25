@@ -1,0 +1,17 @@
+label: Final cost over the first promised cost, 836 Australian transport projects
+exposure_value: 0.24
+exposure_unit: ratio_of_other
+denominator: budget_at_announcement
+exposure_basis: of the first publicly promised cost, final versus promised
+exposure_kind: owner_side
+confidence: moderate
+derivation: as_published
+sources:
+- terrill-danks-2016-transport-overruns
+sample_note: >-
+  836 Australian transport projects of $20m or more, 2001-2016; $28 billion over in total; 34% of projects
+  went over.
+caveat: >-
+  Measured from the first promise, mostly before any contractor is signed, and paid by the owner (the
+  taxpayer). The median overrun is 0%: a few projects dominate the mean.
+status: current

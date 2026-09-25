@@ -1,0 +1,18 @@
+label: Average cost escalation on roads, 258 transport projects in 20 countries
+exposure_value: 0.2
+exposure_unit: ratio_of_other
+denominator: budget_at_decision
+exposure_basis: of budget, decision to build versus actual cost, real terms
+exposure_kind: owner_side
+confidence: high
+derivation: as_published
+sources:
+- flyvbjerg-2004-cost-overrun
+sample_note: >-
+  Roads average 20% (N=167, sd=30); all project types average 28% (N=258, sd=39). Rail, bridge, tunnel
+  and road projects across five continents.
+caveat: >-
+  Measured from the decision to build, so most of it arises BEFORE a contractor is signed, and much of
+  it is paid by the client. This is NOT a figure for what a contractor loses, which is why it is recorded
+  as owner_side and excluded from the headline.
+status: current

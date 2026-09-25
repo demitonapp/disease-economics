@@ -1,0 +1,17 @@
+name: Suggest a source
+description: Research we should read, if you'd rather not open a pull request yourself.
+labels: [new-evidence]
+body:
+  - type: textarea
+    id: source
+    attributes:
+      label: The source
+      description: Title, author or body, year, a link, and the page or table the figure is on.
+    validations:
+      required: true
+  - type: textarea
+    id: figure
+    attributes:
+      label: What it says, and which disease it bears on
+    validations:
+      required: true

@@ -1,0 +1,17 @@
+label: Parties' own costs as a share of arbitration costs, 221 ICC awards
+exposure_value: 0.83
+exposure_unit: ratio_of_other
+denominator: arbitration_cost
+exposure_basis: >-
+  of total arbitration costs, being each party's own lawyers, experts and witnesses
+exposure_kind: contractor_loss
+confidence: high
+derivation: as_published
+sources:
+- icc-2015-costs
+sample_note: 221 ICC awards from 2012, all sectors - not construction-specific.
+caveat: >-
+  The share is of arbitration cost, not of contract value, which is why the unit is a ratio but the basis
+  is explicitly the arbitration bill. Litigation to recovery is not linear: fighting is expensive in people's
+  time.
+status: current

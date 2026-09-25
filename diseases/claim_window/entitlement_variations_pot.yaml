@@ -1,0 +1,17 @@
+label: Client-approved change orders, 67 Australian public infrastructure projects
+exposure_value: 0.106
+exposure_unit: ratio_of_contract
+exposure_basis: of original contract value, client-approved change orders
+exposure_kind: money_at_stake
+confidence: moderate
+is_headline: true
+derivation: as_published
+sources:
+- love-2017-change-orders
+sample_note: >-
+  67 completed public infrastructure projects from one contractor, Australia, civil. Mean change orders
+  were about AU$5.1m and made up 11% of work value 2011-2014.
+caveat: >-
+  SIZE OF THE POT, NOT A LOSS. No study measures how much of it a typical contractor fails to claim. Change
+  orders were linked to HIGHER contractor margins, which is the opposite of a loss.
+status: current

@@ -1,0 +1,16 @@
+label: Average retention held, 419 clients and 508 contractors (UK)
+exposure_value: 0.049
+exposure_unit: ratio_of_contract
+exposure_basis: of contract value, held until the defects liability period ends
+exposure_kind: money_at_stake
+confidence: moderate
+derivation: as_published
+sources:
+- pye-tait-2017-retentions
+sample_note: >-
+  419 clients and 508 contractors surveyed, UK, all construction. Retention was not received back at all
+  after the defects liability period on 5% of tier-1, 10.8% of tier-2 and 13.1% of tier-3 contracts.
+caveat: >-
+  The money is held, not lost, until it is not returned. UK data from 2017 with no comparable Australian
+  study; the authors say some tier differences are not statistically robust.
+status: current

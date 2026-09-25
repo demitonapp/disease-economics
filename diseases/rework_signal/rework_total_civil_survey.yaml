@@ -1,0 +1,17 @@
+label: Mean total rework cost, 115 Australian civil infrastructure projects
+exposure_value: 0.1
+exposure_unit: ratio_of_contract
+exposure_basis: of contract value, including indirect costs
+exposure_kind: contractor_loss
+confidence: moderate
+is_headline: true
+derivation: as_published
+sources:
+- love-2010-rework-civil
+sample_note: >-
+  Questionnaire survey covering 115 Australian civil infrastructure projects. The only peer-reviewed figure
+  specific to civil work.
+caveat: >-
+  Respondents' estimates, not measured cost records. Rework amount correlated significantly with cost
+  and schedule growth (p<0.01).
+status: current

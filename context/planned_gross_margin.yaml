@@ -1,0 +1,24 @@
+label: Planned gross margin on Australian civil and transport work
+exposure_value: 0.0989
+exposure_unit: ratio_of_contract
+exposure_basis: mean margin excluding overheads, of contract value
+exposure_kind: context
+confidence: moderate
+exposure_range:
+  low: 0.06
+  high: 0.0989
+  kind: across_studies
+derivation: as_published
+sources:
+- source: love-2017-change-orders
+  location: accepted manuscript, p.25
+- love-ika-2021-transport-context
+- source: love-2019-make-or-break
+  location: abstract (margins of 6% to 9%)
+sample_note: >-
+  67 projects from one Australian contractor (9.89%); 8 Australian transport projects (almost 9%); six
+  years of one contractor's ledgers (6% to 9%).
+caveat: >-
+  Two of the three sources are one contractor's data each, and all three are the same research group.
+  The docs page rounds this to 9%.
+status: current

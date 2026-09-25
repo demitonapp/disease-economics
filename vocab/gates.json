@@ -1,0 +1,9 @@
+{
+  "claim_window": [
+    "contract_read",
+    "clock_armed",
+    "fired_in_window",
+    "valid_service",
+    "evidence_preserved"
+  ]
+}

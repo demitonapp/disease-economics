@@ -1,0 +1,19 @@
+label: Accident cost as a share of contract sum (Singapore contractors)
+exposure_value: 0.0025
+exposure_unit: ratio_of_contract
+exposure_basis: of contract sum, insured plus uninsured accident cost
+exposure_kind: contractor_loss
+confidence: low
+is_headline: true
+derivation: as_published
+sources:
+- teo-feng-2011-accident-costs
+sample_note: >-
+  Singapore contractors. The research pass could read only a search snippet: the primary document and
+  ResearchGate both returned 403.
+caveat: >-
+  SECONDARY AND UNVERIFIED - the pass's own instruction was 'do not publish without checking the abstract'.
+  Recorded at low confidence so the surface can cite the range (a weak Indian study found about 0.48%
+  accident loss) while showing its evidence grade. The often-quoted '7.9% to 15%' figure comes from 1990s
+  US data that the pass could not verify and deliberately excluded.
+status: current

@@ -1,0 +1,28 @@
+name: release
+
+# Tag vN on main when figures should reach the product. The ledger is built here and attached to
+# the release; it is never committed.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python scripts/validate.py
+      - run: python scripts/build_ledger.py --out dist --release "$TAG"
+        env:
+          TAG: ${{ github.ref_name }}
+      - run: gh release create "$TAG" dist/findings.json dist/findings.csv --generate-notes
+        env:
+          TAG: ${{ github.ref_name }}
+          GH_TOKEN: ${{ github.token }}

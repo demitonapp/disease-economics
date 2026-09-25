@@ -1,0 +1,18 @@
+label: Sums in dispute across 2,200+ projects in 114 countries
+exposure_value: 0.334
+exposure_unit: ratio_of_contract
+exposure_basis: of contract budget
+exposure_kind: money_at_stake
+confidence: moderate
+is_headline: true
+derivation: as_published
+sources:
+- hka-2025-crux
+sample_note: >-
+  2,200+ projects in 114 countries, US$2.433tn of capex, average US$1.25bn. Time extensions sought averaged
+  65.8% of planned schedules.
+caveat: >-
+  CEILING, NOT TYPICAL CASE. These are HKA's own engagements - mostly disputed megaprojects that reached
+  expert investigation. Read it as the top of the range for a job already in trouble, not the exposure
+  on an ordinary civil contract.
+status: current

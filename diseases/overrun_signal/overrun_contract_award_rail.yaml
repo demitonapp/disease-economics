@@ -1,0 +1,17 @@
+label: Mean overrun from contract award, 16 Australian rail projects
+exposure_value: 0.23
+exposure_unit: ratio_of_contract
+exposure_basis: of original contract value, final versus original
+exposure_kind: money_at_stake
+confidence: moderate
+is_headline: true
+derivation: as_published
+sources:
+- love-2017-off-the-rails
+sample_note: >-
+  16 rail projects by a single contractor, AU$0.5b+, mostly WA, 2011-2014. Scope changes accounted for
+  99% of the cost increase; lump-sum projects that overran averaged 12.83%.
+caveat: >-
+  Mostly scope variations the owner paid, not contractor losses. Median 12.3% against a mean of 23%, so
+  a few projects dominate. Recorded as money_at_stake for that reason.
+status: current

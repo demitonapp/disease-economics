@@ -1,0 +1,34 @@
+name: validate
+
+# pull_request, never pull_request_target: this runs contributors' code, so it gets a read-only
+# token and no secrets.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Validate the corpus
+        run: python scripts/validate.py
+        if: github.event_name == 'push'
+      - name: Validate the corpus against the PR's base
+        run: python scripts/validate.py --base "origin/$BASE_REF"
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_REF: ${{ github.base_ref }}
+      - run: python -m unittest discover -s tests
+      - name: The ledger builds
+        run: python scripts/build_ledger.py --out dist

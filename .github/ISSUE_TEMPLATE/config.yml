@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: How to add evidence
+    url: https://github.com/demitonapp/disease-economics/blob/main/CONTRIBUTING.md
+    about: The shape of a pull request, with a worked example.

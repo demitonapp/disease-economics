@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/demitonapp/disease-economics/schema/protection.schema.json",
+  "title": "Protection",
+  "description": "Evidence that one protection mechanism matters. protections/<disease_key>/<mechanism>.yaml. No rule ids, tiers, registers or percentages saved.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["label", "claim", "sources", "confidence", "caveat", "status"],
+  "properties": {
+    "label": {"type": "string", "minLength": 1},
+    "claim": {"type": "string", "minLength": 1},
+    "sources": {"$ref": "finding.schema.json#/properties/sources"},
+    "considered": {"$ref": "finding.schema.json#/properties/considered"},
+    "confidence": {"enum": ["high", "moderate", "low"]},
+    "caveat": {"type": "string", "minLength": 1},
+    "status": {"enum": ["current", "disputed", "withdrawn"]},
+    "dispute_url": {"type": "string", "pattern": "^https://"},
+    "withdrawn_reason": {"type": "string", "minLength": 1}
+  },
+  "allOf": [
+    {"if": {"properties": {"status": {"const": "disputed"}}}, "then": {"required": ["dispute_url"]}},
+    {"if": {"properties": {"status": {"const": "withdrawn"}}}, "then": {"required": ["withdrawn_reason"]}}
+  ]
+}

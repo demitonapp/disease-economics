@@ -1,0 +1,29 @@
+name: Dispute a figure
+description: A figure here is wrong, misread, or outweighed by other evidence.
+labels: [dispute]
+body:
+  - type: input
+    id: finding
+    attributes:
+      label: Which figure
+      description: The file path, e.g. diseases/rework_signal/rework_total_civil_survey.yaml
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong with it
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Your source
+      description: Title, author or body, year, a link, and the page or table. A dispute with a source is flagged on the figure; one without is answered but not flagged.
+    validations:
+      required: true
+  - type: textarea
+    id: interest
+    attributes:
+      label: Any interest you have in this figure
+      description: Optional. For example, if your employer sells something it affects.

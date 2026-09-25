@@ -1,0 +1,17 @@
+label: >-
+  Direct rework 'often' 5% of construction cost (framing in a US study of 359 projects)
+exposure_value: 0.05
+exposure_unit: ratio_of_other
+denominator: construction_cost
+exposure_basis: of total construction cost, direct rework only
+exposure_kind: money_at_stake
+confidence: low
+derivation: as_published
+sources:
+- hwang-2009-rework-cost
+sample_note: >-
+  The paper analyses 359 projects in the CII database, mostly US industrial and commercial.
+caveat: >-
+  The 5% is the abstract's opening framing, not the paper's own measured result, and who bears the cost
+  is not measured.
+status: current

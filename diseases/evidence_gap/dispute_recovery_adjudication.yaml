@@ -1,0 +1,19 @@
+label: Adjudication awards against amounts claimed, Queensland 2024-25
+exposure_value: 0.0856
+exposure_unit: ratio_of_other
+denominator: amount_claimed
+exposure_basis: of the amount claimed, awarded across 214 decisions
+exposure_kind: money_at_stake
+confidence: moderate
+derivation: calculated
+calculation: >-
+  AU$81.9m awarded / AU$957.0m claimed = 0.0856 (Table 23; the ratio is ours, not the QBCC's)
+sources:
+- qbcc-2025-annual-report
+sample_note: >-
+  AU$81.9m awarded against AU$957.0m claimed across 214 decisions. Queensland only, security-of-payment
+  disputes, all construction sectors.
+caveat: >-
+  One A$634m claim dominates the total; without it the award rate is at most about 25%. The ratio is the
+  research pass's own calculation, not the QBCC's. Do not use it as a typical loss rate.
+status: current

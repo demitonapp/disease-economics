@@ -1,0 +1,16 @@
+label: >-
+  Mean field rework above 3% of construction-phase cost, 150+ US heavy industrial projects
+exposure_value: 0.03
+exposure_unit: ratio_of_other
+denominator: construction_cost
+exposure_basis: of construction-phase cost, field rework; the mean is above this figure
+exposure_kind: money_at_stake
+confidence: low
+derivation: as_published
+sources:
+- cii-2001-field-rework-index
+sample_note: More than 150 heavy industrial projects, US, 2001.
+caveat: >-
+  Seen on CII's summary page only; the report was not read. Industrial, not civil, and 25 years old. Who
+  bears the cost is not measured.
+status: current

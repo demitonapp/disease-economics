@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use these figures, please cite the corpus and the release you used."
+title: "disease-economics: what published research says the diseases of a construction job cost, and where every figure came from"
+type: dataset
+authors:
+  - name: "Demiton Pty Ltd"
+repository-code: "https://github.com/demitonapp/disease-economics"
+url: "https://docs.demiton.io/start-here/disease-priority"
+license: CC-BY-4.0
+keywords:
+  - construction
+  - civil engineering
+  - rework
+  - cost overrun
+  - construction disputes
+  - evidence

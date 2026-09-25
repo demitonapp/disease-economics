@@ -123,6 +123,12 @@ class BaseTest(CorpusTest):
     def test_unchanged_passes(self):
         self.assertEqual(self.base_errors(), [])
 
+    def test_a_kind_reclassification_needs_history_not_a_source(self):
+        self.edit(FINDING, exposure_kind="derived_contractor_loss")
+        self.assertTrue(any("history entry" in e for e in self.base_errors()))
+        self.edit(FINDING, history=[{"changed_on": "2026-10-01", "reason": "reclassified", "exposure_kind": "contractor_loss"}])
+        self.assertEqual(self.base_errors(), [])
+
     def test_figure_change_needs_history_and_source(self):
         self.edit(FINDING, exposure_value=0.2)
         errs = self.base_errors()

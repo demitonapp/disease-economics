@@ -279,7 +279,9 @@ def check_against_base(root: Path, base: str):
         if moved:
             if len(new_h) <= len(old_h):
                 errors.append(f"{path}: {moved} changed - append a history entry recording the old figure and why")
-            if not changed:
+            # Reclassifying a figure's kind under the method is not a new reading of the evidence, so it
+            # needs its history entry but no new source (METHOD.md Section 8).
+            if not changed and moved != ["exposure_kind"]:
                 errors.append(f"{path}: {moved} changed - the same PR must add or change a file under sources/")
     return errors
 

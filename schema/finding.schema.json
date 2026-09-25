@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/demitonapp/disease-economics/schema/finding.schema.json",
-  "x-schema-version": "2.1.0",
+  "x-schema-version": "2.2.0",
   "title": "Finding",
   "description": "One figure taken from one or more sources. diseases/<disease_key>/<metric_key>.yaml or context/<metric_key>.yaml. The path is the id; it is never repeated inside the file.",
   "type": "object",
@@ -67,6 +67,7 @@
     "exposure_kind": {
       "enum": [
         "contractor_loss",
+        "derived_contractor_loss",
         "money_at_stake",
         "owner_side",
         "societal",

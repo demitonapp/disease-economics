@@ -163,3 +163,23 @@ A figure carries a `subtype` only when it measures that sub-type. A figure that 
 as a whole has none, and a context figure never has one. A sub-type with no figure says so: that is
 the next place to look for research, not a zero.
 
+## 13. What kind of number a figure is
+
+Every figure is already a statistic its source computed, so each records which (`statistic`) and the
+sample it is computed over (`sample_size`: how many, and of what):
+
+| Statistic | Means |
+|---|---|
+| `mean` | The average of per-unit values, such as each project's rework share |
+| `median` | The middle of per-unit values |
+| `pooled_ratio` | A total divided by a total, such as dollars awarded over dollars claimed across all decisions. Not the same as a mean of per-unit ratios |
+| `total` | An aggregate amount |
+| `single_case` | One project, one organisation's own figure, or one worked example |
+| `modelled` | Produced by a model or a worked calculation |
+| `none` | No figure exists |
+| `unknown` | The source does not say, and we could not tell |
+
+Construction costs are skewed: a few jobs go very badly. A mean answers "what does this cost across a
+portfolio of jobs", a median "what does a typical job cost". When figures from several studies are
+summarised, each counts once unless weighted by `sample_size`, and like should only be set beside like.
+

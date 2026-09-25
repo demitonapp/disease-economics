@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/demitonapp/disease-economics/schema/finding.schema.json",
-  "x-schema-version": "2.2.0",
+  "x-schema-version": "2.3.0",
   "title": "Finding",
   "description": "One figure taken from one or more sources. diseases/<disease_key>/<metric_key>.yaml or context/<metric_key>.yaml. The path is the id; it is never repeated inside the file.",
   "type": "object",
@@ -219,6 +219,51 @@
       "type": "string",
       "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$",
       "description": "The part of the disease this figure measures, from vocab/subtypes.json (METHOD.md Section 12). Absent when the figure covers the disease as a whole."
+    },
+    "statistic": {
+      "enum": [
+        "mean",
+        "median",
+        "pooled_ratio",
+        "total",
+        "single_case",
+        "modelled",
+        "none",
+        "unknown"
+      ],
+      "description": "What kind of number the figure is, as its source computed it (METHOD.md Section 13): a mean or median of per-unit values, a pooled total over total, a total, one case, a model, no figure, or unknown."
+    },
+    "sample_size": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "n",
+        "unit"
+      ],
+      "description": "The sample this figure is computed over (not the whole study, if the figure uses part of it).",
+      "properties": {
+        "n": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "unit": {
+          "enum": [
+            "projects",
+            "respondents",
+            "organisations",
+            "decisions",
+            "awards",
+            "contracts",
+            "cases",
+            "years",
+            "other"
+          ]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
     }
   },
   "allOf": [

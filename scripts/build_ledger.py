@@ -21,7 +21,7 @@ from validate import ROOT, load_corpus, validate  # noqa: E402
 COLUMNS = [
     "id", "family", "disease_key", "metric_key", "subtype", "label", "exposure_value", "exposure_unit", "denominator",
     "currency", "price_year", "exposure_basis", "exposure_kind", "confidence", "exposure_range",
-    "derivation", "calculation", "sample_note", "caveat", "status", "dispute_url", "withdrawn_reason",
+    "derivation", "calculation", "statistic", "sample_size", "sample_note", "caveat", "status", "dispute_url", "withdrawn_reason",
     "sources", "considered", "history", "jurisdictions", "industries",
     # The source of record (the first citation), under the names the product already reads.
     "source_org", "source_title", "source_url", "source_location", "source_year", "source_secondary",

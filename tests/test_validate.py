@@ -184,6 +184,12 @@ class BaseTest(CorpusTest):
         self._schema(lambda s: None, major)
         self.assertEqual(self.base_errors(), [])
 
+    def test_a_new_optional_object_with_its_own_required_fields_is_minor(self):
+        minor = self._bumped("minor")
+        add = lambda s: s["properties"].update(extra={"type": "object", "required": ["n"], "properties": {"n": {"type": "integer"}}})  # noqa: E731
+        self._schema(add, minor)
+        self.assertEqual(self.base_errors(), [])
+
     def test_a_description_change_needs_a_patch_bump(self):
         patch = self._bumped("patch")
         self._schema(lambda s: s.update(description="reworded"), None)

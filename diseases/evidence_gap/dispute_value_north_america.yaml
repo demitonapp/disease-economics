@@ -1,0 +1,21 @@
+label: Average value of a construction dispute, North America 2024
+exposure_value: 60100000.0
+exposure_unit: per_incident
+currency: USD
+price_year: 2024
+exposure_basis: >-
+  US dollars per dispute: the claimed value of the additional work or event as asserted by the contractor
+exposure_kind: money_at_stake
+confidence: moderate
+derivation: as_published
+sources:
+- arcadis-2025-disputes-north-america
+sample_note: >-
+  Arcadis North America survey, 2024 data year, published June 2025. Average dispute length 12.5 months.
+  The number of respondents is not stated.
+caveat: >-
+  A consultancy's view of the disputes it sees, in North America only, and the value claimed by the contractor,
+  not the amount won. A mean dragged up by a few very large disputes: 80% of claims are US$25 million
+  or less and almost half under US$5 million. Not a share of contract value, so it is never multiplied
+  by one.
+status: current

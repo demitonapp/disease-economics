@@ -28,7 +28,7 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python scripts/validate.py
       # The label the site shows: the latest tag, plus how far main has moved past it.
-      - run: python scripts/build_ledger.py --out dist --release "$(git describe --tags 2>/dev/null || echo main)"
+      - run: python scripts/build_ledger.py --out dist --release "$(git describe --tags --match "v*" 2>/dev/null || echo main)"
       - name: Update the data-latest release
         env:
           GH_TOKEN: ${{ github.token }}

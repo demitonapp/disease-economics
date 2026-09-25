@@ -26,6 +26,7 @@ SOLE_ENTRIES = ("GLOBAL", "ALL", "unknown")
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 METRIC_KEY = re.compile(r"^[a-z0-9]+(_[a-z0-9]+)*$")
 #: A change to any of these is a change to the figure: it needs evidence and a history entry.
+SEMVER = re.compile(r"^(\d+)\.(\d+)\.(\d+)$")
 FIGURE_FIELDS = ("exposure_value", "exposure_unit", "denominator", "exposure_range", "exposure_kind", "confidence", "is_headline")
 
 
@@ -94,6 +95,12 @@ def validate(root: Path = ROOT):
         for e in sorted(validator.iter_errors(doc), key=str):
             where = "/".join(map(str, e.absolute_path)) or "(file)"
             errors.append(f"{path}: {where}: {e.message}")
+
+    # ---- schema versions -------------------------------------------------
+    for sp in sorted((root / "schema").glob("*.schema.json")):
+        ver = json.loads(sp.read_text()).get("x-schema-version", "")
+        if not SEMVER.match(str(ver)):
+            errors.append(f"schema/{sp.name}: x-schema-version must be MAJOR.MINOR.PATCH, got {ver!r}")
 
     # ---- sources -------------------------------------------------------
     for slug, fm in sources.items():
@@ -191,6 +198,61 @@ def validate(root: Path = ROOT):
     return errors, warnings
 
 
+def _schema_facts(schema) -> dict:
+    """The parts of a JSON Schema a version bump is judged on, keyed by JSON pointer."""
+    facts = {"props": {}, "required": {}, "enum": {}, "type": {}}
+
+    def walk(node, ptr):
+        if isinstance(node, dict):
+            if isinstance(node.get("properties"), dict):
+                facts["props"][ptr] = set(node["properties"])
+            if isinstance(node.get("required"), list):
+                facts["required"][ptr] = set(node["required"])
+            if "enum" in node:
+                facts["enum"][ptr] = {json.dumps(v) for v in node["enum"]}
+            if "type" in node:
+                facts["type"][ptr] = json.dumps(node["type"], sort_keys=True)
+            for k, v in node.items():
+                if k != "x-schema-version":
+                    walk(v, f"{ptr}/{k}")
+        elif isinstance(node, list):
+            for i, v in enumerate(node):
+                walk(v, f"{ptr}/{i}")
+
+    walk(schema, "#")
+    return facts
+
+
+def schema_bump_needed(old: dict, new: dict):
+    """None if unchanged; else 'major', 'minor' or 'patch', the same rule the monorepo's shelf contracts use.
+
+    MAJOR: a property removed, a new requirement, an enum narrowed, a type changed.
+    MINOR: a property added, an enum widened. PATCH: anything else (descriptions, patterns, examples).
+    """
+    strip = lambda s: {k: v for k, v in s.items() if k != "x-schema-version"}  # noqa: E731
+    if strip(old) == strip(new):
+        return None
+    a, b = _schema_facts(old), _schema_facts(new)
+    if (any(p not in b["props"] or not a["props"][p] <= b["props"][p] for p in a["props"])
+            or any(not b["required"][p] <= a["required"].get(p, set()) for p in b["required"])
+            or any(p in b["enum"] and not a["enum"][p] <= b["enum"][p] for p in a["enum"])
+            or any(p in b["type"] and a["type"][p] != b["type"][p] for p in a["type"])):
+        return "major"
+    if (any(b["props"][p] - a["props"].get(p, set()) for p in b["props"])
+            or any(b["enum"][p] - a["enum"].get(p, set()) for p in b["enum"])):
+        return "minor"
+    return "patch"
+
+
+def _bumped_enough(old_v: str, new_v: str, level: str) -> bool:
+    o, n = tuple(map(int, SEMVER.match(old_v).groups())), tuple(map(int, SEMVER.match(new_v).groups()))
+    if level == "major":
+        return n[0] > o[0]
+    if level == "minor":
+        return n[0] > o[0] or (n[0] == o[0] and n[1] > o[1])
+    return n > o
+
+
 def _git(root: Path, *args: str) -> str:
     return subprocess.run(["git", *args], cwd=root, check=True, capture_output=True, text=True).stdout
 
@@ -202,6 +264,16 @@ def check_against_base(root: Path, base: str):
                   if (p.startswith("diseases/") or p.startswith("context/")) and p.endswith(".yaml")]
     changed = set(_git(root, "diff", "--name-only", base, "--", "sources/").splitlines())
     changed |= set(_git(root, "ls-files", "--others", "--exclude-standard", "sources/").splitlines())
+    for sp in [p for p in _git(root, "ls-tree", "-r", "--name-only", base).splitlines()
+               if p.startswith("schema/") and p.endswith(".schema.json")]:
+        if not (root / sp).exists():
+            errors.append(f"{sp}: a schema is never deleted")
+            continue
+        old, new = json.loads(_git(root, "show", f"{base}:{sp}")), json.loads((root / sp).read_text())
+        level = schema_bump_needed(old, new)
+        ov, nv = str(old.get("x-schema-version", "0.0.0")), str(new.get("x-schema-version", ""))
+        if level and SEMVER.match(ov) and SEMVER.match(nv) and not _bumped_enough(ov, nv, level):
+            errors.append(f"{sp}: this is a {level.upper()} change - bump x-schema-version from {ov} accordingly (now {nv})")
     for path in base_files:
         if not (root / path).exists():
             errors.append(f"{path}: a finding is never deleted - set status: withdrawn with a withdrawn_reason")

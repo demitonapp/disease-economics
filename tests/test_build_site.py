@@ -19,6 +19,22 @@ class SiteTest(unittest.TestCase):
             self.assertIn(f'id="{r["id"]}"', html, r["id"])
         self.assertNotIn(">None<", html)
 
+    def test_the_whole_site_builds(self):
+        import tempfile
+        from build_site import build
+        out = Path(tempfile.mkdtemp())
+        pages = build(out, "test", "2026-01-01")
+        current = [r for r in rows(ROOT) if r.get("status") != "withdrawn"]
+        self.assertEqual(len(pages), 1 + 6 + len(current))  # index, five diseases + context, one per figure
+        for p in pages:
+            self.assertTrue((out / p.strip("/") / "index.html").exists() if p != "/" else (out / "index.html").exists(), p)
+        sitemap = (out / "sitemap.xml").read_text()
+        self.assertEqual(sitemap.count("<loc>"), len(pages))
+        self.assertIn("Sitemap: https://research.demiton.io/sitemap.xml", (out / "robots.txt").read_text())
+        full = (out / "llms-full.txt").read_text()
+        for r in current:
+            self.assertIn(r["label"], full)
+
     def test_figures_read_as_their_unit(self):
         self.assertEqual(figure({"exposure_unit": "ratio_of_contract", "exposure_value": 0.0025}), ("0.25%", "of contract value"))
         self.assertEqual(figure({"exposure_unit": "ratio_of_other", "exposure_value": 0.83, "denominator": "arbitration_cost"})[1],

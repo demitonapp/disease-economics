@@ -144,6 +144,35 @@ class BaseTest(CorpusTest):
         self.edit(HEADLINE, history=[{"changed_on": "2026-10-01", "reason": "rewritten"}])
         self.assertTrue(any("append-only" in e for e in self.base_errors()))
 
+    def _schema(self, change, version):
+        import json
+        sp = self.tmp / "schema" / "finding.schema.json"
+        s = json.loads(sp.read_text())
+        change(s)
+        if version:
+            s["x-schema-version"] = version
+        sp.write_text(json.dumps(s, indent=2))
+
+    def test_widening_an_enum_needs_a_minor_bump(self):
+        widen = lambda s: s["properties"]["denominator"]["enum"].append("new_denominator")  # noqa: E731
+        self._schema(widen, None)
+        self.assertTrue(any("MINOR" in e for e in self.base_errors()))
+        self._schema(lambda s: None, "1.3.0")
+        self.assertEqual(self.base_errors(), [])
+
+    def test_narrowing_an_enum_needs_a_major_bump(self):
+        narrow = lambda s: s["properties"]["confidence"]["enum"].remove("low")  # noqa: E731
+        self._schema(narrow, "1.3.0")
+        self.assertTrue(any("MAJOR" in e for e in self.base_errors()))
+        self._schema(lambda s: None, "2.0.0")
+        self.assertEqual(self.base_errors(), [])
+
+    def test_a_description_change_needs_a_patch_bump(self):
+        self._schema(lambda s: s.update(description="reworded"), None)
+        self.assertTrue(any("PATCH" in e for e in self.base_errors()))
+        self._schema(lambda s: None, "1.2.1")
+        self.assertEqual(self.base_errors(), [])
+
     def test_typo_fix_needs_no_source(self):
         self.edit(HEADLINE, caveat="Respondents' estimates, not measured cost records.")
         self.assertEqual(self.base_errors(), [])

@@ -71,7 +71,8 @@ def write(out: Path, release: str) -> list[dict]:
     """Write findings.json and findings.csv to `out`; return the rows. Shared with build_site.py."""
     out.mkdir(parents=True, exist_ok=True)
     data = rows(ROOT)
-    (out / "findings.json").write_text(json.dumps({"release": release, "findings": data}, indent=2) + "\n")
+    schemas = {p.name: json.loads(p.read_text()).get("x-schema-version") for p in sorted((ROOT / "schema").glob("*.schema.json"))}
+    (out / "findings.json").write_text(json.dumps({"release": release, "schema_versions": schemas, "findings": data}, indent=2) + "\n")
     with (out / "findings.csv").open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=["release", *COLUMNS])
         w.writeheader()

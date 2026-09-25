@@ -1,0 +1,25 @@
+label: >-
+  Share of the amount claimed in Queensland adjudication dismissed for no jurisdiction (246 decisions,
+  2022-23)
+exposure_value: 0.3692
+exposure_unit: ratio_of_other
+denominator: amount_claimed
+exposure_basis: >-
+  of the total amount claimed across 246 adjudication decisions: claims the adjudicator could not decide
+  at all
+exposure_kind: money_at_stake
+confidence: moderate
+derivation: calculated
+calculation: >-
+  $70,119,333.18 claimed in no-jurisdiction decisions / $189,905,327.50 claimed across all 246 decisions
+  = 0.3692 (the author calls it 'almost 37%').
+sources:
+- adjudicate-today-2023-qld-bif-act
+sample_note: >-
+  246 published Queensland adjudication decisions, March 2022 to August 2023; 66 (26.8%) were no-jurisdiction
+  decisions.
+caveat: >-
+  A nominating authority's own count of published decisions, not the regulator's statistics. A no-jurisdiction
+  decision means the claim failed on procedure, such as timing or form, not on its merits, and the claimant
+  may have other routes to recover, so this is money put at risk by procedure rather than a proven loss.
+status: current

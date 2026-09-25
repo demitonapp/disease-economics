@@ -1,0 +1,28 @@
+label: >-
+  Amount determined against amount claimed in adjudication applications, NSW 12% / QLD 18% / VIC 35%,
+  2018-2023
+exposure_value: 0.12
+exposure_unit: ratio_of_other
+denominator: amount_claimed
+exposure_basis: >-
+  of the amount claimed in all adjudication applications, including those that never reached a determination;
+  NSW figure, with QLD and VIC as the range
+exposure_kind: money_at_stake
+confidence: moderate
+exposure_range:
+  low: 0.12
+  high: 0.35
+  kind: reported_min_max
+derivation: as_published
+sources:
+- dga-2023-adjudication-outcomes
+sample_note: >-
+  State regulators' adjudication statistics, NSW, QLD and VIC, 2018-2023: 9,784 applications, 5,657 determinations.
+  NSW is 12%, QLD 18%, VIC 35%.
+caveat: >-
+  The denominator includes the roughly 40% of applications that never reached a determination (withdrawn,
+  settled or paid), so this understates what claimants recover on decided disputes: NSW 2011-12 on decided
+  disputes only was 50.9%. A consultancy's analysis, with internal inconsistencies: Victoria's totals
+  differ between the December 2023 and February 2024 editions, and the NSW prose total ($5.5bn) disagrees
+  with its own table ($6.28bn).
+status: current

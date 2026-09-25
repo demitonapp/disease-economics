@@ -420,7 +420,9 @@ def render(release: str, today: str) -> str:
 <meta property="og:image:alt" content="Disease economics: what published research says the diseases of a construction job cost. Demiton research.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{dataset_ld(release, today, len(current))}</script>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B1220'/%3E%3Crect x='7' y='7' width='18' height='18' fill='none' stroke='%23F9FAFB' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -440,7 +442,8 @@ a:focus-visible, summary:focus-visible {{ outline: 2px solid var(--violet-text);
 .wrap {{ max-width: 960px; margin: 0 auto; padding: 0 16px; }}
 header.top {{ border-bottom: 1px solid var(--border); }}
 header.top .wrap {{ display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 16px; padding-bottom: 16px; }}
-.wordmark {{ font: 500 14px var(--sans); letter-spacing: .15em; color: var(--text); text-decoration: none; display: inline-block; padding: 4px 0; line-height: 16px; }}
+.wordmark {{ font: 500 14px var(--sans); letter-spacing: .15em; color: var(--text); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; padding: 4px 0; line-height: 16px; }}
+.wordmark img {{ display: block; }}
 .top-links a {{ margin-left: 16px; font-size: 14px; display: inline-block; padding: 4px 0; line-height: 16px; }}
 .hero {{ padding-top: 56px; padding-bottom: 24px; }}
 h1 {{ font: 500 clamp(34px, 6vw, 56px)/1.1 var(--serif); margin: 0 0 16px; }}
@@ -550,7 +553,7 @@ footer {{ border-top: 1px solid var(--border); margin-top: 64px; padding: 32px 0
 <body>
 <a class="skip" href="#main">Skip to the figures</a>
 <header class="top"><div class="wrap">
-  <a class="wordmark" href="https://demiton.io">DEMITON</a>
+  <a class="wordmark" href="https://demiton.io"><img src="logo.png" alt="" width="24" height="24">DEMITON</a>
   <span class="top-links"><a href="https://docs.demiton.io/start-here/disease-priority">The long read</a><a href="{REPO}">GitHub</a></span>
 </div></header>
 <div class="wrap hero">
@@ -604,9 +607,8 @@ def main() -> int:
     out = Path(args.out)
     write(out, args.release)
     (out / "index.html").write_text(render(args.release, date.today().isoformat()))
-    og = ROOT / "assets" / "og.png"
-    if og.exists():
-        shutil.copy(og, out / "og.png")
+    for asset in sorted((ROOT / "assets").glob("*")):
+        shutil.copy(asset, out / asset.name)
     print(f"site -> {out}/index.html ({args.release})")
     return 0
 

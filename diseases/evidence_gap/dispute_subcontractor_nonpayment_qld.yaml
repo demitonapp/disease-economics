@@ -1,0 +1,22 @@
+label: >-
+  Average loss per unpaid subcontractor, Queensland (146 submissions to the 2019 taskforce)
+exposure_value: 288000.0
+exposure_unit: per_incident
+currency: AUD
+price_year: 2019
+exposure_basis: >-
+  Australian dollars lost per subcontractor reporting non-payment, excluding submissions about multiple
+  creditors
+exposure_kind: contractor_loss
+confidence: moderate
+derivation: as_published
+sources:
+- byrne-2019-subcontractor-nonpayment
+sample_note: >-
+  146 submissions to a Queensland Government taskforce in 2019, mostly from South Queensland and from
+  small contractors (90% under $12m revenue). Losses ranged from $1,500 to $6 million per individual.
+caveat: >-
+  Self-reported and self-selected: the subcontractors who wrote in, not a sample of all subcontractors,
+  and their own statement of what they were owed. The $112m multi-creditor submission is excluded from
+  the average. Per case, not a share of contract value, so it is never multiplied by one.
+status: current

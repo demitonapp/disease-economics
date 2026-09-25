@@ -1,0 +1,21 @@
+label: >-
+  Claimant's own cost of statutory adjudication as a share of the claim, New Zealand 2003-2023
+exposure_value: 0.192
+exposure_unit: ratio_of_other
+denominator: amount_claimed
+exposure_basis: >-
+  of the amount claimed: the claimant's own costs of taking a payment dispute to adjudication, averaged
+  over all claims
+exposure_kind: contractor_loss
+confidence: moderate
+derivation: as_published
+sources:
+- building-disputes-tribunal-2023-adjudication
+sample_note: >-
+  All statutory adjudications administered by the Building Disputes Tribunal, 2003-2023 (43 to 152 cases
+  a year). Respondents' costs average 17.64% and the adjudicator's fee 16.37% of the claim.
+caveat: >-
+  One tribunal's own caseload, not every New Zealand adjudication. An average of per-claim percentages,
+  so small claims dominate: under $30,000 the claimant's costs are 21.6%, over $10 million 1.74%. The
+  claimant is usually, not always, the contractor or subcontractor seeking payment.
+status: current

@@ -3,7 +3,8 @@
     python scripts/build_ledger.py --out dist --release v1
 
 Writes <out>/findings.json and <out>/findings.csv (the ledger the product pins by release), and
-<out>/corpus.json: the ledger plus every citation, every source and the vocabulary, which is what
+<out>/corpus.json: the ledger plus every citation, every source, the vocabulary and the history of
+every schema and record (from git), which is what
 research.demiton.io is built from. Not committed: release.yml attaches all three to the GitHub
 release, and publish.yml keeps them current on the rolling `data-latest` release.
 """
@@ -12,11 +13,12 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import subprocess
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from validate import ROOT, load_corpus, validate  # noqa: E402
+from validate import ROOT, load_corpus, split_frontmatter, validate  # noqa: E402
 
 COLUMNS = [
     "id", "family", "disease_key", "metric_key", "label", "exposure_value", "exposure_unit", "denominator",
@@ -55,6 +57,55 @@ def rows(root: Path = ROOT) -> list[dict]:
     return sorted(out, key=lambda r: r["id"])
 
 
+def _git(root: Path, *args: str) -> str | None:
+    try:
+        return subprocess.run(["git", *args], cwd=root, check=True, capture_output=True, text=True).stdout
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return None
+
+
+def _log(root: Path, path: str) -> list[dict]:
+    """Commits that touched `path`, oldest first: {commit, date, subject}."""
+    out = _git(root, "log", "--follow", "--format=%H%x09%cs%x09%s", "--", path) or ""
+    rows = [dict(zip(("commit", "date", "subject"), line.split("\t", 2))) for line in out.splitlines() if line]
+    return rows[::-1]
+
+
+def history(root: Path = ROOT) -> dict:
+    """Where the record came from, recovered from git (the publish workflow checks out full history).
+
+    schemas: every distinct document each schema has been, oldest first, with its x-schema-version
+    ("unversioned" before versions were introduced) and the commit, so a reader can see what changed
+    in each release. records: every commit that touched each source and publisher file. Empty
+    outside a git checkout.
+    """
+    if _git(root, "rev-parse", "--is-inside-work-tree") is None:
+        return {"schemas": {}, "records": {}}
+    schemas = {}
+    for sp in sorted((root / "schema").glob("*.schema.json")):
+        rel = f"schema/{sp.name}"
+        versions, last = [], None
+        for c in _log(root, rel):
+            text = _git(root, "show", f"{c['commit']}:{rel}")
+            if text is None:
+                continue
+            doc = json.loads(text)
+            if doc == last:
+                continue
+            last = doc
+            versions.append({**c, "version": str(doc.get("x-schema-version") or "unversioned"), "document": doc})
+        current = json.loads(sp.read_text())
+        if current != last:  # an uncommitted change, e.g. a local build of a PR
+            versions.append({"commit": None, "date": None, "subject": "uncommitted",
+                             "version": str(current.get("x-schema-version") or "unversioned"), "document": current})
+        schemas[sp.name.split(".")[0]] = versions
+    records = {}
+    for d, pattern in (("sources", "*.md"), ("organisations", "*.yaml")):
+        for p in sorted((root / d).glob(pattern)):
+            records[f"{d}/{p.name}"] = _log(root, f"{d}/{p.name}")
+    return {"schemas": schemas, "records": records}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="dist")
@@ -82,7 +133,12 @@ def write(out: Path, release: str) -> list[dict]:
     corpus = {
         "release": release, "schema_versions": schemas,
         "findings": [{**d, "path": r["_path"], "citations": r["_citations"]} for d, r in zip(data, full)],
-        "sources": sources, "vocab": vocab,
+        "sources": sources,
+        # The body of each sources/<slug>.md: what the source says, in the contributor's own words.
+        "source_notes": {p.stem: split_frontmatter(p.read_text())[1].strip() for p in sorted((ROOT / "sources").glob("*.md"))},
+        "vocab": vocab,
+        "schemas": {sp.name.split(".")[0]: json.loads(sp.read_text()) for sp in sorted((ROOT / "schema").glob("*.schema.json"))},
+        "history": history(ROOT),
     }
     (out / "corpus.json").write_text(json.dumps(corpus, indent=2, default=str) + "\n")
     (out / "findings.json").write_text(json.dumps({"release": release, "schema_versions": schemas, "findings": data}, indent=2) + "\n")

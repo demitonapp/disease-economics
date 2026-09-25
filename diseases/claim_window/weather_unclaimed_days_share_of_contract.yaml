@@ -1,0 +1,35 @@
+subtype: weather
+label: Site overhead of 20 unclaimed wet days, as a share of contract value
+exposure_value: 0.0035
+exposure_unit: ratio_of_contract
+exposure_basis: >-
+  of contract value at the low end (0.81% at the high end): the time-related site overhead that keeps
+  running on 20 wet days no one claims an extension or delay costs for
+exposure_kind: contractor_loss
+confidence: low
+exposure_range:
+  low: 0.0035
+  high: 0.0081
+  kind: scenario
+derivation: calculated
+calculation: >-
+  Low end: 10% preliminaries x 45.49% time-related / 261 week days a year x 20 days = 0.35% of contract
+  value. High end: 20% x 45.49% / 226 working days x 20 days = 0.81%. The contract value cancels, so the
+  share holds for any job size. 45.49% is O'Leary and Vaz-Serra table 6; 10% to 20% is their
+  introduction, citing Chan and Pasquire 2002; 261, 226 and 20 are Transport for NSW TS 01566 Table E2.1.
+statistic: modelled
+sources:
+- oleary-vaz-serra-2025-preliminaries
+- source: tfnsw-2024-major-contracts-general-requirements
+  location: Annexure G2-C2/E, Table E2.1, rows c, h and i
+sample_note: >-
+  A worked calculation, not a measurement. The time-related share of preliminaries comes from 30 senior
+  Australian estimators; the working days and the 20 wet days are the ones Transport for NSW builds into
+  its own daywork labour rate for major civil contracts.
+caveat: >-
+  A WORKED EXAMPLE, NOT A MEASUREMENT. The 20 wet days a year that Transport for NSW estimates are priced
+  into the rates, so their overhead is paid for; this is the cost of the same number of days going
+  unclaimed beyond the allowance. How many unclaimed wet days a real job loses is not measured anywhere
+  we found. The 10% to 20% preliminaries figure is a UK 2002 number read second-hand, and the estimators'
+  survey was mostly building work. Use your own preliminaries rate and wet-day count if you have them.
+status: current

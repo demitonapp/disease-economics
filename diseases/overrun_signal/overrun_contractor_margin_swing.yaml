@@ -1,17 +1,35 @@
-label: Largest firms lost the planned 9% margin plus a further 7%
-exposure_value: null
-exposure_unit: none
-exposure_basis: percentage points of margin swing, not a share of contract value
+label: Final loss on 28 completed Australian infrastructure megaprojects, largest contractors
+exposure_value: 0.07
+exposure_unit: ratio_of_contract
+exposure_basis: >-
+  of contract value, final profit at completion: the 9% tendered margin plus a further 7% (a 16-point
+  swing)
 exposure_kind: contractor_loss
-confidence: low
-derivation: as_published
+confidence: moderate
+derivation: calculated
+calculation: >-
+  Table 1, Total row: tendered profit A$3,328m at 9%, so contract value about A$37.0b; final profit
+  A$(2,681)m, about (7.2%). The paper states the same result as "its original 9% profit margin plus a
+  further deterioration of 7%" (abstract). Its "net profit (16%)" is final minus tendered, by its own
+  definition on p.12, so it is not the loss as a share of contract value.
 sources:
 - ryan-duffield-2017-contractor-margins
 sample_note: >-
-  Large Australian infrastructure projects, 17 years of outcomes. This is the one figure that speaks directly
-  to what contractors lose, and it is second-hand.
+  28 completed mega projects over A$500m, Australia, commenced 2000 to 2015, road, rail, water and social
+  infrastructure, PPP and design-and-construct, from Tier 1 contractors' open-book project data.
 caveat: >-
-  SECONDARY, and the report that cites it is sceptical - Grattan's own footnote says the study 'does not
-  explain why shareholders would tolerate such a pattern of losses'. Recorded because the alternative
-  is to pretend no contractor-side overrun figure exists.
+  Megaprojects only: the paper excluded projects under A$500m because most of them made money, so this
+  is not the loss on a typical civil job. The sample is selected for risk (PPP and D&C, alliances
+  excluded). Grattan 2021, which cited it, doubts it: 'The study does not explain why shareholders
+  would tolerate such a pattern of losses.'
 status: current
+history:
+- exposure_value: null
+  exposure_unit: none
+  confidence: low
+  is_headline: false
+  changed_on: '2026-09-25'
+  reason: >-
+    Read at source for the first time (previously second-hand via Grattan 2021). The paper gives the
+    final result as a share of contract value, so the figure moves from an unquantified margin swing to
+    a 7% loss; the grade moves from low (second-hand) to moderate (a sample selected for risk).

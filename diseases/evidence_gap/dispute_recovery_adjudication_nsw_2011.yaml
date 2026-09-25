@@ -1,0 +1,24 @@
+label: >-
+  Adjudication awards against amounts claimed, NSW 2011-12 (determinations released)
+exposure_value: 0.509
+exposure_unit: ratio_of_other
+denominator: amount_claimed
+exposure_basis: >-
+  of the amount claimed, across the 779 applications whose determination was released
+exposure_kind: money_at_stake
+confidence: high
+derivation: calculated
+calculation: >-
+  $77,903,361 adjudicated / $153,143,608 claimed = 0.509 (Fig. 4, p.4). The report states the same result
+  as 'about half of the aggregate amount claimed'.
+sources:
+- nsw-2012-sop-adjudication-report
+sample_note: >-
+  All 1,112 NSW adjudication applications in 2011-12, of which 779 reached a released determination. Claims
+  under $100,000 (74% of determinations) were awarded about 84% of the amount claimed.
+caveat: >-
+  One financial year, fourteen years old. It covers only disputes that reached a decision: the 333 applications
+  withdrawn, settled or dismissed are outside it, so it is the recovery rate once adjudicated, not on
+  every claim. Larger claims recovered a smaller share. Not comparable with the Queensland 2024-25 figure
+  or the 2018-2023 success ratios, which divide by different populations.
+status: current

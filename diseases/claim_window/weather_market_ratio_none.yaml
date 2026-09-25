@@ -7,6 +7,7 @@ exposure_basis: >-
 exposure_kind: contractor_loss
 confidence: low
 derivation: as_published
+statistic: none
 sources:
 - ballesteros-perez-2018-weather
 sample_note: >-

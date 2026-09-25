@@ -6,6 +6,7 @@ exposure_basis: of contract sum, insured (0.15%) plus uninsured (0.1%) accident 
 exposure_kind: contractor_loss
 confidence: moderate
 derivation: as_published
+statistic: unknown
 sources:
 - teo-feng-2011-accident-costs
 sample_note: >-

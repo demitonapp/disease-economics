@@ -6,6 +6,13 @@ exposure_basis: of contract value, held until the defects liability period ends
 exposure_kind: money_at_stake
 confidence: moderate
 derivation: as_published
+statistic: mean
+sample_size:
+  n: 357
+  unit: respondents
+  note: Of 419 clients who responded, 357 had held retentions in the last three years and were asked the
+    full survey. The report gives no base for the typical-retention question itself, so 357 is an upper
+    bound. The 508 contractors did not produce this figure.
 sources:
 - pye-tait-2017-retentions
 sample_note: >-

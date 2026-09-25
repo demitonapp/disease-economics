@@ -12,6 +12,11 @@ calculation: >-
   A$(2,681)m, about (7.2%). The paper states the same result as "its original 9% profit margin plus a
   further deterioration of 7%" (abstract). Its "net profit (16%)" is final minus tendered, by its own
   definition on p.12, so it is not the loss as a share of contract value.
+statistic: pooled_ratio
+sample_size:
+  n: 28
+  unit: projects
+  note: 28 completed Australian megaprojects over A$500m, commenced 2000-2015
 sources:
 - ryan-duffield-2017-contractor-margins
 sample_note: >-

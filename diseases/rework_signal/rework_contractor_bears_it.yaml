@@ -6,6 +6,7 @@ exposure_basis: incidence and profit impact, not a share of contract value
 exposure_kind: contractor_loss
 confidence: moderate
 derivation: as_published
+statistic: none
 sources:
 - love-2019-make-or-break
 sample_note: >-

@@ -5,6 +5,12 @@ exposure_basis: of contract value, including indirect costs
 exposure_kind: contractor_loss
 confidence: moderate
 derivation: as_published
+statistic: mean
+sample_size:
+  n: 115
+  unit: projects
+  note: Questionnaire survey of 115 Australian civil infrastructure projects; abstract gives the mean
+    over the whole sample
 sources:
 - love-2010-rework-civil
 sample_note: >-

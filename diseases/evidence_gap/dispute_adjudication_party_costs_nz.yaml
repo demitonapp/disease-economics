@@ -10,6 +10,7 @@ exposure_basis: >-
 exposure_kind: derived_contractor_loss
 confidence: moderate
 derivation: as_published
+statistic: mean
 sources:
 - building-disputes-tribunal-2023-adjudication
 sample_note: >-

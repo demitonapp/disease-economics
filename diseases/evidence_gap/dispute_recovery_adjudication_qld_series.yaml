@@ -18,6 +18,12 @@ calculation: >-
   $15,854,534 / $51,816,751 = 0.306; 2022-23 $21,858,656 / $152,408,699 = 0.143; 2023-24 $61,524,294 /
   $225,306,009 = 0.273; 2024-25 $81,873,482 / $956,966,294 = 0.086. Pooled over five years: $218,614,077
   / $1,468,752,504 = 0.1488.
+statistic: pooled_ratio
+sample_size:
+  n: 983
+  unit: decisions
+  note: 'QBCC decisions released 2020-21 to 2024-25: 187 + 176 + 172 + 234 + 214; pooled dollars, so 2024-25
+    dominates'
 sources:
 - source: qbcc-2021-annual-report
   location: Table 6, decisions released

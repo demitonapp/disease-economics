@@ -7,6 +7,11 @@ exposure_basis: >-
 exposure_kind: derived_contractor_loss
 confidence: high
 derivation: as_published
+statistic: mean
+sample_size:
+  n: 221
+  unit: awards
+  note: 221 ICC awards from 2012, all sectors, not construction-specific
 sources:
 - icc-2015-costs
 sample_note: 221 ICC awards from 2012, all sectors - not construction-specific.

@@ -6,11 +6,21 @@ exposure_basis: of original contract value, client-approved change orders
 exposure_kind: money_at_stake
 confidence: moderate
 derivation: as_published
+statistic: pooled_ratio
+sample_size:
+  n: 67
+  unit: projects
+  note: The paper calls 10.6% a 'mean', but it equals mean change orders ($5,107,252) divided by mean
+    OCV ($48,201,497) = 0.10596. That is the same as total change orders ($342,185,917) divided by total
+    OCV across the 67 projects, so it is a ratio of totals, not a mean of per-project percentages. The
+    '11% of work value' in Table 3 is the same ratio, rounded.
 sources:
 - love-2017-change-orders
 sample_note: >-
-  67 completed public infrastructure projects from one contractor, Australia, civil. Mean change orders
-  were about AU$5.1m and made up 11% of work value 2011-2014.
+  67 completed public infrastructure projects from one contractor, Australia, civil, 2011-2014. Change
+  orders totalled about AU$342m against about AU$3.2bn of original contract value, so 10.6% is a total
+  over a total (the paper calls it a mean: average change orders of about AU$5.1m over average contract
+  value of about AU$48.2m).
 caveat: >-
   SIZE OF THE POT, NOT A LOSS. No study measures how much of it a typical contractor fails to claim. Change
   orders were linked to HIGHER contractor margins, which is the opposite of a loss.

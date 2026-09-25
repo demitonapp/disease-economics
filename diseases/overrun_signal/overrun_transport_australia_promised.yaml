@@ -6,6 +6,12 @@ exposure_basis: of the first publicly promised cost, final versus promised
 exposure_kind: owner_side
 confidence: moderate
 derivation: as_published
+statistic: pooled_ratio
+sample_size:
+  n: 836
+  unit: projects
+  note: Report attributes the 24% to all 836 projects; Appendix B computes it over completed projects
+    less 56 outliers, count not stated
 sources:
 - terrill-danks-2016-transport-overruns
 sample_note: >-

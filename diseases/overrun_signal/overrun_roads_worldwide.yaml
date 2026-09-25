@@ -6,6 +6,12 @@ exposure_basis: of budget, decision to build versus actual cost, real terms
 exposure_kind: owner_side
 confidence: high
 derivation: as_published
+statistic: mean
+sample_size:
+  n: 167
+  unit: projects
+  note: Roads only; the all-types 28% is N=258. Means of each project's own escalation, with per-project
+    sd reported.
 sources:
 - flyvbjerg-2004-cost-overrun
 sample_note: >-

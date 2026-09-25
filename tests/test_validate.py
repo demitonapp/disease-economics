@@ -89,7 +89,8 @@ class CorpusTest(unittest.TestCase):
         self.assertFails("only entry")
 
     def test_secondary_needs_read_via(self):
-        p = self.tmp / "sources" / "teo-feng-2011-accident-costs.md"
+        # Any second-hand source will do; naming one breaks the day it is read at source.
+        p = next(s for s in sorted((self.tmp / "sources").glob("*.md")) if "access: secondary" in s.read_text())
         text = p.read_text()
         start = text.index("read_via:")
         end = text.index("read_on:")

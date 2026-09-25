@@ -1,0 +1,20 @@
+label: >-
+  Contractors' share of the extra cost of overruns, Belgian public infrastructure (expert survey)
+exposure_value: 0.405
+exposure_unit: ratio_of_other
+denominator: overrun_additional_cost
+exposure_basis: >-
+  of the total additional cost caused by overruns, as apportioned across the parties by 52 surveyed experts
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+sources:
+- molinari-2025-belgian-overruns
+sample_note: >-
+  52 Belgian public infrastructure stakeholders, 35% of them general contractors. Public tendering authorities
+  were assigned 49% and contractors 40.5%.
+caveat: >-
+  An opinion of who pays, not a measured cost: respondents apportioned 100% of the extra cost by judgement.
+  Contractors assigned themselves 50.7%, others assigned them 35.6%. Belgium only, and a share of the
+  overrun, not of the contract, so it is never multiplied by a contract value.
+status: current

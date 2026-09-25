@@ -1,0 +1,14 @@
+# research.demiton.io - rebuilt from the corpus on every merge to main.
+[build]
+  command = "pip install -r requirements.txt && git fetch --tags --quiet || true; python scripts/build_site.py --out site --release \"$(git describe --tags --abbrev=0 2>/dev/null || echo main)\""
+  publish = "site"
+
+[build.environment]
+  PYTHON_VERSION = "3.12"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"

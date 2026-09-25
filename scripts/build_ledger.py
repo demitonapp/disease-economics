@@ -62,19 +62,24 @@ def main() -> int:
     if errors:
         print("the corpus does not validate; run scripts/validate.py", file=sys.stderr)
         return 1
-    out = Path(args.out)
+    data = write(Path(args.out), args.release)
+    print(f"{len(data)} findings -> {args.out}/findings.json, {args.out}/findings.csv ({args.release})")
+    return 0
+
+
+def write(out: Path, release: str) -> list[dict]:
+    """Write findings.json and findings.csv to `out`; return the rows. Shared with build_site.py."""
     out.mkdir(parents=True, exist_ok=True)
     data = rows(ROOT)
-    (out / "findings.json").write_text(json.dumps({"release": args.release, "findings": data}, indent=2) + "\n")
+    (out / "findings.json").write_text(json.dumps({"release": release, "findings": data}, indent=2) + "\n")
     with (out / "findings.csv").open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=["release", *COLUMNS])
         w.writeheader()
         for r in data:
-            w.writerow({"release": args.release, **{
+            w.writerow({"release": release, **{
                 k: json.dumps(v) if isinstance(v, (list, dict)) else v for k, v in r.items()
             }})
-    print(f"{len(data)} findings -> {out}/findings.json, {out}/findings.csv ({args.release})")
-    return 0
+    return data
 
 
 if __name__ == "__main__":

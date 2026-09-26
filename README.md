@@ -36,8 +36,9 @@ The long read that works these figures through a $5 million job is at
   planned margin. Never counted as a cost.
 - **[`protections/`](protections)** - evidence that a protection mechanism matters. No percentages
   saved: nobody has measured that yet.
-- **[`schema/`](schema)** and **[`vocab/`](vocab)** - the shape every file must have, and the code
-  lists (ISO 3166 jurisdictions, ISIC industries).
+- **[`vendor/registers-research/`](vendor/registers-research)** and **[`vocab/`](vocab)** - the shape
+  every file must have (pinned from [`demitonapp/registers`](https://github.com/demitonapp/registers),
+  the source of truth), and the code lists (ISO 3166 jurisdictions, ISIC industries).
 
 ## What this is not
 
@@ -61,7 +62,9 @@ well-argued dispute removed a number, disputing would be the cheapest way to cen
 - **Data** - the frontmatter and our own words in `sources/`, and everything in `diseases/`,
   `context/`, `protections/` and `vocab/`, and the ledger built from them: [CC BY 4.0](LICENSE).
   Credit it as "disease-economics by Demiton".
-- **Code** - `schema/`, `scripts/`, `tests/` and `.github/`: [MIT](LICENSE-CODE).
+- **Code** - `scripts/`, `tests/` and `.github/`: [MIT](LICENSE-CODE).
+- **`vendor/registers-research/`** is a pinned copy of [`demitonapp/registers`](https://github.com/demitonapp/registers)'s
+  own CC BY 4.0-licensed schemas - not ours to relicense, refreshed by `scripts/vendor_registers.sh`.
 - **Quoted passages** from sources remain the property of their authors and publishers. They are
   reproduced under fair dealing for research, criticism or review (Copyright Act 1968 (Cth),
   ss 40-41) and are not covered by either licence.

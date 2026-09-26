@@ -137,10 +137,12 @@ A finding is never deleted. It is `withdrawn`, with a `withdrawn_reason`.
 
 ## 10. Schema versions
 
-Every schema in [`schema/`](schema) carries its own semantic version in `x-schema-version`, and the
+The finding/source/protection schemas live in [`demitonapp/registers`](https://github.com/demitonapp/registers)
+(`research/`), pinned here at [`vendor/registers-research/`](vendor/registers-research) via
+`scripts/vendor_registers.sh`. Each carries its own semantic version in `x-schema-version`, and the
 ledger (`findings.json`) records the versions its rows were validated against. The version is the
 schema's, not the data's: releases (`v4`) tag the corpus; schema versions change only when a schema
-does. CI refuses a schema change whose version bump is too small:
+does. `registers`' CI refuses a schema change whose version bump is too small:
 
 | Bump | When |
 |---|---|

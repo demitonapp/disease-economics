@@ -8,7 +8,7 @@ supports, weakens or replaces a figure here. You don't need to ask first.
 **One source per pull request**, so each can be accepted or rejected on its own.
 
 1. **Add `sources/<slug>.md`.** The slug is `<first-author-or-body>-<year>-<topic>`, lower case with
-   hyphens. Copy an existing source file for the frontmatter; [`schema/source.schema.json`](schema/source.schema.json)
+   hyphens. Copy an existing source file for the frontmatter; [`vendor/registers-research/source.schema.json`](vendor/registers-research/source.schema.json)
    is the full list of fields. The body says what the source says, in your own words.
 2. **Cite it from a finding**, in one of three ways:
    - it supports a figure: add its slug to that finding's `sources`;
@@ -58,9 +58,11 @@ Then either a new finding in `diseases/rework_signal/`, or the source added to a
 
 ## Changing a schema
 
-If your change needs a new field or a new allowed value (a new denominator, say), edit the schema in
-[`schema/`](schema) and bump its `x-schema-version`: MINOR for anything that only adds, MAJOR for
-anything that removes or narrows. CI says which it needs. METHOD.md Section 10 has the rule.
+If your change needs a new field or a new allowed value (a new denominator, say), the schema itself
+now lives in [`demitonapp/registers`](https://github.com/demitonapp/registers) (`research/`), not
+here: open a PR there, bump `x-schema-version` (MINOR for anything that only adds, MAJOR for anything
+that removes or narrows - its CI says which it needs), then run `scripts/vendor_registers.sh` here
+against the new tag to pick it up. METHOD.md Section 10 has the rule.
 
 ## What gets rejected, and why
 

@@ -18,7 +18,11 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from validate import ROOT, load_corpus, split_frontmatter, validate  # noqa: E402
+from validate import ROOT, SCHEMA_DIR, load_corpus, split_frontmatter, validate  # noqa: E402
+
+#: Schemas that once lived at schema/<name>.schema.json before spec 09 P4 pinned them from
+#: demitonapp/registers instead - kept so `history()` can still walk their pre-migration git log.
+SCHEMA_NAMES = ("finding", "source", "protection")
 
 COLUMNS = [
     "id", "family", "disease_key", "metric_key", "subtype", "label", "exposure_value", "exposure_unit", "denominator",
@@ -82,8 +86,10 @@ def history(root: Path = ROOT) -> dict:
     if _git(root, "rev-parse", "--is-inside-work-tree") is None:
         return {"schemas": {}, "records": {}}
     schemas = {}
-    for sp in sorted((root / "schema").glob("*.schema.json")):
-        rel = f"schema/{sp.name}"
+    for name in SCHEMA_NAMES:
+        # The pre-migration history lives at the old schema/<name>.schema.json path - git log
+        # still has it even though the file itself moved to demitonapp/registers (spec 09 P4).
+        rel = f"schema/{name}.schema.json"
         versions, last = [], None
         for c in _log(root, rel):
             text = _git(root, "show", f"{c['commit']}:{rel}")
@@ -94,11 +100,13 @@ def history(root: Path = ROOT) -> dict:
                 continue
             last = doc
             versions.append({**c, "version": str(doc.get("x-schema-version") or "unversioned"), "document": doc})
-        current = json.loads(sp.read_text())
-        if current != last:  # an uncommitted change, e.g. a local build of a PR
-            versions.append({"commit": None, "date": None, "subject": "uncommitted",
-                             "version": str(current.get("x-schema-version") or "unversioned"), "document": current})
-        schemas[sp.name.split(".")[0]] = versions
+        vendored = root / SCHEMA_DIR / f"{name}.schema.json"
+        if vendored.exists():
+            current = json.loads(vendored.read_text())
+            if current != last:  # a version pinned from registers since the last history entry
+                versions.append({"commit": None, "date": None, "subject": "pinned from demitonapp/registers",
+                                 "version": str(current.get("x-schema-version") or "unversioned"), "document": current})
+        schemas[name] = versions
     records = {}
     for d, pattern in (("sources", "*.md"), ("organisations", "*.yaml")):
         for p in sorted((root / d).glob(pattern)):
@@ -125,7 +133,7 @@ def write(out: Path, release: str) -> list[dict]:
     out.mkdir(parents=True, exist_ok=True)
     full = rows(ROOT)
     data = [{k: v for k, v in r.items() if not k.startswith("_")} for r in full]
-    schemas = {p.name: json.loads(p.read_text()).get("x-schema-version") for p in sorted((ROOT / "schema").glob("*.schema.json"))}
+    schemas = {p.name: json.loads(p.read_text()).get("x-schema-version") for p in sorted((ROOT / SCHEMA_DIR).glob("*.schema.json"))}
     _, sources, _, _ = load_corpus(ROOT)
     codes = {x for s in sources.values() for c in s["jurisdictions"] + s["industries"] for x in (c, c.split("-")[0])}
     vocab = {name: {k: v for k, v in json.loads((ROOT / "vocab" / f"{name}.json").read_text()).items() if k in codes}
@@ -138,7 +146,7 @@ def write(out: Path, release: str) -> list[dict]:
         # The body of each sources/<slug>.md: what the source says, in the contributor's own words.
         "source_notes": {p.stem: split_frontmatter(p.read_text())[1].strip() for p in sorted((ROOT / "sources").glob("*.md"))},
         "vocab": vocab,
-        "schemas": {sp.name.split(".")[0]: json.loads(sp.read_text()) for sp in sorted((ROOT / "schema").glob("*.schema.json"))},
+        "schemas": {sp.name.split(".")[0]: json.loads(sp.read_text()) for sp in sorted((ROOT / SCHEMA_DIR).glob("*.schema.json"))},
         "history": history(ROOT),
     }
     (out / "corpus.json").write_text(json.dumps(corpus, indent=2, default=str) + "\n")

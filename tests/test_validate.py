@@ -13,7 +13,7 @@ import yaml
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
-from validate import check_against_base, validate  # noqa: E402
+from validate import SCHEMA_DIR, check_against_base, validate  # noqa: E402
 
 FINDING = "diseases/rework_signal/rework_total_civil_survey.yaml"
 
@@ -21,7 +21,7 @@ FINDING = "diseases/rework_signal/rework_total_civil_survey.yaml"
 class CorpusTest(unittest.TestCase):
     def setUp(self):
         self.tmp = Path(tempfile.mkdtemp())
-        for d in ("schema", "vocab", "sources", "diseases", "context", "protections"):
+        for d in (SCHEMA_DIR, "vocab", "sources", "diseases", "context", "protections"):
             if (REPO / d).exists():
                 shutil.copytree(REPO / d, self.tmp / d)
         (self.tmp / "protections").mkdir(exist_ok=True)
@@ -153,49 +153,8 @@ class BaseTest(CorpusTest):
         self.edit(FINDING, history=[{"changed_on": "2026-10-01", "reason": "rewritten"}])
         self.assertTrue(any("append-only" in e for e in self.base_errors()))
 
-    def _bumped(self, part):
-        """The finding schema's current version with one part bumped: tests follow the schema's own history."""
-        import json
-        major, minor, patch = map(int, json.loads((self.tmp / "schema" / "finding.schema.json").read_text())["x-schema-version"].split("."))
-        return {"major": f"{major + 1}.0.0", "minor": f"{major}.{minor + 1}.0", "patch": f"{major}.{minor}.{patch + 1}"}[part]
-
-    def _schema(self, change, version):
-        import json
-        sp = self.tmp / "schema" / "finding.schema.json"
-        s = json.loads(sp.read_text())
-        change(s)
-        if version:
-            s["x-schema-version"] = version
-        sp.write_text(json.dumps(s, indent=2))
-
-    def test_widening_an_enum_needs_a_minor_bump(self):
-        widen = lambda s: s["properties"]["denominator"]["enum"].append("new_denominator")  # noqa: E731
-        minor = self._bumped("minor")
-        self._schema(widen, None)
-        self.assertTrue(any("MINOR" in e for e in self.base_errors()))
-        self._schema(lambda s: None, minor)
-        self.assertEqual(self.base_errors(), [])
-
-    def test_narrowing_an_enum_needs_a_major_bump(self):
-        narrow = lambda s: s["properties"]["confidence"]["enum"].remove("low")  # noqa: E731
-        minor, major = self._bumped("minor"), self._bumped("major")
-        self._schema(narrow, minor)
-        self.assertTrue(any("MAJOR" in e for e in self.base_errors()))
-        self._schema(lambda s: None, major)
-        self.assertEqual(self.base_errors(), [])
-
-    def test_a_new_optional_object_with_its_own_required_fields_is_minor(self):
-        minor = self._bumped("minor")
-        add = lambda s: s["properties"].update(extra={"type": "object", "required": ["n"], "properties": {"n": {"type": "integer"}}})  # noqa: E731
-        self._schema(add, minor)
-        self.assertEqual(self.base_errors(), [])
-
-    def test_a_description_change_needs_a_patch_bump(self):
-        patch = self._bumped("patch")
-        self._schema(lambda s: s.update(description="reworded"), None)
-        self.assertTrue(any("PATCH" in e for e in self.base_errors()))
-        self._schema(lambda s: None, patch)
-        self.assertEqual(self.base_errors(), [])
+    # Schema bump enforcement (widen/narrow/add/description -> MINOR/MAJOR/PATCH) moved with the
+    # schemas themselves to demitonapp/registers' own CI - see its scripts/bump_check.py.
 
     def test_typo_fix_needs_no_source(self):
         self.edit(FINDING, caveat="Respondents' estimates, not measured cost records.")

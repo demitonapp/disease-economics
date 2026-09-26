@@ -6,7 +6,8 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
-from build_ledger import history  # noqa: E402
+from build_ledger import SCHEMA_NAMES, history  # noqa: E402
+from validate import SCHEMA_DIR  # noqa: E402
 
 
 class HistoryTest(unittest.TestCase):
@@ -14,10 +15,11 @@ class HistoryTest(unittest.TestCase):
         h = history(REPO)
         if not h["schemas"]:
             self.skipTest("not a git checkout")
-        for sp in (REPO / "schema").glob("*.schema.json"):
-            versions = h["schemas"][sp.name.split(".")[0]]
-            self.assertTrue(versions, sp.name)
-            self.assertEqual(versions[-1]["document"], json.loads(sp.read_text()), sp.name)
+        for name in SCHEMA_NAMES:
+            sp = REPO / SCHEMA_DIR / f"{name}.schema.json"
+            versions = h["schemas"][name]
+            self.assertTrue(versions, name)
+            self.assertEqual(versions[-1]["document"], json.loads(sp.read_text()), name)
             self.assertEqual(versions[-1]["version"], json.loads(sp.read_text()).get("x-schema-version", "unversioned"))
 
     def test_every_source_has_a_record_history(self):

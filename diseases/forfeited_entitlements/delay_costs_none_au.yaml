@@ -53,8 +53,9 @@ sample_note: >-
   Constructors Association contract risk survey; Arcadis construction disputes Australia causes. The
   nearest measure is time-related site overhead: 30 Australian estimators put 45.49% of preliminaries as
   time-related for the whole job (Table 6), and preliminaries at 10% to 20% of the contract sum (UK 2002,
-  second-hand); the corpus already holds the resulting per-day worked example under
-  weather_wet_day_overhead. Not counted because it would not open: HKA Crux 2025 (global, page without
+  second-hand); the corpus holds the resulting per-day and share-of-contract worked
+  examples in this cause as weather_wet_day_overhead and weather_unclaimed_days_share_of_contract (moved
+  here from penalty_days on review): calculations, not measurements of money left unclaimed. Not counted because it would not open: HKA Crux 2025 (global, page without
   figures), Austlii judgments (403).
 caveat: >-
   Recorded as `none` on purpose. The time-related overhead share says what a delay day costs in principle,

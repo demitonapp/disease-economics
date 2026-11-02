@@ -1,4 +1,4 @@
-subtype: penalty_days
+subtype: unclaimed_delay_costs
 label: Time-related site overhead per working day, Australian estimators
 exposure_value: 2010.0
 exposure_unit: per_wet_day
@@ -40,3 +40,7 @@ status: current
 history:
   - changed_on: '2026-11-02'
     reason: "subtype 'weather' is now the registers' cause 'penalty_days' (schema 3.0.0, SM070)"
+  - changed_on: '2026-11-02'
+    reason: >-
+      subtype moved from 'penalty_days' to 'unclaimed_delay_costs' on SM070 P2 review: the figure measures time-related site overhead per day (extended preliminaries and site overheads), which is what the
+      delay-costs cause covers, not liquidated damages running on time never claimed (the penalty_days cause)

@@ -1,0 +1,32 @@
+subtype: workmanship_quality
+label: >-
+  Average cost to rectify a defect in a new apartment, $9,349, national owner survey
+exposure_value: 9349
+exposure_unit: per_incident
+currency: AUD
+price_year: 2021
+exposure_basis: >-
+  per defect, rectification cost in an apartment building; owners' own costs scaled to total cost to all
+  parties by the CIE; excludes owners' time and other costs
+exposure_kind: owner_side
+confidence: low
+derivation: as_published
+statistic: mean
+sample_size:
+  n: 181
+  unit: respondents
+  note: Apartment owners in the survey; fewer answered the cost questions
+sources:
+- cie-2021-building-confidence-report
+sample_note: >-
+  Apartment owners' personal rectification cost averaged $8,494; the CIE multiplied it by the detached-house ratio of total cost to
+  personal cost, about 1.10, to give $9,349 (Table 2.17 and the text
+  above it). The report's total cost per apartment defect, including owners' time and other costs, is
+  $12,238. Waterproofing in apartments averaged $19,648 a defect and flammable cladding $34,375, the
+  latter set from one VCAT judgment on the Lacrosse Tower.
+caveat: >-
+  Graded low because the CIE did not use apartment owners' reported total cost: respondents confused the
+  cost to the whole building with their own unit's, so it scaled personal cost by the detached-house ratio. Owner side, not the contractor's loss, and residential apartments rather than civil works. Owners'
+  estimates, covering every defect reported, including some weighted as caused by maintenance or
+  alteration. The report does not state the price year; 2021 is the report's date.
+status: current

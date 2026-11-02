@@ -1,0 +1,45 @@
+subtype: design_documentation
+label: >-
+  Mean design error cost 14.2% of contract value, 139 Australian projects
+exposure_value: 0.142
+exposure_unit: ratio_of_contract
+exposure_basis: >-
+  of original contract value, cost of design errors, direct and indirect, as estimated by survey respondents
+exposure_kind: money_at_stake
+confidence: moderate
+derivation: as_published
+statistic: mean
+sample_size:
+  n: 139
+  unit: projects
+  note: Questionnaire survey of 139 Australian construction projects, mixed types
+sources:
+- love-2014-probabilistic-design-error-costs
+- lopez-love-2012-design-error-costs
+considered:
+- source: love-2014-design-error-organisational-practices
+  reason: >-
+    Reports the same 14.2% for the same 139 Australian projects in a second paper by the same group, so it
+    is the same sample read again, not independent corroboration.
+- source: love-edwards-smith-2006-contract-documentation
+  reason: >-
+    A survey of 161 Australian projects that found no significant relationship between contract
+    documentation and rework cost. It gives no share of contract value for documentation, so it does not
+    give a figure for this cause.
+- source: aca-2026-design-best-practice-principles
+  reason: >-
+    Says late design changes and unclear scope drive cost into major projects, with no figure, sample or
+    data source.
+sample_note: >-
+  Questionnaire survey of 139 Australian projects. The 2012 paper gives a mean direct design error cost of
+  6.85% and a mean indirect cost of 7.36% of contract value; the 2014 paper gives a mean design error cost
+  of 14.2%. 6.85 plus 7.36 is 14.21, so the two appear to describe the same sample, which the abstracts do
+  not state outright.
+caveat: >-
+  Respondents' estimates of design error cost, not measured cost records, and the abstracts do not say who
+  carried the cost (contractor, designer or client), so it is filed as money at stake and not as
+  contractor loss. Abstracts only: the full texts were not read. The 2012 abstract says cost did not vary
+  significantly by project type, while the 2014 abstract reports significant differences by type, which the
+  abstracts do not reconcile. The 2012 abstract does not name the country; Australia comes from the 2014
+  abstracts.
+status: current

@@ -1,0 +1,24 @@
+subtype: design_documentation
+label: >-
+  Mean design error cost 23.44% of contract value on the civil engineering projects in a 139-project Australian sample
+exposure_value: 0.2344
+exposure_unit: ratio_of_contract
+exposure_basis: >-
+  of original contract value, cost of design errors on the civil engineering projects in the sample, as
+  estimated by survey respondents
+exposure_kind: money_at_stake
+confidence: low
+derivation: as_published
+statistic: mean
+sources:
+- love-2014-probabilistic-design-error-costs
+sample_note: >-
+  The civil engineering subgroup of the 139 Australian projects in design_error_cost_au. The abstract does
+  not give how many of the 139 were civil. Fit-out projects averaged 22.50% and projects above A$101
+  million 26.18%.
+caveat: >-
+  Graded low because the subgroup size is not in the abstract, and the 2012 abstract on what appears to be the same
+  sample says cost did not vary significantly by project type. Respondents' estimates, not cost records, and
+  the carrier of the cost is not stated. Abstract only; full text not read. Whether the sampled civil
+  projects were road, rail or utilities is not stated.
+status: current

@@ -1,0 +1,62 @@
+subtype: planning_procurement
+label: No published figure for rework or waste caused by wrong or late procurement and sequencing in Australia
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - Australian sources measure material waste in tonnes and name over-ordering as a practice, but none gives a cost of wrong quantity, wrong type, or wrong sequence
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- gbca-2025-wasted-opportunity
+considered:
+- source: ratnasabapathy-2019-residential-waste-generation
+  reason: >-
+    10 Australian residential projects. Waste quantities and diversion rates, no cost and no cause.
+- source: ratnasabapathy-2020-waste-diversion
+  reason: >-
+    National diversion rate of 64% and 12 residential projects. Quantities only.
+- source: love-2025-non-conformances-eto
+  reason: >-
+    Names processes and methods not followed and defective materials as root causes of non-conformances on
+    infrastructure, with a mean rework cost of 0.30% of contract value, but the abstract does not name the
+    country and does not split cost by cause.
+- source: byda-2024-utility-strikes-economic-assessment
+  reason: >-
+    Mentions resumption costs when work stops at an unexpected asset, in words only, with no figure for
+    them.
+- source: love-2019-make-or-break
+  reason: >-
+    Recorded rework of 0.39% of contract value at one Australian contractor, reported as a total per project
+    with no breakdown by cause in the manuscript.
+- source: love-edwards-2005-rework-costs
+  reason: >-
+    Direct 6.4% and indirect 5.9% rework from 161 Australian projects; no split by cause.
+- source: love-li-2000-causes-costs-rework
+  reason: >-
+    Two Australian projects, rework 3.15% and 2.40% of contract value; names client change and contract
+    documentation as the main causes, not procurement or sequencing.
+- source: love-2002-project-type-procurement-rework
+  reason: >-
+    161 projects. Finds rework did not vary with procurement method, which is the contract route, not wrong
+    or late buying.
+- source: cie-2021-building-confidence-report
+  reason: >-
+    Defect cost per defect in housing; attributes defects to initial build or to maintenance, with no
+    split for procurement.
+sample_note: >-
+  Searches: "Australian construction material waste over-ordering percent of material purchased cost study",
+  "Australian residential construction site material wastage percent over-ordering study", "National Waste
+  Report 2022 construction and demolition waste", and the Love-group rework searches listed under the
+  scope_change record, read for procurement and sequencing content. Frequencies that
+  exist but are not a cost: wasted material averaged 141 kg per square metre, 22% of material weight, on the
+  GBCA sample; the GBCA methodology note says industry practice is a 10% over-order, with no source; the
+  national construction and demolition diversion rate is about 64%.
+caveat: >-
+  Recorded as none on purpose. GBCA prices waste at up to about $384 per square metre, but by assuming
+  wasted material costs the same as used material and counting all waste, not only over-ordering, wrong type
+  or rework. That is a valuation of waste, not a cost of this cause. The 10% over-order is an unsourced
+  statement of practice. A vendor blog seen only in search results claims 10 to 15% waste on purchased material; it was not
+  opened and cites no study. No source read measures temporary-works failures or sequencing error cost.
+status: current

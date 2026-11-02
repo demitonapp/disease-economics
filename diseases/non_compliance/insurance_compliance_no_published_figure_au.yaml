@@ -1,0 +1,53 @@
+subtype: insurance_compliance
+label: No published Australian national cost for missing or insufficient insurance cover in construction
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - national statistics give premium rates and claim costs for insured employers, not the cost of uninsured
+  contractors or under-declared wages
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- swa-2023-cpm25-premiums
+considered:
+- source: fsc-2025-annual-data-report-2024
+  reason: >-
+    Table 23 reports accredited companies' premium rate change over time (57% reduced it by an average 33% after
+    three years); a benefit of accreditation, not a cost of lacking cover.
+- source: dewr-2023-fsc-independent-review
+  reason: >-
+    Quotes earlier scheme premium reduction data (more than 60% of companies, 37% after six years); nothing on uninsured
+    work or under-declared wages.
+- source: swa-2024-key-whs-statistics
+  reason: >-
+    Construction median compensation AU$18,500 per serious claim is what schemes paid on claims; it does not separate
+    claims on uninsured or under-insured employers.
+- source: workcover-qld-2025-premium-compliance
+  reason: >-
+    Queensland only: unpaid premium plus a penalty of 100% of it, AU$4,181,129 premium raised for uninsured or under-insured
+    employers in 2025-26 to 30 September 2025, all industries; a state scheme total, not a per-job figure.
+- source: deloitte-2022-safer-healthier-wealthier
+  reason: Modelled economy-wide gain (AU$28.6 billion a year); not a cost to a contractor of an insurance gap.
+- source: swa-2025-whs-prosecutions-dashboard
+  reason: WHS prosecutions do not cover insurance offences, and the average fine is not split by breach.
+- source: swa-2025-prosecutions-data-dictionary
+  reason: Records WHS Act and Regulation offences only; no insurance field.
+- source: swa-2023-cpm25-whs-compliance-enforcement
+  reason: Enforcement tables cover WHS notices and fines, not workers compensation premium compliance.
+sample_note: >-
+  Search terms used: WHS prosecutions average fine Safe Work Australia; comparative performance monitoring fines
+  per conviction; Federal Safety Commissioner annual data accreditation suspended revoked; Key WHS statistics median
+  compensation construction; uninsured contractors workers compensation premium avoidance under-declared wages construction;
+  national estimate workers compensation premium underpayment black economy; AFCA datacube business insurance claim
+  denied. Not opened because the page refused automated access (403): the NSW regulator's review of under-insurance,
+  WorkCover WA's page on uninsured employers, AFCA's datacube page. A frequency exists, but it is not a cost of
+  missing cover: the standardised construction premium rate was 2.29% of payroll in 2021-22 against 1.34% for all
+  industries; that is what insured employers pay, and it is a rate on payroll that the schema cannot hold (no payroll
+  denominator).
+caveat: >-
+  Recorded as none on purpose. The construction premium rate would price the premium avoided by under-declaring,
+  but no national source read states how much payroll goes undeclared or uninsured, so a loss cannot be built without
+  inventing it. The state figures found are scheme totals for one state.
+status: current

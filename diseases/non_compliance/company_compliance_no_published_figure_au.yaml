@@ -1,0 +1,54 @@
+subtype: company_compliance
+label: >-
+  No published Australian national cost for lapsed contractor licence, prequalification or accreditation in construction
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - national sources count accredited companies and audit findings; licence fines and prequalification sanctions
+  found are single state cases or carry no dollar amount
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- fsc-2025-annual-data-report-2024
+considered:
+- source: dewr-2023-fsc-independent-review
+  reason: >-
+    Reviews the accreditation scheme, its powers and cost recovery; no fine or revenue lost for a lapsed accreditation.
+- source: tmr-2026-tipds-part2-construction-prequalification
+  reason: >-
+    Queensland prequalification manual: suspension, downgrade or cancellation after a show cause notice, with no
+    dollar amount and no cost of lost work.
+- source: qbcc-2021-wrong-licence-fines
+  reason: >-
+    Queensland only: a licensee fined AU$6,500 plus AU$11,000 restitution for work outside the licence class; one
+    case from 2021.
+- source: lha-vic-2024-unlicensed-labour-hire-penalties
+  reason: >-
+    Victoria only: AU$759,674 in total penalties on five companies and three directors for unlicensed labour hire;
+    one case and a labour hire licence, not a contractor licence.
+- source: swa-2025-whs-prosecutions-dashboard
+  reason: National average fine per WHS prosecution is not split by licence or accreditation breach.
+- source: swa-2025-prosecutions-data-dictionary
+  reason: No field for the kind of failure; licensing and accreditation lapses cannot be isolated.
+- source: swa-2023-cpm25-whs-compliance-enforcement
+  reason: National WHS fines and notices only; nothing on contractor licensing or prequalification.
+- source: national-epa-2026-infringement-notices
+  reason: >-
+    Fines for breaching environmental approval conditions are a site matter and do not touch a company's licence
+    or prequalification status.
+sample_note: >-
+  Search terms used: WHS prosecutions average fine Safe Work Australia; comparative performance monitoring fines
+  per conviction; Federal Safety Commissioner annual data accreditation suspended revoked; Key WHS statistics median
+  compensation construction; national prequalification system suspension cancellation; unlicensed contractor penalty.
+  A frequency exists, but it is not a cost: 606 companies held Federal Safety Commissioner accreditation at the
+  end of 2024, 48 were newly accredited, and 3,319 corrective action reports were raised in 657 audits (a stated
+  compliance rate of 80.9%); the report states no count of suspensions or cancellations. Not opened because the
+  page refused automated access (403): the Austroads national prequalification page and the South Australian DIT
+  prequalification guidelines.
+caveat: >-
+  Recorded as none on purpose. Losing accreditation or prequalification costs the work it gates, and no national
+  source read prices that. Licence fines are set and published state by state, and the examples found are individual
+  cases. The source of record measures audit findings, not money.
+status: current

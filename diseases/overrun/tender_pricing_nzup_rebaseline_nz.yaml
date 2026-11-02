@@ -18,7 +18,7 @@ sample_size:
   note: 26 transport projects announced under the New Zealand Upgrade Programme; one programme, one re-baselining in 2020-21
 sources:
 - source: oag-2023-infrastructure-decisions
-  location: Part 5, paragraphs 5.12 and 5.29 to 5.35, pp.52-53
+  location: Part 5, paragraphs 5.12 (p.51) and 5.29 to 5.35 (p.53)
 considered:
 - source: te-waihanga-2024-transmission-gully-review
   reason: >-
@@ -35,5 +35,5 @@ considered:
 sample_note: >-
   The Auditor-General's audit of the 2020 New Zealand Upgrade Programme. 21 of the 26 announced transport projects could not be delivered within the funding allocated (5.32), a frequency, not a cost. The $1.926 billion also funded rescoped projects and a contingency fund (5.12, 5.33). The report notes that confidence in the baseline information was much lower than expected (5.30).
 caveat: >-
-  An estimate against a later estimate, not against outturn, and the owner's money, not a contractor's loss. The addition includes contingency and rescoping, so the ratio overstates the shortfall in the original estimates by an amount the report does not give. One programme, announced before business cases were complete, so it is not a typical New Zealand tender.
+  An estimate against a later estimate, not against outturn, and the owner's money, not a contractor's loss. No contractor's tender price is involved: both figures are the Crown's, the first set at announcement. The addition includes a contingency fund, which makes the ratio larger than the shortfall in the original estimates, and it is net of the projects that were rescoped, which makes it smaller than the cost of delivering the original scope; the report gives the size of neither, so the direction of the net error is unknown. One programme, announced before business cases were complete, so it is not a typical New Zealand tender.
 status: current

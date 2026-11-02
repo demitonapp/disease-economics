@@ -1,14 +1,17 @@
-subtype: input_prices
 label: Direct materials as a share of the cost of New Zealand heavy and civil construction, 2020
 exposure_value: 0.176
 exposure_unit: ratio_of_other
 denominator: construction_cost
 exposure_basis: >-
   of the total inputs of the heavy and civil construction industry: direct material inputs (structural metal 3.7%, sand, gravel, clay, stone and bitumen 3.4%, concrete and other mineral products 2.5%, diesel 1.7%, plaster, lime and paperboard 1.6%, wood 0.6%, other 4.0%)
-exposure_kind: money_at_stake
+exposure_kind: context
 confidence: moderate
 derivation: as_published
 statistic: pooled_ratio
+sample_size:
+  n: 1
+  unit: years
+  note: Statistics New Zealand's 2020 input-output tables for the heavy and civil construction industry, one year, whole industry.
 sources:
 - source: te-waihanga-2023-construction-input-costs
   location: Table 2, p.11, and section 1.4, p.10
@@ -19,5 +22,5 @@ considered:
 sample_note: >-
   Statistics New Zealand's 2020 input-output tables for the heavy and civil construction industry, as tabulated by Te Waihanga. The same paper reports mean quarterly material price change of 1.18% over 2010 to 2022 (Figure 1, nominal), and heavy and civil output prices rising 7.8% a year from 2020 to the March 2023 quarter against 2.4% a year over 2009 to 2019 (Table 1): price changes the schema cannot hold as a cost.
 caveat: >-
-  The share of cost exposed to material prices, not a loss: the source does not say how many contracts were fixed-price or whether they carried fluctuation clauses. Whole industry, one year, not a contract's cost.
+  Context only: how large this input is in the industry's cost structure, not a loss, an overrun or a price rise. It does not measure materials prices rising on a fixed price: the source does not say how many contracts were fixed-price or carried fluctuation clauses. Includes diesel (1.7%), which is also its own context figure. Whole industry, one year, not a contract's cost.
 status: current

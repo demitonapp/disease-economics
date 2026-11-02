@@ -1,19 +1,22 @@
-subtype: plant_fuel
 label: Direct equipment inputs as a share of the cost of New Zealand heavy and civil construction, 2020
 exposure_value: 0.101
 exposure_unit: ratio_of_other
 denominator: construction_cost
 exposure_basis: >-
   of the total inputs of the heavy and civil construction industry: direct equipment inputs (consumption of capital 3.8%, maintenance of equipment 2.1%, equipment hire 1.7%, all other equipment 2.5%)
-exposure_kind: money_at_stake
+exposure_kind: context
 confidence: moderate
 derivation: as_published
 statistic: pooled_ratio
+sample_size:
+  n: 1
+  unit: years
+  note: Statistics New Zealand's 2020 input-output tables for the heavy and civil construction industry, one year, whole industry.
 sources:
 - source: te-waihanga-2023-construction-input-costs
   location: Table 2, p.11, and section 1.4, p.10
 sample_note: >-
   Statistics New Zealand's 2020 input-output tables for the heavy and civil construction industry, as tabulated by Te Waihanga. Diesel, 1.7% of the same total, is recorded as its own finding. The denominator is the industry's total inputs including taxes, subsidies and margins (8.0%).
 caveat: >-
-  The share of cost exposed to plant hours, not the share lost or overspent: the source does not measure plant hours against what was priced. A whole-industry cost structure for one year, not a contract's. Includes consumption of capital (depreciation), which a hire-rate or utilisation overrun would not move. Diesel burned by subcontractors sits in the services inputs, not here.
+  Context only: how large equipment is in the industry's cost structure, not a share lost or overspent: the source does not measure plant hours against what was priced. A whole-industry cost structure for one year, not a contract's. Includes consumption of capital (depreciation), which a hire-rate or utilisation overrun would not move. Diesel burned by subcontractors sits in the services inputs, not here.
 status: current

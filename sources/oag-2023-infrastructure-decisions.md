@@ -10,7 +10,7 @@ source_type: regulator
 method: case-study
 access: primary
 read_on: '2026-11-02'
-location: "Part 5, paragraphs 5.11 to 5.12 (p.52) and 5.29 to 5.35 (p.53)"
+location: "Part 5, paragraphs 5.11 to 5.12 (p.51) and 5.29 to 5.35 (p.53)"
 jurisdictions:
 - NZ
 industries:

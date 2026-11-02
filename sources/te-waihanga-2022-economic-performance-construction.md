@@ -10,7 +10,7 @@ source_type: research-institute
 method: official-statistics
 access: primary
 read_on: '2026-11-02'
-location: "Labour productivity sections, Figures 10 to 12 (pp.16-18); firm profit margins (Figures 16 and 17); Appendix 2 on measuring labour input"
+location: "Labour productivity sections, Figures 10 to 12 (pp.16-19); firm profit margins (Figures 16 and 17); Appendix 2 on measuring labour input"
 jurisdictions:
 - NZ
 industries:

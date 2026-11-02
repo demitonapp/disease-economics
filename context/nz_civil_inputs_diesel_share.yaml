@@ -1,14 +1,17 @@
-subtype: plant_fuel
 label: Diesel as a share of the cost of New Zealand heavy and civil construction, 2020
 exposure_value: 0.017
 exposure_unit: ratio_of_other
 denominator: construction_cost
 exposure_basis: >-
   of the total inputs of the heavy and civil construction industry: direct purchases of diesel
-exposure_kind: money_at_stake
+exposure_kind: context
 confidence: moderate
 derivation: as_published
 statistic: pooled_ratio
+sample_size:
+  n: 1
+  unit: years
+  note: Statistics New Zealand's 2020 input-output tables for the heavy and civil construction industry, one year, whole industry.
 sources:
 - source: te-waihanga-2023-construction-input-costs
   location: Table 2, p.11
@@ -19,5 +22,5 @@ considered:
 sample_note: >-
   Statistics New Zealand's 2020 input-output tables for the heavy and civil construction industry, as tabulated by Te Waihanga. Diesel is one of five materials the source names as most important by value.
 caveat: >-
-  The share of cost exposed to the diesel price, not a fuel overrun: the source does not compare fuel used with fuel priced. Direct purchases only; the source notes services inputs such as aggregate delivery also burn diesel, so the exposure is larger than 1.7% but the paper does not say by how much. One year, whole industry, not a single contract.
+  Context only: how large diesel is in the industry's cost structure, not a fuel overrun or a loss: the source does not compare fuel used with fuel priced. Direct purchases only; the source notes services inputs such as aggregate delivery also burn diesel, so the exposure is larger than 1.7% but the paper does not say by how much. One year, whole industry, not a single contract.
 status: current

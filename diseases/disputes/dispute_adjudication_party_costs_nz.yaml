@@ -1,4 +1,4 @@
-subtype: payment
+subtype: payment_dispute
 label: >-
   Claimant's own cost of statutory adjudication as a share of the claim, New Zealand 2003-2023
 exposure_value: 0.192
@@ -25,3 +25,5 @@ history:
   - exposure_kind: contractor_loss
     changed_on: '2026-09-26'
     reason: Reclassified as derived contractor loss (schema 2.2.0), money spent fighting a dispute rather than the disputed loss itself.
+  - changed_on: '2026-11-02'
+    reason: "subtype 'payment' is now the registers' cause 'payment_dispute' (schema 3.0.0, SM070)"

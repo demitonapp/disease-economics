@@ -124,7 +124,9 @@ A figure is never overwritten silently. When `exposure_value`, `exposure_unit`, 
 - the same pull request adds or changes a file under `sources/`. A change to `exposure_kind` alone is a reclassification under this method, not a new
   reading of the evidence: it needs the `history` entry, not a new source.
 
-A finding is never deleted. It is `withdrawn`, with a `withdrawn_reason`.
+A finding is never deleted. It is `withdrawn`, with a `withdrawn_reason`. Moving a finding to another
+directory (schema 3.0.0 renamed the five disease directories) is not a deletion: `validate.py` follows the
+rename and holds the moved file to the same history and source rules.
 
 ## 9. What is deliberately not modelled
 
@@ -152,18 +154,22 @@ does. `registers`' CI refuses a schema change whose version bump is too small:
 
 It is the same rule the Demiton product applies to its own data contracts.
 
-## 11. Sub-types
+## 11. Causes
 
-Each disease splits into sub-types by where the money goes wrong ([`vocab/subtypes.json`](vocab/subtypes.json)):
-rework by where the error starts, cost drift by what grew, lapsed compliance by what lapsed. Missed
-claims and disputes share theirs (payment, delay and extensions of time, variations, latent
-conditions, retention and close-out), because a missed claim is an entitlement never asserted in
-time and a dispute is one asserted and contested; weather is a missed-claims sub-type and falls
-under delay in a dispute.
+Each disease has five causes, the kinds of failure a contractor counts, and they are not this
+repository's to define: they are `causes` in [`vocab/diseases.json`](vendor/registers-research/diseases.json),
+pinned from [`demitonapp/registers`](https://github.com/demitonapp/registers) with the schemas, so
+the research and the Demiton product, which records every verdict against one of them, name the
+same twenty-five. For rework and cost drift a cause is the control that failed; for missed claims
+the kind of money at stake (penalty days, variations, latent conditions, delay costs, payment and
+retention); for disputes what is disputed; for lapsed compliance what is non-compliant (people,
+plant, insurance, company, site). The stage at which a claim or dispute failed is a separate
+dimension, not a cause. A disease's directory name is its key in that file (`forfeited_entitlements`,
+not the measure name `claim_window` that findings used before schema 3.0.0).
 
-A figure carries a `subtype` only when it measures that sub-type. A figure that covers the disease
-as a whole has none, and a context figure never has one. A sub-type with no figure says so: that is
-the next place to look for research, not a zero.
+A figure carries a `subtype`, the cause's key, only when it measures that cause. A figure that
+covers the disease as a whole has none, and a context figure never has one. A cause with no figure
+for a country says so: that is the next place to look for research, not a zero.
 
 ## 13. What kind of number a figure is
 

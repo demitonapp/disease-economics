@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/demitonapp/disease-economics/schema/finding.schema.json",
-  "x-schema-version": "2.3.0",
+  "x-schema-version": "3.0.0",
   "title": "Finding",
-  "description": "One figure taken from one or more sources. diseases/<disease_key>/<metric_key>.yaml or context/<metric_key>.yaml. The path is the id; it is never repeated inside the file.",
+  "description": "One figure taken from one or more sources. diseases/<disease_key>/<metric_key>.yaml or context/<metric_key>.yaml, where <disease_key> is a key of vocab/diseases.json (rework, overrun, forfeited_entitlements, disputes, non_compliance) and, before 3.0.0, was a measure name (rework_signal, overrun_signal, claim_window, evidence_gap, compliance_gate). The path is the id; it is never repeated inside the file.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -218,7 +218,7 @@
     "subtype": {
       "type": "string",
       "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$",
-      "description": "The part of the disease this figure measures, from vocab/subtypes.json (METHOD.md Section 12). Absent when the figure covers the disease as a whole."
+      "description": "The cause this figure measures: one of the disease's `causes[].key` in vocab/diseases.json, where the disease is the <disease_key> directory the finding sits in. Absent when the figure covers the disease as a whole. Before 3.0.0 this named a sub-type from disease-economics' own vocab/subtypes.json."
     },
     "statistic": {
       "enum": [

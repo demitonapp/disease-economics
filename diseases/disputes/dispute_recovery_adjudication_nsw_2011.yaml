@@ -1,4 +1,4 @@
-subtype: payment
+subtype: payment_dispute
 label: >-
   Adjudication awards against amounts claimed, NSW 2011-12 (determinations released)
 exposure_value: 0.509
@@ -28,3 +28,6 @@ caveat: >-
   every claim. Larger claims recovered a smaller share. Not comparable with the Queensland 2024-25 figure
   or the 2018-2023 success ratios, which divide by different populations.
 status: current
+history:
+  - changed_on: '2026-11-02'
+    reason: "subtype 'payment' is now the registers' cause 'payment_dispute' (schema 3.0.0, SM070)"

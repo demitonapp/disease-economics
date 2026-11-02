@@ -1,4 +1,4 @@
-subtype: variations
+subtype: unclaimed_variations
 label: >-
   Contract variations as a share of project cost, Queensland public infrastructure (QAO audit)
 exposure_value: 0.09
@@ -27,3 +27,6 @@ caveat: >-
   of the pot, not a contractor loss. Corroborates the 10.6% change-order figure (67 Australian projects)
   from a Queensland regulator.
 status: current
+history:
+  - changed_on: '2026-11-02'
+    reason: "subtype 'variations' is now the registers' cause 'unclaimed_variations' (schema 3.0.0, SM070)"

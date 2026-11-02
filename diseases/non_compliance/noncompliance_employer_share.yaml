@@ -1,4 +1,3 @@
-subtype: whs
 label: >-
   Employers' share of the total cost of work-related injury and illness (Australia)
 exposure_value: 0.19
@@ -21,3 +20,6 @@ caveat: >-
   in the summary, 77/18 in para 89) and its latest edition covers 2012-13. No construction-specific employer
   share exists.
 status: current
+history:
+  - changed_on: '2026-11-02'
+    reason: "subtype 'whs' dropped: it is not one of non_compliance's causes, so the figure covers the disease as a whole (schema 3.0.0, SM070)"

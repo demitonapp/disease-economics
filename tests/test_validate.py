@@ -15,7 +15,7 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
 from validate import SCHEMA_DIR, check_against_base, validate  # noqa: E402
 
-FINDING = "diseases/rework_signal/rework_total_civil_survey.yaml"
+FINDING = "diseases/rework/rework_total_civil_survey.yaml"
 
 
 class CorpusTest(unittest.TestCase):
@@ -50,14 +50,24 @@ class CorpusTest(unittest.TestCase):
         self.assertEqual(self.errors(), [])
 
     def test_a_subtype_must_belong_to_its_disease(self):
-        self.edit(FINDING, subtype="payment")
-        self.assertFails("not one of rework_signal's")
-        self.edit(FINDING, subtype="workmanship")
+        self.edit(FINDING, subtype="payment_dispute")
+        self.assertFails("not one of rework's causes")
+        self.edit(FINDING, subtype="weather")  # a 2.x sub-type, not a cause of any disease
+        self.assertFails("not one of rework's causes")
+        self.edit(FINDING, subtype="workmanship_quality")
         self.assertEqual(self.errors(), [])
+
+    def test_a_disease_directory_must_be_a_registers_key(self):
+        self.git_free_move(FINDING, "diseases/rework_signal/rework_total_civil_survey.yaml")
+        self.assertFails("is not one of the five disease keys")
 
     def test_a_context_figure_has_no_subtype(self):
         self.edit("context/planned_gross_margin.yaml", subtype="workmanship")
         self.assertFails("context/ figure has no subtype")
+
+    def git_free_move(self, src, dst):
+        (self.tmp / dst).parent.mkdir(parents=True, exist_ok=True)
+        shutil.move(self.tmp / src, self.tmp / dst)
 
     def test_is_headline_is_gone(self):
         # Schema 2.0.0: no figure stands for a disease; which applies depends on where you work.
@@ -73,7 +83,7 @@ class CorpusTest(unittest.TestCase):
         self.assertFails("denominator")
 
     def test_per_unit_needs_price_year(self):
-        self.edit("diseases/compliance_gate/noncompliance_cost_per_incident.yaml", price_year=None)
+        self.edit("diseases/non_compliance/noncompliance_cost_per_incident.yaml", price_year=None)
         self.assertFails("price_year")
 
     def test_missing_source_fails(self):
@@ -145,6 +155,16 @@ class BaseTest(CorpusTest):
     def test_deleting_a_finding_fails(self):
         (self.tmp / FINDING).unlink()
         self.assertTrue(any("never deleted" in e for e in self.base_errors()))
+
+    def test_a_finding_moved_to_another_directory_is_not_a_deletion(self):
+        self.git("mv", FINDING, "diseases/overrun/rework_total_civil_survey.yaml")
+        self.assertEqual(self.base_errors(), [])
+
+    def test_a_moved_finding_still_needs_history_for_a_figure_change(self):
+        moved = "diseases/overrun/rework_total_civil_survey.yaml"
+        self.git("mv", FINDING, moved)
+        self.edit(moved, exposure_value=0.2)
+        self.assertTrue(any("history entry" in e for e in self.base_errors()))
 
     def test_history_is_append_only(self):
         self.edit(FINDING, history=[{"changed_on": "2026-10-01", "reason": "a"}])

@@ -1,4 +1,3 @@
-subtype: whs
 label: Employer cost per construction accident, from a short absence to a fatality
 exposure_value: 97408.0
 exposure_unit: per_incident
@@ -27,3 +26,6 @@ caveat: >-
   or AU$20m (industrial manslaughter, NSW). Price year taken from the source's data year; not yet confirmed
   against the source's tables.
 status: current
+history:
+  - changed_on: '2026-11-02'
+    reason: "subtype 'whs' dropped: it is not one of non_compliance's causes, so the figure covers the disease as a whole (schema 3.0.0, SM070)"

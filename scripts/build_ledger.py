@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from validate import ROOT, SCHEMA_DIR, load_corpus, split_frontmatter, validate  # noqa: E402
+from validate import DISEASES_FILE, ROOT, SCHEMA_DIR, load_corpus, split_frontmatter, validate  # noqa: E402
 
 #: Schemas that once lived at schema/<name>.schema.json before spec 09 P4 pinned them from
 #: demitonapp/registers instead - kept so `history()` can still walk their pre-migration git log.
@@ -138,7 +138,10 @@ def write(out: Path, release: str) -> list[dict]:
     codes = {x for s in sources.values() for c in s["jurisdictions"] + s["industries"] for x in (c, c.split("-")[0])}
     vocab = {name: {k: v for k, v in json.loads((ROOT / "vocab" / f"{name}.json").read_text()).items() if k in codes}
              for name in ("jurisdictions", "industries")}
-    vocab["subtypes"] = json.loads((ROOT / "vocab" / "subtypes.json").read_text())
+    # Each disease's causes (the registers' vocab/diseases.json): what a finding's `subtype` names.
+    registers = json.loads((ROOT / SCHEMA_DIR / DISEASES_FILE).read_text())
+    vocab["causes"] = {k: [{"key": c["key"], "label": c["label"], "covers": c["covers"]} for c in registers["diseases"][k]["causes"]]
+                       for k in registers["order"]}
     corpus = {
         "release": release, "schema_versions": schemas,
         "findings": [{**d, "path": r["_path"], "citations": r["_citations"]} for d, r in zip(data, full)],

@@ -6,7 +6,7 @@ body:
     id: finding
     attributes:
       label: Which figure
-      description: The file path, e.g. diseases/rework_signal/rework_total_civil_survey.yaml
+      description: The file path, e.g. diseases/rework/rework_total_civil_survey.yaml
     validations:
       required: true
   - type: textarea

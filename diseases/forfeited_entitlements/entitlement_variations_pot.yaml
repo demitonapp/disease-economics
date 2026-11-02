@@ -1,4 +1,4 @@
-subtype: variations
+subtype: unclaimed_variations
 label: Client-approved change orders, 67 Australian public infrastructure projects
 exposure_value: 0.106
 exposure_unit: ratio_of_contract
@@ -25,3 +25,6 @@ caveat: >-
   SIZE OF THE POT, NOT A LOSS. No study measures how much of it a typical contractor fails to claim. Change
   orders were linked to HIGHER contractor margins, which is the opposite of a loss.
 status: current
+history:
+  - changed_on: '2026-11-02'
+    reason: "subtype 'variations' is now the registers' cause 'unclaimed_variations' (schema 3.0.0, SM070)"

@@ -15,4 +15,4 @@ industries:
 - F41
 ---
 
-A structured questionnaire on 161 projects with a stepwise regression on total rework cost. Client-initiated changes and poor use of information technology by design professionals were significant contributors, as was freezing the design scope. The abstract gives no cost per cause. The abstract as read does not name the country of the sample; the authors' 161-project survey is the Australian one described in love-sohal-2003-rework-multivariate.
+A structured questionnaire on 161 projects with a stepwise regression on total rework cost. Client-initiated changes and poor use of information technology by design professionals were significant contributors, as was freezing the design scope. The abstract gives no cost per cause. The abstract, keywords and affiliations name Australia, and it matches the same group's 161-project survey in love-sohal-2003-rework-multivariate.

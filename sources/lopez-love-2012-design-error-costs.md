@@ -10,7 +10,7 @@ access: primary
 read_on: '2026-11-02'
 location: abstract, as held in the Curtin University repository record (read through its mirror at cendekia.unisza.edu.my/neuaxis-e/Record/curtin-20.500.11937-10508/Details); the ASCE page returned 403 and the full text was not read
 jurisdictions:
-- AU
+- unknown
 industries:
 - F
 ---

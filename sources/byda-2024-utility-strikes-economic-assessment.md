@@ -9,7 +9,7 @@ source_type: industry-body
 method: model
 access: primary
 read_on: '2026-11-02'
-location: Section 3.3 (Table 1, 16 case studies) and Section 3.4 (Table 3 and the extrapolation), report pages 5 to 8
+location: Section 3.3 (Table 1, 16 case studies) and Section 3.4 (Table 3 and the extrapolation), report pages 5 to 8, and Appendix C for the basis of the $9,000
 jurisdictions:
 - AU
 industries:

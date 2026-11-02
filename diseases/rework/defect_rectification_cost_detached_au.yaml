@@ -13,9 +13,11 @@ confidence: moderate
 derivation: as_published
 statistic: mean
 sample_size:
-  n: 1231
-  unit: respondents
-  note: Detached-house owners in the survey; fewer answered the cost questions
+  n: 637
+  unit: other
+  note: >-
+    Defect cost estimates used (Table B.18), from detached-house owners; 1,231 detached dwellings were surveyed
+    but not all gave a cost
 sources:
 - cie-2021-building-confidence-report
 considered:

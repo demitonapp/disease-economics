@@ -8,7 +8,7 @@ price_year: 2024
 exposure_basis: >-
   per reported utility strike, direct cost of repairing the damaged asset only; indirect and social costs
   excluded
-exposure_kind: money_at_stake
+exposure_kind: owner_side
 confidence: low
 derivation: as_published
 statistic: modelled
@@ -26,5 +26,8 @@ caveat: >-
   contractor's exposure only where that recovery is made, and it is not the contractor's loss. It excludes
   the contractor's own standing-time and reinstatement costs, delay, and the societal cost of the outage.
   Strikes by pipe, cable or sector differ widely (telecommunications repairs in the case studies were the
-  largest). Price year is the report's year. The strike count covers reported strikes only.
+  largest). The report gives no price year for the $9,000 (it escalates its case-study costs to 2024), so 2024 is the
+  report's date. The strike count covers reported strikes only, which the report thinks is two to three times
+  fewer than the strikes that happen. The report's own basis for the $9,000 is "BYDA data and experience"
+  (Appendix C), with no records shown.
 status: current

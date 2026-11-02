@@ -13,9 +13,11 @@ confidence: low
 derivation: as_published
 statistic: mean
 sample_size:
-  n: 181
-  unit: respondents
-  note: Apartment owners in the survey; fewer answered the cost questions
+  n: 65
+  unit: other
+  note: >-
+    Defect cost estimates used (Table B.20), from apartment owners; 181 apartment dwellings were surveyed
+    but few gave a cost, and three defect types have none and take their cost from townhouses
 sources:
 - cie-2021-building-confidence-report
 sample_note: >-

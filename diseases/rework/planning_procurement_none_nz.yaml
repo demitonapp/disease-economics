@@ -1,0 +1,45 @@
+subtype: planning_procurement
+label: No published New Zealand figure for the cost of planning, procurement and sequencing failures
+exposure_basis: 'none: New Zealand sources measure waste by mass or volume and rank planning as a cost factor, and
+  none prices wrong or surplus orders as a share of project cost'
+sources:
+- mcmeel-2023-construction-waste-scoping-study
+considered:
+- source: jaques-1998-site-waste-design-procurement-wellington
+  reason: Contractors estimate material waste by material (for example plasterboard 5% to 15%) in 1998; 38 Wellington-area
+    respondents, an estimate of quantity wasted, not cost, and dated.
+- source: jaques-1999-site-waste-design-procurement-auckland
+  reason: 84 Auckland respondents; non-standard sizing (53%) is the main cause of waste named by contractors; quantities
+    and perceptions, no cost.
+- source: asadi-2023-rework-provisions-nz-contracts
+  reason: Materials and equipment and process causes of rework are among those the standard contract covers; clause
+    coverage, no cost.
+- source: atapattu-2023-nz-transport-cost-factors
+  reason: Poor planning and scheduling ranks second among cost factors for New Zealand transport projects; a perception
+    ranking with no magnitude.
+- source: bealing-2020-economic-cost-quality-defects
+  reason: Table 2 prints BRANZ inspection results of 12% for materials and 12% for construction methods (builders'
+    opinion 7% and 14%); shares of defects as printed, and the model prices defects as a whole.
+- source: nzic-2022-lay-of-the-land
+  reason: Discusses procurement and delivery capability as drivers of unit cost; benchmarking of unit costs, no
+    share attributable to wrong quantities, sequencing or temporary works.
+- source: te-waihanga-2024-transmission-gully-review
+  reason: The builder not anticipating the consenting system is named as a contributor; no figure.
+- source: scirt-2021-value-of-scirt-summary
+  reason: Describes the Christchurch rebuild procurement model and its $2.2 billion total; no planning, over-order
+    or sequencing cost.
+sample_note: 'Search terms: BRANZ construction waste New Zealand over-ordering materials percent; wrong materials
+  ordered rework New Zealand; temporary works failure cost New Zealand; construction procurement supply chain delay
+  cost percent of project New Zealand; Construction Sector Accord procurement. A frequency exists but is not a cost:
+  AUT''s scoping study puts construction and demolition waste at about 40% of New Zealand landfill, with estimates
+  of 30% to 50% by source, and names over-ordering of wet concrete as a source of concrete waste (ER82). A BRANZ
+  and EBOSS supplier survey of freight cost and delays turned up in search but was not opened.'
+caveat: 'Recorded as none on purpose: waste by mass, landfill share and contractors'' own waste percentages by material
+  (1998 to 1999) are not a cost as a share of project value, and are not filed as one.'
+exposure_value: null
+exposure_unit: none
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+status: current

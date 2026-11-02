@@ -1,0 +1,38 @@
+subtype: workmanship_quality
+label: Modelled cost of quality defects found during new residential construction, New Zealand 2018, as a share
+  of residential construction output
+exposure_value: 0.054
+exposure_unit: ratio_of_other
+denominator: construction_cost
+exposure_basis: 'of the output of the residential construction industry ($995 million of $18.43 billion, central
+  case): rework of defects found during construction of new houses, from a 90% defect prevalence and an assumed
+  6% average cost per defective job'
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: modelled
+exposure_range:
+  low: 0.026
+  high: 0.086
+  kind: scenario
+sources:
+- source: bealing-2020-economic-cost-quality-defects
+  location: Table 7 (p.22), Table 8 and Table 9 (p.24)
+- source: branz-2021-research-now-quality-2
+  location: 'Table 2 (p.2): confirms the $995 million central estimate'
+considered:
+- source: kirby-2026-nz-shoddy-building-bill
+  reason: Presents the $2.5 billion as nearly 10% of sector value lost to quality failure. In the NZIER study $2.5
+    billion is a GDP effect in the economy-wide model, not a cost of defects, so the 10% is not used.
+sample_note: 'A computable general equilibrium study (NZIER, ORANI-NZ) for BRANZ. Inputs: 90% prevalence (85% to
+  95%), 6% average cost of a defect (3% to 9%), residential output $18.43 billion for 2018. The 90% rests on BRANZ
+  new-house quality surveys (92% of 225 houses in 2014 had a quality or appearance defect; 96% had a compliance
+  defect at the first inspection); the 6% is set from the literature review, which cites Australian and UK studies
+  of 4.1% to 6.4% of contract value. Cost $995 million central, $420 million to $1,744 million across the range.'
+caveat: 'A model, not observed rework. Only the prevalence draws on New Zealand data; the average cost of a defect
+  is an assumption informed by overseas studies. New residential building only: not civil work, alterations, undiscovered
+  defects, leaky buildings or earthquake repair. The denominator is industry output, not a contract value, so it
+  is filed as ratio_of_other and is not multiplied by a job value. The range is the report''s low and high scenarios
+  (ER49 Table 7: 2.6%, 5.4%, 8.6%); the BRANZ summary prints the 2.6% and 5.4% in the wrong columns of its Table
+  2.'
+status: current

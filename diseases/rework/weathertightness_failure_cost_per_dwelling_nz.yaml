@@ -1,0 +1,28 @@
+subtype: workmanship_quality
+label: Modelled economic cost per weathertightness failure, New Zealand dwellings built 1992 to 2008, repair and
+  transaction costs
+exposure_value: 268667
+exposure_unit: per_incident
+currency: NZD
+price_year: 2008
+exposure_basis: 'per failing dwelling: total economic cost of repair and transaction costs ($11,284 million, consensus
+  forecast) over the forecast 42,000 failures; the cost mostly falls on owners and councils'
+exposure_kind: owner_side
+confidence: low
+derivation: calculated
+calculation: $11,284 million (Figure 26, consensus forecast, 2008 dollars, excluding government costs) / 42,000
+  failures (Executive Summary, consensus forecast) = $268,667 per failure. The same division on the lower view is
+  $5,925 million / about 22,000 = about $269,000.
+statistic: modelled
+sources:
+- source: pwc-2009-weathertightness-estimating-cost
+  location: Figure 26 (p.29); Executive Summary pp.2-3 for the 42,000 failures and the cost split
+sample_note: 'Consensus forecast of 42,000 failing dwellings (range 22,000 to 89,000) from consent-based risk profiles,
+  4,615 failures evidenced in the Weathertight Homes Resolution Service claims 2002 to 2008, and expert opinion.
+  Cost split under 2009 policy: owners 69%, councils 25%, third parties including builders 4%, government 2%.'
+caveat: 'A forecast, and the division is ours: the report gives totals, not a per-dwelling average. The failure
+  count is a consensus of expert opinion, the dollar figure is 2008 and includes legal and other transaction costs,
+  and multi-unit dwellings (cheaper per unit) are averaged with houses. The report does not split failures between
+  design, workmanship and materials, so filing it under workmanship_quality is a judgement. Owner-side money: builders
+  bore about 4%.'
+status: current

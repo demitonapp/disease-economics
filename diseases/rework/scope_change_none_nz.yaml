@@ -1,0 +1,47 @@
+subtype: scope_change
+label: No published New Zealand figure for the cost of scope and change after work was committed
+exposure_basis: 'none: New Zealand sources rank change as a cause of rework or cost growth but give no cost, and
+  the one national benchmarking dataset has no New Zealand overrun data'
+sources:
+- asadi-2023-rework-provisions-nz-contracts
+considered:
+- source: atapattu-2023-nz-transport-cost-factors
+  reason: Estimators rank frequent design changes as the top cost factor on New Zealand transport projects; a perception
+    ranking with no cost magnitude in the abstract, full text unavailable.
+- source: nzic-2022-lay-of-the-land
+  reason: Says added scope and design requirements raise infrastructure unit costs and that overrun analysis is
+    outside its scope; no figure.
+- source: oxford-global-projects-2022-nz-benchmark
+  reason: Overrun reference classes are international; the report states New Zealand estimated-versus-actual data
+    were lacking, and it does not attribute overruns to scope change.
+- source: te-waihanga-2024-transmission-gully-review
+  reason: Summary names estimate accuracy, governance, consenting and external events; it does not quantify or separate
+    scope or design change.
+- source: scirt-2021-value-of-scirt-summary
+  reason: Describes the Christchurch rebuild as having an evolving scope; reports the $2.2 billion programme total,
+    no change or rework cost.
+- source: jaques-1998-site-waste-design-procurement-wellington
+  reason: Architects and quantity surveyors rate avoiding variations on site as a way to cut waste; 38 respondents,
+    opinions only, no cost.
+- source: jaques-1999-site-waste-design-procurement-auckland
+  reason: Repeats that buildable design avoiding variations reduces waste; 84 respondents, opinions only, no cost.
+- source: bealing-2020-economic-cost-quality-defects
+  reason: Prices defects found during construction as a whole; client or end-user change is not separated and is
+    outside the defect definition.
+sample_note: 'Search terms: New Zealand construction variations change orders cost percent of contract value; NZS
+  3910 rework variation survey; design change cost New Zealand infrastructure; Auditor-General Treasury variations
+  contract value New Zealand; Transmission Gully cost scope change. A frequency or ranking exists but is not a cost:
+  New Zealand estimators rank frequent design changes first among cost factors (Atapattu 2023), and Asadi 2023 (80
+  completed responses) scores changes first among the rework causes the standard contract addresses (Table 3, mean
+  3.83 of 5), a rating of contract coverage. The Asadi paper quotes rework of up to 25% of contract value from earlier
+  international work.'
+caveat: 'Recorded as none on purpose: no New Zealand source read measures the cost of client or design change, abortive
+  work or change orders that caused rework. Variation values for Australia exist in the corpus but do not apply
+  to New Zealand.'
+exposure_value: null
+exposure_unit: none
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+status: current

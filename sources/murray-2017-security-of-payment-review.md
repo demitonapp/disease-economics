@@ -9,7 +9,7 @@ method: survey
 access: primary
 read_on: '2026-11-02'
 location: >-
-  Chapter 3 pp.14-17 (late-payment surveys, Table 1 construction insolvencies, case examples); Appendix B pp.323-325 (survey of contractors); Chapter 15.5 (retention)
+  Chapter 3 pp.14-17 (late-payment surveys, Table 1 construction insolvencies, case examples); Appendix B pp.323-325 (survey of contractors); Chapter 15.5 (retention); Chapter 16.5 and 16.6 (time bars and unfair contract terms)
 jurisdictions:
 - AU
 industries:

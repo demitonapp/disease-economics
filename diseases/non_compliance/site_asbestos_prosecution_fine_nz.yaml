@@ -1,0 +1,54 @@
+subtype: site_compliance
+label: Median fine in nine asbestos prosecutions in New Zealand building and construction, 2017-2023
+exposure_value: 16000.0
+exposure_unit: per_incident
+currency: NZD
+price_year: 2020
+exposure_basis: NZD fine per prosecution under the Health and Safety at Work Act 2015 for asbestos offences (survey,
+  notification, licensed removal, demolition of contaminated buildings); median of nine; mean $54,247
+exposure_kind: contractor_loss
+confidence: moderate
+exposure_range:
+  low: 1100.0
+  high: 318750.0
+  kind: reported_min_max
+derivation: calculated
+calculation: 'Fines as the WorkSafe register states them, sorted: $1,100 (Gannaway 2023); $3,000 (Knight 2018);
+  $10,000 (Topham 2017); $15,000 (Sibley 2020); $16,000 (Ecologically Sound Demolition 2020); $23,375 (Inspired
+  Enterprises 2023, after appeal); $35,000 (Robertson 2018); $66,000 (Wilson Building Timaru 2023); $318,750 (Crafar
+  Crouch Construction 2018). The median is the fifth value, $16,000. Sum $488,225, mean $54,247 (488,225 / 9). price_year
+  2020 is the middle decision year; the amounts are nominal.'
+statistic: median
+sample_size:
+  n: 9
+  unit: cases
+  note: Convicted defendants with a fine above zero, industry recorded as building and construction, offence decided
+    under the Health and Safety at Work Act 2015, charged with asbestos offences.
+sources:
+- source: worksafe-2025-court-summaries-asbestos
+  location: 'nine register entries listed in the source: topham-holding-limited, richard-john-knight, john-carstairs-robertson,
+    crafar-crouch-construction-limited-b, glenn-warwick-sibley, ecologically-sound-demolition-limited, lawrence-gannaway,
+    inspired-enterprises-limited, wilson-building-timaru-limited'
+considered:
+- source: te-uru-kahika-2025-cme-metrics
+  reason: Resource Management Act fines of $3,108,157 across 71 convicted defendants in 2024/25 cover every sector
+    with no construction or earthworks split, so they do not measure an environmental-conditions breach on a construction
+    job.
+- source: worksafe-2026-quarterly-report-q2
+  reason: Counts of notices and prosecutions with no dollar value by cause.
+- source: hesketh-henry-2018-hswa-two-years-on
+  reason: An all-sector average of $145,033.60 per section 36 offence from 2018, not tied to a site requirement.
+sample_note: 'WorkSafe''s court summary register (608 entries when read) searched on "asbestos": 24 entries. Left
+  out: 7 decided under the 1992 Act (fines up to $45,000), 2 withdrawn, Dong SH Auckland ($255,000) and its appeal,
+  Quick Earth Moving ($150,000) and Essential Homes ($30,000) because the asbestos finding was secondary to a wall
+  collapse or a prohibition-notice breach, and Bays Boating ($108,000, retail) and McManus Hotel ($50,000, hospitality)
+  because the register records a non-construction industry. The register was also searched on "traffic management"
+  (17 construction entries); of those read, only Higgins Contractors ($270,000, a three-fatality roadside case)
+  was described by its facts as a traffic-management failure, so no set could be formed.'
+caveat: A set chosen by this research from one regulator's register under the inclusion rule in sample_note, so
+  the register's completeness and the keyword search both shape it; a different rule would move the median. Defendants
+  are a mix of individuals and companies and the offences range from no asbestos survey to demolishing two contaminated
+  buildings. Each fine is for the whole charge sheet, including any section 36 charge, and is after the court's
+  discounts. Amounts are nominal across 2017 to 2023. The cause names the asbestos register, and none of the nine
+  entries is charged only with a missing register or management plan.
+status: current

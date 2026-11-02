@@ -1,0 +1,46 @@
+subtype: insurance_compliance
+label: No published New Zealand figure for the cost of insurance that did not reach a job
+exposure_value: null
+exposure_unit: none
+exposure_basis: none - no source read gives a cost of uninsured contractors, denied claims or under-declared ACC
+  earnings in New Zealand construction
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- business-govt-nz-2026-acc-levies
+considered:
+- source: insurance-business-2022-ami-contract-works-survey
+  reason: 'AMI and Ipsos survey of 536 homeowners: 54% of 170 renovators did not consider contract works insurance.
+    A frequency from homeowners, with no dollar value and no damaged-project count.'
+- source: bizcover-2024-public-liability-cost
+  reason: One broker's average monthly premiums (builders $60); a price of cover, not the cost of lacking it.
+- source: nzta-2026-schedule-9-public-liability
+  reason: 'NZTA principal-arranged public liability: $100,000,000 limit, $500,000 deductible; shows cover is a contract
+    requirement but gives no loss from cover that failed.'
+- source: howden-2022-acc-levy-large-employers
+  reason: ACC experience rating (penalties up to 75%, moving to 100%) is a levy loading for claims history, not
+    a cost of under-declared wages, and is not construction-specific.
+- source: businessinsurance-2013-nz-public-assets-uninsured
+  reason: 'Auditor-General survey of public entities: less than half of NZ$225 billion of public assets insured;
+    public owners, no dollar uninsured loss, no contractors.'
+- source: insurance-business-2024-liability-insurance-guide
+  reason: States public liability is often a contract requirement; no figures on uninsured contractors or denials.
+- source: icnz-2026-homepage
+  reason: The industry body publishes claims and weather-loss data but nothing on contract works, public liability
+    or declined claims for contractors.
+- source: mbie-2025-lbp-maximum-fine-ris
+  reason: MBIE estimates latent defects average about $23,000 per new house in 2025, but does not say who bears
+    the cost or whether insurance responded.
+sample_note: 'Searched: ACC levy penalties, uncovered or under-declared employers, uninsured contractors, public
+  liability and contract works cover, declined claims, WorkSafe court summary register ("insurance" returned 8 entries
+  and "uninsured" none; the 8 were not read). The ACC Act 2001 page, an ACC OIA response and an NBR article could
+  not be opened (403 or empty), and ACC statistics PDFs refused automated download. A frequency exists that the
+  schema cannot hold: 54% of 170 surveyed renovators did not consider contract works insurance (AMI and Ipsos, 2022),
+  which is homeowners, not contractors.'
+caveat: Recorded as none on purpose. ACC guidance says levies apply to employers and to contractors paid schedular
+  payments, and the page gives no penalty amount, so there is no regulator count of uninsured contractors in anything
+  read. The ACC Act levy penalty provisions and ACC's own compliance statistics were not read, and may hold a figure
+  for levy under-declaration.
+status: current

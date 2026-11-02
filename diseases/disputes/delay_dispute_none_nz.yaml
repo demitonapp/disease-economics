@@ -10,7 +10,7 @@ derivation: as_published
 statistic: none
 sources:
 - source: building-disputes-tribunal-2023-adjudication
-  location: '''Types of issues'', p.29 (the tribunal says it has not collected statistics on the issues referred)'
+  location: '''Types of issues'', p.29 (the tribunal says it has not collected detailed statistics on the types of issues referred)'
 considered:
 - source: russell-mcveagh-2020-construction-disputes-survey
   reason: 'A 2020 survey of New Zealand industry members: 20% named delays and extensions of time as an expected
@@ -18,6 +18,10 @@ considered:
     expect a cause, not dollars.'
 - source: hesketh-henry-2015-avoiding-construction-disputes
   reason: Practitioner paper that puts delay and disruption costs among payment claims and gives no figures.
+- source: russell-mcveagh-2026-construction-survey-report
+  reason: '2026 survey of 95 New Zealand professionals (late 2025): 68% expect delay and extension of time claims
+    to cause disputes over the next two years, and 77% name principal-initiated variations to scope as a key driver
+    of delay (pp.15, 18-19). Shares of respondents, no dollars.'
 - source: silva-2023-nz-construction-court-cases
   reason: '35 court cases coded by cause and area: no case is coded to delay or extension of time, and no amounts
     are recorded.'
@@ -33,17 +37,8 @@ considered:
   reason: 40 High Court payment cases, 2008-2010, with claimed amounts but no split by delay or extension of time.
 - source: dbh-2013-construction-contracts-act-review-ris
   reason: 'Regulatory impact statement on adjudication reform: no breakdown of disputes by cause, no values.'
-sample_note: 'Searched: New Zealand construction disputes causes survey variations delay payment latent conditions;
-  MBIE Construction Contracts Act review adjudication statistics retentions; Arcadis Global Construction Disputes
-  Report New Zealand average dispute value causes; New Zealand construction delay causes extension of time liquidated
-  damages empirical study; New Zealand Building Disputes Tribunal AMINZ Resolution Institute statistics disputes
-  caseload value. A frequency exists: 20% of Russell McVeagh''s 2020 respondents expect delays and extensions of
-  time to cause disputes, and the tribunal lists extension-of-time, delay-cost and liquidated damages claims among
-  the issues it commonly sees, but it is not a cost. Not opened: the Arcadis and HKA disputes reports (their published
-  figures are global or North American, none for New Zealand); MBIE''s KPMG retention review and Weathertight Homes
-  statistics (mbie.govt.nz and building.govt.nz PDFs refused scripted downloads and were not retrieved by other
-  means); Jelodar et al. 2016 (ASCE, paywalled, read only as summarised in Silva et al. 2023).'
+sample_note: 'Searched: New Zealand construction disputes causes survey variations delay payment latent conditions; MBIE Construction Contracts Act review adjudication statistics retentions; Arcadis Global Construction Disputes Report New Zealand average dispute value causes; New Zealand construction delay causes extension of time liquidated damages empirical study; New Zealand Building Disputes Tribunal AMINZ Resolution Institute statistics disputes caseload value. Frequencies exist: 20% of Russell McVeagh''s 2020 respondents (no respondent count stated) and 68% of its 2026 respondents (95, late 2025) expect delays and extensions of time to cause disputes, shares that differ widely between editions and are not read as a trend, and the tribunal lists extension-of-time, delay-cost and liquidated damages claims among the issues it commonly sees, but it is not a cost. Not opened: the Arcadis and HKA disputes reports (their published figures are global or North American; no New Zealand split was found); Jelodar et al. 2016 (ASCE, paywalled, read only as summarised in Silva et al. 2023).'
 caveat: 'Recorded as none on purpose: the only New Zealand evidence found is frequency or perception, and the largest
-  national source, the Building Disputes Tribunal, states that it does not collect statistics on the issues in its
-  adjudications. The tribunal''s own average costs and claim sizes cover all claims together, not delay claims.'
+  national source, the Building Disputes Tribunal, states that it has not collected detailed statistics on the types of
+  issues in its adjudications. The tribunal''s own average costs and claim sizes cover all claims together, not delay claims.'
 status: current

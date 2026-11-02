@@ -10,11 +10,14 @@ derivation: as_published
 statistic: none
 sources:
 - source: building-disputes-tribunal-2023-adjudication
-  location: '''Types of issues'', p.29 (the tribunal says it has not collected statistics on the issues referred)'
+  location: '''Types of issues'', p.29 (the tribunal says it has not collected detailed statistics on the types of issues referred)'
 considered:
 - source: russell-mcveagh-2020-construction-disputes-survey
   reason: '2020 survey: 13% of respondents expect variations to cause disputes and employer variations are seen
     as a leading cause of delay (pp.4, 10-11). Shares of respondents, no dollars.'
+- source: russell-mcveagh-2026-construction-survey-report
+  reason: '2026 survey of 95 New Zealand professionals (late 2025): 39% expect changes to the original scope of work
+    to cause disputes over the next two years (pp.18-19); share of respondents, no dollars.'
 - source: silva-2023-nz-construction-court-cases
   reason: '35 court cases: Figure 3 marks variation entitlement in 2 cases and variation procedural in 2; no amounts.
     Too few cases to state a share.'
@@ -34,15 +37,7 @@ considered:
     the survey itself has no variation item.
 - source: dbh-2013-construction-contracts-act-review-ris
   reason: 'Regulatory impact statement on adjudication reform: no breakdown of disputes by cause, no values.'
-sample_note: 'Searched: New Zealand construction disputes causes survey variations delay payment latent conditions;
-  New Zealand construction variations cost study Mbachu Domingo variation orders percentage of contract value; MBIE
-  Construction Contracts Act review adjudication statistics; Silva Domingo Ameer Ali court cases New Zealand; Te
-  Waihanga MBIE Law Commission construction disputes cost value adjudication. A frequency exists: 13% of Russell
-  McVeagh''s 2020 respondents expect variations to cause disputes, and variation entitlement is the area of 2 of
-  35 court cases in Silva et al. 2023, but neither is a cost. Not opened: the Arcadis and HKA disputes reports (their
-  published figures are global or North American, none for New Zealand); MBIE''s KPMG retention review and Weathertight
-  Homes statistics (mbie.govt.nz and building.govt.nz PDFs refused scripted downloads and were not retrieved by
-  other means); Jelodar et al. 2016 (ASCE, paywalled, read only as summarised in Silva et al. 2023).'
+sample_note: 'Searched: New Zealand construction disputes causes survey variations delay payment latent conditions; New Zealand construction variations cost study Mbachu Domingo variation orders percentage of contract value; MBIE Construction Contracts Act review adjudication statistics; Silva Domingo Ameer Ali court cases New Zealand; Te Waihanga MBIE Law Commission construction disputes cost value adjudication. Frequencies exist: 13% of Russell McVeagh''s 2020 respondents (no respondent count stated) expect variations to cause disputes, 39% of its 2026 respondents (95, late 2025) expect changes to the original scope of work to cause them (a different wording, so the two are not read as a trend), and variation entitlement is the area of 2 of 35 court cases in Silva et al. 2023 (my reading of the figure''s matrix, not stated in the text), but none is a cost. Not opened: the Arcadis and HKA disputes reports (their published figures are global or North American; no New Zealand split was found); Jelodar et al. 2016 (ASCE, paywalled, read only as summarised in Silva et al. 2023).'
 caveat: Recorded as none on purpose. No New Zealand source states what variation disputes are worth, as an amount,
   a share of contract value or a share of the amount claimed. The Australian and North American variation figures
   in the corpus are not New Zealand evidence.

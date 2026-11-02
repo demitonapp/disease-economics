@@ -10,8 +10,8 @@ derivation: as_published
 statistic: none
 sources:
 - source: building-disputes-tribunal-2023-adjudication
-  location: '''Types of issues'', p.29 (defective or incomplete work claims are listed as common, with no statistics
-    collected)'
+  location: '''Types of issues'', p.29 (the tribunal says it has not collected detailed statistics on the types of issues referred; defective or
+    incomplete work claims are listed as common)'
 considered:
 - source: ramachandra-2011-payment-problems-nz-court-cases
   reason: '40 High Court payment cases, 2008-2010: 10 (25%) concerned final payments and 1 retention, with claimed
@@ -36,20 +36,22 @@ considered:
 - source: silva-2023-nz-construction-court-cases
   reason: '35 court cases: quality of works is the area of 4 cases and testing and inspection of 1; no final account,
     retention or practical completion category, no amounts.'
+- source: russell-mcveagh-2026-construction-survey-report
+  reason: '2026 survey of 95 New Zealand professionals (late 2025): 28% expect defective or incomplete work to cause
+    disputes, and 92% say their contracts typically provide for retentions, 80% of those in cash (pp.17-19); shares
+    of respondents, no dollars and no retention amount or rate.'
+- source: kpmg-2019-retention-money-provisions-review
+  reason: 'MBIE-commissioned review of the retention regime (survey of 223 firms, 71 responses, plus interviews):
+    retention up to 10% of contract value, released half at practical completion and half at the end of the defects
+    liability period; interviewees knew of no retention disputes before adjudicators. Its dollar figures are four
+    insolvencies (about $8.35m held), not disputes, and it measures no value of retentions held or disputed.'
+- source: mbie-2019-weathertight-homes-claims-statistics
+  reason: 'MBIE monthly counts of weathertightness claims (7,377 claims for 12,810 properties at 31 January 2019): counts
+    only, no claim value, and homeowners'' defect claims rather than contractor close-out disputes.'
 - source: ramachandra-2015-payment-problems-nz
   reason: Survey in which disputes over quality of work score 3.53 out of 5 as a cause of payment problems (a perception
     score, not money); retention appears only in its literature review.
-sample_note: 'Searched: MBIE Construction Contracts Act review adjudication statistics retentions regulatory impact
-  statement; New Zealand retention money regime review KPMG MBIE retentions held estimated value subcontractors;
-  KPMG 2019 implementation review retention money regime survey percentage released late; Weathertight Homes Resolution
-  Service claims statistics average claim value building defects; New Zealand construction disputes causes survey;
-  New Zealand Building Disputes Tribunal AMINZ statistics. Frequencies exist: 25% of the 40 High Court payment cases
-  in Ramachandra and Rotimi 2011 were about final payments; retention is commonly 2% to 10% of contract value (MBIE
-  2020 and 2021). Neither is a dispute cost or a share of contract value that was disputed. Not opened: the Arcadis
-  and HKA disputes reports (their published figures are global or North American, none for New Zealand); MBIE''s
-  KPMG retention review and Weathertight Homes statistics (mbie.govt.nz and building.govt.nz PDFs refused scripted
-  downloads and were not retrieved by other means); Jelodar et al. 2016 (ASCE, paywalled, read only as summarised
-  in Silva et al. 2023).'
+sample_note: 'Searched: MBIE Construction Contracts Act review adjudication statistics retentions regulatory impact statement; New Zealand retention money regime review KPMG MBIE retentions held estimated value subcontractors; KPMG 2019 implementation review retention money regime survey percentage released late; Weathertight Homes Resolution Service claims statistics average claim value building defects; New Zealand construction disputes causes survey; New Zealand Building Disputes Tribunal AMINZ statistics. Frequencies exist: 28% of Russell McVeagh''s 2026 respondents (95, late 2025) expect defective or incomplete work to cause disputes; 25% of the 40 High Court payment cases in Ramachandra and Rotimi 2011 were about final payments; retention is commonly 2% to 10% of contract value (MBIE 2020 and 2021, a stated practice range with no sample) or up to 10% on a sliding scale (KPMG 2019, 71 firms). Neither is a dispute cost or a share of contract value that was disputed. KPMG''s review was readable at building.govt.nz and the Weathertight Homes statistics through the Internet Archive copy; neither holds a value for close-out disputes. Not opened: the Arcadis and HKA disputes reports (their published figures are global or North American; no New Zealand split was found); Jelodar et al. 2016 (ASCE, paywalled, read only as summarised in Silva et al. 2023).'
 caveat: Recorded as none on purpose. A retention rate is how much is held as routine security, so multiplying it
   by a contract value would overstate what is disputed at close-out. The UK retention figure in the corpus (entitlement_retention_held)
   is not New Zealand evidence.

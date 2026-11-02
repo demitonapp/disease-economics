@@ -7,7 +7,7 @@ source_type: regulator
 method: records
 access: primary
 read_on: '2026-11-02'
-location: Chair's review (p.5-6); "Penalties imposed in 2024/25" table (p.14)
+location: Chair's review (p.5); "Penalties imposed in 2024/25" table (p.14)
 jurisdictions:
 - NZ
 industries:

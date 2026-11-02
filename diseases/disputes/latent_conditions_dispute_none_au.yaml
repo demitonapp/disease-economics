@@ -1,0 +1,62 @@
+subtype: latent_conditions_dispute
+label: No published national figure for the cost of latent condition disputes in Australia
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - no Australian national source found gives an amount, a share of contract value or a share of disputes for
+  latent or differing site conditions
+exposure_kind: money_at_stake
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- source: murray-2017-security-of-payment-review
+  location: Chapter 10, p.123 (latent conditions, time-related costs and disputed variations in adjudication)
+considered:
+- source: acif-2023-subsurface-risk-allocation
+  reason: >-
+    National practice note on how Australian forms allocate subsurface risk; guidance with no claims data or amounts.
+- source: infrastructure-australia-2021-national-infrastructure-risk
+  reason: >-
+    Perceptions of who should carry latent condition risk (Figure 28, PDF p.47) from a market sounding survey; no
+    dispute counts, amounts or outcomes.
+- source: productivity-commission-2014-public-infrastructure
+  reason: >-
+    Explains who carries latent conditions under construct-only and design-and-construct contracts (PDF pp.108-109);
+    no data on disputes.
+- source: grattan-2020-megaprojects
+  reason: >-
+    One Victorian case (West Gate Tunnel soil contamination) with an estimated $1 billion extra cost; a single
+    contested project, not a sample.
+- source: hka-2026-crux-ninth-report
+  reason: >-
+    Unforeseen physical conditions triggered claims on 17.4% of Americas projects and 23.7% of renewable energy
+    projects; Oceania has no split by cause and nothing is Australian.
+- source: arcadis-2016-global-construction-disputes
+  reason: >-
+    Differing site conditions ranked third in North America; Australia section lists no site-condition figures.
+- source: arcadis-2022-global-construction-disputes
+  reason: >-
+    Differing site conditions are new in third place in the North America ranking (p.14), not the global one (p.11); a
+    rank, with no amounts and no Australian breakdown.
+- source: campos-gutierrez-2013-court-case-disputes
+  reason: >-
+    Site conditions are not among the five factors found in 78 Australian court cases; no figure.
+- source: love-2008-causal-modelling-disputes
+  reason: >-
+    Lists site conditions fourth in a 2006 Australian law firm ranking of dispute causes, second-hand and without
+    percentages.
+- source: rahnamayiezekavat-2022-nsw-disputes-typology
+  reason: >-
+    NSW only; its 13 case categories include no site-condition category, so no share.
+sample_note: >-
+  Search terms: latent conditions dispute Australia; differing site conditions claims share Australia; unforeseen
+  ground conditions claims contractors Australia survey; subsurface risk allocation disputes; geotechnical claims
+  Australian infrastructure; Infrastructure Australia, ACIF and APCC, Arcadis and HKA CRUX. No frequency of latent
+  condition disputes was found for Australia either; the only counts are rankings, and the closest is a perception
+  survey on who should carry the risk.
+caveat: >-
+  Recorded as `none` on purpose. Ten sources were opened (listed above); none states an Australian national amount,
+  share or outcome rate for latent condition disputes. The $1 billion Victorian case is one contested project and
+  is not offered as a benchmark. This is the next place to look for research, not a zero.
+status: current

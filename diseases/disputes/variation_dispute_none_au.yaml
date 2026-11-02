@@ -1,0 +1,60 @@
+subtype: variation_dispute
+label: No published national figure for the cost of variation disputes in Australia
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - no Australian national source found gives an amount, a share of contract value or a share of a claim for
+  disputes about whether work was a variation or what it is worth
+exposure_kind: money_at_stake
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- source: campos-gutierrez-2013-court-case-disputes
+  location: Section 4.1 and Figure 2; Table 1 (variation row)
+considered:
+- source: murray-2017-security-of-payment-review
+  reason: >-
+    Describes how the Acts treat disputed variations (Victoria caps some at 10% of the contract sum, p.119) and
+    calls them too complex for rapid adjudication (p.123); legal text with no amounts or shares.
+- source: rahnamayiezekavat-2022-nsw-disputes-typology
+  reason: >-
+    Variation is 3% and scope 2% of 230 NSW cases (Table 3, p.9); one state, case counts, no amounts.
+- source: love-2017-change-orders
+  reason: >-
+    Australian civil: change orders were 11% of work value on 67 public infrastructure projects of one contractor.
+    That is the size of variations, not of disputes about them, and is one contractor's own projects.
+- source: productivity-commission-2014-public-infrastructure
+  reason: >-
+    Cites second-hand that 60 to 90 per cent of variations come from poor design documentation; a share of
+    variations, not of disputes, with no amounts.
+- source: hka-2026-crux-ninth-report
+  reason: >-
+    Scope change was blamed on 33.4% of projects worldwide; global, a frequency, and not an Australian figure.
+- source: arcadis-2016-global-construction-disputes
+  reason: >-
+    Global cause ranking led by contract administration; its Australia section gives no variation figures.
+- source: arcadis-2022-global-construction-disputes
+  reason: >-
+    Owner-directed changes tied third among global causes; a rank with no amount and no Australian split.
+- source: love-2008-causal-modelling-disputes
+  reason: >-
+    Reports a 2006 Australian law firm ranking with variations to scope first, second-hand and without
+    percentages.
+- source: byrne-2019-subcontractor-nonpayment
+  reason: >-
+    Queensland only; subcontractors report contention over what counts as a variation but give no amounts by cause.
+- source: dga-2023-adjudication-outcomes
+  reason: >-
+    NSW, Queensland and Victorian adjudication totals for all payment claims; no split for variations and not a
+    national series.
+sample_note: >-
+  Search terms: variation dispute Australia; disputed variations share of disputes; scope change disputes
+  Australian contractors survey; change orders claims value Australia; variation claims adjudication;
+  Arcadis, HKA CRUX, Murray review. A frequency exists: variations were a factor in 23 of 78 Australian court cases
+  from 1966 to 2012 (Campos Gutierrez 2013), and variation is 3% of 230 NSW cases, but neither is a cost.
+caveat: >-
+  Recorded as `none` on purpose. Ten sources were opened (listed above); none states an Australian national amount
+  or share of a claim for variation disputes. The 11% change-order figure measures change, not dispute, and comes
+  from one contractor's projects. This is the next place to look for research, not a zero.
+status: current

@@ -14,12 +14,12 @@ sources:
 considered:
 - source: aca-arcadis-2024-market-sentiment-survey
   reason: >-
-    Same survey a year on. A chart of escalation absorbed on projects during 2023 has three bands (under 10%, 10 to 25%, over
+    Same survey a year on. A chart of escalation absorbed on projects during 2023 has bands (none, under 10%, 10 to 25%, over
     25%) with no printed values, no sample size is stated, and it covers all construction. Reading the bar lengths would be an
     inference, so no figure is taken.
 - source: aca-2022-construction-cost-inflation
   reason: >-
-    Advocacy paper: some contractors saw supply costs rise up to 70% in a year; fixed prices held 12 to 24 months; rise and fall
+    Advocacy paper: some contractors saw supply costs rise up to 70% in a year; contractors must hold fixed prices for 12 to 18 months or even two to three years; rise and fall
     clauses uncommon. No measured cost to a contract. Table 1 has no printed values.
 - source: eslake-2026-civil-fuel-shock
   reason: >-

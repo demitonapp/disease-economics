@@ -20,4 +20,4 @@ An author summary of an RMIT study of 81 construction plant-related deaths in th
 Information System. In more than half the decedent was not the operator. The causes named include site
 constraints (19 cases), inadequate supervision (18), plant design (17), safety culture (13) and construction
 process design (13). It quotes Safe Work Australia for 123 construction deaths in 2008-09 to 2010-11. Read as
-the author's article, not the underlying paper. No money figure.
+the author's article; the underlying paper (Engineering, Construction and Architectural Management, 2013) is paywalled and only its abstract was read, which is also about causes and holds no money. No money figure.

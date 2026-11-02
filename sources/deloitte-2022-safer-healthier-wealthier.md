@@ -9,7 +9,7 @@ source_type: research-institute
 method: model
 access: primary
 read_on: '2026-11-02'
-location: Findings text on the Deloitte page
+location: Findings text on the Deloitte page, and the linked 1MB technical report PDF (keyword scan for insurance, premium, fine, penalty, compliance and licence found no relevant money)
 jurisdictions:
 - AU
 industries:

@@ -21,7 +21,8 @@ The national environmental regulator publishes a register of infringement notice
 contested, withdrawn or reissued, for breaches of conditions of approvals under the EPBC Act. The page states
 that the penalty for a corporation is 60 penalty units and that a notice can impose at most 20% of the maximum
 court penalty. Each register entry names the project, the company, the number of notices, the total value and
-the condition breached. Notices dated in 2025 total 32 notices and AU$628,500 across 21 entries, with single
-notices at AU$18,780 or AU$19,800; in 2026 single notices appear at AU$19,800 and AU$21,840. Projects include
+the condition breached. Notices dated in 2025 total 32 notices and AU$628,500 across 21 entries, and every notice is
+AU$18,780 or AU$19,800 (60 penalty units at an implied AU$313 or AU$330 a unit, so the amount is set by statute and
+not by the harm); in 2026 single notices appear at AU$19,800 and AU$21,840. Projects include
 rail, pipelines, quarries, mines, subdivisions and commercial developments. Many notices concern late or
 missing compliance reports and management plans; some concern clearing outside the approved area.

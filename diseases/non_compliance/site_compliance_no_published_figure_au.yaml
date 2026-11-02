@@ -1,0 +1,62 @@
+subtype: site_compliance
+label: >-
+  No published Australian national cost for a lapsed permit, traffic management plan, environmental condition or asbestos register on a construction site
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - the one national money series found, EPBC Act infringement notices, is a statutory penalty (60 penalty units)
+  and not a measured cost, and the national fine statistics are not split by kind of breach
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- national-epa-2026-infringement-notices
+considered:
+- source: owhsp-2021-asbestos-roof-fine
+  reason: >-
+    Queensland only and one case: a painter fined AU$3,000 against a AU$153,600 maximum for spraying an asbestos
+    roof. Shows asbestos-related site breaches are prosecuted, but a state-only single case cannot fill the national
+    cell.
+- source: swa-2025-model-whs-regulations
+  reason: >-
+    Regulation 425 requires an asbestos register and carries a tier G monetary penalty, but the model regulations
+    give no dollar amount, are not themselves in force, and so give the asbestos register part of the site cause no
+    figure.
+- source: swa-2025-whs-prosecutions-dashboard
+  reason: >-
+    National average fine of AU$116,979 per prosecution (2024) covers every WHS breach and cannot be attributed
+    to permits, traffic management, environment or asbestos.
+- source: swa-2025-prosecutions-data-dictionary
+  reason: No field for the kind of failure; a permit, traffic plan or asbestos register breach cannot be isolated.
+- source: swa-2023-cpm25-whs-compliance-enforcement
+  reason: >-
+    5,700 prohibition notices and AU$26,050 thousand in court fines nationally in 2021-22, none split by kind of
+    breach or industry.
+- source: fsc-2020-mobile-plant-scaffolding-data
+  reason: >-
+    Counts 249 road or traffic high-risk incidents among 1,737 reported in 2015-2019; counts only, no cost.
+- source: fsc-2025-annual-data-report-2024
+  reason: >-
+    Audit findings against accredited companies' systems, including traffic management plan criteria, as issue
+    rates; no penalty or cost.
+- source: swa-2024-key-whs-statistics
+  reason: >-
+    Construction median compensation AU$18,500 per serious claim covers every injury cause and cannot be tied to a
+    permit, traffic plan, environmental condition or asbestos register.
+sample_note: >-
+  National EPA register of paid infringement notices (entries dated 2025, re-added by the reviewer): 32 notices in 21
+  entries, AU$628,500 in all, a mean of AU$19,640.63 per notice. Every one of the 32 notices is either AU$18,780 (5) or
+  AU$19,800 (27), which is 60 penalty units at an implied unit value of AU$313 and AU$330; 2026 entries show AU$19,800
+  and AU$21,840 (unit value AU$364). The mean therefore restates the penalty unit rate in force on each notice date
+  and measures no cost; it was a figure in the first draft of this record and was removed at review. Search terms used:
+  WHS prosecutions average fine Safe Work Australia; comparative performance monitoring fines per conviction; Federal
+  Safety Commissioner annual data; Key WHS statistics median compensation construction.
+caveat: >-
+  Recorded as none on purpose. The EPBC notice is a fixed statutory amount, so averaging it measures the penalty unit
+  value and not what a breach costs anyone. It also covers one federal Act (EPBC approval conditions) and not permits
+  to work, traffic management plans, state environmental licences or asbestos registers; most notices on the register
+  are for late or missing compliance reports and management plans, and the notice goes to the approval holder or the
+  third party carrying out the action, who is often an owner or developer and not a contractor. A fine only: the
+  stop-work, rectification and clean-up costs that follow a breach are not in it.
+status: current

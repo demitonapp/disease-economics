@@ -17,5 +17,5 @@ industries:
 ---
 
 A reminder that building contractors may only do work their licence class permits. The item reports that a
-court fined one licensee AU$6,500 and ordered AU$11,000 in restitution to the property owners. Two licensees
-were involved; only the one amount was read. One case, one state, 2021.
+court fined one licensee AU$6,500 and ordered AU$11,000 in restitution to the property owners. A second licensee, a
+Brisbane company, was penalised more than AU$13,000 for patios built without the right licence class. Two cases, one state, 2021.

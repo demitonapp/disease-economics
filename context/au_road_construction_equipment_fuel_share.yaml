@@ -1,11 +1,10 @@
-subtype: plant_fuel
 label: Equipment and fuel as a share of the cost of road construction, Australia (2013 survey of road works)
 exposure_value: 0.2744
 exposure_unit: ratio_of_other
 denominator: construction_cost
 exposure_basis: >-
   of the total cost of road construction work: equipment hire and depreciation 21.69% plus fuel 5.76%
-exposure_kind: money_at_stake
+exposure_kind: context
 confidence: moderate
 derivation: as_published
 statistic: mean
@@ -35,7 +34,7 @@ sample_note: >-
   (36 respondents) equipment and fuel are 27.60% of construction cost (hire and depreciation 21.53%, fuel
   6.07%). State and territory road authorities report 27.70% and local governments 26.97%.
 caveat: >-
-  The share of road-construction cost that plant and fuel make up, 2013 mix, for roads only. It is not an
+  Context only: how large plant and fuel are in the cost of road construction, 2013 mix, for roads only. It is not an
   overrun, an hours-over-allowance figure or a measure of standby, and not a share of contract value. Fuel
   alone is 5.76% of road construction cost, but only 0.79% in the state road authorities' own column and
   8.05% in local governments' (Table B2), so it varies with who does the work.

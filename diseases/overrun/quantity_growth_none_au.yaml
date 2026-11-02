@@ -40,8 +40,9 @@ considered:
     quantity outturn.
 - source: infrastructure-australia-2025-market-capacity
   reason: >-
-    States that there is no consistent project-level data on budgeted against actual cost and that a
-    benchmark workstream would have to collect it (p.61). It confirms that the measure is not published.
+    Says there is no consistent project-level data on subcontracting and self-performance, and proposes
+    a workstream to collect core measures such as budgeted against actual cost (p.61). It holds no quantity
+    outturn, and does not itself say budget-against-actual data is absent.
 - source: abs-2025-australian-industry-heavy-civil
   reason: >-
     Industry income, expense and labour totals in dollars. No physical quantities and no job-level outturn.
@@ -51,9 +52,11 @@ sample_note: >-
   Auditor-General road construction contract variations; Austroads estimated against actual quantities. Eight
   national or state sources were opened and none reports measured against schedule quantity. Related shares
   that are not this cause: Grattan found scope changes explain about 11% of the cost overrun on 51
-  Australian transport projects (additions to what is built, owner-side, between announcement and
+  Australian transport projects over $100 million (additions to what is built, owner-side, between announcement and
   completion); Love and colleagues found change orders at 11% of work value for one contractor. A
-  Queensland Transport and Main Roads variation study (USQ, Purvis 2015) was found but could not be opened.
+  Queensland Transport and Main Roads variation study (USQ, Purvis 2015) was found but could not be opened (connection refused again at review, 2026-11-02). It covers Queensland Transport and Main Roads only, so
+  it could not fill the national cell. A further search at review for an Austroads, Auditor-General or road agency quantity outturn study found none: Baccarini's contingency study of 48 road projects and a NSW
+  road authority estimating study compare cost against estimate, not measured against schedule quantity.
 caveat: >-
   Recorded as none on purpose: no defensible Australia-wide figure for how far measured quantities exceed the
   schedule on re-measurable contracts was found, not that none exists. The 11% figures above are shares of a

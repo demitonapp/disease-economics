@@ -1,12 +1,10 @@
-subtype: labour_productivity
 label: Labour as a share of the cost of road construction, Australia (2013 survey of road works)
 exposure_value: 0.3179
 exposure_unit: ratio_of_other
 denominator: construction_cost
 exposure_basis: >-
-  of the total cost of road construction work: site-based labour 24.19% plus office-based labour 7.60%, the
-  share of cost that hours worked drive
-exposure_kind: money_at_stake
+  of the total cost of road construction work: site-based labour 24.19% plus office-based labour 7.60%
+exposure_kind: context
 confidence: moderate
 derivation: as_published
 statistic: mean
@@ -32,7 +30,7 @@ considered:
     indirect labour cost metrics would have to be collected (p.61); no hours-against-budget figure.
 - source: abs-2025-australian-industry-heavy-civil
   reason: >-
-    Gives labour cost against expense for the industry; filed as its own finding, labour_cost_share_heavy_civil_au.
+    Gives labour cost against expense for the industry; filed as its own context figure, au_heavy_civil_labour_cost_share.
 - source: ryan-duffield-2017-contractor-margins
   reason: >-
     Lists poor productivity among factors the literature gives for megaproject failure; it gives no
@@ -42,7 +40,7 @@ sample_note: >-
   mix is labour 33.94% (Table B1); maintenance alone 36.2% (Figure 4). The private contractors' column,
   the most relevant to a contractor, shows 32.13% for road construction and maintenance together.
 caveat: >-
-  This is the part of road-works cost that labour hours drive, not a measure of overstaffing, lost hours or
+  Context only: how large labour is in the cost of road works, not a measure of overstaffing, lost hours or
   productivity, and not an overrun or a loss. Shares are from 2013 and for roads (construction and
   maintenance), not all civil work. Labour bought inside materials or subcontract prices is counted there,
   not here. No Australian measure of hours over budget was found.

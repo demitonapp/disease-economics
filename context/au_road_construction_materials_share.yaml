@@ -1,12 +1,11 @@
-subtype: input_prices
 label: Materials as a share of the cost of road construction, Australia (2013 survey of road works)
 exposure_value: 0.4077
 exposure_unit: ratio_of_other
 denominator: construction_cost
 exposure_basis: >-
   of the total cost of road construction work: bituminous materials 12.23%, cement and concrete 4.46%, quarry
-  products 16.16% and reinforcing steel 7.92%, the part of cost exposed to materials price rises
-exposure_kind: money_at_stake
+  products 16.16% and reinforcing steel 7.92%
+exposure_kind: context
 confidence: moderate
 derivation: as_published
 statistic: mean
@@ -45,7 +44,7 @@ sample_note: >-
   mix: materials 37.06%. Private sector contractors alone: materials 41.01% of road construction and
   maintenance cost. Subcontract prices are not a separate line in this mix.
 caveat: >-
-  The share of road-construction cost that materials make up, not the loss from a price rise: no price
+  Context only: how large materials are in the cost of road construction, not the loss from a price rise: no price
   movement is applied to it. Roads only, 2013 mix. It is not a share of contract value and
   says nothing about how much of a job is on a fixed price.
 status: current

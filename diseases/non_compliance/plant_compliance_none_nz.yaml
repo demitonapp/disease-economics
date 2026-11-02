@@ -9,11 +9,19 @@ confidence: low
 derivation: as_published
 statistic: none
 sources:
-- worksafe-2019-crane-topic-page
+- worksafe-2023-kncc-truck-loader-crane-summary
 considered:
-- source: worksafe-2023-kncc-truck-loader-crane-summary
-  reason: Crane-related prosecution (fine $380,000, reduced to $240,000) charged for failing to secure a load, a
-    general duty failure, not registration or inspection of the crane.
+- source: worksafe-2019-crane-topic-page
+  reason: States that holding a crane unit standard or certificate is not mandatory for an operator, which is a
+    people question; it holds no cost and says nothing on plant registration or inspection.
+- source: nz-1999-pressure-equipment-cranes-regulations
+  reason: The regulations that require certificates of inspection for cranes and pressure equipment. Their offences and
+    penalties (Part 6, regulation 39) were revoked on 4 April 2016, so a missing certificate is no longer a
+    stand-alone offence with a penalty of its own, and the text holds no dollar figure.
+- source: worksafe-2022-metallic-sweeping-summary
+  reason: The one prosecution found where a crane certificate of inspection is a named particular outside the
+    KNCC case ($15,000 over three years, 2022), but the industry is waste services and the fine is for the whole
+    section 36 charge, including a detached hook.
 - source: worksafe-2023-culham-engineering-summary
   reason: Crane lift and collapsed temporary works ($400,000 fine, reparation and costs) charged under the general
     duty, not plant certification.
@@ -42,11 +50,12 @@ sample_note: 'WorkSafe court summary register searched on "crane", "certificate 
   and all industries); WorkSafe cranes and construction pages; the quarterly report; a law-firm count of fines.
   The register''s free-text search is not selective ("plant registration" returned all 608 entries), so the entries
   read were those whose titles and facts were plant-related; none was charged for an unregistered or uncertified
-  machine. Frequencies exist that the schema cannot hold: construction is about 15% of work-related fatalities and
+  machine, except KNCC and Metallic Sweeping, where a certificate of inspection was one particular among several. Frequencies exist that the schema cannot hold: construction is about 15% of work-related fatalities and
   serious injuries, with 9 to 10 deaths a year, and vehicles and mobile machinery are a WorkSafe focus area.'
-caveat: Recorded as none on purpose. WorkSafe says crane operator qualifications are not mandatory until cranes
-  become prescribed high-risk plant, and the plant prosecutions read were brought under the general duties, so a
-  fine cannot be assigned to a plant-registration cause. The crane page links the 1999 regulations on pressure equipment,
-  cranes and passenger ropeways, which were not read and may carry inspection-certificate penalties. This is a search
-  of public registers and pages, not of court files.
+caveat: Recorded as none on purpose. The nearest evidence is KNCC (2023), a construction company charged under section 36
+  with four particulars, one of which was using a truck loader crane and slings without a current certificate of
+  inspection. The fine ($380,000, cut to $240,000 for financial capacity) covers the whole charge, so no part of it can
+  be assigned to the plant certificate. The 1999 pressure equipment and cranes regulations, which require those
+  certificates, lost their offence and penalty provisions in 2016, so plant breaches are pleaded as general duty
+  failures. This is a search of public registers and pages, not of court files.
 status: current

@@ -30,6 +30,11 @@ sources:
 - source: 1news-2026-williams-unlicensed-carterton
   location: 'second paragraph: $5,600 fine, $1,000 emotional harm reparation, $130 costs'
 considered:
+- source: 1news-2024-ewrb-unauthorised-electrical-work
+  reason: 'A separate regime (Electricity Act 1992, Electrical Workers Registration Board). Six prosecutions heard March
+    to July 2024 with fines of $1,200 to $9,000 ($28,950 in all) are reported by a news article; the Board''s own
+    prosecution page lists no amounts. A better base for a people figure than one building case, once the Board''s
+    releases are read, and not mixed in here because the licence and the trade differ.'
 - source: mbie-2025-lbp-maximum-fine-ris
   reason: Gives the Board's disciplinary fines for LBPs as a range of $500 to $5,000 over four years but no average,
     and a disciplinary fine is for poor work or supervision by a person who holds a licence, not for working without
@@ -61,10 +66,14 @@ sample_note: 'One New Zealand case read in MBIE''s own media release, with three
   exist that the schema cannot hold: the Board upholds about 100 complaints or inquiries a year and imposed 59 fines
   among 81 penalties in 2024/25 (no dollar amounts); WorkSafe issued 1,039 improvement notices in one quarter; Draper
   (Taupo, 2019) was ordered to pay $3,000 for claiming to be an LBP, which the report does not call a fine.'
-caveat: 'A single case, graded low. The tradesperson held an LBP licence that was suspended, so this is a suspended
-  licence rather than never being licensed. The three other cases were found by search, not drawn as a sample: I
-  found no complete MBIE list, and other prosecutions exist (a $10,000 fine reported in 2025 for unlicensed work
-  with forged documents appeared in search results and was not read). Two of the four cases are news accounts, not
-  court records. The fine is paid by the individual tradesperson. The only licence regime read here is the LBP scheme
-  for restricted building work; WorkSafe''s crane page shows that no crane operator ticket is required.'
+caveat: 'A single case, graded low, and a thin fill for the cell: one fine in one court (Kaitaia) is not a national
+  figure, though Building Act section 85 and MBIE as prosecutor are national. Dodd is the value because MBIE''s own
+  release states the fine separately from the reparation and false-statement fines; he held an LBP licence that was
+  suspended, whereas Ross, Faulkner and Williams were never licensed, so this is a suspended licence rather than none.
+  The other three fall at $2,000, $2,000 and $5,600, and Dodd sits inside that range. They were found by search, not
+  drawn as a sample: I found no complete MBIE list, and other prosecutions exist (a $10,000 fine reported in 2025 for
+  unlicensed work with forged documents appeared in search results and was not read). Two of the four cases are news
+  accounts, not court records. The fine is paid by the individual tradesperson and is a sentence on the offence, not
+  the cost of the licence lapse. The only licence regime read here is the LBP scheme for restricted building work;
+  WorkSafe''s crane page shows that no crane operator ticket is required.'
 status: current

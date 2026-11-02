@@ -15,4 +15,4 @@ industries:
 - F
 ---
 
-WorkSafe's page on cranes. It states that the crane code of practice's suggestion that crane workers hold unit standards or a National Certificate in Crane Operation is good practice but not mandatory, and that until cranes become prescribed high-risk plant or similar, only the general training provisions of the Health and Safety at Work Act 2015 apply. In other words New Zealand has no licence or ticket for crane operators that a prosecution could be brought under, which is why no fine for an unlicensed or uncertified operator exists to be counted. It holds no cost figure.
+WorkSafe's page on cranes. It states that the crane code of practice's suggestion that crane workers hold unit standards or a National Certificate in Crane Operation is good practice but not mandatory, and that until cranes become prescribed high-risk plant or similar, only the general training provisions of the Health and Safety at Work Act 2015 apply. In other words no licence or ticket for crane operators exists in law for a prosecution to rest on. It is about operators, not plant, and holds no cost figure.

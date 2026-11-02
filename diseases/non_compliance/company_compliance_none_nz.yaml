@@ -1,0 +1,49 @@
+subtype: company_compliance
+label: No defensible New Zealand figure for the cost of a business lacking a licence it needed (three asbestos removal prosecutions only)
+exposure_value: null
+exposure_unit: none
+exposure_basis: none - the only fines found that turn on a business or worker lacking a licence are three WorkSafe asbestos
+  prosecutions, too few and too unlike to summarise, and each fine covers a whole charge sheet
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- worksafe-2025-court-summaries-asbestos
+considered:
+- source: mbie-2023-dodd-unlicensed-work-release
+  reason: Unlicensed restricted building work by an individual under the LBP scheme, a worker licence filed under
+    people_compliance, not a licence the business holds.
+- source: mbie-2025-lbp-maximum-fine-ris
+  reason: Board disciplinary fines on licensed practitioners ($500 to $5,000 over four years, no average) are for poor
+    work or supervision, not for lacking a licence.
+- source: building-practitioners-board-2025-annual-report
+  reason: Counts 59 fines among 81 penalties in 2024/25 with no dollar amounts, and covers licensed individuals only.
+- source: building-practitioners-board-2024-annual-report
+  reason: Counts 56 fines in 2023/24 with no dollar amounts; the same limit.
+- source: worksafe-2026-quarterly-report-q2
+  reason: Counts of notices and prosecutions only, no dollar value and no licence cause.
+- source: hesketh-henry-2018-hswa-two-years-on
+  reason: An all-sector average of $145,033.60 per section 36 offence from 2018, with no split by licence or accreditation.
+- source: worksafe-2026-construction-sector-page
+  reason: Construction's share of harm and deaths, with no cost figure and nothing on licences or accreditation held
+    by a business.
+- source: worksafe-2019-crafar-crouch-picton-summary
+  reason: A company fined $351,563 on the whole section 36 duty after an unlicensed driver died; none of it can be
+    attributed to a licence the business lacked.
+sample_note: 'WorkSafe''s court summary register searched on "asbestos" (24 results on 2026-11-02), "licence" and
+  "unlicensed" in building and construction. Three entries say the person removing asbestos held no removal licence
+  and were decided under the Health and Safety at Work Act 2015: Knight $3,000 (2 November 2018, an individual),
+  Sibley $15,000 (11 November 2020, an individual) and Wilson Building Timaru Limited $66,000 (29 September 2023, a
+  company whose worker was unlicensed). A fourth, Essential Homes ($30,000, 2020), was charged mainly with breaching a
+  prohibition notice that included unlicensed removal. The licence regimes found are the asbestos removal licences
+  (Class A and B) and the LBP scheme; no general contractor licence, prequalification or accreditation regime with a
+  published penalty was found.'
+caveat: Recorded as none on purpose. A median of the three unlicensed removal fines ($15,000, range $3,000 to $66,000) was
+  considered and rejected. A median of three is not a statistic, because the three differ twenty-two fold, two
+  defendants are individuals and one a company, each fine covers the whole charge sheet (Wilson's reflects four days
+  of exposure to other workers' fibres, not the missing licence alone), and all three already sit inside the
+  nine-case set filed under site_compliance, so a second figure would count the same prosecutions twice. The cell is
+  open for research that finds a licence, prequalification or accreditation regime with a published cost, such as a
+  principal's panel exclusion, which this search did not reach.
+status: current

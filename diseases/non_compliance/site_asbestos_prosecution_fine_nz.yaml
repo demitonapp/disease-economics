@@ -7,7 +7,7 @@ price_year: 2020
 exposure_basis: NZD fine per prosecution under the Health and Safety at Work Act 2015 for asbestos offences (survey,
   notification, licensed removal, demolition of contaminated buildings); median of nine; mean $54,247
 exposure_kind: contractor_loss
-confidence: moderate
+confidence: low
 exposure_range:
   low: 1100.0
   high: 318750.0
@@ -44,11 +44,19 @@ sample_note: 'WorkSafe''s court summary register (608 entries when read) searche
   collapse or a prohibition-notice breach, and Bays Boating ($108,000, retail) and McManus Hotel ($50,000, hospitality)
   because the register records a non-construction industry. The register was also searched on "traffic management"
   (17 construction entries); of those read, only Higgins Contractors ($270,000, a three-fatality roadside case)
-  was described by its facts as a traffic-management failure, so no set could be formed.'
-caveat: A set chosen by this research from one regulator's register under the inclusion rule in sample_note, so
-  the register's completeness and the keyword search both shape it; a different rule would move the median. Defendants
-  are a mix of individuals and companies and the offences range from no asbestos survey to demolishing two contaminated
-  buildings. Each fine is for the whole charge sheet, including any section 36 charge, and is after the court's
-  discounts. Amounts are nominal across 2017 to 2023. The cause names the asbestos register, and none of the nine
-  entries is charged only with a missing register or management plan.
+  was described by its facts as a traffic-management failure, so no set could be formed. Review re-derived the 24
+  results on 2026-11-02: 9 in the set, 3 left out as above (Dong, Quick Earth, Essential Homes), Dong''s appeal, 2
+  non-construction, 7 under the 1992 Act and 2 withdrawn 2013 entries; every fine in the set matches its entry.'
+caveat: 'Graded low on review. The median is not stable. It is the middle of nine prosecutions
+  chosen by this research from one regulator''s register under the rule in sample_note, and a defensible change to the
+  rule moves it. Adding Dong SH Auckland ($255,000, one of its three charges is worker exposure to asbestos) gives a
+  median of $19,687.50 over ten; adding Dong and Quick Earth Moving ($150,000) gives $23,375 over eleven; adding those two
+  and Essential Homes ($30,000) gives $26,687.50 over twelve; dropping Topham gives $19,687.50 over eight. The nine are
+  eight jobs, since Inspired Enterprises and Gannaway are one flooring job (21 June 2021), and Topham is a farmer
+  demolishing a chicken shed, which the register records as building and construction. Each fine is a sentence on the
+  whole charge sheet after the court''s discounts, so it prices a prosecution, not the cost of a missing register, and
+  only prosecuted breaches appear. Defendants are individuals and companies; the offences range from no asbestos
+  survey to demolishing two contaminated buildings. Amounts are nominal across 2017 to 2023. The cause also covers
+  permits to work, traffic management plans and environmental conditions, and this figure speaks to none of those; none of the nine
+  entries is charged only with a missing asbestos register or management plan.'
 status: current

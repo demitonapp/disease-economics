@@ -30,17 +30,27 @@ considered:
 - source: icnz-2026-homepage
   reason: The industry body publishes claims and weather-loss data but nothing on contract works, public liability
     or declined claims for contractors.
+- source: acc-act-2001-levy-penalties
+  reason: 'The ACC levy penalty rule is in the statute: interest, then 10% of the total unpaid after 210 days and again
+    every 180 days, capped at three times the unpaid levy (section 250). A rate and a cap, not an observed cost, and
+    the Act counts no employer who under-declared.'
+- source: acc-2026-work-injury-statistics-q2
+  reason: 'ACC quarterly statistics: construction had 27,121 new work claims in 2025, but costs are given for all
+    industries only ($1,254,610,727 active costs, 271,126 active claims), so there is no cost per construction claim,
+    and no link to cover that lapsed.'
 - source: mbie-2025-lbp-maximum-fine-ris
   reason: MBIE estimates latent defects average about $23,000 per new house in 2025, but does not say who bears
     the cost or whether insurance responded.
 sample_note: 'Searched: ACC levy penalties, uncovered or under-declared employers, uninsured contractors, public
   liability and contract works cover, declined claims, WorkSafe court summary register ("insurance" returned 8 entries
-  and "uninsured" none; the 8 were not read). The ACC Act 2001 page, an ACC OIA response and an NBR article could
-  not be opened (403 or empty), and ACC statistics PDFs refused automated download. A frequency exists that the
-  schema cannot hold: 54% of 170 surveyed renovators did not consider contract works insurance (AMI and Ipsos, 2022),
-  which is homeowners, not contractors.'
+  and "uninsured" none; the 8 were not read). Review read the Accident Compensation Act 2001 on legislation.govt.nz
+  and ACC''s Q2 2026 work statistics deck, which the first search could not open; neither holds a defensible money
+  figure. ACC''s OIA responses and the ACC work-injury statistics web page returned PDF-only or empty pages. A frequency
+  exists that the schema cannot hold: 54% of 170 surveyed renovators did not consider contract works insurance (AMI and
+  Ipsos, 2022), which is homeowners, not contractors.'
 caveat: Recorded as none on purpose. ACC guidance says levies apply to employers and to contractors paid schedular
-  payments, and the page gives no penalty amount, so there is no regulator count of uninsured contractors in anything
-  read. The ACC Act levy penalty provisions and ACC's own compliance statistics were not read, and may hold a figure
-  for levy under-declaration.
+  payments, and gives no penalty amount; the Act gives only a rate and a cap. ACC publishes counts of construction
+  claims but costs only across all industries, so a cost per construction claim does not exist in anything read, and
+  it would measure injury cost to the scheme rather than the cost of cover that lapsed. No regulator count of uninsured
+  contractors was found.
 status: current

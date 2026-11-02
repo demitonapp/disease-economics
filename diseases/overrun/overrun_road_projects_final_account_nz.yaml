@@ -19,4 +19,11 @@ sample_note: >-
   Table 4.1 gives the mean percentage cost overrun as 21.6% for small projects (41), 17.8% for medium (55), 19.6% for large (10) and 19.5% in total, with a median of 18% in the table and a standard deviation of 16.07% in the text (printed p.97); 96.2% of the projects overran and the rest finished at or under forecast, so the mean is net of those. The group means weighted by project count give 19.4%, so the percentage rows are consistent with each other. The text rounds the group means to 22%, 18% and 20%. Records were limited to projects the agencies could still produce data for, and the thesis notes private-sector projects could not be obtained.
 caveat: >-
   Owner-side: the road controlling authority's cost against its own forecast, not a contractor's loss. All causes together. The thesis does not show whether the forecast in the records is the decision-stage budget, a design estimate or the contract price (it sizes projects by contract price and says contract documents hold the cost estimate), so treat the comparison with figures measured from the decision to build as the thesis's own, not confirmed. The table's dollar rows do not reconcile: for small projects the sum of overruns (NZ$523.3 million) exceeds the sum of total project cost (NZ$240 million), the all-projects share of 20% does not equal 815.7 / 5,077, and the text puts the projects' total value at about NZ$1.5 billion against the table's 5,077 million; only the percentage rows are used here. The sample is the projects NZTA and Auckland Transport could still produce records for (no other councils, no private clients), a doctoral thesis, one researcher's collection, not independently audited.
-status: current
+status: withdrawn
+withdrawn_reason: >-
+  The baseline cannot be confirmed. The thesis does not show whether the forecast in the records is the decision-stage
+  budget, a design estimate or the contract price, so the figure cannot be read against any one denominator, and it is
+  filed under budget_at_decision only by assumption. It can return if the records' baseline is confirmed.
+history:
+  - changed_on: '2026-11-02'
+    reason: withdrawn before any tagged release, SM070; the baseline of the 19.5% mean overrun is unconfirmed

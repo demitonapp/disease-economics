@@ -1,0 +1,39 @@
+subtype: tender_pricing
+label: >-
+  Extra Crown funding to deliver New Zealand Upgrade Programme transport projects at their new cost estimates, as a share of the original $6.8 billion allocation
+exposure_value: 0.283
+exposure_unit: ratio_of_other
+denominator: budget_at_announcement
+exposure_basis: >-
+  of the original $6.8 billion transport allocation announced in 2020: the additional $1.926 billion Cabinet approved on 31 May 2021 to fund agreed projects at their re-baselined cost estimates, plus contingency, after some projects were rescoped
+exposure_kind: owner_side
+confidence: moderate
+derivation: calculated
+calculation: >-
+  $1.926 billion (paragraph 5.33) divided by $6.8 billion (paragraph 5.32) = 0.2832, rounded to 0.283. The report's own rounded figure for the addition is $1.9 billion (5.12).
+statistic: single_case
+sample_size:
+  n: 26
+  unit: projects
+  note: 26 transport projects announced under the New Zealand Upgrade Programme; one programme, one re-baselining in 2020-21
+sources:
+- source: oag-2023-infrastructure-decisions
+  location: Part 5, paragraphs 5.12 (p.51) and 5.29 to 5.35 (p.53)
+considered:
+- source: te-waihanga-2024-transmission-gully-review
+  reason: >-
+    One project, and the executive summary gives no original-versus-final cost ratio. It finds the Affordability Threshold was set too low, which is the qualitative point, not a figure for how short the estimate was.
+- source: te-waihanga-2026-making-every-dollar-count
+  reason: >-
+    National Infrastructure Pipeline Figure 33 gives only how often reported cost went up after financial decision (51% of projects over $100 million, 28% of the rest), not by how much, so it is a frequency and not a cost.
+- source: atapattu-2023-nz-transport-cost-factors
+  reason: >-
+    Estimators' ranking of causes of overrun, with inadequate tender documentation among the top three; no share of cost, and read from the abstract only.
+- source: te-waihanga-2022-lay-of-the-land
+  reason: >-
+    States that analysis of cost overruns is out of its scope; it compares unit costs between countries.
+sample_note: >-
+  The Auditor-General's audit of the 2020 New Zealand Upgrade Programme. 21 of the 26 announced transport projects could not be delivered within the funding allocated (5.32), a frequency, not a cost. The $1.926 billion also funded rescoped projects and a contingency fund (5.12, 5.33). The report notes that confidence in the baseline information was much lower than expected (5.30).
+caveat: >-
+  An estimate against a later estimate, not against outturn, and the owner's money, not a contractor's loss. No contractor's tender price is involved: both figures are the Crown's, the first set at announcement. The addition includes a contingency fund, which makes the ratio larger than the shortfall in the original estimates, and it is net of the projects that were rescoped, which makes it smaller than the cost of delivering the original scope; the report gives the size of neither, so the direction of the net error is unknown. One programme, announced before business cases were complete, so it is not a typical New Zealand tender.
+status: current

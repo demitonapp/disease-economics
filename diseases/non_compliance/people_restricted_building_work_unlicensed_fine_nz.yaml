@@ -1,0 +1,79 @@
+subtype: people_compliance
+label: Fine for carrying out restricted building work while unlicensed, one New Zealand case (Kaitaia, 2023)
+exposure_value: 3279.8
+exposure_unit: per_incident
+currency: NZD
+price_year: 2023
+exposure_basis: NZD fine imposed on one tradesperson for carrying out restricted building work while his Licensed
+  Building Practitioner licence was suspended; excludes the $4,880.81 reparation, $1,000 emotional harm and two
+  $1,000 fines for false statements in the same case
+exposure_kind: contractor_loss
+confidence: low
+exposure_range:
+  low: 2000.0
+  high: 5600.0
+  kind: across_studies
+derivation: as_published
+statistic: single_case
+sample_size:
+  n: 1
+  unit: cases
+  note: 'The value is the Dodd case alone. The range is the lowest and highest fine for the same offence in the
+    three other MBIE prosecutions found: $2,000 (Ross, 2017), $2,000 (Faulkner, 2019), $5,600 (Williams, 2026).'
+sources:
+- source: mbie-2023-dodd-unlicensed-work-release
+  location: 'paragraph on the sentence: $3,279.80 fine for carrying out restricted building work while unlicensed'
+- source: mbie-2017-ross-unlicensed-work-release
+  location: 'headline and first paragraph: $2,000 fine'
+- source: 1news-2019-draper-faulkner-unlicensed-work
+  location: 'second case (Faulkner): $2,000 fine, $4,500 reparation'
+- source: 1news-2026-williams-unlicensed-carterton
+  location: 'second paragraph: $5,600 fine, $1,000 emotional harm reparation, $130 costs'
+considered:
+- source: 1news-2024-ewrb-unauthorised-electrical-work
+  reason: 'A separate regime (Electricity Act 1992, Electrical Workers Registration Board). Six prosecutions heard March
+    to July 2024 with fines of $1,200 to $9,000 ($28,950 in all) are reported by a news article; the Board''s own
+    prosecution page lists no amounts. A better base for a people figure than one building case, once the Board''s
+    releases are read, and not mixed in here because the licence and the trade differ.'
+- source: mbie-2025-lbp-maximum-fine-ris
+  reason: Gives the Board's disciplinary fines for LBPs as a range of $500 to $5,000 over four years but no average,
+    and a disciplinary fine is for poor work or supervision by a person who holds a licence, not for working without
+    one.
+- source: building-practitioners-board-2025-annual-report
+  reason: Counts 59 fines among 81 penalties in 2024/25 but states no dollar amounts, and covers licensed practitioners
+    only.
+- source: building-practitioners-board-2024-annual-report
+  reason: Counts 56 fines in 2023/24 with no dollar amounts; the same limit as the 2025 report.
+- source: worksafe-2019-crafar-crouch-picton-summary
+  reason: An unlicensed driver died, but the $351,563 fine was for the whole section 36 duty failure and cannot
+    be split to the missing licence.
+- source: worksafe-2022-hon-sang-cheuk-summary
+  reason: Competence of a harness user was one strand of a risk-assessment failure, and no fine was in fact imposed
+    because the defendant could not pay.
+- source: worksafe-2019-crane-topic-page
+  reason: States that holding a crane unit standard or certificate is not mandatory, so a crane operator without
+    one breaches no ticket requirement that a penalty could be counted against.
+- source: worksafe-2026-quarterly-report-q2
+  reason: Counts improvement notices (1,039), prohibition notices (254) and prosecutions disposed (12) for one quarter,
+    with no dollar value and no cause split.
+- source: hesketh-henry-2018-hswa-two-years-on
+  reason: An average fine of $145,033.60 per section 36 offence from the Act's first two years, all sectors and
+    all causes, from the firm's own count.
+sample_note: 'One New Zealand case read in MBIE''s own media release, with three further MBIE prosecutions of the
+  same offence read in one MBIE release and two news reports. Searches: WorkSafe court summaries register ("licence",
+  "unlicensed", "unqualified", "training", "induction", "competent", "certificate of competence", "forklift licence"),
+  MBIE and Building Practitioners Board reports, news searches on unlicensed restricted building work. Frequencies
+  exist that the schema cannot hold: the Board upholds about 100 complaints or inquiries a year and imposed 59 fines
+  among 81 penalties in 2024/25 (no dollar amounts); WorkSafe issued 1,039 improvement notices in one quarter; Draper
+  (Taupo, 2019) was ordered to pay $3,000 for claiming to be an LBP, which the report does not call a fine.'
+caveat: 'A single case, graded low, and a thin fill for the cell: one fine in one court (Kaitaia) is not a national
+  figure, though Building Act section 85 and MBIE as prosecutor are national. Dodd is the value because MBIE''s own
+  release states the fine separately from the reparation and false-statement fines; he held an LBP licence that was
+  suspended, whereas Ross, Faulkner and Williams were never licensed, so this is a suspended licence rather than none.
+  The other three fall at $2,000, $2,000 and $5,600, and Dodd sits inside that range. They were found by search, not
+  drawn as a sample: I found no complete MBIE list, and other prosecutions exist (a $10,000 fine reported in 2025 for
+  unlicensed work with forged documents appeared in search results and was not read). Two of the four cases are news
+  accounts, not court records. The fine is paid by the individual tradesperson and is a sentence on the offence, not
+  the cost of the licence lapse. The only licence regime read here is the LBP scheme for restricted building work;
+  WorkSafe''s crane page shows that no crane operator ticket is required.'
+status: current

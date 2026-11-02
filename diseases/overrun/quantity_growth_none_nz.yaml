@@ -1,0 +1,45 @@
+subtype: quantity_growth
+label: No published New Zealand figure for quantity growth against the priced schedule
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - no New Zealand national source read gives final quantities, or final account value, against the schedule of quantities tendered
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- nzgp-2019-measurement-contract
+considered:
+- source: te-waihanga-2026-making-every-dollar-count
+  reason: >-
+    The National Infrastructure Pipeline shares (Figure 33) say how often reported cost rose after financial decision, 51% of projects over $100 million and 28% of the rest, not by how much, and not because of quantities.
+- source: oag-2023-infrastructure-decisions
+  reason: >-
+    Audit of one programme's decisions; it reports that 21 of 26 transport projects could not be delivered within allocated funding, a frequency, and gives no split of the increase between scope, quantity and price.
+- source: te-waihanga-2024-transmission-gully-review
+  reason: >-
+    One public-private partnership road. Its settlements ($400.3 million in total, $186.5 million for the consenting claim, about $50 million for a change to asphalt over one-third of the road) are variations and claims on one job, not quantity growth on a schedule.
+- source: atapattu-2023-nz-transport-cost-factors
+  reason: >-
+    Survey of 92 estimators ranking causes of overrun; the abstract names design changes, planning and tender documentation as leading, and gives no share of cost for quantity growth. Abstract only was read.
+- source: te-waihanga-2022-lay-of-the-land
+  reason: >-
+    States that cost overrun analysis is out of its scope; its cost breakdown by input is Australian data.
+- source: te-waihanga-2023-construction-input-costs
+  reason: >-
+    About input prices and wages, and the industry's cost structure; it says nothing about quantities built against quantities scheduled.
+- source: te-waihanga-2022-economic-performance-construction
+  reason: >-
+    Industry-wide output, price and productivity statistics; no project-level quantities or final accounts.
+- source: jaffe-2016-construction-productivity
+  reason: >-
+    Firm productivity decomposition from Statistics New Zealand microdata; no project-level quantities.
+- source: nzier-2013-construction-productivity
+  reason: >-
+    Sector-wide productivity and competition evidence; no project-level quantities or final accounts.
+sample_note: >-
+  Searches: "Te Waihanga cost overruns infrastructure"; "NZ Transport Agency research report cost estimate accuracy roading outturn"; "New Zealand infrastructure projects cost overruns study Treasury major projects"; "New Zealand roading contracts quantity variations schedule of quantities remeasure final account"; "New Zealand civil construction contract variations final account over tender Waka Kotahi post implementation review"; "Office of the Auditor-General Waka Kotahi procurement contract management variations". Not opened: the NZ Transport Agency website refused automated access (its 1993 Transit New Zealand research report 23 on the reliability of capital cost estimates, the SM031 basis of payment template and the 2025 contract variation guidance draft could not be read); the publisher's site refused automated access to the full text of Atapattu et al. 2023. A frequency exists: the Pipeline shares above, and the Auditor-General's 21 of 26 projects, but neither is a cost and neither is about quantities.
+caveat: >-
+  Recorded as `none` on purpose. New Zealand government guidance confirms the mechanism, that on re-measurement contracts the initial sum is adjusted as actual quantities are measured, but no source read publishes how far quantities moved. This register holds no ratio rather than a borrowed one. The Australian findings in the corpus do not apply to a New Zealand job.
+status: current

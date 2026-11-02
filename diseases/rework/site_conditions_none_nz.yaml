@@ -1,0 +1,48 @@
+subtype: site_conditions
+label: No published New Zealand figure for the cost of setting-out, ground and external-condition failures
+exposure_basis: 'none: New Zealand sources count utility strikes or describe ground and weather costs qualitatively;
+  none gives a cost per strike or a share of contract value'
+sources:
+- maree-2021-as-built-drawings-utility-strikes
+considered:
+- source: beforeudig-2026-service-statistics-page
+  reason: Reports 186,614 enquiries lodged in 2022 and 186 asset owners; publishes no national strike counts or
+    costs.
+- source: nzta-2015-utilities-minimum-standard
+  reason: Says tenders will ask for service-strike performance and that damage must be monitored; no strike counts
+    or costs.
+- source: scirt-2021-value-of-scirt-summary
+  reason: Christchurch rebuild summary with the $2.2 billion programme total; no strike, ground or weather cost.
+- source: nzic-2022-lay-of-the-land
+  reason: States tunnelling in difficult ground can cost up to three times as much as in favourable ground; an international
+    tunnelling comparison, not a New Zealand share of contract value and not about ground differing from the record.
+- source: te-waihanga-2024-transmission-gully-news
+  reason: Lists external events (earthquake, weather, COVID-19) among contributors to the overrun; no figure and
+    no separation of ground conditions.
+- source: oxford-global-projects-2022-nz-benchmark
+  reason: Says New Zealand estimated-versus-actual cost data were lacking, so no New Zealand overrun benchmark or
+    cause split exists in it.
+- source: pwc-2009-weathertightness-estimating-cost
+  reason: Prices the leaky-building repair bill (NZ$11.3 billion, 2008 dollars); those are building defects, not weather
+    or ground conditions, and the report does not split them by cause.
+- source: bealing-2020-economic-cost-quality-defects
+  reason: Prices construction defects in new houses; setting-out error and weather damage are not separated.
+sample_note: 'Search terms: Before U Dig New Zealand utility strikes annual cost per strike; NZ Utilities Advisory
+  Group strikes; Waka Kotahi utility strike research; SCIRT service strikes cost; New Zealand weather delays construction
+  cost; Transmission Gully ground conditions cost; setting-out survey error cost New Zealand. A frequency exists
+  but is not a cost: in a 2020 survey, 34 respondents reported 60 utility damage incidents in 2019 tied to missing
+  or inaccurate as-built drawings and 50 for other reasons (Maree 2021, section 4.3); the same paper fits a line to
+  those counts and says about 8 to 9 strikes per 100 excavations, a frequency from a 34-respondent sample, not a
+  cost. Vendor blogs quote a New Zealand
+  strike count (12,861 in 2020) and per-strike costs built on a UK multiplier; they were not opened at source and
+  are not used. The Auditor-General''s 2016 SCIRT report and MBIE weathertightness statistics were blocked to automated
+  access and not read.'
+caveat: 'Recorded as none on purpose: the New Zealand strike statistics found are counts of incidents or enquiries.
+  Australian damage costs per strike in the corpus do not apply to New Zealand.'
+exposure_value: null
+exposure_unit: none
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+status: current

@@ -1,0 +1,65 @@
+subtype: people_compliance
+label: No published Australian national cost for licence, ticket or induction breaches in construction
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - national fine and claim statistics are not split by licence, ticket or induction breach, and the one licence-breach
+  fine found is a single Queensland case
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- fsc-2025-annual-data-report-2024
+considered:
+- source: swa-2025-whs-prosecutions-dashboard
+  reason: >-
+    National average fine AU$116,979 per prosecution in 2024 (317 prosecutions, 47% in construction), but across
+    every kind of WHS breach and every industry; not attributable to licences, tickets or inductions.
+- source: swa-2025-prosecutions-data-dictionary
+  reason: >-
+    The repository records the Act and regulation section cited as free text and no field for the kind of failure,
+    so a licence or induction average cannot be read without coding cases by hand.
+- source: swa-2023-cpm25-whs-compliance-enforcement
+  reason: >-
+    National fines ordered (AU$26,050 thousand in 2021-22 over 301 convictions, orders or agreements) are not split
+    by breach type or industry.
+- source: swa-2024-key-whs-statistics
+  reason: >-
+    Construction median compensation of AU$18,500 per serious claim is a cost per injury of any cause; the claims
+    data does not record whether a missing ticket or licence was the cause.
+- source: swa-2025-model-whs-regulations
+  reason: >-
+    Regulations 39 (training and instruction) and 81 (high risk work licence) set the duties, but offences carry
+    tiers, not dollar amounts, and the model is not itself in force.
+- source: owhsp-2023-high-risk-work-licence-fine
+  reason: >-
+    One Queensland case: a worker fined AU$3,500 against a AU$20,000 maximum for operating a forklift without the
+    right licence class. State only, one case.
+- source: gharaie-2013-plant-fatalities
+  reason: >-
+    Names inadequate supervision (18 of 81 plant deaths) among underlying causes; an author summary with no cost
+    figure.
+- source: dewr-2023-fsc-independent-review
+  reason: >-
+    Reviews the accreditation scheme and quotes premium reductions; contains no fine or penalty for tickets or inductions.
+- source: fsc-2020-mobile-plant-scaffolding-data
+  reason: >-
+    Counts corrective action reports on mobile plant and scaffolding systems of work (competence, training); counts
+    only, no money.
+- source: lingard-2019-crane-safety-construction
+  reason: >-
+    New South Wales study naming operator competency and licensing among crane incident factors; keyword scan found
+    no cost or fine amounts.
+sample_note: >-
+  Search terms used: WHS prosecutions average fine Safe Work Australia; comparative performance monitoring fines
+  per conviction; Federal Safety Commissioner annual data accreditation suspended revoked; Key WHS statistics median
+  compensation construction; unlicensed high risk work licence fine court average. A frequency exists, but it is
+  not a cost: in the Federal Safety Commissioner's 2024 audits the highest corrective action issue rate for accredited
+  companies was 52% (40 reports in 77 tests) for temporary structures being installed by a competent person, and
+  for non-accredited applicants 43% for training of managers and supervisors in WHS.
+caveat: >-
+  Recorded as none on purpose. The national fine data are real but are not split by the kind of breach, and the
+  only licence-breach fine amounts found are single state court reports. The source of record is the most relevant
+  national source read; it measures audit findings, not money.
+status: current

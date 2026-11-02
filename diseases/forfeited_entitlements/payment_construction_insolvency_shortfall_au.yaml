@@ -1,0 +1,40 @@
+subtype: unpaid_claims
+label: Minimum shortfall to creditors per insolvent construction company, Australia 2013-14
+exposure_value: 755000
+exposure_unit: per_incident
+currency: AUD
+price_year: 2014
+exposure_basis: >-
+  AUD per insolvent construction company: the lowest-band estimate of liabilities over assets for all its
+  creditors (unsecured trade creditors and subcontractors among them), averaged over the 2,153 insolvencies
+exposure_kind: money_at_stake
+confidence: low
+derivation: calculated
+calculation: >-
+  Table 3.1 total estimated deficiency (minimum) $1,625 million, built by taking the lowest dollar figure
+  in each of seven deficiency bands, divided by the 2,153 reports: 1,625,000,000 / 2,153 = 754,761, shown
+  as 755,000 because the table is rounded to $ million.
+statistic: modelled
+sample_size:
+  n: 2153
+  unit: organisations
+  note: ASIC initial external administrators' reports lodged for construction-industry companies in
+    2013-14, as tabulated by the Senate committee.
+sources:
+- source: senate-2015-insolvency-construction-industry
+  location: Chapter 3, Table 3.1 and paragraph 3.4
+sample_note: >-
+  All 2,153 construction-industry initial external administrators' reports in 2013-14. The committee's own
+  total is a floor; the CFMEU's median-based estimate is $2.70 billion, or about $1.26 million per
+  insolvency (also a division by 2,153). 1,974 of the 2,153 (91.7%) paid unsecured creditors zero cents in
+  the dollar (Table 3.4).
+caveat: >-
+  Losses of ALL creditors, including banks, the tax office and employees, not of subcontractors alone, and
+  of insolvent companies, not of a typical job. An estimate lodged at the start of each administration (liabilities over assets), not a realised loss
+  or a recovery outcome. A lower-bound mean from band minimums, so it understates the 67 insolvencies
+  above $10 million, which Table 3.1 counts at their $10 million floor; and the mean is pulled up by those
+  large cases (981 of the 2,153 reports, 45.6%, show a deficiency under $250,000), so it is not a typical
+  company's shortfall. 2013-14 data;
+  ASIC publishes later years that this research pass did not open. Not a share of contract value, so never
+  multiplied by one.
+status: current

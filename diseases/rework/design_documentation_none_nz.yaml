@@ -1,0 +1,49 @@
+subtype: design_documentation
+label: No published New Zealand figure for the cost of design and documentation failures in construction
+exposure_basis: 'none: New Zealand sources give how often documents have gaps and how often design is blamed for
+  defects, not what it costs'
+sources:
+- page-2016-consent-documentation-quality
+considered:
+- source: bealing-2020-economic-cost-quality-defects
+  reason: Prices all quality defects in new houses together (5.4% of output, modelled). Table 2 attributes 12% of
+    defects found in inspections to poor or incomplete design, which is a share of defects, not of cost.
+- source: branz-2021-research-now-quality-2
+  reason: Summary of the same model; lists poor design as one direct cause of defects and gives no cost for it.
+- source: pwc-2009-weathertightness-estimating-cost
+  reason: Prices the leaky-building bill (NZ$11.3 billion, 2008 dollars) as a whole and does not split design from
+    workmanship or materials; design fees appear only as a claimant transaction cost ($15,000 for a full reclad).
+- source: atapattu-2023-nz-transport-cost-factors
+  reason: Estimators name inadequate tender documentation and frequent design changes among the three most critical cost
+    factors; a perception ranking with no cost magnitude in the abstract, and the full text was not available.
+- source: asadi-2023-rework-provisions-nz-contracts
+  reason: Rates how well the standard contract addresses rework causes, with errors in design, drawings and specifications
+    and incomplete design among five scored adequate (Table 3, means 3.50 and 3.39 on a 5-point scale); contract
+    coverage, not cost. The 25% of contract value rework figure it quotes comes from earlier international literature.
+- source: nzic-2022-lay-of-the-land
+  reason: Notes that policy-driven added scope and design requirements raise infrastructure cost; compares unit
+    costs and attributes no share to design or documentation.
+- source: te-waihanga-2024-transmission-gully-news
+  reason: Names an under-estimated initial cost and governance as contributors to the motorway overrun; no design-error
+    or documentation figure.
+- source: jaques-1999-site-waste-design-procurement-auckland
+  reason: Contractors link non-standard design and inaccurate detailing (15%) to material waste; measures waste
+    causes by respondent share, no cost.
+- source: kirby-2026-nz-shoddy-building-bill
+  reason: Opinion piece; its nearly-10% loss figure misreads the NZIER GDP effect as a defect cost and gives no
+    design-specific number.
+sample_note: 'Search terms: New Zealand construction design errors documentation cost percent of contract value;
+  BRANZ consent documentation quality; design defects rework cost New Zealand; New Zealand design change cost estimators;
+  cost of defects causes design workmanship. A frequency exists but is not a cost: BRANZ inspectors found that in
+  43% of 52 sets of new-house consent drawings not all details were provided and in 31% uplift fixing details were
+  missing (SR355, section 5); and ER49 Table 2 (from BRANZ inspections) attributes 12% of defects found to poor
+  or incomplete design against 52% to poor workmanship.'
+caveat: 'Recorded as none on purpose: the New Zealand sources read count documents with gaps and defects by cause,
+  and the one New Zealand cost model prices all defects together. No figure is inferred from the cause split.'
+exposure_value: null
+exposure_unit: none
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+status: current

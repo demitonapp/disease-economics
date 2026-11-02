@@ -1,0 +1,64 @@
+subtype: scope_change
+label: No published figure for rework caused by scope or client change in Australia
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - Australian studies name client and end-user change as a main cause of rework and measure change-order value, but none gives the cost of the work lost
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- love-2017-change-orders
+considered:
+- source: love-2019-make-or-break
+  reason: >-
+    Accepted manuscript opened and searched for change and cause content. 98 projects of one contractor. A
+    footnote records that data on rework arising from change-orders and design omissions was not made
+    available, so it cannot say what change cost in lost work.
+- source: love-li-2000-causes-costs-rework
+  reason: >-
+    Two Australian projects with rework at 3.15% and 2.40% of contract value. Names client and end-user
+    changes as a main cause but gives no cost for it.
+- source: love-sohal-2003-capturing-rework-costs
+  reason: >-
+    The same two projects, same result: cause named, no cost per cause.
+- source: love-sohal-2003-rework-multivariate
+  reason: >-
+    161 Australian projects. Client-initiated change is a significant regression predictor of total rework
+    cost, with no money figure for it.
+- source: love-edwards-2004-determinants-of-rework
+  reason: >-
+    Same 161-project survey, same predictors, no share of rework or of contract value attributed to change.
+- source: love-2002-project-type-procurement-rework
+  reason: >-
+    161 projects. Reports rework as 52% of cost growth and 26% of its variance, shares of cost growth
+    rather than of contract value, and not split by cause.
+- source: love-edwards-smith-2006-contract-documentation
+  reason: >-
+    Looks at contract documentation, not change, and finds no significant link with rework.
+- source: love-edwards-2005-rework-costs
+  reason: >-
+    161 projects, direct 6.4% and indirect 5.9% of contract value in total; not split by cause.
+- source: aca-2026-design-best-practice-principles
+  reason: >-
+    Says late design changes drive cost and time pressure, with no figure or data source.
+sample_note: >-
+  Searches: "Love Edwards rework Australian construction design change causes percentage of contract
+  value", "rework client-initiated changes cost percentage contract value Australia questionnaire change
+  orders", "Make-or-break during production change-orders rework contractors margin", "Infrastructure
+  Australia OR Australian Constructors Association cost of rework design changes major projects",
+  "Australia latent conditions variation cost percent of contract value", "Love 2002 influence of project
+  type and procurement method on rework costs", "Off the rails cost performance of infrastructure rail
+  projects scope changes". Infrastructure Australia and Productivity Commission material turned up in
+  searches only and gave no cost of lost work. Frequencies and values that exist
+  but are not a cost of lost work: change-orders averaged 10.6% of original contract value on 67 Australian
+  public infrastructure projects of one contractor (11% of work value 2011 to 2014); in the 98-project
+  sample, where change-order data existed for 67 projects, they were 3.6% of awarded value. Those are the value of additional or altered work the
+  client pays for, not rework.
+caveat: >-
+  Recorded as none on purpose. A change-order is usually paid work and mostly revenue to the contractor, so
+  its share of contract value is not a loss, and no Australian source read gives the cost of work done and
+  then lost to a change. Every peer-reviewed Australian rework source found comes from one research group
+  and mostly from perception surveys, or from one contractor's records.
+status: current

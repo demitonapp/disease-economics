@@ -30,9 +30,9 @@ jobs:
         env:
           BASE_REF: ${{ github.base_ref }}
       - run: python -m unittest discover -s tests
-      # SM070: which of the 50 cells (25 causes in AU and NZ) hold a figure or a recorded none. Informational until
-      # every cell is filled; then drop --report and an empty cell fails the build.
+      # SM070: all 50 cells (25 causes in AU and NZ) hold a figure or a recorded none. An open cell, for example a
+      # withdrawn figure with nothing behind it, fails the build.
       - name: The AU and NZ grid
-        run: python scripts/grid.py --report
+        run: python scripts/grid.py
       - name: The ledger builds
         run: python scripts/build_ledger.py --out dist

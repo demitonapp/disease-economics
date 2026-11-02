@@ -1,0 +1,70 @@
+subtype: input_prices
+label: No published national figure for the cost of input price rises on fixed-price civil work as a share of contract value
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - no Australia-wide source read gives unrecovered input price escalation as a measured share of contract value or of overrun
+exposure_kind: money_at_stake
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- source: aca-arcadis-2023-market-sentiment-survey
+  location: "one-page infographic, 'Escalation absorption' chart; ACA release 2 May 2023 key statistics"
+considered:
+- source: aca-arcadis-2024-market-sentiment-survey
+  reason: >-
+    Same survey a year on. A chart of escalation absorbed on projects during 2023 has bands (none, under 10%, 10 to 25%, over
+    25%) with no printed values, no sample size is stated, and it covers all construction. Reading the bar lengths would be an
+    inference, so no figure is taken.
+- source: aca-2022-construction-cost-inflation
+  reason: >-
+    Advocacy paper: some contractors saw supply costs rise up to 70% in a year; contractors must hold fixed prices for 12 to 18 months or even two to three years; rise and fall
+    clauses uncommon. No measured cost to a contract. Table 1 has no printed values.
+- source: eslake-2026-civil-fuel-shock
+  reason: >-
+    For the 2026 oil shock: the CCF estimates 80 to 95% of civil contracts by number are fixed price; prices of bitumen,
+    explosives and plastic pipe up 35% to 50% on anecdotal evidence. A share of contracts by count and anecdotes; the diesel
+    scenario is filed under plant_fuel.
+- source: infrastructure-australia-2024-market-capacity
+  reason: >-
+    Industry reports non-labour input price escalation of about 10 to 20% over 12 months (p.7), 51% of businesses had sought a
+    contract variation and some build 10% variations into budgets. A sentiment range for prices, not a share of contract
+    value lost.
+- source: infrastructure-australia-2025-market-capacity
+  reason: >-
+    68% of surveyed organisations saw non-labour input costs rise and 36% think prices have not peaked (p.37): perceptions of
+    direction. No cost to a contract.
+- source: grattan-2020-rise-of-megaprojects
+  reason: >-
+    Shows the ABS road and bridge producer price index flat 2013-16 then rising, and quotes a minister blaming market forces
+    for a $3 billion overrun. Descriptive; no share of overrun is assigned to input prices.
+- source: dita-2023-strategic-review-infrastructure-investment-program
+  reason: >-
+    $32.8 billion of known cost pressures across the federal land transport program, with escalation handled ad hoc. The summary
+    does not split by cause, and it is the owner's budget pressure.
+- source: abs-2026-producer-price-indexes-road-bridge
+  reason: >-
+    Road and bridge construction output price index up 6.0% over the year to September 2026 (146.6 to 155.4; our arithmetic). A
+    price clients are charged, a rate with no unit in the schema, not a cost to a fixed-price contractor.
+- source: bitre-2019-road-bridge-price-index-alert
+  reason: >-
+    BITRE's alert on the ABS road and bridge output price index: up 1.7% over the year to September 2019 against a ten-year average of 2.4% a year. A rate, and an output price.
+- source: bitre-2013-road-price-index-input-shares
+  reason: >-
+    Materials are 40.77% of road construction cost (Table B2, filed as context): how much is exposed, not how much prices rose
+    against what was priced.
+sample_note: >-
+  Search terms: input price escalation fixed price contract; unrecovered cost increases percent of project budget; rise and
+  fall clause; construction input price index road bridge; contractors absorbed escalation; Australian Constructors Association
+  Arcadis survey; Infrastructure Australia market capacity input costs. Ten sources opened. A frequency exists: the ACA and
+  Arcadis 2023 survey of builders says all respondents absorbed some unrecoverable 2022 material escalation,
+  and for nearly half it was more than 10% of project budgets (their own estimates, once mitigations were applied), but it
+  is a count of respondents, not a cost. The 2024 survey chart shows absorption in bands. Rates with no unit: ABS road and
+  bridge output prices +6.0% (year to September 2026; the June 2026 quarter alone +4.5%); BITRE's alert +1.7% (year to September 2019).
+caveat: >-
+  Recorded as none on purpose: no defensible Australia-wide figure was found for unrecovered input price escalation as a
+  share of contract value, not that none exists. The ACA and Arcadis survey is the closest measure of the cause and is
+  people's own estimates across all construction. Its PDFs sit at a new web address from the one in the 2023 release: the
+  original links were refused with 403 and not worked around.
+status: current

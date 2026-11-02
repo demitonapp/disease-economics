@@ -1,0 +1,33 @@
+label: Outsourced services as a share of input costs, Australian construction industry
+exposure_value: 0.465
+exposure_unit: ratio_of_other
+denominator: construction_cost
+exposure_basis: >-
+  of all input costs for the construction industry: outsourced services such as labour hire, design and
+  engineering consultants and equipment rental
+exposure_kind: context
+confidence: moderate
+derivation: as_published
+statistic: pooled_ratio
+sample_size:
+  n: 1
+  unit: years
+  note: One year of the ABS input-output tables for all construction as reported by Infrastructure Australia; the report does not state which year.
+sources:
+- source: infrastructure-australia-2024-market-capacity
+  location: "p.60 (key points: intermediate services input 46.5% of input costs); p.7 (almost 47 cents in every dollar, up from 40 cents in 1995-96)"
+considered:
+- source: abs-2025-australian-industry-heavy-civil
+  reason: >-
+    Heavy and civil engineering purchases of goods and materials were 30.7% of total expenses in 2024-25
+    (37,773 of 123,216); the cube has no separate subcontract line, so it cannot give the outsourced share
+    for civil work.
+sample_note: >-
+  Infrastructure Australia reports the ABS 'intermediate services inputs' measure for the construction
+  industry as a whole (the ABS input-output tables), not for civil work alone. The report does not give the
+  year or the table.
+caveat: >-
+  Context only: how large bought-in services are in construction's cost, not a subcontract price rise or a loss. Read in Infrastructure Australia's report, not in the ABS table it draws on, and for all construction
+  including housing. It includes
+  labour hire and equipment rental, so it overlaps the labour and equipment shares in other context figures.
+status: current

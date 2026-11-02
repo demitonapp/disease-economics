@@ -1,0 +1,41 @@
+label: Equipment and fuel as a share of the cost of road construction, Australia (2013 survey of road works)
+exposure_value: 0.2744
+exposure_unit: ratio_of_other
+denominator: construction_cost
+exposure_basis: >-
+  of the total cost of road construction work: equipment hire and depreciation 21.69% plus fuel 5.76%
+exposure_kind: context
+confidence: moderate
+derivation: as_published
+statistic: mean
+sample_size:
+  n: 277
+  unit: organisations
+  note: 8 state and territory road authorities, 233 local governments and 36 private sector contractors, combined by their share of road expenditure
+sources:
+- source: bitre-2013-road-price-index-input-shares
+  location: "Appendix B, Table B2, 'All equipment', 'Hire/ depreciation' and 'Fuel', road expenditure weighted column (p.23)"
+- source: bitre-2016-modelled-road-price-index
+  location: "p.1 (combined construction and maintenance mix: equipment 23.2% plus fuel 5.8%)"
+considered:
+- source: ato-2026-fuel-tax-credit-rates
+  reason: >-
+    A tax credit in cents per litre (52.6 for off-road diesel in early 2026, 20.6 from April 2026). It is a
+    rate on fuel bought, not a share of cost, and the schema has no per-litre unit.
+- source: abs-2026-producer-price-indexes-road-bridge
+  reason: >-
+    The output price of road and bridge construction rose 6.0% over the year to September 2026, with a 4.5% jump
+    in the June 2026 quarter. A price movement, not plant or fuel as a share of contract cost.
+- source: bitre-2014-road-price-index-update
+  reason: >-
+    Reports diesel and labour as the main contributors to the 2013-14 rise in index points; no cost share beyond the 2013 mix.
+sample_note: >-
+  Survey of road works by the federal transport research bureau, 2013. For private sector contractors alone
+  (36 respondents) equipment and fuel are 27.60% of construction cost (hire and depreciation 21.53%, fuel
+  6.07%). State and territory road authorities report 27.70% and local governments 26.97%.
+caveat: >-
+  Context only: how large plant and fuel are in the cost of road construction, 2013 mix, for roads only. It is not an
+  overrun, an hours-over-allowance figure or a measure of standby, and not a share of contract value. Fuel
+  alone is 5.76% of road construction cost, but only 0.79% in the state road authorities' own column and
+  8.05% in local governments' (Table B2), so it varies with who does the work.
+status: current

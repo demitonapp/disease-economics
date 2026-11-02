@@ -1,0 +1,64 @@
+subtype: quantity_growth
+label: No published national figure for quantity growth against the priced schedule
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - no Australia-wide source read measures the final measured quantity against the schedule quantity
+exposure_kind: money_at_stake
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- source: terrill-danks-2016-transport-overruns
+  location: "Section 1.3.1, Figure 1.5 (p.13)"
+considered:
+- source: love-2017-change-orders
+  reason: >-
+    67 projects from one contractor; change orders were 11% of work value. A change order is an instructed
+    variation of scope, design or error, not a difference between the schedule quantity and the quantity
+    measured, and the paper does not separate re-measure.
+- source: ryan-duffield-2017-contractor-margins
+  reason: >-
+    28 megaprojects reported by final profit against tendered profit. No quantity measure, and the paper does
+    not split the loss by cause.
+- source: wt-partnership-2018-blacktown-quantity-verification
+  reason: >-
+    Compares two estimates of quantities (consultant against council) for one NSW plan before construction;
+    earthworks differed and the council's estimate was 6% high. It is a pre-construction check, one plan, one
+    state, and the error ran the other way.
+- source: vago-2011-major-road-projects
+  reason: >-
+    Victoria only, four projects, budget overspend of 0% to 9% attributed to land prices and geotechnical
+    conditions. No quantity data.
+- source: bitre-2013-road-price-index-input-shares
+  reason: >-
+    National road-works cost shares and price indexes. They say what money goes on labour, materials and
+    equipment, with no measure of quantities built against quantities priced.
+- source: infrastructure-australia-2024-market-capacity
+  reason: >-
+    National pipeline and capacity analysis. Reports input price sentiment and productivity, with no project
+    quantity outturn.
+- source: infrastructure-australia-2025-market-capacity
+  reason: >-
+    Says there is no consistent project-level data on subcontracting and self-performance, and proposes
+    a workstream to collect core measures such as budgeted against actual cost (p.61). It holds no quantity
+    outturn, and does not itself say budget-against-actual data is absent.
+- source: abs-2025-australian-industry-heavy-civil
+  reason: >-
+    Industry income, expense and labour totals in dollars. No physical quantities and no job-level outturn.
+sample_note: >-
+  Search terms: quantity variation; quantity growth; bill of quantities variance; schedule of rates final
+  account; remeasurable contract; earthworks quantity variance; unit rate contract quantity overrun;
+  Auditor-General road construction contract variations; Austroads estimated against actual quantities. Eight
+  national or state sources were opened and none reports measured against schedule quantity. Related shares
+  that are not this cause: Grattan found scope changes explain about 11% of the cost overrun on 51
+  Australian transport projects over $100 million (additions to what is built, owner-side, between announcement and
+  completion); Love and colleagues found change orders at 11% of work value for one contractor. A
+  Queensland Transport and Main Roads variation study (USQ, Purvis 2015) was found but could not be opened (connection refused again at review, 2026-11-02). It covers Queensland Transport and Main Roads only, so
+  it could not fill the national cell. A further search at review for an Austroads, Auditor-General or road agency quantity outturn study found none: Baccarini's contingency study of 48 road projects and a NSW
+  road authority estimating study compare cost against estimate, not measured against schedule quantity.
+caveat: >-
+  Recorded as none on purpose: no defensible Australia-wide figure for how far measured quantities exceed the
+  schedule on re-measurable contracts was found, not that none exists. The 11% figures above are shares of a
+  different thing and are not offered as proxies.
+status: current

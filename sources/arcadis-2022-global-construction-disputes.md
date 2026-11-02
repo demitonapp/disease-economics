@@ -20,5 +20,5 @@ industries:
 The 2021 data-year edition of the consultancy's annual report. It reports global averages (average dispute value
 down 3% from 2020, time to resolve up almost 15%) and a ranked list of causes: poorly drafted or unsubstantiated
 claims first, errors or omissions in contract documents second, with owner-directed changes and failure to
-understand contractual obligations tied third, and differing site conditions newly listed. It breaks results out by
-North America and other regions but publishes no Australian breakdown, and its causes are ranks, not amounts.
+understand contractual obligations tied third. Differing site conditions are newly listed third in its North America
+section only. It breaks results out by North America and other regions but publishes no Australian breakdown, and its causes are ranks, not amounts.

@@ -1,6 +1,7 @@
 subtype: payment_dispute
 label: >-
-  Average amount of a contractor's most recent claim under security of payment laws, Australia 2017 survey
+  Average amount of a contractor's most recent claim for delayed or disputed payment under security of payment laws,
+  Australia 2017 survey
 exposure_value: 221633.0
 exposure_unit: per_incident
 currency: AUD
@@ -33,15 +34,18 @@ considered:
     National arbitration caseload with total values but no payment-dispute split.
 sample_note: >-
   A survey commissioned for the Murray Review and run by AMR Interactive: 526 responses from contractors and
-  subcontractors in all states and territories, circulated by industry associations on a voluntary basis. Only the
-  23% of respondents who had ever made a claim under security of payment laws answered the amount question; the
-  report does not give their number. The most common band among those who claimed in the last two years was
+  subcontractors in all states and territories, circulated by industry associations on a voluntary basis. Only 23%
+  of respondents had ever made a claim under security of payment laws, so the average can only be over those
+  claimants; the report does not give their number, and does not say how many answered the amount question. The most common band among those who claimed in the last two years was
   $100,001 to $500,000 (25%). Not all of this money was awarded or lost: this is what was claimed.
 caveat: >-
-  A self-selected sample: 46.8% of respondents were from Queensland, 30.8% from Western Australia and 17.9% from
-  NSW, 45% were electrical contractors and 73% worked for firms of 20 or fewer people, so the average describes
-  small and medium trades and is not a typical national claim. It is one claim per respondent (the most recent),
-  as the respondents recalled it. The report does not date the survey; the Review ran during 2017, which is the
-  price year used. No median is given. A per-claim amount, not a share of contract value, so it is never
+  Money claimed, not money lost or awarded: the claim may be for delayed payment as well as disputed payment, and
+  the report gives no outcome for it. A self-selected sample: 46.8% of respondents were from Queensland, 30.8% from
+  Western Australia and 17.9% from NSW, which leaves 4.5% for Victoria, South Australia, Tasmania, the Territories
+  and the ACT together; 45% were electrical contractors and 73% worked for firms of 20 or fewer people. The
+  average therefore describes small and medium trades in three states and is not a typical national claim. It is
+  one claim per respondent (the most recent), as the respondents recalled it. The report writes 'average' and does
+  not say whether it is a mean or a median; no median is given. The report does not date the survey; the Review
+  ran during 2017, which is the price year used. A per-claim amount, not a share of contract value, so it is never
   multiplied by one.
 status: current

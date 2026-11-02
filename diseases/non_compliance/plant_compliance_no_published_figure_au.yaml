@@ -1,0 +1,50 @@
+subtype: plant_compliance
+label: >-
+  No published Australian national cost for unregistered, uninspected or wrong-category plant in construction
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - national statistics count plant incidents and audit findings but give no fine, stop-work cost or cost per
+  incident for plant
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- fsc-2020-mobile-plant-scaffolding-data
+considered:
+- source: fsc-2025-annual-data-report-2024
+  reason: 2024 audit findings by criterion with issue rates; counts only, no penalty or cost for plant.
+- source: swa-2025-whs-prosecutions-dashboard
+  reason: National average fine AU$116,979 per prosecution across all breaches; no plant breakdown.
+- source: swa-2025-prosecutions-data-dictionary
+  reason: >-
+    No field for the kind of failure, so plant-registration or prestart fines cannot be isolated without coding
+    free text.
+- source: swa-2023-cpm25-whs-compliance-enforcement
+  reason: >-
+    5,700 prohibition notices across Australia in 2021-22, a stop-work count with no cost and no plant split.
+- source: swa-2024-key-whs-statistics
+  reason: >-
+    Construction median compensation AU$18,500 per serious claim covers every injury cause, not plant incidents.
+- source: swa-2025-model-whs-regulations
+  reason: >-
+    Regulation 246 requires registration of listed plant; the penalty is a tier with no dollar amount in the model.
+- source: gharaie-2013-plant-fatalities
+  reason: >-
+    Study of 81 construction plant deaths (trucks and excavators most frequent, 15 crane deaths); an author summary,
+    causes only, no cost.
+- source: lingard-2019-crane-safety-construction
+  reason: >-
+    New South Wales crane incident study; keyword scan of the full text found no incident cost or fine amount.
+sample_note: >-
+  Search terms used: WHS prosecutions average fine Safe Work Australia; comparative performance monitoring fines
+  per conviction; Federal Safety Commissioner annual data accreditation suspended revoked; Key WHS statistics median
+  compensation construction; mobile plant crane incident cost per incident; plant registration prestart fine. A
+  frequency exists, but it is not a cost: mobile plant was the most frequent high-risk hazard in incidents reported
+  to the Federal Safety Commissioner in 2015-2019 (548 of 1,737) and drew 1,954 of 4,447 high-risk corrective action
+  reports (44%) in 2017-2019.
+caveat: >-
+  Recorded as none on purpose. Plant is well counted in Australian national data and not priced. A crane or mobile
+  plant incident has fines and compensation costs, but none of the national sources read states one for plant.
+status: current

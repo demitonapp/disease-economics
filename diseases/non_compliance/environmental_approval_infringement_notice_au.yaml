@@ -1,0 +1,58 @@
+subtype: site_compliance
+label: >-
+  Infringement notice paid for breaching an environmental approval condition (EPBC Act), average per notice, 2025
+exposure_value: 19640.63
+exposure_unit: per_incident
+currency: AUD
+price_year: 2025
+exposure_basis: >-
+  AUD per infringement notice paid by a company for breaching a condition of an EPBC Act approval, mean over the
+  notices on the national register dated 2025
+exposure_kind: contractor_loss
+confidence: moderate
+exposure_range:
+  low: 18780.0
+  high: 19800.0
+  kind: reported_min_max
+derivation: calculated
+calculation: >-
+  Register entries dated 2025 (21 entries) state 32 notices in all and AU$628,500 in total value (sum of the entries
+  as printed). 628,500 / 32 = 19,640.625. The range is the two single-notice amounts printed on 2025 entries: AU$18,780
+  and AU$19,800.
+statistic: mean
+sample_size:
+  n: 32
+  unit: other
+  note: infringement notices on the National EPA register dated 2025, in 21 register entries
+sources:
+- national-epa-2026-infringement-notices
+considered:
+- source: owhsp-2021-asbestos-roof-fine
+  reason: >-
+    Queensland only and one case: a painter fined AU$3,000 against a AU$153,600 maximum for spraying an asbestos
+    roof. Shows asbestos-related site breaches are prosecuted, but a state-only single case cannot fill the national
+    cell.
+- source: swa-2025-model-whs-regulations
+  reason: >-
+    Regulation 425 requires an asbestos register and carries a tier G monetary penalty, but the model regulations
+    give no dollar amount, so the asbestos register part of the site cause has no figure from this source.
+- source: swa-2025-whs-prosecutions-dashboard
+  reason: >-
+    National average fine of AU$116,979 per prosecution (2024) covers every WHS breach and cannot be attributed
+    to permits, traffic management, environment or asbestos.
+sample_note: >-
+  National EPA register of paid infringement notices, entries dated 2025: 32 notices in 21 entries, AU$628,500 in
+  all; single-notice entries print AU$18,780 or AU$19,800. In 2026 to 22 October single notices are AU$19,800 and
+  AU$21,840. Projects include rail, pipelines, quarries, mines, subdivisions and commercial developments. A frequency
+  exists for other site matters but is not a cost: the Federal Safety Commissioner data sheet counts 249 road or
+  traffic high-risk incidents among 1,737 reported in 2015-2019, and the Comparative Performance Monitoring tables
+  count 5,700 prohibition notices across Australia in 2021-22.
+caveat: >-
+  A fine only. The stop-work, rectification and clean-up costs that follow a breach are not in this figure. It covers
+  one federal Act (EPBC approval conditions), not permits to work, traffic management plans, state environmental
+  licences or asbestos registers. Many notices on the register are for late or missing compliance reports and management
+  plans, not for physical damage. The register lists only notices that were paid, not contested, withdrawn or reissued.
+  The notice goes to the approval holder or the third party carrying out the action, who may be an owner or developer
+  rather than a contractor. The register shows the same 60-penalty-unit notice at different dollar amounts on different
+  dates; the page does not state the unit values.
+status: current

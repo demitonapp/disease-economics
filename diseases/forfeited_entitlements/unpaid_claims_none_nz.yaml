@@ -1,0 +1,52 @@
+subtype: unpaid_claims
+label: >-
+  No published New Zealand figure for earned payment and retention never received, as a share of contract value or of the amount claimed
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - New Zealand sources count how often payment is delayed or lost, and the 2014 MBIE impact statement estimates NZ$7 to 16 million of retentions written off a year against NZ$150 to 250 million held, but no source measures a share of contract value or of the amount claimed that is never paid, and the corpus has no denominator for a share of retention held
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- ramachandra-2011-payment-problems
+considered:
+- source: mbie-2020-retention-money-regime-ris
+  reason: >-
+    Gives retention as 2 to 10 per cent of contract price and modelled benefits ($88.9m financing, $7.6m insolvency a year) taken from a New South Wales analysis; modelled, not observed losses.
+- source: mbie-2021-retention-money-bill-disclosure
+  reason: >-
+    Repeats retention of commonly 2% to 10% of contract value and the modelled $50 to $100 million benefit; a typical range held, not a share lost.
+- source: raina-2015-retention-practice
+  reason: >-
+    Survey of 187: retention is lost altogether sometimes or rarely for most subcontractors (Figure 5.8). Table 5.16 has subcontractors' own retention held and overdue, which the thesis adds to NZ$6,603,422 overdue. It is overdue, not lost (some rows are, and say so), self-reported, from a low-response self-selected set; the table also gives retention held, so overdue is roughly a third of it, but that is lateness of a held sum, not a loss, and has no denominator in the corpus.
+- source: ramachandra-2015-payment-causes
+  reason: >-
+    Importance ratings of causes of payment problems from 115 practitioners; no amounts.
+- source: ramachandra-2012-payment-delays-losses
+  reason: >-
+    Full text read (263 of 1,600 invited responded): respondents report payment delays or losses on 10 to 40% of contractors' and 10 to 80% of subcontractors' projects (Figure 1); a share of projects, not of money.
+- source: dbh-2013-construction-contracts-act-review-ris
+  reason: >-
+    About residential consumer disputes and dispute resolution fees; no figures on unpaid claims or retention.
+- source: building-disputes-tribunal-2023-adjudication
+  reason: >-
+    One tribunal: 15% of adjudications are brought solely on default liability (no payment schedule or unpaid scheduled amount) and 14% face jurisdictional challenges; the costs it reports are of the process, not of unpaid money.
+- source: russell-mcveagh-2020-construction-disputes-survey
+  reason: >-
+    19% of respondents expect financial issues (slow payment, solvency) to cause disputes; shares of respondents, no money.
+- source: advisian-2019-nzs-conditions-of-contract
+  reason: >-
+    Calls for consistent retention and bonding terms across public contracts; no amounts.
+- source: mbie-2014-retentions-in-construction-contracts-ris
+  reason: >-
+    The nearest to a measured loss: from an October 2014 MBIE survey of the commercial construction sector (125 usable responses, about 13 per cent of the market) it estimates NZ$150 to 250 million of retentions held and NZ$7 to 16 million written off a year, 40 per cent of payees writing off 5 per cent or more of their retentions. MBIE itself flags significant uncertainty from survey design and extrapolation. It is a share of retention held, a denominator the finding schema does not offer, and it covers commercial building, not civil work, so it is not filed.
+- source: kpmg-2019-retention-money-implementation-review
+  reason: >-
+    Implementation review of the retention regime (71 of 223 firms responded). Gives case amounts only: NZ$4.47 million of post-regime retentions withheld at the Ebert receivership, of which subcontractors holding NZ$856,141 had no interest in the trust account, and about NZ$8.35 million in retention accounts across four insolvencies. It says the larger insolvency loss is the one to two months of unpaid claims and work in progress, with no amount.
+sample_note: >-
+  Search terms: MBIE regulatory impact statement retention money Construction Contracts Act; KPMG implementation review retention money; New Zealand retention lost insolvency subcontractors; payment delays losses New Zealand construction survey; Ramachandra Rotimi payment; liquidation unsecured creditors dividend construction New Zealand; BDO construction survey retentions; adjudication default liability New Zealand. Frequencies exist, none a cost: 40% of 40 High Court payment cases ended with the claimant paid in full but late and 25% with a loss (Ramachandra and Rotimi 2011, Table 3); 12 of 16 liquidated trade-service firms paid trade creditors nothing; respondents say payment delays or losses touched 10 to 40% of contractors' and 10 to 80% of subcontractors' projects (2012 abstract); 15% of Tribunal adjudications rest on default liability. The BDO 2018 and 2019 survey reports were not found as PDFs and press coverage of them was not used. Of the two retention measures found, the 2014 MBIE estimate of annual write-offs is the closer to a loss, but it is a share of retentions held and the schema has no such denominator; Ramachandra and Rotimi 2011 is the source of record because it is the New Zealand national source read that records actual outcomes of unpaid construction payments in liquidation and court.
+caveat: >-
+  Recorded as none on purpose. The liquidation records are 65 companies and the court records 40 cases, with outcomes classified by the authors; the payment loss is counted in cases, not in dollars of contract value. Retention held is not retention lost, and the 2020 MBIE benefits are a model. The 2014 MBIE write-off estimate is real survey data but is a share of retention held, so it cannot be filed until the schema has a retention-held denominator. Not read: the BDO 2018 and 2019 survey reports, the Mainzeal and Ebert liquidators' reports, and Companies Office insolvency statistics.
+status: current

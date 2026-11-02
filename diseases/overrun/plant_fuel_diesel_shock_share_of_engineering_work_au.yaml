@@ -1,0 +1,61 @@
+subtype: plant_fuel
+label: >-
+  Cost of the 2026 diesel price rise, held for a year, as a share of private-sector engineering construction work, Australia
+exposure_value: 0.012
+exposure_unit: ratio_of_other
+denominator: construction_cost
+exposure_basis: >-
+  of the annual value of engineering construction work done by the private sector in 2025: the extra diesel cost to
+  civil contractors of a 145 cents a litre rise in terminal gate price (national average, end of March 2026 against
+  27 February), if sustained for 12 months ($1.53 billion)
+exposure_kind: money_at_stake
+confidence: low
+derivation: as_published
+statistic: modelled
+sources:
+- source: eslake-2026-civil-fuel-shock
+  location: "p.9 (text after Chart 10: 'This annual figure represents 1.2%...'); p.8 ($128 million a month from 88 million litres and 145 cents); p.3 (145.2 c/L, 88.9%)"
+considered:
+- source: abc-2026-fuel-price-public-works-blowouts
+  reason: >-
+    The CCF chief executive tells the reporter that diesel is about 7.75% of any tender and an extra $46 million on a
+    billion-dollar project (4.6%). The article does not show how $46 million was worked out or which price rise it
+    assumes, and it is a lobbyist's statement to the press, so it is not filed. It is the same order as the Eslake figure.
+- source: ccf-2026-project-cost-calculator
+  reason: >-
+    Gives 7.75% of contract value as the default 'fuel-impacted' proportion (5% direct fuel, 2.75% indirect) to be multiplied
+    by the change in terminal gate price. That is a guideline cost share the user adjusts, not a measured overrun, and by the
+    review ruling a composition share is not evidence of the cause.
+- source: ccf-tas-2026-diesel-price-surge
+  reason: >-
+    Tasmanian chapter's release: fuel up to 30% of project input costs and bitumen sealing cost up 30%. No method or sample,
+    and Tasmania only.
+- source: ato-2026-fuel-tax-credit-rates
+  reason: >-
+    The off-road diesel credit fell from 52.6 to 20.6 cents a litre on 1 April 2026 after the excise cut. It is a tax rate that
+    changes what a contractor nets, not an amount priced or an overrun.
+- source: bitre-2013-road-price-index-input-shares
+  reason: >-
+    Fuel is 5.76% of road construction cost (Table B2) and equipment 27.44%: a cost composition, filed as context, not a
+    measure of fuel above what was priced.
+sample_note: >-
+  A scenario from a report commissioned by the Civil Contractors Federation, written in April 2026. Diesel use is the 88
+  million litres a month used by the federation's 1,150 member firms (Chart 10, from a CCF member survey); the price rise is
+  the national average terminal gate price rise of 145.2 cents a litre (88.9%) between the start of the Middle East conflict
+  at the end of February and the end of March 2026; the denominator is the report's own figure for private-sector
+  engineering construction work done in 2025 (ABS), which the report does not state in dollars. The arithmetic matches
+  (88 million x $1.45 = $128 million a month; x 12 = $1.53 billion), but the report's own key numbers also give 1.15 billion
+  litres a year, which is more than 88 million x 12 (1.06 billion); the 1.2% was not recalculated. For scale, by 3 April
+  the wholesale diesel price was still 127.3 cents a litre (78.0%) above pre-war, before the 30 March excise cut had fully
+  passed through; the report notes much civil diesel is off-road and does not get the excise cut. It also reports the
+  CCF's margin estimates (about 5% on $1 million projects, 3 to 5% up to $1 billion, 1% above $1 billion) and that the CCF
+  estimates 80 to 95% of civil contracts by number are fixed price.
+caveat: >-
+  An advocate's scenario, not a measured overrun. The numerator is the extra cost of diesel to the federation's member
+  firms only, over the whole industry's private work, and it assumes the price rise lasts a full year with nothing
+  recovered through rise and fall, variation or a falling price; the report says some contracts do carry rise and fall
+  but gives no share of the cost that was recovered. It is a share of a year's industry turnover, not of a contract, so
+  it is not offered to be multiplied by a contract value. The cost is the contractor's when a contract is fixed price, but
+  the report does not say how much of it was. It covers diesel, not other plant costs such as standby or hours above plan,
+  and not indirect fuel in bitumen or materials.
+status: current

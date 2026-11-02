@@ -1,0 +1,63 @@
+subtype: labour_productivity
+label: No published national figure for the cost of labour productivity below plan on Australian civil work
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - no Australia-wide source read states labour hours above need, or lost productivity, as a cost or as a share of project or contract cost on a basis that can be defended
+exposure_kind: money_at_stake
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- source: infrastructure-australia-2025-market-capacity
+  location: "p.57 (summary: construction multifactor productivity rose 2.0% in 2023-24); p.61 (no consistent project-level data on subcontracting and self-performance)"
+considered:
+- source: infrastructure-australia-2024-market-capacity
+  reason: >-
+    Reports construction multifactor productivity growth of -0.8 (p.60) and that labour is about two-thirds of land transport
+    construction cost (p.7, no source for it). A productivity growth rate and a cost share: no cost of hours above need.
+- source: aca-2023-nailing-construction-productivity
+  reason: >-
+    ABS multifactor productivity indexes for construction against other industries, and an Oxford Economics estimate that
+    reaching the economy-wide average would unlock $56 billion of construction capacity a year. An economy-wide counterfactual
+    of capacity, not a cost on any contract.
+- source: oxford-economics-2025-construction-productivity
+  reason: >-
+    Estimates stagnant productivity costs Australia $62 billion a year in lost work across all construction. A modelled
+    opportunity cost for the economy; the full report was not read and no share of a project's cost is stated.
+- source: rlb-2024-turbulent-times-construction
+  reason: >-
+    RLB's own series: since 2013 workers up 26.5%, hours per worker down 2.0%, output per worker down 25.4%; the Productivity
+    Commission's 1.8% fall in construction labour productivity in 2022-23. Productivity rates for all construction, not money.
+- source: pc-2025-housing-construction-productivity
+  reason: >-
+    Dwelling construction completes about half as many homes per hour as in the mid-1990s, and quality-adjusted gross value
+    added per hour is 12% lower. Housing, and a rate, not a cost on civil work.
+- source: roads-australia-2025-productivity-media-release
+  reason: >-
+    Members say delays and a poor working environment add 30% to total project costs. A lobby group's statement with no
+    sample, method or definition; it mixes delay and site conditions with labour productivity, so it is not filed.
+- source: aca-arcadis-2024-market-sentiment-survey
+  reason: >-
+    Survey of the largest contractors: rising labour costs and stagnant productivity cited as raising costs; skilled trades
+    up about 5% on average. Perceptions of rates of change; no cost of hours above need, no sample size.
+- source: abs-2025-australian-industry-heavy-civil
+  reason: >-
+    Labour costs are 21.35% of total expenses for heavy and civil engineering (filed as context). The size of the labour
+    cost base, not hours above what the work needed.
+- source: bitre-2013-road-price-index-input-shares
+  reason: >-
+    Labour is 31.79% of road construction cost (Table B2, filed as context). A cost composition; nothing on productivity.
+sample_note: >-
+  Search terms: construction labour productivity Australia; overstaffing; hours over budget; labour cost share of cost
+  overrun; productivity gap cost per project; Productivity Commission construction productivity; Infrastructure Australia
+  productivity; ABS multifactor productivity construction. Nine sources opened. Rates exist but are not costs, so the schema
+  has no unit for them: construction multifactor productivity (-0.8 growth in IA 2024; a 2022-23 fall then +2.0% in 2023-24 in IA 2025);
+  construction labour productivity per hour worked down about 12% since 1994 against up 49% for the economy
+  (Productivity Commission, housing); output per construction worker down 25.4% since 2013 (RLB). Dollar totals exist only
+  for the whole economy ($56 billion and $62 billion a year of capacity or work, two consultancies' models).
+caveat: >-
+  Recorded as none on purpose: no defensible Australia-wide figure for the cost of more hours than the work needed was found,
+  not that none exists. The Roads Australia 30% was left out because nothing shows what it measures; it is an unsourced
+  member claim.
+status: current

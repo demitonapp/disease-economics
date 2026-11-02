@@ -1,0 +1,33 @@
+subtype: site_conditions
+label: >-
+  Direct repair cost of a utility strike taken as $9,000 a strike across about 15,000 strikes a year, Australia 2024
+exposure_value: 9000
+exposure_unit: per_incident
+currency: AUD
+price_year: 2024
+exposure_basis: >-
+  per reported utility strike, direct cost of repairing the damaged asset only; indirect and social costs
+  excluded
+exposure_kind: owner_side
+confidence: low
+derivation: as_published
+statistic: modelled
+sources:
+- byda-2024-utility-strikes-economic-assessment
+sample_note: >-
+  A direct cost per strike that the industry body advised as conservative and the report used to price about
+  15,276 strikes reported a year by the 26 largest network operators ($137.5 million a year). The 16 case
+  studies it examined (four each in gas, energy, water and telecommunications) averaged $26,732 in direct
+  cost, which the report says is likely higher than the average strike. Including indirect and social
+  costs, the report puts the total at $4.6 billion a year, about 32.4 times the direct cost.
+caveat: >-
+  An advised planning figure used as a model input, not an observed mean. The cost is the asset owner's
+  repair cost: the utility bears it unless it recovers it from whoever caused the damage, so it is the
+  contractor's exposure only where that recovery is made, and it is not the contractor's loss. It excludes
+  the contractor's own standing-time and reinstatement costs, delay, and the societal cost of the outage.
+  Strikes by pipe, cable or sector differ widely (telecommunications repairs in the case studies were the
+  largest). The report gives no price year for the $9,000 (it escalates its case-study costs to 2024), so 2024 is the
+  report's date. The strike count covers reported strikes only, which the report thinks is two to three times
+  fewer than the strikes that happen. The report's own basis for the $9,000 is "BYDA data and experience"
+  (Appendix C), with no records shown.
+status: current

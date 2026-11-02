@@ -1,0 +1,45 @@
+subtype: workmanship_quality
+label: >-
+  Average cost to rectify a defect in a new detached house, $3,440, national owner survey
+exposure_value: 3440
+exposure_unit: per_incident
+currency: AUD
+price_year: 2021
+exposure_basis: >-
+  per defect, total rectification cost to all parties (owner, builder, insurer and others), as estimated
+  by dwelling owners; excludes owners' time and other costs
+exposure_kind: owner_side
+confidence: moderate
+derivation: as_published
+statistic: mean
+sample_size:
+  n: 637
+  unit: other
+  note: >-
+    Defect cost estimates used (Table B.18), from detached-house owners; 1,231 detached dwellings were surveyed
+    but not all gave a cost
+sources:
+- cie-2021-building-confidence-report
+considered:
+- source: love-2025-non-conformances-eto
+  reason: >-
+    Gives a mean non-conformance cost of 0.41% of contract value on infrastructure, but the abstract does
+    not name the country, so it cannot fill an Australian cell.
+- source: love-2019-make-or-break
+  reason: >-
+    Recorded rework of 0.39% of contract value at one Australian contractor, but it is not split by cause
+    and its ledgers undercount quality failures.
+sample_note: >-
+  Owners' estimates from a survey of 1,606 residential dwellings in all eight states and territories,
+  Census-weighted, 2,574 defects reported. Of the 1,605 dwellings analysed, 1,231 are detached houses with
+  1,969 defects reported. The report's total cost per defect, including owners' time and other costs, is
+  $4,366 for detached houses.
+caveat: >-
+  Owners' own estimates, not invoices, and the cost is the owner side (the buyer's cost of putting a defect
+  right), not the contractor's loss, which depends on warranty and who pays. Houses, not civil works.
+  The average covers every defect owners reported, including some the CIE weights as caused by maintenance
+  or alteration rather than the initial build (1,024 of 1,969 detached-house defects are weighted as
+  initial-build). The text calls the $3,440 a cost per dwelling in one sentence, but Table 2.17 and the
+  total-cost line give it per defect. The report does not state the price year of the estimates; 2021 is
+  the report's date. Workmanship is not separated from design and approval failures in this figure.
+status: current

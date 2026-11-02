@@ -1,33 +1,29 @@
 subtype: unclaimed_delay_costs
-label: Site overhead of 20 unclaimed wet days, as a share of contract value
-exposure_value: 0.0035
-exposure_unit: ratio_of_contract
+label: No measured share of contract value for wet-day overhead left unclaimed
+exposure_value: null
+exposure_unit: none
 exposure_basis: >-
-  of contract value at the low end (0.81% at the high end): the time-related site overhead that keeps
-  running on 20 wet days no one claims an extension or delay costs for
+  none - a worked calculation gives 0.35% to 0.81% of contract value for 20 unclaimed wet days, but no source
+  measures how many wet days a real job leaves unclaimed
 exposure_kind: contractor_loss
 confidence: low
-exposure_range:
-  low: 0.0035
-  high: 0.0081
-  kind: scenario
-derivation: calculated
-calculation: >-
-  Low end: 10% preliminaries x 45.49% time-related / 261 week days a year x 20 days = 0.35% of contract
-  value. High end: 20% x 45.49% / 226 working days x 20 days = 0.81%. The contract value cancels, so the
-  share holds for any job size. 45.49% is O'Leary and Vaz-Serra table 6; 10% to 20% is their
-  introduction, citing Chan and Pasquire 2002; 261, 226 and 20 are Transport for NSW TS 01566 Table E2.1.
-statistic: modelled
+derivation: as_published
+statistic: none
 sources:
 - oleary-vaz-serra-2025-preliminaries
 - source: tfnsw-2024-major-contracts-general-requirements
   location: Annexure G2-C2/E, Table E2.1, rows c, h and i
 sample_note: >-
-  A worked calculation, not a measurement. The time-related share of preliminaries comes from 30 senior
+  The calculation, not a measurement: 10% preliminaries x 45.49% time-related / 261 week days a year x 20
+  days = 0.35% of contract value; 20% x 45.49% / 226 working days x 20 days = 0.81%. 45.49% is O'Leary and
+  Vaz-Serra table 6; 10% to 20% is their introduction, citing Chan and Pasquire 2002; 261, 226 and 20 are
+  Transport for NSW TS 01566 Table E2.1. The time-related share of preliminaries comes from 30 senior
   Australian estimators; the working days and the 20 wet days are the ones Transport for NSW builds into
   its own daywork labour rate for major civil contracts.
 caveat: >-
-  A WORKED EXAMPLE, NOT A MEASUREMENT. The 20 wet days a year that Transport for NSW estimates are priced
+  Recorded as `none` on purpose. A share of contract value is the one unit a product multiplies by a
+  contract value, and this one rests on an assumed day count, so it is not held as a figure. See
+  weather_wet_day_overhead for the same arithmetic as a cost per day. The 20 wet days a year that Transport for NSW estimates are priced
   into the rates, so their overhead is paid for; this is the cost of the same number of days going
   unclaimed beyond the allowance. How many unclaimed wet days a real job loses is not measured anywhere
   we found. The 10% to 20% preliminaries figure is a UK 2002 number read second-hand, and the estimators'
@@ -40,3 +36,9 @@ history:
     reason: >-
       subtype moved from 'penalty_days' to 'unclaimed_delay_costs' on SM070 P2 review: the figure measures time-related site overhead that keeps running on the days (extended preliminaries and site overheads), which is what the
       delay-costs cause covers, not liquidated damages running on time never claimed (the penalty_days cause)
+  - changed_on: '2026-11-02'
+    reason: >-
+      exposure_value 0.0035 (range 0.0035 to 0.0081, derivation calculated, unit ratio_of_contract) set to none
+      before any tagged release, SM070: as a ratio of contract the worked example displaced the 10.6% variations
+      figure on New South Wales jobs because its Transport for NSW source made it the nearest evidence, about 30 times
+      lower on an assumed count of 20 unclaimed days. The arithmetic is kept in sample_note.

@@ -7,7 +7,8 @@ source_type: regulator
 method: official-statistics
 access: primary
 read_on: '2026-11-02'
-location: 'Clear expectations and consistent enforcement' (pp.9-10: notices issued, 77/81/85 per cent in priority sectors) and regulatory statistics appendix (p.25: prosecutions disposed, notices)
+location: 'section on clear expectations and consistent enforcement (pp.9-10: notices issued; 77, 81 and 85 per
+  cent in priority sectors) and the regulatory statistics appendix (p.25: prosecutions disposed, notices)'
 jurisdictions:
 - NZ
 industries:

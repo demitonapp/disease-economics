@@ -1,0 +1,56 @@
+subtype: closeout_dispute
+label: No published New Zealand figure for the value of close-out, defects, final account or retention disputes
+exposure_value: null
+exposure_unit: none
+exposure_basis: none - New Zealand sources state a typical retention rate and count final-payment cases, but none
+  measures the value of close-out disputes
+exposure_kind: money_at_stake
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- source: building-disputes-tribunal-2023-adjudication
+  location: '''Types of issues'', p.29 (defective or incomplete work claims are listed as common, with no statistics
+    collected)'
+considered:
+- source: ramachandra-2011-payment-problems-nz-court-cases
+  reason: '40 High Court payment cases, 2008-2010: 10 (25%) concerned final payments and 1 retention, with claimed
+    amounts per case but no close-out total or recovery rate for them.'
+- source: mbie-2020-retention-money-regime-impact-summary
+  reason: MBIE 2020 impact summary states retention is held at between 2 and 10 per cent of the contract price and
+    paid after 12 months; a stated practice range with no sample, and not the amount disputed or overdue.
+- source: mbie-2021-retention-money-bill-disclosure
+  reason: MBIE 2021 disclosure statement repeats the 2% to 10% range and the 12 month release; no count or value
+    of retention withheld or disputed.
+- source: mbie-2024-retention-money-complaints
+  reason: 'MBIE retention complaints page: fine ceilings of $50,000 (individual) and $200,000 (company) for breaches;
+    no complaint counts or outcomes.'
+- source: standards-nz-2023-dz3910-consultation-draft
+  reason: Draft contract wording for practical completion, final account, defects liability and retention (clauses
+    9.11, 10.4, 11; p.57); mechanisms, not data.
+- source: russell-mcveagh-2020-construction-disputes-survey
+  reason: '2020 survey: 19% expect quality or inexperience issues to cause disputes; no close-out item and no amounts.'
+- source: hesketh-henry-2015-avoiding-construction-disputes
+  reason: Practitioner paper that divides disputes into payment and defect claims and notes defects surface long
+    after completion; no figures.
+- source: silva-2023-nz-construction-court-cases
+  reason: '35 court cases: quality of works is the area of 4 cases and testing and inspection of 1; no final account,
+    retention or practical completion category, no amounts.'
+- source: ramachandra-2015-payment-problems-nz
+  reason: Survey in which disputes over quality of work score 3.53 out of 5 as a cause of payment problems (a perception
+    score, not money); retention appears only in its literature review.
+sample_note: 'Searched: MBIE Construction Contracts Act review adjudication statistics retentions regulatory impact
+  statement; New Zealand retention money regime review KPMG MBIE retentions held estimated value subcontractors;
+  KPMG 2019 implementation review retention money regime survey percentage released late; Weathertight Homes Resolution
+  Service claims statistics average claim value building defects; New Zealand construction disputes causes survey;
+  New Zealand Building Disputes Tribunal AMINZ statistics. Frequencies exist: 25% of the 40 High Court payment cases
+  in Ramachandra and Rotimi 2011 were about final payments; retention is commonly 2% to 10% of contract value (MBIE
+  2020 and 2021). Neither is a dispute cost or a share of contract value that was disputed. Not opened: the Arcadis
+  and HKA disputes reports (their published figures are global or North American, none for New Zealand); MBIE''s
+  KPMG retention review and Weathertight Homes statistics (mbie.govt.nz and building.govt.nz PDFs refused scripted
+  downloads and were not retrieved by other means); Jelodar et al. 2016 (ASCE, paywalled, read only as summarised
+  in Silva et al. 2023).'
+caveat: Recorded as none on purpose. A retention rate is how much is held as routine security, so multiplying it
+  by a contract value would overstate what is disputed at close-out. The UK retention figure in the corpus (entitlement_retention_held)
+  is not New Zealand evidence.
+status: current

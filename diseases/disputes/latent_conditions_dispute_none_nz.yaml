@@ -1,0 +1,48 @@
+subtype: latent_conditions_dispute
+label: No published New Zealand figure for latent-condition or differing-site-condition disputes
+exposure_value: null
+exposure_unit: none
+exposure_basis: none - no New Zealand source found counts or values disputes over ground or site conditions
+exposure_kind: money_at_stake
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- source: building-disputes-tribunal-2023-adjudication
+  location: '''Types of issues'', p.29: ground or site conditions are not among the issues the tribunal lists as
+    common'
+considered:
+- source: russell-mcveagh-2020-construction-disputes-survey
+  reason: '2020 survey of causes of disputes and delay: ground or site conditions are not an option or a named cause
+    (pp.4-11).'
+- source: silva-2023-nz-construction-court-cases
+  reason: '35 court cases: no area or cause is ground or site conditions; one case has weather and environmental
+    issues as its primary cause.'
+- source: silva-2025-pre-contract-dispute-measures-nz
+  reason: '14 expert interviews: pre-contract site investigation is one recommended measure; no frequency or amount
+    for ground disputes.'
+- source: standards-nz-2023-dz3910-consultation-draft
+  reason: 'Draft contract wording for unforeseen physical conditions that an experienced contractor could not reasonably
+    have foreseen (clause 9.5): how the risk is allocated, not how often it is disputed or what it costs.'
+- source: mbie-2016-practice-advisory-17-ground-investigation
+  reason: MBIE regulator guidance that under-investment in ground investigation correlates with cost overruns, evidenced
+    by a 1994 UK highways study; no New Zealand figure.
+- source: hesketh-henry-2015-avoiding-construction-disputes
+  reason: Practitioner paper that lists inadequate scoping and design among causes of claims; ground conditions
+    are not mentioned.
+- source: ramachandra-2011-payment-problems-nz-court-cases
+  reason: '40 High Court payment cases: payment claims only, with no ground-condition category.'
+- source: dbh-2013-construction-contracts-act-review-ris
+  reason: 'Regulatory impact statement on adjudication reform: no breakdown of disputes by cause, no values.'
+sample_note: 'Searched: New Zealand differing site conditions latent conditions construction contract NZS 3910 dispute
+  cases study; NZS 3910 latent conditions unforeseen ground conditions site conditions risk contractor principal;
+  Te Waihanga Infrastructure Commission ground conditions risk geotechnical investigation cost certainty; Transmission
+  Gully settlement CPB HEB claims ground conditions NZTA; New Zealand construction disputes causes survey. No New
+  Zealand frequency was found either. A project-level settlement on one large road project was reported in the press,
+  but the agency''s own releases could not be opened, so no figure is filed. Not opened: the Arcadis and HKA disputes
+  reports (their published figures are global or North American, none for New Zealand); MBIE''s KPMG retention review
+  and Weathertight Homes statistics (mbie.govt.nz and building.govt.nz PDFs refused scripted downloads and were
+  not retrieved by other means); Jelodar et al. 2016 (ASCE, paywalled, read only as summarised in Silva et al. 2023).'
+caveat: Recorded as none on purpose. The nearest evidence is a contract clause and a regulator's guidance on ground
+  investigation, neither of which measures disputes. Australian latent-condition material is not New Zealand evidence.
+status: current

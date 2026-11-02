@@ -12,13 +12,13 @@ method: survey
 access: primary
 read_on: '2026-11-02'
 location: >-
-  abstract on the AUT repository record (PMI New Zealand Chapter 18th Annual Conference, concise paper); the full text was not opened
+  full concise paper from the AUT repository: sample paragraph (263 responses of 1,600 invited), Figure 1 (payment delays and losses as a share of total projects) and Table 2
 jurisdictions:
 - NZ
 industries:
 - F
 ---
 
-An online survey of contractors, subcontractors and consultants. The abstract reports that respondents said 10 to 40% of contractors' projects and 10 to 80% of subcontractors' projects had experienced payment delays or losses since the Construction Contracts Act took effect, that retention payments were the most often delayed, and that payment bonds, direct payment and trust accounts were the preferred remedies.
+An online survey of contractors, subcontractors and consultants: 263 full responses from 1,600 invited (16 per cent). Respondents said payment delays and losses had touched 10 to 40% of contractors' projects and 10 to 80% of subcontractors' projects since the Construction Contracts Act took effect (Figure 1, a chart of the share of total projects), and that retention release drew the most "very often" answers of any payment type (Table 2: 44, against 15 to 23 for the others). Payment bonds, direct payment and trust accounts were the preferred remedies.
 
-Only the abstract was read. The percentages are shares of projects with a delay or loss, from respondents' own accounts. They do not give how much was lost.
+The percentages are shares of projects with a delay or loss, from respondents' own accounts. They do not give how much was lost.

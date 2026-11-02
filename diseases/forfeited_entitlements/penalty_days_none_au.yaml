@@ -1,0 +1,48 @@
+subtype: penalty_days
+label: No published Australian figure for liquidated damages levied or extension-of-time claims missed, refused or time-barred
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - ten Australian sources opened, none measures liquidated damages as a share of contract value or per day across a national sample of projects, or the share of extension-of-time claims refused or served late
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- murray-2017-security-of-payment-review
+considered:
+- source: anao-2016-mulwala-propellant-facility
+  reason: >-
+    The one place an audit states liquidated damages actually applied and the contract value: $6.5 million on a $263 million contract (Box 2 Note b, paragraph 3.1). It is one troubled Commonwealth project in New South Wales, so it is filed as a per-project amount under AU-NSW (penalty_days_liquidated_damages_levied_mulwala_nsw) and cannot stand for Australia.
+- source: anao-2009-christmas-island-detention-centre
+  reason: >-
+    Finance withheld liquidated damages for missing Practical Completion, then released them and waived more in a 2007 settlement, but the report states no amount. The contractor's extension-of-time claim (234.9 days, $46.89 million; Finance counted 89 days and $19.45 million) is one project's dispute, not a rate.
+- source: wa-oag-2013-banksia-hill-detention-centre
+  reason: >-
+    $209 000 of liquidated damages applied on one Western Australian building contract, against $789 000 of transitional costs; no contract value is given, so no share can be formed, and it is one state project.
+- source: vago-2020-freight-outcomes-regional-rail-upgrades
+  reason: >-
+    Shows liquidated damages exposure released in a settlement on one Victorian rail project (settlement 10.5 per cent of the original contract price), but states no amount accrued, so the damages themselves are unmeasured.
+- source: vago-2026-delivering-suburban-rail-loop
+  reason: >-
+    Describes the liquidated damages regime (daily rates, capped at 10 per cent of target outturn cost, 15 per cent if the contractor raises the cap) on contracts not yet performed; a contract term, not damages levied.
+- source: productivity-commission-2014-public-infrastructure-vol2
+  reason: >-
+    National inquiry on public infrastructure delivery; liquidated damages appear only in passing (a commentator's $15 million for one day late on one plant, a 10 per cent provision in one contract), with nothing on what is levied or on extension-of-time claims.
+- source: tfnsw-2024-major-contracts-general-requirements
+  reason: >-
+    Transport for NSW's general requirements: the Principal's Authorised Person has no power over the liquidated damages only clause (clause 13.1(c), Clause 51), and a subcontractor's liquidated damages may not exceed the rates agreed with the Principal (Primary Testing hold point); contract terms with no rate and no outcome.
+- source: hasib-2021-project-delay-factors-australia
+  reason: >-
+    28 respondents ranking 59 causes of delay; the paper does not mention damages, penalties or extensions of time, and measures no cost.
+- source: infrastructure-australia-2021-national-infrastructure-risk
+  reason: >-
+    National market-capacity study of risk allocation between government and contractors; the full text has no reference to liquidated damages or extensions of time.
+- source: arcadis-aca-2023-market-sentiment-survey
+  reason: >-
+    Contractors' absorbed price escalation after variations and extensions of time; it names extensions of time as a mitigation tool but gives no count of claims refused or damages deducted, and no respondent count.
+sample_note: >-
+  Search terms: liquidated damages levied Australia public infrastructure percentage of contract value; Auditor-General liquidated damages not applied delayed projects (NSW, Victoria, Queensland, WA, Commonwealth); extension of time claims time-barred notice empirical study Australia; Society of Construction Law Australia empirical delay claims; Productivity Commission public infrastructure liquidated damages; Melbourne Law School survey of contract amendments; Arcadis global construction disputes Australia delay claims. Amounts found, none national: Mulwala $6.5 million on $263 million (ANAO, filed under AU-NSW); Banksia Hill $209 000 (WA, no contract value). Frequencies and contract terms found, none a cost: Suburban Rail Loop tunnels cap liquidated damages at 10 per cent of target outturn cost (15 per cent by election); the Murray review (Chapter 15.5, retentions) reports head contractors citing liquidated damages to keep subcontractors' retention, with no count or amount. Not opened and so not counted: a Melbourne Law School survey of contract amendments that a search summary of a vendor page cited (not found at source), and the Arcadis and HKA global dispute reports, whose Australian cuts we did not find.
+caveat: >-
+  Recorded as `none` on purpose. Liquidated damages are a contract term, and Australian audit offices report them only project by project, usually when a project failed. No source we could open reports how much is levied across a national sample, or how many extension-of-time claims are refused or time-barred. One project amount is filed under AU-NSW. Contract rates and caps (for example 10 per cent of target outturn cost) are terms, not outcomes, and are not filed.
+status: current

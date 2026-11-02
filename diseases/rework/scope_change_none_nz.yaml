@@ -6,8 +6,8 @@ sources:
 - asadi-2023-rework-provisions-nz-contracts
 considered:
 - source: atapattu-2023-nz-transport-cost-factors
-  reason: Estimators rank frequent design changes as the top cost factor on New Zealand transport projects; a perception
-    ranking with no cost magnitude in the abstract, full text unavailable.
+  reason: Estimators name frequent design changes among the three most critical cost factors on New Zealand transport
+    projects; a perception ranking with no cost magnitude in the abstract, full text unavailable.
 - source: nzic-2022-lay-of-the-land
   reason: Says added scope and design requirements raise infrastructure unit costs and that overrun analysis is
     outside its scope; no figure.
@@ -31,7 +31,8 @@ considered:
 sample_note: 'Search terms: New Zealand construction variations change orders cost percent of contract value; NZS
   3910 rework variation survey; design change cost New Zealand infrastructure; Auditor-General Treasury variations
   contract value New Zealand; Transmission Gully cost scope change. A frequency or ranking exists but is not a cost:
-  New Zealand estimators rank frequent design changes first among cost factors (Atapattu 2023), and Asadi 2023 (80
+  New Zealand estimators name frequent design changes among the three most critical cost factors (Atapattu 2023,
+  abstract only), and Asadi 2023 (80
   completed responses) scores changes first among the rework causes the standard contract addresses (Table 3, mean
   3.83 of 5), a rating of contract coverage. The Asadi paper quotes rework of up to 25% of contract value from earlier
   international work.'

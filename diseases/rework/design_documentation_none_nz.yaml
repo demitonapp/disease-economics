@@ -11,11 +11,11 @@ considered:
 - source: branz-2021-research-now-quality-2
   reason: Summary of the same model; lists poor design as one direct cause of defects and gives no cost for it.
 - source: pwc-2009-weathertightness-estimating-cost
-  reason: Weathertightness failure cost ($268,667 per failure, calculated) does not split design from workmanship
-    or materials; design fees appear only as a claimant transaction cost ($15,000 for a full reclad).
+  reason: Prices the leaky-building bill (NZ$11.3 billion, 2008 dollars) as a whole and does not split design from
+    workmanship or materials; design fees appear only as a claimant transaction cost ($15,000 for a full reclad).
 - source: atapattu-2023-nz-transport-cost-factors
-  reason: Estimators rank inadequate tender documentation and frequent design changes among the top three cost factors;
-    a perception ranking with no cost magnitude in the abstract, and the full text was not available.
+  reason: Estimators name inadequate tender documentation and frequent design changes among the three most critical cost
+    factors; a perception ranking with no cost magnitude in the abstract, and the full text was not available.
 - source: asadi-2023-rework-provisions-nz-contracts
   reason: Rates how well the standard contract addresses rework causes, with errors in design, drawings and specifications
     and incomplete design among five scored adequate (Table 3, means 3.50 and 3.39 on a 5-point scale); contract

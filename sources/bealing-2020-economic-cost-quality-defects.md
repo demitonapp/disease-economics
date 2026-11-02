@@ -12,6 +12,7 @@ jurisdictions:
 - NZ
 industries:
 - F41
+- F43
 ---
 
 Models the cost of quality defects found during construction of new houses in New Zealand, for 2018, with NZIER's ORANI-NZ model. The partial-equilibrium step multiplies three inputs: the share of jobs with a defect (central 90%, range 85% to 95%), an average cost of a defect (central 6%, range 3% to 9%), and the output of residential construction ($18.43 billion central, $16.46 to $20.39 billion). The product is a cost factor of 5.4% (2.6% low, 8.6% high) and a cost of $995 million (central), $420 million to $1,744 million across the range. The report says the inputs rest on its literature review and industry analysis, and assumes international defect-cost estimates apply to New Zealand. Its New Zealand observation is the BRANZ new-house quality survey (92% of 225 houses had a quality or appearance defect in 2014; 96% had a compliance defect at the first inspection).

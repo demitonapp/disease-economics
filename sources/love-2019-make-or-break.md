@@ -1,5 +1,5 @@
 ---
-title: 'Make-or-break during production: the costs of rework'
+title: 'Make-or-break during production: shedding light on change-orders, rework and contractors margin in construction'
 organisation: Love, Ika, Ahiaga-Dagbui, Locatelli & Sing
 year: 2019
 published_in: Production Planning & Control 30(4)

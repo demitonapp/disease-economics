@@ -1,0 +1,51 @@
+subtype: input_prices
+label: No published New Zealand figure for the cost of materials and subcontract price rises on fixed-price work
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - New Zealand national sources give how fast construction input prices moved, as index rates, but none gives what price escalation cost as a share of a fixed-price contract or of an overrun, or how much of it the contractor bore
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- te-waihanga-2023-construction-input-costs
+considered:
+- source: te-waihanga-2026-making-every-dollar-count
+  reason: >-
+    Says material prices follow world commodity prices (a 1% rise lifts the New Zealand price of steel, diesel and timber by about 0.6%, and quarterly moves above 2% occurred in almost half of the 53 quarters from 2010 to 2022). Price behaviour, with no share of any contract exposed and nobody's loss.
+- source: nzta-2026-contract-price-adjustment-indexes
+  reason: >-
+    The Transport Agency's published cost indexes and bitumen series, from Statistics New Zealand inputs: the construction index (excluding bitumen) rose 13.7% in the year to June 2022, and the bitumen series was 46.35% above a year earlier in December 2022. Index movements for contracts that use the adjustment, with no count of contracts that do and no money paid.
+- source: infometrics-2023-rapid-cost-escalation
+  reason: >-
+    Reads Statistics New Zealand indexes: Capital Goods Price Index up 12.5% in the year to June 2022, transport ways up 19.1% in the year to the end of 2022, civil infrastructure about 26% above the consultancy's own trend. Economy-wide price levels quoted second-hand from the statistics, not the cost of escalation on a contract and not who paid it.
+- source: pennington-2026-rnz-nzta-fuel-briefings
+  reason: >-
+    A news report of Transport Agency briefings that contractors on young projects carry fuel index changes for the first 12 months, and of an Agency model of a 5% to 10% rise in big project costs with oil at US$100 to US$150. A press account of documents not opened, with a modelled owner-side projection.
+- source: wynn-williams-2026-fuel-costs-contracts
+  reason: >-
+    States that since COVID-19 most New Zealand contracts do not allow for cost escalation, and that on a fixed price without fluctuations the contractor carries price movement. This is the mechanism, in words, with no count of contracts and no amount.
+- source: sccp-2026-fuel-freight-guidance
+  reason: >-
+    Guidance for reading fluctuation clauses under NZS 3910 contracts and for agreeing baseline indices; it holds no figure.
+- source: bondcm-2021-wellington-water-cost-escalation
+  reason: >-
+    A quantity surveyor's repricing of three Wellington three-waters contracts found an overall 5-6% rise since September 2021, with bitumen products 8-10% and steel 4-15% up over the quarter. The closest read to a share of a contract, but three specimen contracts in one region over three months, one consultant's estimate, and it says nothing of who bore it.
+- source: ghd-2023-tauranga-cost-escalation
+  reason: >-
+    A forecast of roading cost indices for one council, with weights (labour 40%, plant 25%, bitumen 21%, materials 14%). Forecasts and index weights, not realised escalation on a contract.
+- source: atapattu-2023-massey-thesis-road-cost-estimation
+  reason: >-
+    The full thesis was read. Its survey of 92 estimators ranks "price fluctuation" with a significance index of 46% (49th of 53 causes of overrun, Table 3.2, printed p.70), noting that most projects allow price fluctuation claims; its literature review cites a 20 to 25% share of overruns from price fluctuations in a study (Adam et al. 2017) that is not a New Zealand sample and was not opened. A perception ranking and a second-hand figure from another country.
+- source: te-waihanga-2022-economic-performance-construction
+  reason: >-
+    Industry-wide output, price and productivity statistics; no project-level or contract-level price exposure.
+- source: oag-2023-infrastructure-decisions
+  reason: >-
+    Searched for escalation, inflation, bitumen, steel and diesel and uses none of those words; its re-baselining of the New Zealand Upgrade Programme gives no split of the increase between scope and price.
+sample_note: >-
+  Searches: "Waka Kotahi NZ Transport Agency cost escalation infrastructure construction price increases cost of delivering roads report"; "New Zealand infrastructure cost escalation fixed price contracts contractors bear price risk bitumen steel diesel Te Waihanga"; "NZTA price adjustment fluctuations formula bitumen contracts cost fluctuation NZS 3910"; "Stats NZ Capital goods price index civil construction annual percentage increase road and bridge construction"; "Auditor-General New Zealand Upgrade Programme cost escalation construction costs share of increase contractors price risk"; "Te Waihanga infrastructure cost escalation share of project cost increase attributed to price escalation"; "Civil Contractors New Zealand survey members cost increases fuel bitumen contract price adjustment clauses". Index rates held here rather than as figures: Te Waihanga puts heavy and civil output price growth at 2.4% a year from 2009 to 2019 and 7.8% a year from 2020 to the March 2023 quarter; NZTA's construction index (excluding bitumen) rose 13.7% in the year to June 2022. Not opened: the NZ Transport Agency's website, the Ministry of Transport's website (the Cabinet paper on the Upgrade Programme's cost increase) and Statistics New Zealand's release pages (rendered by script) could not be read by automated request, and the Auditor-General's Upgrade Programme page returned 403; none was worked around. A frequency exists in words only: the law firm's observation that most contracts since COVID-19 do not allow escalation, with no count.
+caveat: >-
+  Recorded as `none` on purpose. A rise in an input price index, however large, is not the cost of that rise on a fixed-price contract: that needs the share of work exposed, the escalation clause, and who paid. No New Zealand source read measures that. The three nearest reads (a quantity surveyor's three-contract repricing, the Agency's modelled projection, and index rates) are respectively regional, modelled and not a cost, and are not filed as a figure.
+status: current

@@ -1,0 +1,22 @@
+label: Mean cost overrun of 106 completed New Zealand road projects, final account against forecast cost
+exposure_value: 0.195
+exposure_unit: ratio_of_other
+denominator: budget_at_decision
+exposure_basis: >-
+  of each project's forecast cost, the final account minus the forecast, averaged over 106 completed road projects whose records came from the NZ Transport Agency and Auckland Transport (all causes together). The thesis calls the baseline the "forecasted cost" and does not say at which stage it was set, so budget_at_decision is the nearest fixed denominator, not a confirmed one.
+exposure_kind: owner_side
+confidence: moderate
+derivation: as_published
+statistic: mean
+sample_size:
+  n: 106
+  unit: projects
+  note: Completed New Zealand road projects of the past twenty years for which the Transport Agency and Auckland Transport held usable records; 41 under NZ$10 million, 55 from $10 to $100 million, 10 over $100 million.
+sources:
+- source: atapattu-2023-massey-thesis-road-cost-estimation
+  location: Table 4.1, PDF p.113 (printed p.93); overrun definition on printed p.91; "general cost overrun percentage of road projects in NZ is 19.5%" on printed p.97
+sample_note: >-
+  Table 4.1 gives the mean percentage cost overrun as 21.6% for small projects (41), 17.8% for medium (55), 19.6% for large (10) and 19.5% in total, with a median of 18% and a standard deviation of 16.07% in the text; 96.2% of the projects overran. The text rounds the group means to 22%, 18% and 20%. Records were limited to projects the agencies could still produce data for, and the thesis notes private-sector projects could not be obtained.
+caveat: >-
+  Owner-side: the road controlling authority's cost against its own forecast, not a contractor's loss. All causes together, and the table does not say whether the forecast is the decision-stage budget, a design estimate or the contract price, so it is not comparable with figures measured from the decision to build. The table's dollar rows do not reconcile: for small projects the sum of overruns (NZ$523.3 million) exceeds the sum of total project cost (NZ$240 million), and the all-projects share of 20% does not equal 815.7 / 5,077; only the percentage rows are used here. Doctoral thesis, one researcher's collection from two agencies, not independently audited.
+status: current

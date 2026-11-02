@@ -1,0 +1,49 @@
+subtype: workmanship_quality
+label: Modelled cost of quality defects found during new residential construction, New Zealand 2018, as a share
+  of residential construction output
+exposure_value: 0.054
+exposure_unit: ratio_of_other
+denominator: construction_cost
+exposure_basis: 'of the output of the residential construction industry ($995 million of $18.43 billion, central
+  case): the modelled cost of rectifying quality defects found during construction, from a 90% defect prevalence
+  (informed by New Zealand surveys of new houses) and an assumed 6% average cost per defective job (set from overseas
+  studies)'
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: modelled
+exposure_range:
+  low: 0.026
+  high: 0.086
+  kind: scenario
+sources:
+- source: bealing-2020-economic-cost-quality-defects
+  location: Table 7 (p.22), Table 8 and Table 9 (p.24)
+- source: branz-2021-research-now-quality-2
+  location: 'Table 2 (p.2): confirms the $995 million central estimate'
+considered:
+- source: pwc-2009-weathertightness-estimating-cost
+  reason: Prices the leaky-building repair bill (NZ$11.3 billion in 2008 dollars, 42,000 failing dwellings built 1992
+    to 2008), which ER49 puts out of scope. The report does not split failures between design, workmanship and
+    materials and 69% of the cost falls on owners, so it is not rework by a builder and is not filed under any cause.
+- source: kirby-2026-nz-shoddy-building-bill
+  reason: Presents the $2.5 billion as nearly 10% of sector value lost to quality failure. In the NZIER study $2.5
+    billion is a GDP effect in the economy-wide model, not a cost of defects, so the 10% is not used.
+sample_note: 'A computable general equilibrium study (NZIER, ORANI-NZ) for BRANZ. Inputs: 90% prevalence (85% to
+  95%), 6% average cost of a defect (3% to 9%), residential output $18.43 billion for 2018. The 90% rests on BRANZ
+  new-house quality surveys (92% of 225 houses in 2014 had a quality or appearance defect; 96% had a compliance
+  defect at the first inspection); the 6% is set from the literature review, which cites Australian and UK studies
+  of rework or defect cost averaging 2.4% to 6.4% of contract value (UK 5.8%; Australia 2.4% and 3.15%, 4.1% with
+  a 3.0% to 11.2% range, and 6.4% direct and 5.6% indirect). Cost $995 million central, $420 million to $1,744 million across the range.'
+caveat: 'A model, not observed rework. Only the prevalence is informed by New Zealand data; the average cost of
+  a defect is an assumption taken from overseas studies, and the report assumes those estimates apply to New Zealand.
+  The 5.4% is prevalence times average cost (0.90 x 6%), applied to all residential construction output, including
+  the residential share (45%) of construction services; the report scopes the study to defects found during construction
+  of new houses but assumes non-new work has the same prevalence. Out of scope by the report''s own list: civil and
+  non-residential work, alterations and maintenance, undiscovered defects, leaky buildings and earthquake repair. It
+  is an industry-wide resource cost that the report says falls on builders but is priced into construction costs,
+  so it is not the loss of any one contractor. The denominator is industry output, not a contract value, so it is
+  filed as ratio_of_other and is not multiplied by a job value. The range is the report''s low and high scenarios
+  (ER49 Table 7: 2.6%, 5.4%, 8.6%; Appendix Table 13 agrees); ER49''s own Table 8 and the BRANZ summary''s Table 2
+  both print the 2.6% and 5.4% in the wrong columns.'
+status: current

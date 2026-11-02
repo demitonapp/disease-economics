@@ -1,0 +1,43 @@
+subtype: penalty_days
+label: >-
+  No published New Zealand figure for time owed but not claimed, or for liquidated damages levied, as a share of contract value
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - New Zealand sources describe time bars on extension of time claims and name delay as a dispute cause, but none measures the money lost to unclaimed time or levied liquidated damages
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- advisian-2019-nzs-conditions-of-contract
+considered:
+- source: russell-mcveagh-2020-construction-disputes-survey
+  reason: >-
+    Perception survey: 20% of respondents expect delays and extensions of time to cause disputes and employer variation is the leading cause of delay. Shares of respondents, no money, no count of claims or liquidated damages.
+- source: building-disputes-tribunal-2023-adjudication
+  reason: >-
+    Lists extensions of time and liquidated damages claims among the common issues in adjudication but says it has not collected statistics on issue types; its published costs are for the dispute process, not the time claim.
+- source: niwa-2020-wet-days-climate-averages
+  reason: >-
+    Mean annual wet days (1 mm or more) by station, 1991 to 2020, for example Auckland 130.1 and Christchurch 82.9. A count of days, not working days lost and not a cost; it does not say how many were claimed.
+- source: atapattu-2023-nz-road-cost-overruns
+  reason: >-
+    Respondents rate unpredictable weather conditions 62% on a severity index (27th of 53 factors). A rating of importance; the 19.5% mean overrun across 106 road projects is not split by cause.
+- source: icnz-2023-gabrielle-claims
+  reason: >-
+    Insurer-reported claims from Cyclone Gabrielle (NZ$890 million, commercial NZ$352.5 million at March 2023). Insured property and business losses, not contractors' unrecovered delay costs or liquidated damages.
+- source: te-waihanga-2022-infrastructure-delivery-cost
+  reason: >-
+    Benchmarks delivery cost against other countries and names delays and scope uncertainty as cost sources in general terms; no extension of time or liquidated damages data.
+- source: oag-2020-nzta-network-outcomes-contracts
+  reason: >-
+    National audit of state highway maintenance contracts; reports on monitoring and the contract model and says nothing on extensions of time, weather days or liquidated damages.
+- source: mbachu-2014-nz-contractual-risks
+  reason: >-
+    Abstract only: ranks 21 contractual risks in six categories, including external risks, by significance. A ranking, no money, and no liquidated damages or time-bar measure.
+sample_note: >-
+  Search terms: New Zealand construction extension of time claims survey; liquidated damages New Zealand study rate per day percentage of contract; NZS 3910 time bars; construction weather delays New Zealand wet days cost; BRANZ NIWA weather delay construction; Civil Contractors NZ extreme weather survey. A frequency exists: respondents to the Treasury review report time bars of often 10 working days (Advisian 2019, Time bars section), and 20% of Russell McVeagh 2020 respondents expect delays and extensions of time to cause disputes; neither is a cost. Wet days are counted (NIWA 1991-2020, Auckland 130.1 a year) but not costed. The Civil Contractors NZ and Teletrac Navman 2023 survey (nearly 70% of businesses with projects hit by extreme weather, reported by RNZ) was seen only as press coverage and its report was not opened. The Treasury report is the source of record because it is the national New Zealand source that deals directly with time bars.
+caveat: >-
+  Recorded as none on purpose: eight sources opened, none states what unclaimed time or levied liquidated damages cost a New Zealand contractor. A claim that a time bar caused a loss is the industry's complaint recorded in a review, not a measurement. Not read: the NZS 3910:2023 contract text, court decisions on liquidated damages, and any New Zealand Transport Agency data on liquidated damages levied.
+status: current

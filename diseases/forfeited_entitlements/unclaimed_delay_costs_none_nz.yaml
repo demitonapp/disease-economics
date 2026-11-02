@@ -1,0 +1,43 @@
+subtype: unclaimed_delay_costs
+label: >-
+  No published New Zealand figure for delay costs (prolongation, standby plant, extended preliminaries) not claimed, as a share of contract value or per day
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - New Zealand sources describe delay and extension of time disputes, but none gives a delay cost per day, a share of contract value, or the share of delay costs left unclaimed
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- building-disputes-tribunal-2023-adjudication
+considered:
+- source: advisian-2019-nzs-conditions-of-contract
+  reason: >-
+    Reports time bars on variation and extension of time claims, often 10 working days; no delay cost amounts or counts.
+- source: russell-mcveagh-2020-construction-disputes-survey
+  reason: >-
+    Perception survey: employer variation and design problems are the commonest delay causes and 20% expect delays and extensions of time to cause disputes. Shares of respondents, no money.
+- source: atapattu-2023-nz-road-cost-overruns
+  reason: >-
+    Delays in design rate 79% on a severity index (fourth of 53); contractual claims such as extensions of time with cost claims appear in only 8 articles of the literature review. Ratings and counts of papers, not costs.
+- source: te-waihanga-2022-infrastructure-delivery-cost
+  reason: >-
+    Says delays and scope uncertainty raise costs in general terms; no delay cost per day or unclaimed amounts.
+- source: oag-2020-nzta-network-outcomes-contracts
+  reason: >-
+    National audit of state highway maintenance contracts; reports on no delay claims.
+- source: mbachu-2014-nz-contractual-risks
+  reason: >-
+    Abstract only: ranks contractual risks by significance; no delay cost figure.
+- source: icnz-2023-gabrielle-claims
+  reason: >-
+    Insured claims from Cyclone Gabrielle (NZ$890 million at March 2023); it does not separate business interruption or contractors' standby costs.
+- source: adafin-2021-nz-budget-risk-factors
+  reason: >-
+    Cost plan against tender sum drift of 23.86% from 64 project managers; pre-award estimating, not prolongation costs.
+sample_note: >-
+  Search terms: New Zealand construction delay costs prolongation claims study; extension of time cost claims New Zealand survey; delay and disruption costs per day New Zealand; standby plant delay claim; preliminaries time-related New Zealand; Transmission Gully delay payments; Te Waihanga delay. A frequency exists: the Tribunal lists extensions of time and delay cost claims among the common issues in adjudication but has not collected statistics on types (printed pp.29-30 of its 2023 report). The Tribunal report is the source of record because it is the New Zealand national source that names delay cost claims as a routine adjudication issue and states it holds no figures for them. Reports of a NZ$190.6 million settlement with the Transmission Gully builder were seen in press only and cover one project.
+caveat: >-
+  Recorded as none on purpose. A count of days is not a cost: no source gives money per delay day. The Australian per-day preliminaries figure in this corpus is Australian and is not carried across. Not read: the Waka Kotahi final account data, NZS 3910 commentary, and Transmission Gully settlement papers.
+status: current

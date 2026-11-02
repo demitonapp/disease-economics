@@ -1,0 +1,43 @@
+subtype: unclaimed_latent_conditions
+label: >-
+  No published New Zealand figure for ground or site conditions not shown in the contract, claimed or unclaimed, as a share of contract value
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - New Zealand sources rank unforeseen ground conditions as a leading cost risk and say ground risk is transferred to contractors without reliance on reports, but none measures what it costs or how much goes unclaimed
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- atapattu-2023-nz-road-cost-overruns
+considered:
+- source: advisian-2019-nzs-conditions-of-contract
+  reason: >-
+    Says ground risk is transferred to contractors by geotechnical reports issued without reliance clauses and that this has a cost, but gives no amount or count.
+- source: adafin-2021-nz-budget-risk-factors
+  reason: >-
+    Ranks site condition information among the top five risks to the gap between cost plan and tender sum (64 project managers). Pre-award estimating drift of 23.86%, not claims on ground conditions.
+- source: roberts-2017-nz-ground-investigation
+  reason: >-
+    NZGS paper saying unforeseen ground conditions cause cost over-runs; its evidence is a UK highways study and a UK table, not New Zealand data.
+- source: te-waihanga-2022-infrastructure-delivery-cost
+  reason: >-
+    Says tunnelling in difficult ground can cost up to three times as much as in favourable ground and that further work is needed to quantify New Zealand's geological premium; no claim data.
+- source: mbachu-2014-nz-contractual-risks
+  reason: >-
+    Abstract only: site conditions are the most significant of six contractual risk categories in a survey of consultants and contractors. A ranking, no money.
+- source: building-disputes-tribunal-2023-adjudication
+  reason: >-
+    Does not list latent or differing site conditions among the common adjudication issues and has not collected issue-type statistics.
+- source: russell-mcveagh-2020-construction-disputes-survey
+  reason: >-
+    Dispute and delay causes reported by respondents do not include ground conditions as a category; no money.
+- source: oag-2020-nzta-network-outcomes-contracts
+  reason: >-
+    National audit of state highway maintenance contracts; says nothing on ground conditions or claims.
+sample_note: >-
+  Search terms: New Zealand latent conditions claims; differing site conditions New Zealand contract; unforeseen ground conditions cost overrun New Zealand percentage; geotechnical risk allocation New Zealand; Transmission Gully ground conditions; NZS 3910 latent conditions; Te Waihanga geotechnical. A frequency exists: respondents to the Atapattu survey (92 completed responses) gave unforeseen ground conditions a severity index of 78%, sixth of 53 factors (Table 3.2); that is a rating of importance, not a cost. Press reports of ground surprises on single state highway projects were not opened. The Atapattu thesis is the source of record because it is the national New Zealand source with the most direct rating of unforeseen ground conditions, and its 106 road projects had a mean overrun of 19.5% that it does not split by cause.
+caveat: >-
+  Recorded as none on purpose. The overrun of 19.5% on 106 New Zealand road projects covers every cause together and must not be read as the cost of ground conditions. Not read: tender-stage geotechnical baseline practice, NZS 3910 clause text, and claim files for ground conditions.
+status: current

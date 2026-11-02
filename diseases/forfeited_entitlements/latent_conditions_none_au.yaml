@@ -1,0 +1,64 @@
+subtype: unclaimed_latent_conditions
+label: No published Australian figure for latent-condition claims missed, rejected or time-barred, or for ground-risk cost
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - eight Australian sources opened, none measures latent-condition claims or their cost as a share of
+  contract value, a cost per claim, or the share rejected for lack of notice
+exposure_kind: money_at_stake
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- infrastructure-australia-2021-national-infrastructure-risk
+considered:
+- source: love-2017-off-the-rails
+  reason: >-
+    16 Australian rail projects by one contractor; scope changes drove the cost increase and the text names
+    underground-utility relocation as a cause, but gives no latent-condition cost or share.
+- source: love-2017-change-orders
+  reason: >-
+    67 public infrastructure projects; change orders of 10.6% of contract value are reported in total. The
+    paper says analysing the nature of change orders is outside its remit and observes only that scope
+    changes and documentation errors predominated, so there is no latent-condition category.
+- source: terrill-coates-danks-2016-atrf-cost-overruns
+  reason: >-
+    836-project national overrun dataset measured from the first announced cost; owner-side money and no
+    split by cause, so ground conditions cannot be isolated.
+- source: qld-tmr-2019-contract-variations-qon-170
+  reason: >-
+    Names latent conditions among reasons for variations on Queensland road contracts and gives net
+    variations in total ($753.7m on $8.87bn awarded); no split by reason, and Queensland only.
+- source: infrastructure-dept-2023-iip-strategic-review
+  reason: >-
+    $32.8bn of known cost pressures across the federal pipeline, not split by cause and not independently
+    verified by the review; government money.
+- source: arcadis-aca-2023-market-sentiment-survey
+  reason: >-
+    Contractors' absorbed market price escalation after variations and extensions of time; a perception
+    survey on prices, not ground conditions, with no respondent count.
+- source: hasib-2021-project-delay-factors-australia
+  reason: >-
+    28 respondents ranking 59 delay causes; ground conditions were not among the causes surveyed and no
+    cost is measured.
+- source: tfnsw-2024-major-contracts-general-requirements
+  reason: >-
+    Transport for NSW's general requirements for major civil contracts; a search of its full text found no
+    latent-condition clause or rate, and it holds contract terms, not outcomes.
+sample_note: >-
+  Search terms: latent conditions claims Australia cost share of contract value; differing site conditions
+  variations percentage; ground risk cost infrastructure Australia; latent conditions time bar notice
+  empirical study; ANAO contract variations latent conditions; Austroads variations by cause; Australian
+  Constructors Association risk allocation survey; underground utility strikes cost Australia. Frequencies
+  found, none a cost: in the Infrastructure Australia market sounding survey 44% of government and 38% of
+  private executives said latent ground risk should be shared and 8% of government executives said the
+  private sector should bear it (Section 4.9, p.47). Sources that could not be opened and so are not
+  counted: a Queensland TMR road-variations thesis (Purvis 2015, host unreachable), the Before You Dig
+  Australia 2024 utility-strike assessment (403), Austlii judgments (403).
+caveat: >-
+  Recorded as `none` on purpose. No source we could open reports how often latent-condition claims are
+  made, how many fail for lack of notice, or what ground risk costs as a share of contract value. The
+  Sydney CBD Light Rail overrun (about $1bn, about 50% of project value, Infrastructure Australia Section
+  4.7) is one contested NSW project driven mainly by utilities and is owner-side, so it is not filed as a
+  figure.
+status: current

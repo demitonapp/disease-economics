@@ -1,0 +1,29 @@
+subtype: unpaid_claims
+label: Average value of the most recent security-of-payment claim, Australian construction contractors (2017 survey)
+exposure_value: 221633
+exposure_unit: per_incident
+currency: AUD
+price_year: 2017
+exposure_basis: >-
+  AUD per claim: the average dollar amount of the claimant's most recent claim under security of payment
+  law, as reported by contractors who had made one
+exposure_kind: money_at_stake
+confidence: moderate
+derivation: as_published
+statistic: mean
+sources:
+- source: murray-2017-security-of-payment-review
+  location: Appendix B, 'Security of payment laws and claims made', p.324
+sample_note: >-
+  Survey of 526 construction contractors in all states and territories (46.8% Queensland, 30.8% Western
+  Australia, 17.9% New South Wales), commissioned for the 2017 review. Only 23% had ever made a security
+  of payment claim, and the report does not state how many answered the claim-amount question. 25% of
+  claimants in the last two years said their claim was between $100 001 and $500 000; 60% said the claim
+  was against a head contractor.
+caveat: >-
+  A claim amount is money claimed because it was unpaid or disputed, not money lost: some is later paid or adjudicated
+  in part. A mean of self-reported amounts from a convenience survey, not a count of claims: 73% of
+  respondents were in firms of 20 or fewer people, 45% were electrical contractors, and civil contractors
+  are a minority, and 96% of respondents came from Queensland, Western Australia and New South Wales, so
+  the other states and territories are barely represented. Never multiplied by a contract value.
+status: current

@@ -8,7 +8,7 @@ source_type: regulator
 method: legal-text
 access: primary
 read_on: 2026-09-26
-location: "Annexure G2-C2/E, Table E2.1 (Calculation of Ordinary Daywork Labour Hourly Rate), rows c, h and i"
+location: "Annexure G2-C2/E, Table E2.1 (Calculation of Ordinary Daywork Labour Hourly Rate), rows c, h and i; clause 13.1(c) (liquidated damages only); Primary Testing subcontract hold point (subcontractor liquidated damages)"
 jurisdictions: [AU-NSW]
 industries: [F42]
 ---

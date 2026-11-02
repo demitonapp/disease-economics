@@ -1,4 +1,4 @@
-subtype: penalty_days
+subtype: unclaimed_delay_costs
 label: Site overhead of 20 unclaimed wet days, as a share of contract value
 exposure_value: 0.0035
 exposure_unit: ratio_of_contract
@@ -36,3 +36,7 @@ status: current
 history:
   - changed_on: '2026-11-02'
     reason: "subtype 'weather' is now the registers' cause 'penalty_days' (schema 3.0.0, SM070)"
+  - changed_on: '2026-11-02'
+    reason: >-
+      subtype moved from 'penalty_days' to 'unclaimed_delay_costs' on SM070 P2 review: the figure measures time-related site overhead that keeps running on the days (extended preliminaries and site overheads), which is what the
+      delay-costs cause covers, not liquidated damages running on time never claimed (the penalty_days cause)

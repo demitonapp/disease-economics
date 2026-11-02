@@ -1,0 +1,63 @@
+subtype: unclaimed_delay_costs
+label: No published Australian figure for delay costs granted in time but not claimed in money
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - nine Australian sources opened, none measures prolongation, standby or extended-preliminaries
+  money that went unclaimed after time was granted
+exposure_kind: money_at_stake
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- oleary-vaz-serra-2025-preliminaries
+considered:
+- source: tfnsw-2024-major-contracts-general-requirements
+  reason: >-
+    Clause 43 pays wet-weather delay costs only above a nominated threshold of days, and the guide note
+    sets the rate at 50% of the site-overhead rate: a contract rule from one agency, not a measure of what
+    contractors fail to claim.
+- source: infrastructure-australia-2021-national-infrastructure-risk
+  reason: >-
+    Says contractor claims are growing and cites delay-driven disputes, with no count or dollar figure for
+    delay costs claimed or missed.
+- source: hasib-2021-project-delay-factors-australia
+  reason: >-
+    Ranks causes of delay by perceived importance (28 respondents); measures no cost and no claim outcome.
+- source: arcadis-aca-2023-market-sentiment-survey
+  reason: >-
+    Costs absorbed after contractual mitigation including extensions of time, but only for market price
+    escalation, with no respondent count and no values printed on the chart.
+- source: love-2017-off-the-rails
+  reason: >-
+    16 rail projects; reports cost increases by scope change and mentions delays only as background, with no
+    delay-cost measure.
+- source: love-2017-change-orders
+  reason: >-
+    67 projects' change orders in total; no extension-of-time or prolongation category.
+- source: terrill-coates-danks-2016-atrf-cost-overruns
+  reason: >-
+    836 transport projects' overruns from announcement, owner-side and not split by cause.
+- source: infrastructure-dept-2023-iip-strategic-review
+  reason: >-
+    $32.8bn of known cost pressures and delivery delays across the federal pipeline, not split by cause;
+    government money.
+- source: qld-tmr-2019-contract-variations-qon-170
+  reason: >-
+    Net variations in contract scope, cost or time across Queensland road contracts, with no separation of
+    delay costs; Queensland only.
+sample_note: >-
+  Search terms: extension of time claims liquidated damages Australian construction empirical; delay cost
+  prolongation claims percentage Australia; delay costs recovery survey Australian contractors; unrecovered
+  costs claims per cent of contract value Australia; Australian
+  Constructors Association contract risk survey; Arcadis construction disputes Australia causes. The
+  nearest measure is time-related site overhead: 30 Australian estimators put 45.49% of preliminaries as
+  time-related for the whole job (Table 6), and preliminaries at 10% to 20% of the contract sum (UK 2002,
+  second-hand); the corpus holds the resulting per-day and share-of-contract worked
+  examples in this cause as weather_wet_day_overhead and weather_unclaimed_days_share_of_contract (moved
+  here from penalty_days on review): calculations, not measurements of money left unclaimed. Not counted because it would not open: HKA Crux 2025 (global, page without
+  figures), Austlii judgments (403).
+caveat: >-
+  Recorded as `none` on purpose. The time-related overhead share says what a delay day costs in principle,
+  not how many such days go unclaimed once time is granted, which no source we could open measures.
+status: current

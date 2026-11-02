@@ -1,0 +1,49 @@
+subtype: labour_productivity
+label: Labour as a share of the cost of road construction, Australia (2013 survey of road works)
+exposure_value: 0.3179
+exposure_unit: ratio_of_other
+denominator: construction_cost
+exposure_basis: >-
+  of the total cost of road construction work: site-based labour 24.19% plus office-based labour 7.60%, the
+  share of cost that hours worked drive
+exposure_kind: money_at_stake
+confidence: moderate
+derivation: as_published
+statistic: mean
+sample_size:
+  n: 277
+  unit: organisations
+  note: 8 state and territory road authorities, 233 local governments and 36 private sector contractors, combined by their share of road expenditure
+sources:
+- source: bitre-2013-road-price-index-input-shares
+  location: "Appendix B, Table B2, 'All labour', road expenditure weighted column (p.23)"
+- source: bitre-2016-modelled-road-price-index
+  location: "p.1 (combined construction and maintenance mix: labour 26.7% plus 7.3%)"
+considered:
+- source: infrastructure-australia-2024-market-capacity
+  reason: >-
+    States, with no source or method, that labour is roughly two-thirds of costs in land-transport
+    infrastructure construction (p.7). That is double the survey share, and with no basis given it is not
+    used as a figure. Its p.60 says labour productivity indicators (absenteeism, turnover) are the least used
+    by industry and construction multifactor productivity growth was -0.8; neither is a money measure.
+- source: infrastructure-australia-2025-market-capacity
+  reason: >-
+    Says no consistent project-level data on subcontracting, self-performance or rework exists and that
+    indirect labour cost metrics would have to be collected (p.61); no hours-against-budget figure.
+- source: abs-2025-australian-industry-heavy-civil
+  reason: >-
+    Gives labour cost against expense for the industry; filed as its own finding, labour_cost_share_heavy_civil_au.
+- source: ryan-duffield-2017-contractor-margins
+  reason: >-
+    Lists poor productivity among factors the literature gives for megaproject failure; it gives no
+    figure for it.
+sample_note: >-
+  Survey of road works by the federal transport research bureau, 2013. Combined construction and maintenance
+  mix is labour 33.94% (Table B1); maintenance alone 36.2% (Figure 4). The private contractors' column,
+  the most relevant to a contractor, shows 32.13% for road construction and maintenance together.
+caveat: >-
+  This is the part of road-works cost that labour hours drive, not a measure of overstaffing, lost hours or
+  productivity, and not an overrun or a loss. Shares are from 2013 and for roads (construction and
+  maintenance), not all civil work. Labour bought inside materials or subcontract prices is counted there,
+  not here. No Australian measure of hours over budget was found.
+status: current

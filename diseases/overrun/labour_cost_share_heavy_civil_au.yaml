@@ -1,0 +1,32 @@
+subtype: labour_productivity
+label: Employee labour costs as a share of total expenses, heavy and civil engineering construction, Australia 2024-25
+exposure_value: 0.2135
+exposure_unit: ratio_of_other
+denominator: construction_cost
+exposure_basis: >-
+  of the industry's total expenses: total labour costs of its own employees, a dollar base that hours worked
+  drive
+exposure_kind: money_at_stake
+confidence: moderate
+derivation: calculated
+calculation: >-
+  Total labour costs A$26,308m divided by total expenses A$123,216m, both for 31 Heavy and civil engineering
+  construction in 2024-25 (Data1 sheet, 30 June 2025 row) = 0.2135. Against total income of A$132,471m it
+  is 0.1986.
+statistic: pooled_ratio
+sources:
+- abs-2025-australian-industry-heavy-civil
+considered:
+- source: bitre-2013-road-price-index-input-shares
+  reason: >-
+    Filed as its own finding; a survey of road works that counts labour at 31.79% of road construction cost,
+    higher than this share; the two are not the same base (road works against the whole industry's books).
+sample_note: >-
+  ABS annual industry accounts for ANZSIC subdivision 31 Heavy and civil engineering construction, which
+  includes road and bridge construction and other heavy and civil work. Employment 165,900 at
+  June 2025.
+caveat: >-
+  A share of an industry's books, not of a contract and not a loss. It counts only the industry's own
+  employees: labour bought from subcontractors or labour hire firms is not in labour costs, so the share
+  probably understates the cost that hours drive on a job. It says nothing about hours over need.
+status: current

@@ -1,0 +1,51 @@
+subtype: input_prices
+label: Materials as a share of the cost of road construction, Australia (2013 survey of road works)
+exposure_value: 0.4077
+exposure_unit: ratio_of_other
+denominator: construction_cost
+exposure_basis: >-
+  of the total cost of road construction work: bituminous materials 12.23%, cement and concrete 4.46%, quarry
+  products 16.16% and reinforcing steel 7.92%, the part of cost exposed to materials price rises
+exposure_kind: money_at_stake
+confidence: moderate
+derivation: as_published
+statistic: mean
+sample_size:
+  n: 277
+  unit: organisations
+  note: 8 state and territory road authorities, 233 local governments and 36 private sector contractors, combined by their share of road expenditure
+sources:
+- source: bitre-2013-road-price-index-input-shares
+  location: "Appendix B, Table B2, 'All materials', road expenditure weighted column (p.23)"
+- source: bitre-2016-modelled-road-price-index
+  location: "p.1 (combined construction and maintenance mix: bituminous 13.7%, cement 4.1%, quarry 13.4%, steel 5.8%)"
+considered:
+- source: abs-2026-producer-price-indexes-road-bridge
+  reason: >-
+    Output price of road and bridge construction up 6.0% in the year to September 2026 (index 146.6 to 155.4).
+    A rate of change in what clients pay, not the exposure of a fixed price contract.
+- source: bitre-2019-road-bridge-price-index-alert
+  reason: >-
+    Same ABS index rose 1.7% in the year to September 2019 against a ten-year average of 2.4%. A price rate,
+    five years stale.
+- source: bitre-2014-road-price-index-update
+  reason: >-
+    Input price index rose 0.49 index points in 2013-14, led by labour and fuel. Index points, not a share
+    of a contract.
+- source: infrastructure-australia-2024-market-capacity
+  reason: >-
+    Industry sentiment puts non-labour input price escalation at about 10-20% over twelve months (p.7). A
+    perception, stated as a range, with no contract exposure attached.
+- source: infrastructure-australia-2025-market-capacity
+  reason: >-
+    68% of surveyed organisations saw non-labour input costs rise in the last year (p.37). A frequency of
+    perception, not a cost.
+sample_note: >-
+  Survey of road works by the federal transport research bureau, 2013. Combined construction and maintenance
+  mix: materials 37.06%. Private sector contractors alone: materials 41.01% of road construction and
+  maintenance cost. Subcontract prices are not a separate line in this mix.
+caveat: >-
+  The share of road-construction cost that materials make up, not the loss from a price rise: no price
+  movement is applied to it. Roads only, 2013 mix. It is not a share of contract value and
+  says nothing about how much of a job is on a fixed price.
+status: current

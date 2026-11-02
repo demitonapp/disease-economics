@@ -1,0 +1,45 @@
+subtype: tender_pricing
+label: >-
+  Upward revision of early public cost estimates when scrutinised at budget commitment, Australian transport projects 2001-2015
+exposure_value: 0.25
+exposure_unit: ratio_of_other
+denominator: budget_at_announcement
+exposure_basis: >-
+  of the first publicly announced cost: the average increase needed once an announcement made before any
+  formal budget commitment was scrutinised in the budget process
+exposure_kind: owner_side
+confidence: moderate
+derivation: as_published
+statistic: mean
+sources:
+- source: terrill-danks-2016-transport-overruns
+  location: "Chapter 2, p.16 (text beside Figure 2.1)"
+considered:
+- source: vago-2011-major-road-projects
+  reason: >-
+    Victoria only. Four VicRoads design-and-construct projects finished 0% to 9% over approved budget (3% on
+    average, Figure 2C, p.12) and one public sector comparator was revised up 45%: a handful of owner-side
+    budgets in one state, so it cannot fill the national cell.
+- source: ryan-duffield-2017-contractor-margins
+  reason: >-
+    Contractors' own open-book data on 28 megaprojects: tendered margin 9% became a 7% loss. It measures the
+    whole swing from tender to completion. The paper blames bidding competitiveness and risk transfer in
+    words but does not split the loss between underpricing at tender and what happened in delivery, so it
+    is not a tender-pricing figure.
+- source: abs-2025-australian-industry-heavy-civil
+  reason: >-
+    Gives the industry's operating profit before tax as 6.5% of total income in 2024-25 (8,631 of 132,471),
+    the margin a short tender has to eat. That is a result for the whole industry, not a measure of how short
+    tenders were.
+sample_note: >-
+  Australian transport projects completed between 2001 and 2015, from the Investment Monitor database
+  (Grattan Institute 2016). The 25% applies to projects whose first cost was announced before a formal
+  budget commitment, which are 32% of projects and 74% of the value of overruns; after the budget
+  commitment their costs rose by a further 26%. The text does not give the number of projects behind the 25%.
+caveat: >-
+  An owner's early public estimate, not a contractor's tender price: the client's money, and mostly before any
+  contractor was signed. It covers only announcements made ahead of a budget commitment and is from
+  transport projects of $20m or more, not civil work generally. It is a stated average with no sample size.
+  The report says early announcements are made for electoral reasons, not that the estimates were wrong
+  because contractors priced short. The contractor's side of tender pricing has no national figure here.
+status: current

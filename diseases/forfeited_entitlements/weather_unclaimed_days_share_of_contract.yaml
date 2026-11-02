@@ -1,4 +1,4 @@
-subtype: weather
+subtype: penalty_days
 label: Site overhead of 20 unclaimed wet days, as a share of contract value
 exposure_value: 0.0035
 exposure_unit: ratio_of_contract
@@ -33,3 +33,6 @@ caveat: >-
   we found. The 10% to 20% preliminaries figure is a UK 2002 number read second-hand, and the estimators'
   survey was mostly building work. Use your own preliminaries rate and wet-day count if you have them.
 status: current
+history:
+  - changed_on: '2026-11-02'
+    reason: "subtype 'weather' is now the registers' cause 'penalty_days' (schema 3.0.0, SM070)"

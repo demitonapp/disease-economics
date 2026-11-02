@@ -1,4 +1,4 @@
-subtype: payment
+subtype: payment_dispute
 label: >-
   Adjudication awards against amounts claimed, Queensland 2020-21 to 2024-25 (decisions released)
 exposure_value: 0.1488
@@ -44,3 +44,6 @@ caveat: >-
   A$634m claim sits inside it. The annual rate swings from 8.6% to 45.6%. It counts only disputes that
   reached a released decision, not every payment claim.
 status: current
+history:
+  - changed_on: '2026-11-02'
+    reason: "subtype 'payment' is now the registers' cause 'payment_dispute' (schema 3.0.0, SM070)"

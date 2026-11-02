@@ -1,4 +1,4 @@
-subtype: payment
+subtype: unpaid_claims
 label: >-
   Share of the amount claimed in Queensland adjudication dismissed for no jurisdiction (246 decisions,
   2022-23)
@@ -31,3 +31,6 @@ caveat: >-
   decision means the claim failed on procedure, such as timing or form, not on its merits, and the claimant
   may have other routes to recover, so this is money put at risk by procedure rather than a proven loss.
 status: current
+history:
+  - changed_on: '2026-11-02'
+    reason: "subtype 'payment' is now the registers' cause 'unpaid_claims' (schema 3.0.0, SM070)"

@@ -1,4 +1,4 @@
-subtype: closeout
+subtype: unpaid_claims
 label: Average retention held, 419 clients and 508 contractors (UK)
 exposure_value: 0.049
 exposure_unit: ratio_of_contract
@@ -22,3 +22,6 @@ caveat: >-
   The money is held, not lost, until it is not returned. UK data from 2017 with no comparable Australian
   study; the authors say some tier differences are not statistically robust.
 status: current
+history:
+  - changed_on: '2026-11-02'
+    reason: "subtype 'closeout' is now the registers' cause 'unpaid_claims' (schema 3.0.0, SM070)"

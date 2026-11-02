@@ -23,7 +23,15 @@ ROOT = Path(__file__).resolve().parent.parent
 #: The finding/source/protection schemas are pinned from github.com/demitonapp/registers
 #: (spec 09 P4) - vendor_registers.sh refreshes this, nothing here fetches it at runtime.
 SCHEMA_DIR = "vendor/registers-research"
-DISEASE_KEYS = ("rework_signal", "overrun_signal", "claim_window", "evidence_gap", "compliance_gate")
+#: The five diseases and their causes, pinned with the schemas from demitonapp/registers' vocab/diseases.json
+#: (SM070/P1): a finding's directory is a key of it, and its `subtype` is one of that disease's `causes`.
+DISEASES_FILE = "diseases.json"
+
+
+def disease_vocab(root: Path = ROOT) -> dict:
+    """`{disease key: [cause key, ...]}` in the registers' order."""
+    d = json.loads((root / SCHEMA_DIR / DISEASES_FILE).read_text())
+    return {k: [c["key"] for c in d["diseases"][k]["causes"]] for k in d["order"]}
 SOLE_ENTRIES = ("GLOBAL", "ALL", "unknown")
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 METRIC_KEY = re.compile(r"^[a-z0-9]+(_[a-z0-9]+)*$")
@@ -92,7 +100,7 @@ def validate(root: Path = ROOT):
     jurisdictions = json.loads((root / "vocab" / "jurisdictions.json").read_text())
     industries = json.loads((root / "vocab" / "industries.json").read_text())
     gates = json.loads((root / "vocab" / "gates.json").read_text())
-    subtypes = {k: {st["key"] for st in v} for k, v in json.loads((root / "vocab" / "subtypes.json").read_text()).items()}
+    causes = disease_vocab(root)
 
     def schema_errors(path, doc, validator):
         for e in sorted(validator.iter_errors(doc), key=str):
@@ -127,8 +135,8 @@ def validate(root: Path = ROOT):
         is_context = parts[0] == "context"
         if not METRIC_KEY.match(Path(path).stem):
             errors.append(f"{path}: filename (the metric_key) must be lower-case words joined by underscores")
-        if not is_context and parts[1] not in DISEASE_KEYS:
-            errors.append(f"{path}: {parts[1]!r} is not one of the five disease keys {DISEASE_KEYS}")
+        if not is_context and parts[1] not in causes:
+            errors.append(f"{path}: {parts[1]!r} is not one of the five disease keys {tuple(causes)}")
             continue
         if not isinstance(f, dict):
             errors.append(f"{path}: not a YAML mapping")
@@ -149,8 +157,8 @@ def validate(root: Path = ROOT):
         st = f.get("subtype")
         if st and is_context:
             errors.append(f"{path}: a context/ figure has no subtype")
-        elif st and st not in subtypes.get(parts[1], set()):
-            errors.append(f"{path}: subtype {st!r} is not one of {parts[1]}'s in vocab/subtypes.json")
+        elif st and st not in causes.get(parts[1], []):
+            errors.append(f"{path}: subtype {st!r} is not one of {parts[1]}'s causes {causes.get(parts[1])} in {SCHEMA_DIR}/{DISEASES_FILE}")
         if is_context:
             if kind != "context":
                 errors.append(f"{path}: a context/ file has exposure_kind 'context'")
@@ -208,11 +216,20 @@ def check_against_base(root: Path, base: str):
     changed |= set(_git(root, "ls-files", "--others", "--exclude-standard", "sources/").splitlines())
     # Schema bump enforcement moved with the schemas themselves to demitonapp/registers'
     # own CI (scripts/bump_check.py, ported from the schema_bump_needed this used to run).
+    # A finding moved to another directory (a disease key renamed) is the same finding, not a deletion.
+    moved_to = {}
+    for line in _git(root, "diff", "-M", "--name-status", "--diff-filter=R", base, "--", "diseases/", "context/").splitlines():
+        _, old_path, new_path = line.split("\t")
+        moved_to[old_path] = new_path
     for path in base_files:
+        if path in moved_to:
+            base_path, path = path, moved_to[path]
+        else:
+            base_path = path
         if not (root / path).exists():
             errors.append(f"{path}: a finding is never deleted - set status: withdrawn with a withdrawn_reason")
             continue
-        old = load_yaml(_git(root, "show", f"{base}:{path}")) or {}
+        old = load_yaml(_git(root, "show", f"{base}:{base_path}")) or {}
         new = load_yaml((root / path).read_text()) or {}
         old_h, new_h = old.get("history") or [], new.get("history") or []
         if new_h[: len(old_h)] != old_h:

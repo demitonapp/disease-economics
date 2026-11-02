@@ -1,0 +1,483 @@
+{
+  "$comment": "The five diseases (SD027 §4.6), set independently of protection type: construction's loss taxonomy, in the order published research says each costs a contractor, most first. Keys are the vocabulary of obligations/*.yaml's `disease` and are the keys Demiton stores and shows. Demiton's own measure names (`claim_window`, `evidence_gap`, `compliance_gate`, `rework_signal`, `overrun_signal`) are an implementation detail on the other side of this repository's boundary. `start` is what a disease's daily check needs before it can run: a list of groups, ALL of which must hold data, where ANY one register in a group is enough. `feeders` are the registers that enrich a verdict. `buyer_name`, `what` and `prevention` are the brand standard's Section 1 copy. `causes` are the disease's five subcategories (SM065), in the order the disease page shows them: for rework and overrun the control that failed; for forfeited entitlements the kind of money at stake (penalty days, variations), for disputes what the dispute is about (the five `dispute_types`), and for non-compliance what is non-compliant (people, plant, insurance, company, site). The stage at which a claim, a dispute or a requirement failed is a separate dimension, not a cause. A verdict's `cause_category` must be one of its own disease's keys; a key belongs to exactly one disease. `i18n.<language>` holds the same copy in another language (Demiton app i18n, 2026-10-30): `label`, `buyer_name`, `what`, `prevention`, and `causes.<cause key>.label` / `.covers`. The English fields stay the stored and canonical text; a reader with no translation for a field reads the English. French is a draft pending native and legal review.",
+  "order": [
+    "rework",
+    "overrun",
+    "forfeited_entitlements",
+    "disputes",
+    "non_compliance"
+  ],
+  "diseases": {
+    "rework": {
+      "label": "Rework",
+      "buyer_name": "rework",
+      "what": "Work done twice: failed inspections, NCRs, wrong ground assumptions.",
+      "prevention": "The test result lands in the register before the pour goes wrong.",
+      "start": [
+        [
+          "purchase_line"
+        ]
+      ],
+      "feeders": [
+        "inspection_test_result",
+        "safety_ncr",
+        "punch_list",
+        "site_inspection",
+        "plant_prestart",
+        "toolbox_talk",
+        "site_geology",
+        "site_bore_reference",
+        "utility_location",
+        "drawing_register",
+        "survey_control",
+        "construction_methodology"
+      ],
+      "causes": [
+        {
+          "key": "design_documentation",
+          "label": "Design and documentation",
+          "covers": "Wrong, late, incomplete or superseded design; clashes; unclear specification; an unanswered RFI."
+        },
+        {
+          "key": "scope_change",
+          "label": "Scope and change",
+          "covers": "A requirement changed after work was committed: client or end-user change, variation, design change, a latent-condition instruction."
+        },
+        {
+          "key": "planning_procurement",
+          "label": "Planning, procurement and sequencing",
+          "covers": "Wrong quantity or type bought, repeat orders, over-order, wrong method or sequence, temporary works, long-lead material."
+        },
+        {
+          "key": "site_conditions",
+          "label": "Setting-out, ground and external conditions",
+          "covers": "Wrong level or position, survey error, service strike, ground not as recorded, weather or external damage."
+        },
+        {
+          "key": "workmanship_quality",
+          "label": "Workmanship and quality conformance",
+          "covers": "Work not to specification: failed test, NCR, ITP or hold-point failure, non-conforming work, punch list, defective material installed."
+        }
+      ],
+      "i18n": {
+        "fr": {
+          "label": "Reprises",
+          "buyer_name": "reprises",
+          "what": "Un travail fait deux fois : essais non conformes, fiches de non-conformité, hypothèses de sol erronées.",
+          "prevention": "Le résultat d’essai arrive au registre avant que le coulage ne tourne mal.",
+          "causes": {
+            "design_documentation": {
+              "label": "Conception et documentation",
+              "covers": "Conception erronée, tardive, incomplète ou périmée ; conflits ; spécification floue ; une demande d’information restée sans réponse."
+            },
+            "scope_change": {
+              "label": "Périmètre et modifications",
+              "covers": "Une exigence a changé après l’engagement des travaux : modification du client ou de l’utilisateur, avenant, changement de conception, instruction sur une condition cachée."
+            },
+            "planning_procurement": {
+              "label": "Planification, achats et enchaînement",
+              "covers": "Mauvaise quantité ou mauvais type acheté, commandes répétées, surcommande, mauvaise méthode ou mauvais phasage, ouvrages provisoires, matériaux à long délai."
+            },
+            "site_conditions": {
+              "label": "Implantation, sol et conditions extérieures",
+              "covers": "Mauvais niveau ou mauvaise position, erreur de levé, réseau endommagé, sol différent du relevé, intempéries ou dommage extérieur."
+            },
+            "workmanship_quality": {
+              "label": "Exécution et conformité qualité",
+              "covers": "Travail non conforme à la spécification : essai échoué, fiche de non-conformité, point d’arrêt non levé, ouvrage non conforme, liste de réserves, matériau défectueux posé."
+            }
+          }
+        }
+      }
+    },
+    "overrun": {
+      "label": "Baseline overrun",
+      "buyer_name": "cost drift",
+      "what": "Cost and programme drift against the tender.",
+      "prevention": "The drift is caught at $50K, not $5M.",
+      "start": [
+        [
+          "job_budget"
+        ],
+        [
+          "cost_element",
+          "purchase_line"
+        ]
+      ],
+      "feeders": [
+        "budget_vs_actual",
+        "job_progress",
+        "cost_element",
+        "sor_verification_tendered",
+        "overstaffing_verdict",
+        "margin_driver_contribution",
+        "progress_claim",
+        "tendered_budget",
+        "tender_baseline",
+        "sor_outturn_comparison",
+        "claim_line_observation",
+        "attendance_record",
+        "plant_fuel_usage",
+        "fuel_transaction",
+        "project_performance_record",
+        "contract_terms"
+      ],
+      "causes": [
+        {
+          "key": "tender_pricing",
+          "label": "Tender pricing",
+          "covers": "The estimate or schedule of rates was short from the start."
+        },
+        {
+          "key": "quantity_growth",
+          "label": "Quantity growth",
+          "covers": "More was built than the schedule priced."
+        },
+        {
+          "key": "labour_productivity",
+          "label": "Labour productivity and overstaffing",
+          "covers": "More hours than the work needed."
+        },
+        {
+          "key": "plant_fuel",
+          "label": "Plant and fuel",
+          "covers": "Plant hours and fuel above what was priced."
+        },
+        {
+          "key": "input_prices",
+          "label": "Input price rises",
+          "covers": "Materials and subcontract prices rising on a fixed price."
+        }
+      ],
+      "i18n": {
+        "fr": {
+          "label": "Dépassement",
+          "buyer_name": "dérive des coûts",
+          "what": "La dérive des coûts et du planning par rapport à l’offre.",
+          "prevention": "La dérive est repérée à 50 000, pas à 5 millions.",
+          "causes": {
+            "tender_pricing": {
+              "label": "Prix de l’offre",
+              "covers": "L’estimation ou le bordereau des prix était trop bas dès le départ."
+            },
+            "quantity_growth": {
+              "label": "Hausse des quantités",
+              "covers": "On a construit plus que ce que le bordereau a chiffré."
+            },
+            "labour_productivity": {
+              "label": "Productivité et sureffectif",
+              "covers": "Plus d’heures que le travail n’en demandait."
+            },
+            "plant_fuel": {
+              "label": "Engins et carburant",
+              "covers": "Des heures d’engins et du carburant au-delà du prix."
+            },
+            "input_prices": {
+              "label": "Hausse des prix d’achat",
+              "covers": "Les prix des matériaux et de la sous-traitance montent sur un prix ferme."
+            }
+          }
+        }
+      }
+    },
+    "forfeited_entitlements": {
+      "label": "Forfeited entitlements",
+      "buyer_name": "missed claims",
+      "what": "Variations and time owed but never claimed: notices missed, time bars closed, wet days never logged.",
+      "prevention": "The notice is drafted before the window closes.",
+      "start": [
+        [
+          "contract_terms"
+        ],
+        [
+          "site_diary",
+          "day_works_docket",
+          "variations"
+        ]
+      ],
+      "feeders": [
+        "contract_terms",
+        "variations",
+        "change_event",
+        "day_works_docket",
+        "site_diary",
+        "platform_weather",
+        "rfi",
+        "progress_claim",
+        "payment_schedule",
+        "programme",
+        "tender_baseline_active",
+        "contract_notice",
+        "project_milestone",
+        "daily_log",
+        "site_activity",
+        "claim_line_observation"
+      ],
+      "causes": [
+        {
+          "key": "penalty_days",
+          "label": "Penalty days",
+          "covers": "Time owed but never claimed, so liquidated damages run: a wet day never logged, a client delay with no extension-of-time notice, a programme never updated to show the critical path moved."
+        },
+        {
+          "key": "unclaimed_variations",
+          "label": "Variations",
+          "covers": "Work directed but never priced: an instruction on site, an RFI answer that changed the scope, a day-works docket that never became a variation."
+        },
+        {
+          "key": "unclaimed_latent_conditions",
+          "label": "Latent conditions",
+          "covers": "Ground or site the contract did not show: rock, contamination, groundwater, services not on the drawings. The notice periods are short and run from discovery."
+        },
+        {
+          "key": "unclaimed_delay_costs",
+          "label": "Delay costs",
+          "covers": "The time was granted but the money was not claimed: prolongation, plant on standby, extended preliminaries and site overheads, disruption to the planned sequence."
+        },
+        {
+          "key": "unpaid_claims",
+          "label": "Payment and retention",
+          "covers": "Money already earned that never arrives: a payment claim not served by its reference date, a schedule left unanswered, a price adjustment not claimed in its window, retention or a security never released."
+        }
+      ],
+      "i18n": {
+        "fr": {
+          "label": "Droits perdus",
+          "buyer_name": "réclamations manquées",
+          "what": "Des avenants et des délais dus mais jamais réclamés : notifications manquées, forclusions, jours d’intempérie jamais consignés.",
+          "prevention": "La notification est rédigée avant la fin du délai.",
+          "causes": {
+            "penalty_days": {
+              "label": "Pénalités de retard",
+              "covers": "Des délais dus mais jamais réclamés, si bien que les pénalités courent : un jour d’intempérie jamais consigné, un retard du maître d’ouvrage sans demande de prolongation, un planning jamais mis à jour."
+            },
+            "unclaimed_variations": {
+              "label": "Travaux modificatifs",
+              "covers": "Des travaux ordonnés mais jamais chiffrés : un ordre de chantier, une réponse à une demande d’information qui a changé le périmètre, un bon de régie jamais transformé en avenant."
+            },
+            "unclaimed_latent_conditions": {
+              "label": "Sujétions imprévues",
+              "covers": "Un sol ou un site que le marché ne montrait pas : rocher, pollution, nappe, réseaux absents des plans. Les délais de notification sont courts et courent dès la découverte."
+            },
+            "unclaimed_delay_costs": {
+              "label": "Coûts du retard",
+              "covers": "Le délai a été accordé mais pas l’argent : prolongation, matériel immobilisé, frais de chantier prolongés, désorganisation du phasage prévu."
+            },
+            "unpaid_claims": {
+              "label": "Paiement et retenue",
+              "covers": "De l’argent déjà gagné qui n’arrive jamais : une situation non présentée à temps, un décompte resté sans réponse, une révision de prix non réclamée dans son délai, une retenue de garantie ou une caution jamais libérée."
+            }
+          }
+        }
+      }
+    },
+    "disputes": {
+      "label": "Disputes",
+      "buyer_name": "disputes",
+      "what": "The claim that became a case.",
+      "prevention": "The record is complete before the argument starts.",
+      "start": [
+        [
+          "contract_terms"
+        ],
+        [
+          "progress_claim",
+          "retention_position",
+          "payment_schedule",
+          "programme",
+          "day_works_docket",
+          "site_diary"
+        ]
+      ],
+      "feeders": [
+        "contract_terms",
+        "retention_position",
+        "subcontract",
+        "document_transmittal",
+        "diary_photo_observation",
+        "rfi",
+        "site_diary",
+        "contract_notice",
+        "bank_guarantee",
+        "diary_compliance_assessment",
+        "daily_log",
+        "site_activity",
+        "attendance_record",
+        "drawing_register",
+        "project_milestone"
+      ],
+      "dispute_types": [
+        {
+          "key": "payment",
+          "label": "Payment"
+        },
+        {
+          "key": "delay_eot",
+          "label": "Delay and extensions of time"
+        },
+        {
+          "key": "variations",
+          "label": "Variations"
+        },
+        {
+          "key": "latent_conditions",
+          "label": "Latent conditions"
+        },
+        {
+          "key": "closeout",
+          "label": "Close-out"
+        }
+      ],
+      "causes": [
+        {
+          "key": "payment_dispute",
+          "label": "Payment",
+          "covers": "What is owed for work done: a progress claim cut or ignored, a payment schedule, set-off against the claim, an adjudication under the security of payment act."
+        },
+        {
+          "key": "delay_dispute",
+          "label": "Delay and extensions of time",
+          "covers": "Who carries the time: an extension refused, liquidated damages deducted, a delay analysis argued against the programme."
+        },
+        {
+          "key": "variation_dispute",
+          "label": "Variations",
+          "covers": "Whether the work was a change and what it is worth: scope, direction, valuation, a docket the other side says was always in the contract."
+        },
+        {
+          "key": "latent_conditions_dispute",
+          "label": "Latent conditions",
+          "covers": "Whether the ground was foreseeable: what the site information showed, what a competent tenderer would have allowed for, when notice was given."
+        },
+        {
+          "key": "closeout_dispute",
+          "label": "Close-out",
+          "covers": "The end of the job: practical completion, defects, the final account, retention and securities held past their release date."
+        }
+      ],
+      "i18n": {
+        "fr": {
+          "label": "Litiges",
+          "buyer_name": "litiges",
+          "what": "La réclamation devenue un contentieux.",
+          "prevention": "Le dossier est complet avant que la discussion commence.",
+          "causes": {
+            "payment_dispute": {
+              "label": "Paiement",
+              "covers": "Ce qui est dû pour le travail fait : une situation réduite ou ignorée, un décompte, une compensation opposée, une procédure de paiement accélérée."
+            },
+            "delay_dispute": {
+              "label": "Retards et prolongations",
+              "covers": "Qui porte le délai : une prolongation refusée, des pénalités retenues, une analyse des retards contestée sur le planning."
+            },
+            "variation_dispute": {
+              "label": "Travaux modificatifs",
+              "covers": "Si le travail était une modification et ce qu’il vaut : périmètre, ordre, valorisation, un bon que l’autre partie dit compris au marché."
+            },
+            "latent_conditions_dispute": {
+              "label": "Sujétions imprévues",
+              "covers": "Si le sol était prévisible : ce que montraient les données du site, ce qu’un soumissionnaire compétent aurait prévu, quand la notification a été faite."
+            },
+            "closeout_dispute": {
+              "label": "Clôture",
+              "covers": "La fin du chantier : réception, réserves, décompte général, retenue de garantie et cautions conservées au-delà de leur date de libération."
+            }
+          }
+        }
+      }
+    },
+    "non_compliance": {
+      "label": "Non-compliance",
+      "buyer_name": "lapsed compliance",
+      "what": "The right to bid itself: panels, prequalification, certificates.",
+      "prevention": "The expiry is counted down 90-30-7, before the panel notices.",
+      "start": [
+        [
+          "certification_register",
+          "insurance_certificate",
+          "worker_qualification"
+        ]
+      ],
+      "feeders": [
+        "compliance_state",
+        "compliance_prequal",
+        "certification_register",
+        "insurance_certificate",
+        "worker_qualification",
+        "training_records",
+        "plant_registration",
+        "toolbox_talk",
+        "prequalification_answer",
+        "platform_prequal",
+        "compliance_evidence",
+        "compliance_certifications",
+        "worker_training_session",
+        "permit_to_work",
+        "asbestos_register",
+        "traffic_management_plan",
+        "environmental_aspect",
+        "environmental_observation",
+        "construction_methodology",
+        "plant_prestart",
+        "gps_event"
+      ],
+      "causes": [
+        {
+          "key": "people_compliance",
+          "label": "People",
+          "covers": "Who is on site and what they hold: tickets, high-risk work licences, construction induction cards, site inductions, a ticket that does not cover the task in hand."
+        },
+        {
+          "key": "plant_compliance",
+          "label": "Plant",
+          "covers": "What is running on site: registration, inspection certificates, daily prestarts, the wrong plant category for the work."
+        },
+        {
+          "key": "insurance_compliance",
+          "label": "Insurance",
+          "covers": "What covers the job: public liability, workers' compensation, contract works, a policy whose territory or limit does not reach this job."
+        },
+        {
+          "key": "company_compliance",
+          "label": "Company",
+          "covers": "What the business holds: its contractor licence, prequalification and its conditions, WHS and quality accreditation."
+        },
+        {
+          "key": "site_compliance",
+          "label": "Site",
+          "covers": "What the job itself requires: permits to work, traffic management plans, environmental conditions, the asbestos register."
+        }
+      ],
+      "i18n": {
+        "fr": {
+          "label": "Non-conformité",
+          "buyer_name": "conformité expirée",
+          "what": "Le droit même de soumissionner : référencements, qualifications, certificats.",
+          "prevention": "L’échéance est décomptée à 90, 30 et 7 jours, avant que l’acheteur ne la voie.",
+          "causes": {
+            "people_compliance": {
+              "label": "Personnel",
+              "covers": "Qui est sur le chantier et ce qu’il détient : habilitations, autorisations de conduite, accueil sécurité, une habilitation qui ne couvre pas la tâche en cours."
+            },
+            "plant_compliance": {
+              "label": "Engins",
+              "covers": "Ce qui tourne sur le chantier : immatriculation, vérifications périodiques, contrôles de prise de poste, une catégorie d’engin inadaptée au travail."
+            },
+            "insurance_compliance": {
+              "label": "Assurances",
+              "covers": "Ce qui couvre le chantier : responsabilité civile, accidents du travail, tous risques chantier, une police dont le territoire ou le plafond ne couvre pas ce chantier."
+            },
+            "company_compliance": {
+              "label": "Entreprise",
+              "covers": "Ce que détient l’entreprise : ses qualifications et leurs conditions, ses agréments, ses certifications sécurité et qualité."
+            },
+            "site_compliance": {
+              "label": "Chantier",
+              "covers": "Ce que le chantier lui-même exige : permis de travail, plans de circulation, prescriptions environnementales, repérage amiante."
+            }
+          }
+        }
+      }
+    }
+  }
+}

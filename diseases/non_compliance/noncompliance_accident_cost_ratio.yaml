@@ -1,4 +1,3 @@
-subtype: whs
 label: Accident cost as a share of contract sum (Singapore building contractors)
 exposure_value: 0.0025
 exposure_unit: ratio_of_contract
@@ -27,3 +26,5 @@ history:
     abstract, which confirms the 0.25% and adds the insured and uninsured split. A survey of contractors'
     own estimates grades moderate under METHOD.md Section 4. The title and industry (building, F41) are
     corrected from the abstract.
+- changed_on: '2026-11-02'
+  reason: "subtype 'whs' dropped: it is not one of non_compliance's causes, so the figure covers the disease as a whole (schema 3.0.0, SM070)"

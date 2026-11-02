@@ -1,4 +1,4 @@
-subtype: weather
+subtype: penalty_days
 label: No published figure for weather cost as a share of contract value
 exposure_value: null
 exposure_unit: none
@@ -19,3 +19,6 @@ caveat: >-
   pass called implausible. Neither is a benchmark, so this register holds no ratio rather than a convenient
   one. See weather_wet_day_overhead for what IS measured.
 status: current
+history:
+  - changed_on: '2026-11-02'
+    reason: "subtype 'weather' is now the registers' cause 'penalty_days' (schema 3.0.0, SM070)"

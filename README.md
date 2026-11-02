@@ -16,13 +16,13 @@ is at stake, not how much a contractor ends up losing. Each one says which.
 
 ## The five diseases
 
-| Directory | Disease | Also called (in the Demiton app) |
+| Directory (the key of `vocab/diseases.json` in demitonapp/registers) | Disease | Also called (in the Demiton app) |
 |---|---|---|
-| [`diseases/rework_signal`](diseases/rework_signal) | Rework | Rework |
-| [`diseases/overrun_signal`](diseases/overrun_signal) | Cost drift | Baseline overrun |
-| [`diseases/claim_window`](diseases/claim_window) | Missed claims (including weather) | Forfeited entitlements |
-| [`diseases/evidence_gap`](diseases/evidence_gap) | Disputes | Disputes |
-| [`diseases/compliance_gate`](diseases/compliance_gate) | Lapsed compliance | Non-compliance |
+| [`diseases/rework`](diseases/rework) | Rework | Rework |
+| [`diseases/overrun`](diseases/overrun) | Cost drift | Baseline overrun |
+| [`diseases/forfeited_entitlements`](diseases/forfeited_entitlements) | Missed claims (including weather) | Forfeited entitlements |
+| [`diseases/disputes`](diseases/disputes) | Disputes | Disputes |
+| [`diseases/non_compliance`](diseases/non_compliance) | Lapsed compliance | Non-compliance |
 
 The long read that works these figures through a $5 million job is at
 [docs.demiton.io/start-here/disease-priority](https://docs.demiton.io/start-here/disease-priority).

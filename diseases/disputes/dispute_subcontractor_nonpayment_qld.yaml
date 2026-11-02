@@ -1,4 +1,4 @@
-subtype: payment
+subtype: payment_dispute
 label: >-
   Average loss per unpaid subcontractor, Queensland (146 submissions to the 2019 taskforce)
 exposure_value: 288000.0
@@ -27,3 +27,6 @@ caveat: >-
   and their own statement of what they were owed. The $112m multi-creditor submission is excluded from
   the average. Per case, not a share of contract value, so it is never multiplied by one.
 status: current
+history:
+  - changed_on: '2026-11-02'
+    reason: "subtype 'payment' is now the registers' cause 'payment_dispute' (schema 3.0.0, SM070)"

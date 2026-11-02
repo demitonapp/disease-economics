@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# Vendor the research schemas (finding/source/protection) from a pinned release of
-# github.com/demitonapp/registers, which is now their source of truth (spec 09 P4).
+# Vendor the research schemas (finding/source/protection) and the disease vocabulary
+# (diseases.json: the five diseases and their 25 causes) from a pinned release of
+# github.com/demitonapp/registers, which is their source of truth (spec 09 P4, SM070/P1).
 #
 #   scripts/vendor_registers.sh v1
 #
@@ -16,7 +17,8 @@ gh release download "$tag" --repo demitonapp/registers --pattern "registers-rese
 asset="$(ls "$tmp"/registers-research-*.tar.gz)"
 rm -rf "$dest"
 mkdir -p "$dest"
-tar -xzf "$asset" -C "$dest" --strip-components=1 research
+tar -xzf "$asset" -C "$tmp" research vocab/diseases.json
+cp "$tmp"/research/*.schema.json "$tmp/vocab/diseases.json" "$dest/"
 
 echo "$tag" > "$dest/VENDORED_TAG"
 count="$(ls "$dest"/*.schema.json | wc -l | tr -d ' ')"

@@ -54,7 +54,7 @@ industries: [F42]
 Cost records from 40 road projects across three contractors. Mean rework was 8% of contract value.
 ```
 
-Then either a new finding in `diseases/rework_signal/`, or the source added to an existing finding.
+Then either a new finding in `diseases/rework/`, or the source added to an existing finding.
 
 ## Changing a schema
 

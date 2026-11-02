@@ -1,0 +1,48 @@
+subtype: plant_fuel
+label: No published New Zealand figure for plant hours or fuel above what was priced
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - no New Zealand national source read gives plant utilisation or standby cost, fuel used against fuel priced, or the cost of fuel and plant overruns as a share of a contract or of an overrun
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- nzta-2026-contract-price-adjustment-indexes
+considered:
+- source: te-waihanga-2023-construction-input-costs
+  reason: >-
+    Statistics New Zealand's 2020 input-output tables as tabulated by Te Waihanga: diesel is 1.7% and equipment 10.1% of the heavy and civil industry's inputs. That is how big plant and fuel are in the cost structure, now filed as context, and the paper does not compare fuel or plant hours used with those priced.
+- source: te-waihanga-2026-making-every-dollar-count
+  reason: >-
+    Estimates that a 1% rise in world commodity prices lifts New Zealand diesel prices by about 0.6% (p.17); a price pass-through, with no fuel use against estimate and no plant utilisation.
+- source: nzta-2026-contract-price-adjustment-indexes
+  reason: >-
+    The Transport Agency's price-adjustment index for construction other than structures weights plant and site overheads 0.35 and the bitumen series is set monthly. They record how fast prices moved for contracts that use them, not hours above what was priced, and they do not say how many contracts carry the adjustment.
+- source: pennington-2026-rnz-nzta-fuel-briefings
+  reason: >-
+    A news report of Transport Agency briefings: diesel is seven percent of the road construction index, and on projects under a year old contractors are exposed to fuel index changes in that first 12 months. A press account of documents not opened, and a share of an index, not a measured overrun in fuel or plant.
+- source: sccp-2026-fuel-freight-guidance
+  reason: >-
+    Practitioners' guidance on recovering fuel cost rises under NZS 3910 contracts. It names the mechanisms and the records to keep and contains no figure.
+- source: wynn-williams-2026-fuel-costs-contracts
+  reason: >-
+    Law-firm commentary that on fixed-price contracts without fluctuation provisions the contractor generally carries a fuel price rise, and that most contracts since COVID-19 do not allow for escalation. It states who bears the risk, with no number for how much fuel cost exceeded what was priced.
+- source: bondcm-2021-wellington-water-cost-escalation
+  reason: >-
+    A quantity surveyor's quarter-on-quarter repricing for three Wellington pipe-renewal contracts: diesel about 13%, plant hire 3-5% and operated plant 5-7% up in the fourth quarter of 2021. Price movements for one region and one quarter, estimated by one consultant, and no hours or litres against allowance.
+- source: ghd-2023-tauranga-cost-escalation
+  reason: >-
+    A consultancy's forecast for one council: plant other than structures is 25% of its roading output index. An index weight and a forecast, not plant use above what was priced.
+- source: atapattu-2023-massey-thesis-road-cost-estimation
+  reason: >-
+    The full thesis was read. Its survey of 92 estimators ranks "unavailability or failure of equipment" with a significance index of 49% (44th of 53 causes of overrun, Table 3.2, printed p.70). A perception ranking, with no share of cost, and plant hours and fuel are not separate items in it.
+- source: oag-2023-infrastructure-decisions
+  reason: >-
+    The Auditor-General's report on the New Zealand Upgrade Programme's decisions was searched for fuel, diesel, bitumen, steel, escalation and inflation and uses none of those words; it gives no plant or fuel cost.
+sample_note: >-
+  Searches: "New Zealand civil contractors fuel plant utilisation standby cost study roading contractors diesel share contract price"; "Waka Kotahi NZ Transport Agency cost escalation infrastructure construction price increases"; "NZTA price adjustment fluctuations formula bitumen contracts NZS 3910"; "Civil Contractors New Zealand survey members cost increases fuel bitumen contract price adjustment"; "New Zealand infrastructure cost escalation fixed price contracts contractors bear price risk bitumen steel diesel". Not opened: the NZ Transport Agency's own website, the Ministry of Transport website and the EECA off-road equipment decarbonisation report all returned a bot-protection page to automated requests, and the Auditor-General's New Zealand Upgrade Programme page returned 403; none was worked around. Index rates, not costs: NZTA's construction index (excluding bitumen) rose 13.7% in the year to June 2022 and its bitumen series was $1.1197 a litre in December 2022, $0.4635 a litre (about 71%) above a year earlier. A model, not an outturn, and not filed: RNZ reports the Agency's early modelling at a five percent rise in big project costs at US$100 a barrel and ten percent at US$150, with no time horizon given; Te Waihanga's 2026 review repeats it, citing only that RNZ article, as annual cost inflation for projects with active fluctuation clauses. The briefings themselves are not published where they could be found. It is a modelled owner-side projection of total project cost from diesel and bitumen together, not plant hours or fuel above what was priced.
+caveat: >-
+  Recorded as `none` on purpose. Sources give how large plant and fuel are in a cost structure, how fast diesel and bitumen prices moved and who carries the risk under the contract, but none measures plant hours or fuel above what was priced, or the cost of that as a share of a contract or an overrun. Cost-composition shares are context, not evidence of this cause. This register holds no ratio rather than a borrowed one.
+status: current

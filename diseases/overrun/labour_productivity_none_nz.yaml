@@ -1,0 +1,45 @@
+subtype: labour_productivity
+label: No published New Zealand figure for hours or labour cost above what the work needed
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - New Zealand national sources give industry productivity indices and cost shares, not hours or labour cost against budget on civil jobs
+exposure_kind: contractor_loss
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- te-waihanga-2022-economic-performance-construction
+considered:
+- source: te-waihanga-2026-making-every-dollar-count
+  reason: >-
+    Gives civil labour productivity growth of 7% from 2000 to 2020 (building construction 21%), an index of output per hour for the industry, not hours over need on a job. Its earlier edition's 5% differs.
+- source: te-waihanga-2023-construction-input-costs
+  reason: >-
+    Puts direct labour at around 22% of heavy and civil industry costs (the printed table's labour cell is blank). That is the cost base exposed to hours, not an overstaffing or overrun figure.
+- source: jaffe-2016-construction-productivity
+  reason: >-
+    Firm-level productivity growth and dispersion for 2001 to 2012; compares firms with each other, not hours with a budget.
+- source: nzier-2013-construction-productivity
+  reason: >-
+    Sector-wide productivity and competition evidence from 2013; no job-level hours or budgets.
+- source: atapattu-2023-nz-transport-cost-factors
+  reason: >-
+    Estimators' ranking of overrun causes; the abstract names design changes, planning and tender documentation and gives no labour-hours share. Abstract only was read.
+- source: te-waihanga-2024-transmission-gully-review
+  reason: >-
+    One road. It records construction progress rates falling short of the joint venture's plan, with no hours or labour cost figure.
+- source: te-waihanga-2022-lay-of-the-land
+  reason: >-
+    Productivity levels are estimated for vertical (building) construction only, and its labour-share breakdown is Australian data.
+- source: oag-2023-infrastructure-decisions
+  reason: >-
+    Audit of one programme's decision-making; it does not break increases into labour, plant or materials.
+- source: nzgp-2019-measurement-contract
+  reason: >-
+    Contract-form guidance; it contains no labour or productivity figure.
+sample_note: >-
+  Searches: "Stats NZ productivity statistics industry heavy and civil engineering construction labour productivity hours worked"; "Jaffe Le Chappell Motu construction productivity heavy and civil"; "Te Waihanga cost of infrastructure construction cost drivers productivity"; "Labour Productivity in the New Zealand Construction Industry: A Thorough Investigation" (publisher page refused access, so not opened); "New Zealand infrastructure projects cost overruns study". Frequencies and indices that exist but are not costs: civil labour productivity growth of 5% (2022 edition) or 7% (2026 edition) over 2000 to 2020; annual paid hours per worker in construction down about 6% over 2000 to 2020; a Te Waihanga model estimating civil construction prices would be about 10% lower had productivity matched building (a modelled counterfactual on prices, not a share of contract).
+caveat: >-
+  Recorded as `none` on purpose. Productivity statistics and a labour cost share are not a measure of hours beyond what the work needed, and presenting 22% of cost or a 5% to 7% index as a contractor's overstaffing exposure would be a misreading. No New Zealand source read reports hours or labour cost against budget on civil work.
+status: current

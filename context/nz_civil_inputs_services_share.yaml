@@ -1,0 +1,22 @@
+label: Intermediate service inputs, including installation work and engineering services, as a share of the cost of New Zealand heavy and civil construction, 2020
+exposure_value: 0.418
+exposure_unit: ratio_of_other
+denominator: construction_cost
+exposure_basis: >-
+  of the total inputs of the heavy and civil construction industry: intermediate service inputs (civil engineering services 16.8%, other installation work 13.5%, all other services 11.4%)
+exposure_kind: context
+confidence: moderate
+derivation: as_published
+statistic: pooled_ratio
+sample_size:
+  n: 1
+  unit: years
+  note: Statistics New Zealand's 2020 input-output tables for the heavy and civil construction industry, one year, whole industry.
+sources:
+- source: te-waihanga-2023-construction-input-costs
+  location: Table 2, p.11, and section 1.4, p.10
+sample_note: >-
+  Statistics New Zealand's 2020 input-output tables for the heavy and civil construction industry, as tabulated by Te Waihanga. The paper describes these services as mostly labour, with some material content, such as diesel used to deliver aggregates.
+caveat: >-
+  Context only: how large bought-in services are in the industry's cost structure, not a loss, an overrun or a price rise. The category is purchased services, which includes subcontracted installation and engineering work but also professional and other services, and the source does not split subcontracts out. Whole industry, one year.
+status: current

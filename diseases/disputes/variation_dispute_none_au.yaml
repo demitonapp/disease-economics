@@ -15,8 +15,8 @@ sources:
 considered:
 - source: murray-2017-security-of-payment-review
   reason: >-
-    Describes how the Acts treat disputed variations (a 10% threshold in Victoria) and calls them too complex for
-    rapid adjudication (pp.26, 123); legal text with no amounts.
+    Describes how the Acts treat disputed variations (Victoria caps some at 10% of the contract sum, p.119) and
+    calls them too complex for rapid adjudication (p.123); legal text with no amounts or shares.
 - source: rahnamayiezekavat-2022-nsw-disputes-typology
   reason: >-
     Variation is 3% and scope 2% of 230 NSW cases (Table 3, p.9); one state, case counts, no amounts.

@@ -1,0 +1,60 @@
+subtype: delay_dispute
+label: No published national figure for the cost of extension-of-time and delay disputes in Australia
+exposure_value: null
+exposure_unit: none
+exposure_basis: >-
+  none - no Australian national source found gives an amount, a share of contract value or a share of a claim for
+  disputes about extensions of time, liquidated damages or delay analysis
+exposure_kind: money_at_stake
+confidence: low
+derivation: as_published
+statistic: none
+sources:
+- source: campos-gutierrez-2013-court-case-disputes
+  location: Section 4.1 and Figure 2; Table 1 (timing row)
+considered:
+- source: murray-2017-security-of-payment-review
+  reason: >-
+    Says time-related cost claims are too complex for rapid adjudication and that Victoria excludes them (p.123); a
+    legal and policy account with no amounts or shares.
+- source: rahnamayiezekavat-2022-nsw-disputes-typology
+  reason: >-
+    Time disputes are 6% of 230 NSW cases (Table 3, p.9); a frequency, for one state, with no amounts.
+- source: hka-2026-crux-ninth-report
+  reason: >-
+    Global extension-of-time claims averaged 48.8% of contract schedules on projects completing from 2020; that is
+    days, not money, and Oceania is shown only for claimed costs across all causes (13.3% of budgets), not delay.
+- source: arcadis-2016-global-construction-disputes
+  reason: >-
+    Its Australia section (pp.24-25) lists typical dispute reasons with no figures; global averages only.
+- source: arcadis-2022-global-construction-disputes
+  reason: >-
+    Global and North American averages and ranked causes with no Australian breakdown and no delay amounts.
+- source: productivity-commission-2014-public-infrastructure
+  reason: >-
+    Discusses delays and risk allocation on public infrastructure and mentions litigation, but holds no data on
+    delay dispute amounts or shares.
+- source: infrastructure-australia-2021-national-infrastructure-risk
+  reason: >-
+    Notes insurers reacting to a growth in claims for delay (p.49) without counting or valuing them.
+- source: grattan-2020-megaprojects
+  reason: >-
+    Single-project accounts of delay disputes (West Gate Tunnel) drawn from reports; no sample, no cause shares.
+- source: love-2008-causal-modelling-disputes
+  reason: >-
+    Lists extension of time claims third in a 2006 Australian law firm ranking of dispute causes, second-hand and
+    without percentages or amounts.
+- source: byrne-2019-subcontractor-nonpayment
+  reason: >-
+    Queensland only; records subcontractor complaints about liquidated damages and time bars but no delay amounts.
+sample_note: >-
+  Search terms: extension of time dispute Australia; liquidated damages dispute cost Australia; delay claims value
+  Australian contractors survey; time-related costs adjudication; delay and disruption claims share of disputes
+  Australia; Arcadis, HKA CRUX and Australian Disputes Centre or ACICA statistics. A frequency exists: timing was a
+  factor in 38 of 78 Australian court cases from 1966 to 2012 (Campos Gutierrez 2013), and time disputes are 6% of
+  230 NSW cases 2002-2021, but neither is a cost.
+caveat: >-
+  Recorded as `none` on purpose. Eleven sources were opened (listed above); none states an Australian national
+  amount or share for delay disputes. The case-count frequencies are for litigated cases only, from published
+  judgments, and say nothing about what was at stake. This is the next place to look for research, not a zero.
+status: current

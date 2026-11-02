@@ -17,4 +17,5 @@ The general requirements Transport for NSW attaches to its major civil works con
 which builds up the daywork labour rate, counts 261 week days a year, 226 working days once leave and
 public holidays are taken out, and an estimated 20 wet-weather days a year before rostered days off.
 Clause 43 pays Wet Weather Delay Costs only when the time for completion is more than 52 weeks and only
-for wet days above a threshold the Project Manager nominates.
+for wet days above a threshold the Project Manager nominates. It is a
+contract rule from one agency and does not measure how many wet days contractors leave unclaimed.
